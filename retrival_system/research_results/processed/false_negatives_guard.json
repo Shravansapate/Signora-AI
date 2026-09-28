@@ -1,0 +1,102 @@
+[
+  {
+    "id": "destination-to-only-0",
+    "kind": "destination_to_only",
+    "announcement": "Train 1201 to Mumbai will arrive at platform 1",
+    "trusted_statement": "Train 1201 to Pune will arrive at platform 1",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.2183,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-1",
+    "kind": "destination_to_only",
+    "announcement": "Train 1202 to Mumbai will arrive at platform 2",
+    "trusted_statement": "Train 1202 to Pune will arrive at platform 2",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.2023,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-2",
+    "kind": "destination_to_only",
+    "announcement": "Train 1203 to Mumbai will arrive at platform 3",
+    "trusted_statement": "Train 1203 to Pune will arrive at platform 3",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.3408,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-3",
+    "kind": "destination_to_only",
+    "announcement": "Train 1204 to Mumbai will arrive at platform 4",
+    "trusted_statement": "Train 1204 to Pune will arrive at platform 4",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1962,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-4",
+    "kind": "destination_to_only",
+    "announcement": "Train 1205 to Mumbai will arrive at platform 5",
+    "trusted_statement": "Train 1205 to Pune will arrive at platform 5",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1885,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-5",
+    "kind": "destination_to_only",
+    "announcement": "Train 1206 to Mumbai will arrive at platform 6",
+    "trusted_statement": "Train 1206 to Pune will arrive at platform 6",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1971,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-6",
+    "kind": "destination_to_only",
+    "announcement": "Train 1207 to Mumbai will arrive at platform 7",
+    "trusted_statement": "Train 1207 to Pune will arrive at platform 7",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1836,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-7",
+    "kind": "destination_to_only",
+    "announcement": "Train 1208 to Mumbai will arrive at platform 1",
+    "trusted_statement": "Train 1208 to Pune will arrive at platform 1",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1834,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-8",
+    "kind": "destination_to_only",
+    "announcement": "Train 1209 to Mumbai will arrive at platform 2",
+    "trusted_statement": "Train 1209 to Pune will arrive at platform 2",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.1857,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  },
+  {
+    "id": "destination-to-only-9",
+    "kind": "destination_to_only",
+    "announcement": "Train 1210 to Mumbai will arrive at platform 3",
+    "trusted_statement": "Train 1210 to Pune will arrive at platform 3",
+    "expected_conflict": true,
+    "detected": false,
+    "guard_ms": 0.3024,
+    "scope": "candidate compatibility guard, not integrated trusted timetable validation"
+  }
+]

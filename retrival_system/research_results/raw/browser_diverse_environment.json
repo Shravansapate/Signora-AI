@@ -1,0 +1,17 @@
+{
+  "version": "153.0.8010.12",
+  "gpu": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "vendor": "Google Inc. (Google)"
+  },
+  "headless": true,
+  "args": [
+    "--enable-unsafe-swiftshader"
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "measurement": "requestAnimationFrame diagnostics; bone pose hash sampled by app every 250ms; warm persistent-avatar session; no playback-rate changes",
+  "timing_workload": "Distinct existing words, 20 trials per length; new assets cold on first occurrence, animation cache warm thereafter"
+}

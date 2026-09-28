@@ -1,0 +1,590 @@
+[
+  {
+    "id": "arrival-08-0",
+    "text": "Platform 2 train 1201 Mumbai arrival.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "arrival-09-0",
+    "text": "The Vidarbha Express train 1201 is arriving at platform 2.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "departure-08-0",
+    "text": "Platform 2 train 1201 Mumbai departure.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "departure-09-0",
+    "text": "The Vidarbha Express train 1201 is departing at platform 2.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "delay-02-0",
+    "text": "Train 1201 is delayed by 15 minutes due to fog.",
+    "field": "destination",
+    "expected": null,
+    "actual": "fog"
+  },
+  {
+    "id": "cancellation-06-0",
+    "text": "Service 1201 is cancelled.",
+    "field": "train_number",
+    "expected": "1201",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-0",
+    "text": "Train 1201 platform changed from 2 to 5.",
+    "field": "destination",
+    "expected": null,
+    "actual": "5"
+  },
+  {
+    "id": "platform-change-01-0",
+    "text": "Train 1201 platform changed from 2 to 5.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-0",
+    "text": "Train 1201 platform changed from 2 to 5.",
+    "field": "source",
+    "expected": null,
+    "actual": "2"
+  },
+  {
+    "id": "platform-change-01-0",
+    "text": "Train 1201 platform changed from 2 to 5.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-0",
+    "text": "Train 1201 will use platform 5 instead of platform 2.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-0",
+    "text": "Train 1201 will use platform 5 instead of platform 2.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-0",
+    "text": "Platform change: train 1201 moves from 2 to 5.",
+    "field": "destination",
+    "expected": null,
+    "actual": "5"
+  },
+  {
+    "id": "platform-change-03-0",
+    "text": "Platform change: train 1201 moves from 2 to 5.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-0",
+    "text": "Platform change: train 1201 moves from 2 to 5.",
+    "field": "source",
+    "expected": null,
+    "actual": "2"
+  },
+  {
+    "id": "platform-change-03-0",
+    "text": "Platform change: train 1201 moves from 2 to 5.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-0",
+    "text": "Train 1201 now arrives at platform 5, not platform 2.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-0",
+    "text": "Train 1201 now arrives at platform 5, not platform 2.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-0",
+    "text": "Attention: platform for train 1201 has changed from 2 to 5.",
+    "field": "destination",
+    "expected": null,
+    "actual": "5"
+  },
+  {
+    "id": "platform-change-06-0",
+    "text": "Attention: platform for train 1201 has changed from 2 to 5.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-0",
+    "text": "Attention: platform for train 1201 has changed from 2 to 5.",
+    "field": "source",
+    "expected": null,
+    "actual": "2"
+  },
+  {
+    "id": "platform-change-06-0",
+    "text": "Attention: platform for train 1201 has changed from 2 to 5.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-0",
+    "text": "Train 1201: platform 2 replaced by 5.",
+    "field": "new_platform",
+    "expected": "5",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-0",
+    "text": "Train 1201: platform 2 replaced by 5.",
+    "field": "old_platform",
+    "expected": "2",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-0",
+    "text": "Train 1201: platform 2 replaced by 5.",
+    "field": "platform",
+    "expected": null,
+    "actual": "2"
+  },
+  {
+    "id": "emergency-04-0",
+    "text": "Danger. Keep away from the tracks.",
+    "field": "source",
+    "expected": null,
+    "actual": "the"
+  },
+  {
+    "id": "other-06-0",
+    "text": "Welcome to Nagpur station.",
+    "field": "destination",
+    "expected": null,
+    "actual": "nagpur"
+  },
+  {
+    "id": "arrival-08-1",
+    "text": "Platform 3 train 1310 Mumbai arrival.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "arrival-09-1",
+    "text": "The Vidarbha Express train 1310 is arriving at platform 3.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "departure-08-1",
+    "text": "Platform 3 train 1310 Mumbai departure.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "departure-09-1",
+    "text": "The Vidarbha Express train 1310 is departing at platform 3.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "delay-02-1",
+    "text": "Train 1310 is delayed by 30 minutes due to fog.",
+    "field": "destination",
+    "expected": null,
+    "actual": "fog"
+  },
+  {
+    "id": "cancellation-06-1",
+    "text": "Service 1310 is cancelled.",
+    "field": "train_number",
+    "expected": "1310",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-1",
+    "text": "Train 1310 platform changed from 3 to 6.",
+    "field": "destination",
+    "expected": null,
+    "actual": "6"
+  },
+  {
+    "id": "platform-change-01-1",
+    "text": "Train 1310 platform changed from 3 to 6.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-1",
+    "text": "Train 1310 platform changed from 3 to 6.",
+    "field": "source",
+    "expected": null,
+    "actual": "3"
+  },
+  {
+    "id": "platform-change-01-1",
+    "text": "Train 1310 platform changed from 3 to 6.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-1",
+    "text": "Train 1310 will use platform 6 instead of platform 3.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-1",
+    "text": "Train 1310 will use platform 6 instead of platform 3.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-1",
+    "text": "Platform change: train 1310 moves from 3 to 6.",
+    "field": "destination",
+    "expected": null,
+    "actual": "6"
+  },
+  {
+    "id": "platform-change-03-1",
+    "text": "Platform change: train 1310 moves from 3 to 6.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-1",
+    "text": "Platform change: train 1310 moves from 3 to 6.",
+    "field": "source",
+    "expected": null,
+    "actual": "3"
+  },
+  {
+    "id": "platform-change-03-1",
+    "text": "Platform change: train 1310 moves from 3 to 6.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-1",
+    "text": "Train 1310 now arrives at platform 6, not platform 3.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-1",
+    "text": "Train 1310 now arrives at platform 6, not platform 3.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-1",
+    "text": "Attention: platform for train 1310 has changed from 3 to 6.",
+    "field": "destination",
+    "expected": null,
+    "actual": "6"
+  },
+  {
+    "id": "platform-change-06-1",
+    "text": "Attention: platform for train 1310 has changed from 3 to 6.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-1",
+    "text": "Attention: platform for train 1310 has changed from 3 to 6.",
+    "field": "source",
+    "expected": null,
+    "actual": "3"
+  },
+  {
+    "id": "platform-change-06-1",
+    "text": "Attention: platform for train 1310 has changed from 3 to 6.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-1",
+    "text": "Train 1310: platform 3 replaced by 6.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-1",
+    "text": "Train 1310: platform 3 replaced by 6.",
+    "field": "old_platform",
+    "expected": "3",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-1",
+    "text": "Train 1310: platform 3 replaced by 6.",
+    "field": "platform",
+    "expected": null,
+    "actual": "3"
+  },
+  {
+    "id": "emergency-04-1",
+    "text": "Danger. Keep away from the tracks.",
+    "field": "source",
+    "expected": null,
+    "actual": "the"
+  },
+  {
+    "id": "other-06-1",
+    "text": "Welcome to Nagpur station.",
+    "field": "destination",
+    "expected": null,
+    "actual": "nagpur"
+  },
+  {
+    "id": "arrival-08-2",
+    "text": "Platform 4 train 1419 Mumbai arrival.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "arrival-09-2",
+    "text": "The Vidarbha Express train 1419 is arriving at platform 4.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "departure-08-2",
+    "text": "Platform 4 train 1419 Mumbai departure.",
+    "field": "destination",
+    "expected": "mumbai",
+    "actual": null
+  },
+  {
+    "id": "departure-09-2",
+    "text": "The Vidarbha Express train 1419 is departing at platform 4.",
+    "field": "train_name",
+    "expected": "vidarbha express",
+    "actual": null
+  },
+  {
+    "id": "delay-02-2",
+    "text": "Train 1419 is delayed by 45 minutes due to fog.",
+    "field": "destination",
+    "expected": null,
+    "actual": "fog"
+  },
+  {
+    "id": "cancellation-06-2",
+    "text": "Service 1419 is cancelled.",
+    "field": "train_number",
+    "expected": "1419",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-2",
+    "text": "Train 1419 platform changed from 4 to 7.",
+    "field": "destination",
+    "expected": null,
+    "actual": "7"
+  },
+  {
+    "id": "platform-change-01-2",
+    "text": "Train 1419 platform changed from 4 to 7.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-01-2",
+    "text": "Train 1419 platform changed from 4 to 7.",
+    "field": "source",
+    "expected": null,
+    "actual": "4"
+  },
+  {
+    "id": "platform-change-01-2",
+    "text": "Train 1419 platform changed from 4 to 7.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-2",
+    "text": "Train 1419 will use platform 7 instead of platform 4.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-02-2",
+    "text": "Train 1419 will use platform 7 instead of platform 4.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-2",
+    "text": "Platform change: train 1419 moves from 4 to 7.",
+    "field": "destination",
+    "expected": null,
+    "actual": "7"
+  },
+  {
+    "id": "platform-change-03-2",
+    "text": "Platform change: train 1419 moves from 4 to 7.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-03-2",
+    "text": "Platform change: train 1419 moves from 4 to 7.",
+    "field": "source",
+    "expected": null,
+    "actual": "4"
+  },
+  {
+    "id": "platform-change-03-2",
+    "text": "Platform change: train 1419 moves from 4 to 7.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-2",
+    "text": "Train 1419 now arrives at platform 7, not platform 4.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-04-2",
+    "text": "Train 1419 now arrives at platform 7, not platform 4.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-2",
+    "text": "Attention: platform for train 1419 has changed from 4 to 7.",
+    "field": "destination",
+    "expected": null,
+    "actual": "7"
+  },
+  {
+    "id": "platform-change-06-2",
+    "text": "Attention: platform for train 1419 has changed from 4 to 7.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-06-2",
+    "text": "Attention: platform for train 1419 has changed from 4 to 7.",
+    "field": "source",
+    "expected": null,
+    "actual": "4"
+  },
+  {
+    "id": "platform-change-06-2",
+    "text": "Attention: platform for train 1419 has changed from 4 to 7.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-2",
+    "text": "Train 1419: platform 4 replaced by 7.",
+    "field": "new_platform",
+    "expected": "7",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-2",
+    "text": "Train 1419: platform 4 replaced by 7.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "platform-change-07-2",
+    "text": "Train 1419: platform 4 replaced by 7.",
+    "field": "platform",
+    "expected": null,
+    "actual": "4"
+  },
+  {
+    "id": "emergency-04-2",
+    "text": "Danger. Keep away from the tracks.",
+    "field": "source",
+    "expected": null,
+    "actual": "the"
+  },
+  {
+    "id": "other-06-2",
+    "text": "Welcome to Nagpur station.",
+    "field": "destination",
+    "expected": null,
+    "actual": "nagpur"
+  },
+  {
+    "id": "additional-9",
+    "text": "Train 19711 will leave from platform 6 instead of platform 4.",
+    "field": "new_platform",
+    "expected": "6",
+    "actual": null
+  },
+  {
+    "id": "additional-9",
+    "text": "Train 19711 will leave from platform 6 instead of platform 4.",
+    "field": "old_platform",
+    "expected": "4",
+    "actual": null
+  },
+  {
+    "id": "additional-12",
+    "text": "Tickets for the Superfast Express are available at the counter.",
+    "field": "train_name",
+    "expected": "superfast express",
+    "actual": null
+  }
+]

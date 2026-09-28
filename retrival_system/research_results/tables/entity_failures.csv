@@ -1,0 +1,85 @@
+id,text,field,expected,actual
+arrival-08-0,Platform 2 train 1201 Mumbai arrival.,destination,mumbai,
+arrival-09-0,The Vidarbha Express train 1201 is arriving at platform 2.,train_name,vidarbha express,
+departure-08-0,Platform 2 train 1201 Mumbai departure.,destination,mumbai,
+departure-09-0,The Vidarbha Express train 1201 is departing at platform 2.,train_name,vidarbha express,
+delay-02-0,Train 1201 is delayed by 15 minutes due to fog.,destination,,fog
+cancellation-06-0,Service 1201 is cancelled.,train_number,1201,
+platform-change-01-0,Train 1201 platform changed from 2 to 5.,destination,,5
+platform-change-01-0,Train 1201 platform changed from 2 to 5.,new_platform,5,
+platform-change-01-0,Train 1201 platform changed from 2 to 5.,source,,2
+platform-change-01-0,Train 1201 platform changed from 2 to 5.,old_platform,2,
+platform-change-02-0,Train 1201 will use platform 5 instead of platform 2.,new_platform,5,
+platform-change-02-0,Train 1201 will use platform 5 instead of platform 2.,old_platform,2,
+platform-change-03-0,Platform change: train 1201 moves from 2 to 5.,destination,,5
+platform-change-03-0,Platform change: train 1201 moves from 2 to 5.,new_platform,5,
+platform-change-03-0,Platform change: train 1201 moves from 2 to 5.,source,,2
+platform-change-03-0,Platform change: train 1201 moves from 2 to 5.,old_platform,2,
+platform-change-04-0,"Train 1201 now arrives at platform 5, not platform 2.",new_platform,5,
+platform-change-04-0,"Train 1201 now arrives at platform 5, not platform 2.",old_platform,2,
+platform-change-06-0,Attention: platform for train 1201 has changed from 2 to 5.,destination,,5
+platform-change-06-0,Attention: platform for train 1201 has changed from 2 to 5.,new_platform,5,
+platform-change-06-0,Attention: platform for train 1201 has changed from 2 to 5.,source,,2
+platform-change-06-0,Attention: platform for train 1201 has changed from 2 to 5.,old_platform,2,
+platform-change-07-0,Train 1201: platform 2 replaced by 5.,new_platform,5,
+platform-change-07-0,Train 1201: platform 2 replaced by 5.,old_platform,2,
+platform-change-07-0,Train 1201: platform 2 replaced by 5.,platform,,2
+emergency-04-0,Danger. Keep away from the tracks.,source,,the
+other-06-0,Welcome to Nagpur station.,destination,,nagpur
+arrival-08-1,Platform 3 train 1310 Mumbai arrival.,destination,mumbai,
+arrival-09-1,The Vidarbha Express train 1310 is arriving at platform 3.,train_name,vidarbha express,
+departure-08-1,Platform 3 train 1310 Mumbai departure.,destination,mumbai,
+departure-09-1,The Vidarbha Express train 1310 is departing at platform 3.,train_name,vidarbha express,
+delay-02-1,Train 1310 is delayed by 30 minutes due to fog.,destination,,fog
+cancellation-06-1,Service 1310 is cancelled.,train_number,1310,
+platform-change-01-1,Train 1310 platform changed from 3 to 6.,destination,,6
+platform-change-01-1,Train 1310 platform changed from 3 to 6.,new_platform,6,
+platform-change-01-1,Train 1310 platform changed from 3 to 6.,source,,3
+platform-change-01-1,Train 1310 platform changed from 3 to 6.,old_platform,3,
+platform-change-02-1,Train 1310 will use platform 6 instead of platform 3.,new_platform,6,
+platform-change-02-1,Train 1310 will use platform 6 instead of platform 3.,old_platform,3,
+platform-change-03-1,Platform change: train 1310 moves from 3 to 6.,destination,,6
+platform-change-03-1,Platform change: train 1310 moves from 3 to 6.,new_platform,6,
+platform-change-03-1,Platform change: train 1310 moves from 3 to 6.,source,,3
+platform-change-03-1,Platform change: train 1310 moves from 3 to 6.,old_platform,3,
+platform-change-04-1,"Train 1310 now arrives at platform 6, not platform 3.",new_platform,6,
+platform-change-04-1,"Train 1310 now arrives at platform 6, not platform 3.",old_platform,3,
+platform-change-06-1,Attention: platform for train 1310 has changed from 3 to 6.,destination,,6
+platform-change-06-1,Attention: platform for train 1310 has changed from 3 to 6.,new_platform,6,
+platform-change-06-1,Attention: platform for train 1310 has changed from 3 to 6.,source,,3
+platform-change-06-1,Attention: platform for train 1310 has changed from 3 to 6.,old_platform,3,
+platform-change-07-1,Train 1310: platform 3 replaced by 6.,new_platform,6,
+platform-change-07-1,Train 1310: platform 3 replaced by 6.,old_platform,3,
+platform-change-07-1,Train 1310: platform 3 replaced by 6.,platform,,3
+emergency-04-1,Danger. Keep away from the tracks.,source,,the
+other-06-1,Welcome to Nagpur station.,destination,,nagpur
+arrival-08-2,Platform 4 train 1419 Mumbai arrival.,destination,mumbai,
+arrival-09-2,The Vidarbha Express train 1419 is arriving at platform 4.,train_name,vidarbha express,
+departure-08-2,Platform 4 train 1419 Mumbai departure.,destination,mumbai,
+departure-09-2,The Vidarbha Express train 1419 is departing at platform 4.,train_name,vidarbha express,
+delay-02-2,Train 1419 is delayed by 45 minutes due to fog.,destination,,fog
+cancellation-06-2,Service 1419 is cancelled.,train_number,1419,
+platform-change-01-2,Train 1419 platform changed from 4 to 7.,destination,,7
+platform-change-01-2,Train 1419 platform changed from 4 to 7.,new_platform,7,
+platform-change-01-2,Train 1419 platform changed from 4 to 7.,source,,4
+platform-change-01-2,Train 1419 platform changed from 4 to 7.,old_platform,4,
+platform-change-02-2,Train 1419 will use platform 7 instead of platform 4.,new_platform,7,
+platform-change-02-2,Train 1419 will use platform 7 instead of platform 4.,old_platform,4,
+platform-change-03-2,Platform change: train 1419 moves from 4 to 7.,destination,,7
+platform-change-03-2,Platform change: train 1419 moves from 4 to 7.,new_platform,7,
+platform-change-03-2,Platform change: train 1419 moves from 4 to 7.,source,,4
+platform-change-03-2,Platform change: train 1419 moves from 4 to 7.,old_platform,4,
+platform-change-04-2,"Train 1419 now arrives at platform 7, not platform 4.",new_platform,7,
+platform-change-04-2,"Train 1419 now arrives at platform 7, not platform 4.",old_platform,4,
+platform-change-06-2,Attention: platform for train 1419 has changed from 4 to 7.,destination,,7
+platform-change-06-2,Attention: platform for train 1419 has changed from 4 to 7.,new_platform,7,
+platform-change-06-2,Attention: platform for train 1419 has changed from 4 to 7.,source,,4
+platform-change-06-2,Attention: platform for train 1419 has changed from 4 to 7.,old_platform,4,
+platform-change-07-2,Train 1419: platform 4 replaced by 7.,new_platform,7,
+platform-change-07-2,Train 1419: platform 4 replaced by 7.,old_platform,4,
+platform-change-07-2,Train 1419: platform 4 replaced by 7.,platform,,4
+emergency-04-2,Danger. Keep away from the tracks.,source,,the
+other-06-2,Welcome to Nagpur station.,destination,,nagpur
+additional-9,Train 19711 will leave from platform 6 instead of platform 4.,new_platform,6,
+additional-9,Train 19711 will leave from platform 6 instead of platform 4.,old_platform,4,
+additional-12,Tickets for the Superfast Express are available at the counter.,train_name,superfast express,

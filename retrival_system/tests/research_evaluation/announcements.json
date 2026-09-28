@@ -1,0 +1,4037 @@
+[
+  {
+    "id": "arrival-00-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-0",
+    "text": "Train 1201 arrives at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-01-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-1",
+    "text": "Train number 1201 is arriving on platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-02-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-2",
+    "text": "Train 1201 will arrive at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-03-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-3",
+    "text": "Train 1201 has arrived at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "arrival-04-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-4",
+    "text": "1201 is arriving platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-05-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-5",
+    "text": "Train 1201 arrive at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-06-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-6",
+    "text": "Train 1201 from Nagpur to Mumbai will arrive at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-07-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-7",
+    "text": "Train 1201 will arrive at platform 2 at 5:30 PM.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "arrival_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "arrival-08-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-8",
+    "text": "Platform 2 train 1201 Mumbai arrival.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "arrival-09-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "Arrival-9",
+    "text": "The Vidarbha Express train 1201 is arriving at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-00-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-0",
+    "text": "Train 1201 departs at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-01-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-1",
+    "text": "Train number 1201 is departing on platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-02-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-2",
+    "text": "Train 1201 will depart at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-03-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-3",
+    "text": "Train 1201 has departed at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "departure-04-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-4",
+    "text": "1201 is departing platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-05-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-5",
+    "text": "Train 1201 depart at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-06-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-6",
+    "text": "Train 1201 from Nagpur to Mumbai will depart at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-07-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-7",
+    "text": "Train 1201 will depart at platform 2 at 5:30 PM.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "departure_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "departure-08-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-8",
+    "text": "Platform 2 train 1201 Mumbai departure.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "departure-09-0",
+    "category": "Departure",
+    "variant": 0,
+    "family": "Departure-9",
+    "text": "The Vidarbha Express train 1201 is departing at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "DEPART",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "delay-00-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-0",
+    "text": "Train 1201 is delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-01-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-1",
+    "text": "Train 1201 has been delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-02-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-2",
+    "text": "Train 1201 is delayed by 15 minutes due to fog.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-03-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-3",
+    "text": "Train 1201 is running 15 minutes late.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-04-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-4",
+    "text": "A delay of 15 minutes affects train 1201.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-05-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-5",
+    "text": "Train number 1201 is delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-06-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-6",
+    "text": "Train 1201 delayed 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-07-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-7",
+    "text": "Passengers, train 1201 is delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-08-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-8",
+    "text": "Train 1201 from Nagpur to Mumbai is delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "delay-09-0",
+    "category": "Delay",
+    "variant": 0,
+    "family": "Delay-9",
+    "text": "1201 is delayed by 15 minutes.",
+    "entities": {
+      "train_number": "1201",
+      "delay_duration": "15 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "DELAY",
+      "15",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "cancellation-00-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-0",
+    "text": "Train 1201 is cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-01-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-1",
+    "text": "Train 1201 has been cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-02-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-2",
+    "text": "Train number 1201 is cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-03-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-3",
+    "text": "Train 1201 is not cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL",
+      "NOT"
+    ]
+  },
+  {
+    "id": "cancellation-04-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-4",
+    "text": "Train 1201 has been canceled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-05-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-5",
+    "text": "Train 1201 cancellation announced.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-06-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-6",
+    "text": "Service 1201 is cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-07-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-7",
+    "text": "Train 1201 from Nagpur to Mumbai is cancelled.",
+    "entities": {
+      "train_number": "1201",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "cancellation-08-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-8",
+    "text": "Train 1201 is cancelled today.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-09-0",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "Cancellation-9",
+    "text": "1201 is cancelled.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "platform-change-00-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-0",
+    "text": "Platform for train 1201 has changed from 2 to 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-01-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-1",
+    "text": "Train 1201 platform changed from 2 to 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-02-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-2",
+    "text": "Train 1201 will use platform 5 instead of platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-03-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-3",
+    "text": "Platform change: train 1201 moves from 2 to 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-04-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-4",
+    "text": "Train 1201 now arrives at platform 5, not platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-05-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-5",
+    "text": "Platform for train number 1201 has changed from 2 to 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-06-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-6",
+    "text": "Attention: platform for train 1201 has changed from 2 to 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-07-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-7",
+    "text": "Train 1201: platform 2 replaced by 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-08-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-8",
+    "text": "Platform for train 1201 has changed from 2 to 5",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-09-0",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "Platform change-9",
+    "text": "PLATFORM FOR TRAIN 1201 HAS CHANGED FROM 2 TO 5.",
+    "entities": {
+      "train_number": "1201",
+      "old_platform": "2",
+      "new_platform": "5"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "PLATFORM",
+      "2",
+      "TO",
+      "PLATFORM",
+      "5",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "emergency-00-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-0",
+    "text": "Emergency evacuation. Use the nearest emergency exit.",
+    "entities": {},
+    "required_units": [
+      "EMERGENCY",
+      "EVACUATE",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-01-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-1",
+    "text": "Fire at platform 2. Leave the station immediately.",
+    "entities": {
+      "platform": "2"
+    },
+    "required_units": [
+      "FIRE",
+      "PLATFORM",
+      "2",
+      "LEAVE",
+      "STATION"
+    ]
+  },
+  {
+    "id": "emergency-02-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-2",
+    "text": "Security alert. Do not touch unattended baggage.",
+    "entities": {},
+    "required_units": [
+      "SECURITY",
+      "ALERT",
+      "NOT",
+      "TOUCH",
+      "BAGGAGE"
+    ]
+  },
+  {
+    "id": "emergency-03-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-3",
+    "text": "An accident has occurred. Please call for help.",
+    "entities": {},
+    "required_units": [
+      "ACCIDENT",
+      "HELP"
+    ]
+  },
+  {
+    "id": "emergency-04-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-4",
+    "text": "Danger. Keep away from the tracks.",
+    "entities": {},
+    "required_units": [
+      "DANGER",
+      "TRACK"
+    ]
+  },
+  {
+    "id": "emergency-05-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-5",
+    "text": "Medical emergency at platform 2.",
+    "entities": {
+      "platform": "2"
+    },
+    "required_units": [
+      "MEDICAL",
+      "EMERGENCY",
+      "PLATFORM",
+      "2"
+    ]
+  },
+  {
+    "id": "emergency-06-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-6",
+    "text": "Evacuate platform 2 immediately.",
+    "entities": {
+      "platform": "2"
+    },
+    "required_units": [
+      "EVACUATE",
+      "PLATFORM",
+      "2"
+    ]
+  },
+  {
+    "id": "emergency-07-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-7",
+    "text": "Smoke detected. Follow emergency instructions.",
+    "entities": {},
+    "required_units": [
+      "SMOKE",
+      "EMERGENCY"
+    ]
+  },
+  {
+    "id": "emergency-08-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-8",
+    "text": "Warning: suspicious object near the exit.",
+    "entities": {},
+    "required_units": [
+      "WARNING",
+      "OBJECT",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-09-0",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "Emergency-9",
+    "text": "Emergency. Stop boarding train 1201.",
+    "entities": {
+      "train_number": "1201"
+    },
+    "required_units": [
+      "EMERGENCY",
+      "STOP",
+      "BOARD",
+      "TRAIN",
+      "1201"
+    ]
+  },
+  {
+    "id": "other-00-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-0",
+    "text": "Please keep your ticket ready.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "READY"
+    ]
+  },
+  {
+    "id": "other-01-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-1",
+    "text": "Board train 1201 at platform 2.",
+    "entities": {
+      "train_number": "1201",
+      "platform": "2"
+    },
+    "required_units": [
+      "BOARD",
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2"
+    ]
+  },
+  {
+    "id": "other-02-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-2",
+    "text": "Train 1201 to Pune.",
+    "entities": {
+      "train_number": "1201",
+      "destination": "pune"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "TO",
+      "PUNE"
+    ]
+  },
+  {
+    "id": "other-03-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-3",
+    "text": "Drinking water is available near platform 2.",
+    "entities": {
+      "platform": "2"
+    },
+    "required_units": [
+      "DRINKING WATER",
+      "PLATFORM",
+      "2"
+    ]
+  },
+  {
+    "id": "other-04-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-4",
+    "text": "Please mind the gap.",
+    "entities": {},
+    "required_units": [
+      "GAP"
+    ]
+  },
+  {
+    "id": "other-05-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-5",
+    "text": "The ticket counter is closed.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "COUNTER",
+      "CLOSED"
+    ]
+  },
+  {
+    "id": "other-06-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-6",
+    "text": "Welcome to Nagpur station.",
+    "entities": {},
+    "required_units": [
+      "WELCOME",
+      "NAGPUR",
+      "STATION"
+    ]
+  },
+  {
+    "id": "other-07-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-7",
+    "text": "Train 1201 from Xylophonex to Quizzleville.",
+    "entities": {
+      "train_number": "1201",
+      "source": "xylophonex",
+      "destination": "quizzleville"
+    },
+    "required_units": [
+      "TRAIN",
+      "1201",
+      "FROM",
+      "XYLOPHONEX",
+      "TO",
+      "QUIZZLEVILLE"
+    ]
+  },
+  {
+    "id": "other-08-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-8",
+    "text": "Passengers for Mumbai should proceed to platform 2.",
+    "entities": {
+      "platform": "2"
+    },
+    "required_units": [
+      "PASSENGER",
+      "MUMBAI",
+      "PLATFORM",
+      "2"
+    ]
+  },
+  {
+    "id": "other-09-0",
+    "category": "Other",
+    "variant": 0,
+    "family": "Other-9",
+    "text": "Keep the station clean.",
+    "entities": {},
+    "required_units": [
+      "STATION",
+      "CLEAN"
+    ]
+  },
+  {
+    "id": "arrival-00-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-0",
+    "text": "Train 1310 arrives at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-01-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-1",
+    "text": "Train number 1310 is arriving on platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-02-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-2",
+    "text": "Train 1310 will arrive at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-03-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-3",
+    "text": "Train 1310 has arrived at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "arrival-04-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-4",
+    "text": "1310 is arriving platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-05-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-5",
+    "text": "Train 1310 arrive at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-06-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-6",
+    "text": "Train 1310 from Nagpur to Mumbai will arrive at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-07-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-7",
+    "text": "Train 1310 will arrive at platform 3 at 5:30 PM.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "arrival_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "arrival-08-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-8",
+    "text": "Platform 3 train 1310 Mumbai arrival.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "arrival-09-1",
+    "category": "Arrival",
+    "variant": 1,
+    "family": "Arrival-9",
+    "text": "The Vidarbha Express train 1310 is arriving at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "ARRIVE",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-00-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-0",
+    "text": "Train 1310 departs at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-01-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-1",
+    "text": "Train number 1310 is departing on platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-02-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-2",
+    "text": "Train 1310 will depart at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-03-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-3",
+    "text": "Train 1310 has departed at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "departure-04-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-4",
+    "text": "1310 is departing platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-05-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-5",
+    "text": "Train 1310 depart at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-06-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-6",
+    "text": "Train 1310 from Nagpur to Mumbai will depart at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-07-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-7",
+    "text": "Train 1310 will depart at platform 3 at 5:30 PM.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "departure_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "departure-08-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-8",
+    "text": "Platform 3 train 1310 Mumbai departure.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "departure-09-1",
+    "category": "Departure",
+    "variant": 1,
+    "family": "Departure-9",
+    "text": "The Vidarbha Express train 1310 is departing at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3",
+      "DEPART",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "delay-00-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-0",
+    "text": "Train 1310 is delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-01-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-1",
+    "text": "Train 1310 has been delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-02-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-2",
+    "text": "Train 1310 is delayed by 30 minutes due to fog.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-03-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-3",
+    "text": "Train 1310 is running 30 minutes late.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-04-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-4",
+    "text": "A delay of 30 minutes affects train 1310.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-05-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-5",
+    "text": "Train number 1310 is delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-06-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-6",
+    "text": "Train 1310 delayed 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-07-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-7",
+    "text": "Passengers, train 1310 is delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-08-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-8",
+    "text": "Train 1310 from Nagpur to Mumbai is delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "delay-09-1",
+    "category": "Delay",
+    "variant": 1,
+    "family": "Delay-9",
+    "text": "1310 is delayed by 30 minutes.",
+    "entities": {
+      "train_number": "1310",
+      "delay_duration": "30 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "DELAY",
+      "30",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "cancellation-00-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-0",
+    "text": "Train 1310 is cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-01-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-1",
+    "text": "Train 1310 has been cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-02-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-2",
+    "text": "Train number 1310 is cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-03-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-3",
+    "text": "Train 1310 is not cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL",
+      "NOT"
+    ]
+  },
+  {
+    "id": "cancellation-04-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-4",
+    "text": "Train 1310 has been canceled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-05-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-5",
+    "text": "Train 1310 cancellation announced.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-06-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-6",
+    "text": "Service 1310 is cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-07-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-7",
+    "text": "Train 1310 from Nagpur to Mumbai is cancelled.",
+    "entities": {
+      "train_number": "1310",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "cancellation-08-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-8",
+    "text": "Train 1310 is cancelled today.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-09-1",
+    "category": "Cancellation",
+    "variant": 1,
+    "family": "Cancellation-9",
+    "text": "1310 is cancelled.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "platform-change-00-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-0",
+    "text": "Platform for train 1310 has changed from 3 to 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-01-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-1",
+    "text": "Train 1310 platform changed from 3 to 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-02-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-2",
+    "text": "Train 1310 will use platform 6 instead of platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-03-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-3",
+    "text": "Platform change: train 1310 moves from 3 to 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-04-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-4",
+    "text": "Train 1310 now arrives at platform 6, not platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-05-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-5",
+    "text": "Platform for train number 1310 has changed from 3 to 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-06-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-6",
+    "text": "Attention: platform for train 1310 has changed from 3 to 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-07-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-7",
+    "text": "Train 1310: platform 3 replaced by 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-08-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-8",
+    "text": "Platform for train 1310 has changed from 3 to 6",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-09-1",
+    "category": "Platform change",
+    "variant": 1,
+    "family": "Platform change-9",
+    "text": "PLATFORM FOR TRAIN 1310 HAS CHANGED FROM 3 TO 6.",
+    "entities": {
+      "train_number": "1310",
+      "old_platform": "3",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "PLATFORM",
+      "3",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "emergency-00-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-0",
+    "text": "Emergency evacuation. Use the nearest emergency exit.",
+    "entities": {},
+    "required_units": [
+      "EMERGENCY",
+      "EVACUATE",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-01-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-1",
+    "text": "Fire at platform 3. Leave the station immediately.",
+    "entities": {
+      "platform": "3"
+    },
+    "required_units": [
+      "FIRE",
+      "PLATFORM",
+      "3",
+      "LEAVE",
+      "STATION"
+    ]
+  },
+  {
+    "id": "emergency-02-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-2",
+    "text": "Security alert. Do not touch unattended baggage.",
+    "entities": {},
+    "required_units": [
+      "SECURITY",
+      "ALERT",
+      "NOT",
+      "TOUCH",
+      "BAGGAGE"
+    ]
+  },
+  {
+    "id": "emergency-03-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-3",
+    "text": "An accident has occurred. Please call for help.",
+    "entities": {},
+    "required_units": [
+      "ACCIDENT",
+      "HELP"
+    ]
+  },
+  {
+    "id": "emergency-04-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-4",
+    "text": "Danger. Keep away from the tracks.",
+    "entities": {},
+    "required_units": [
+      "DANGER",
+      "TRACK"
+    ]
+  },
+  {
+    "id": "emergency-05-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-5",
+    "text": "Medical emergency at platform 3.",
+    "entities": {
+      "platform": "3"
+    },
+    "required_units": [
+      "MEDICAL",
+      "EMERGENCY",
+      "PLATFORM",
+      "3"
+    ]
+  },
+  {
+    "id": "emergency-06-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-6",
+    "text": "Evacuate platform 3 immediately.",
+    "entities": {
+      "platform": "3"
+    },
+    "required_units": [
+      "EVACUATE",
+      "PLATFORM",
+      "3"
+    ]
+  },
+  {
+    "id": "emergency-07-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-7",
+    "text": "Smoke detected. Follow emergency instructions.",
+    "entities": {},
+    "required_units": [
+      "SMOKE",
+      "EMERGENCY"
+    ]
+  },
+  {
+    "id": "emergency-08-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-8",
+    "text": "Warning: suspicious object near the exit.",
+    "entities": {},
+    "required_units": [
+      "WARNING",
+      "OBJECT",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-09-1",
+    "category": "Emergency",
+    "variant": 1,
+    "family": "Emergency-9",
+    "text": "Emergency. Stop boarding train 1310.",
+    "entities": {
+      "train_number": "1310"
+    },
+    "required_units": [
+      "EMERGENCY",
+      "STOP",
+      "BOARD",
+      "TRAIN",
+      "1310"
+    ]
+  },
+  {
+    "id": "other-00-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-0",
+    "text": "Please keep your ticket ready.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "READY"
+    ]
+  },
+  {
+    "id": "other-01-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-1",
+    "text": "Board train 1310 at platform 3.",
+    "entities": {
+      "train_number": "1310",
+      "platform": "3"
+    },
+    "required_units": [
+      "BOARD",
+      "TRAIN",
+      "1310",
+      "PLATFORM",
+      "3"
+    ]
+  },
+  {
+    "id": "other-02-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-2",
+    "text": "Train 1310 to Pune.",
+    "entities": {
+      "train_number": "1310",
+      "destination": "pune"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "TO",
+      "PUNE"
+    ]
+  },
+  {
+    "id": "other-03-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-3",
+    "text": "Drinking water is available near platform 3.",
+    "entities": {
+      "platform": "3"
+    },
+    "required_units": [
+      "DRINKING WATER",
+      "PLATFORM",
+      "3"
+    ]
+  },
+  {
+    "id": "other-04-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-4",
+    "text": "Please mind the gap.",
+    "entities": {},
+    "required_units": [
+      "GAP"
+    ]
+  },
+  {
+    "id": "other-05-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-5",
+    "text": "The ticket counter is closed.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "COUNTER",
+      "CLOSED"
+    ]
+  },
+  {
+    "id": "other-06-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-6",
+    "text": "Welcome to Nagpur station.",
+    "entities": {},
+    "required_units": [
+      "WELCOME",
+      "NAGPUR",
+      "STATION"
+    ]
+  },
+  {
+    "id": "other-07-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-7",
+    "text": "Train 1310 from Xylophonex to Quizzleville.",
+    "entities": {
+      "train_number": "1310",
+      "source": "xylophonex",
+      "destination": "quizzleville"
+    },
+    "required_units": [
+      "TRAIN",
+      "1310",
+      "FROM",
+      "XYLOPHONEX",
+      "TO",
+      "QUIZZLEVILLE"
+    ]
+  },
+  {
+    "id": "other-08-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-8",
+    "text": "Passengers for Mumbai should proceed to platform 3.",
+    "entities": {
+      "platform": "3"
+    },
+    "required_units": [
+      "PASSENGER",
+      "MUMBAI",
+      "PLATFORM",
+      "3"
+    ]
+  },
+  {
+    "id": "other-09-1",
+    "category": "Other",
+    "variant": 1,
+    "family": "Other-9",
+    "text": "Keep the station clean.",
+    "entities": {},
+    "required_units": [
+      "STATION",
+      "CLEAN"
+    ]
+  },
+  {
+    "id": "arrival-00-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-0",
+    "text": "Train 1419 arrives at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-01-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-1",
+    "text": "Train number 1419 is arriving on platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-02-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-2",
+    "text": "Train 1419 will arrive at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-03-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-3",
+    "text": "Train 1419 has arrived at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "arrival-04-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-4",
+    "text": "1419 is arriving platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "NOW"
+    ]
+  },
+  {
+    "id": "arrival-05-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-5",
+    "text": "Train 1419 arrive at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "arrival-06-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-6",
+    "text": "Train 1419 from Nagpur to Mumbai will arrive at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "arrival-07-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-7",
+    "text": "Train 1419 will arrive at platform 4 at 5:30 PM.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "arrival_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "arrival-08-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-8",
+    "text": "Platform 4 train 1419 Mumbai arrival.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "arrival-09-2",
+    "category": "Arrival",
+    "variant": 2,
+    "family": "Arrival-9",
+    "text": "The Vidarbha Express train 1419 is arriving at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "ARRIVE",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-00-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-0",
+    "text": "Train 1419 departs at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-01-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-1",
+    "text": "Train number 1419 is departing on platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-02-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-2",
+    "text": "Train 1419 will depart at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-03-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-3",
+    "text": "Train 1419 has departed at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "ALREADY"
+    ]
+  },
+  {
+    "id": "departure-04-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-4",
+    "text": "1419 is departing platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "NOW"
+    ]
+  },
+  {
+    "id": "departure-05-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-5",
+    "text": "Train 1419 depart at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "departure-06-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-6",
+    "text": "Train 1419 from Nagpur to Mumbai will depart at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI",
+      "FUTURE"
+    ]
+  },
+  {
+    "id": "departure-07-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-7",
+    "text": "Train 1419 will depart at platform 4 at 5:30 PM.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "departure_time": "5:30 pm"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "FUTURE",
+      "5:30 PM"
+    ]
+  },
+  {
+    "id": "departure-08-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-8",
+    "text": "Platform 4 train 1419 Mumbai departure.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "departure-09-2",
+    "category": "Departure",
+    "variant": 2,
+    "family": "Departure-9",
+    "text": "The Vidarbha Express train 1419 is departing at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4",
+      "train_name": "vidarbha express"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4",
+      "DEPART",
+      "VIDARBHA EXPRESS",
+      "NOW"
+    ]
+  },
+  {
+    "id": "delay-00-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-0",
+    "text": "Train 1419 is delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-01-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-1",
+    "text": "Train 1419 has been delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-02-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-2",
+    "text": "Train 1419 is delayed by 45 minutes due to fog.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-03-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-3",
+    "text": "Train 1419 is running 45 minutes late.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-04-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-4",
+    "text": "A delay of 45 minutes affects train 1419.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-05-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-5",
+    "text": "Train number 1419 is delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-06-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-6",
+    "text": "Train 1419 delayed 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-07-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-7",
+    "text": "Passengers, train 1419 is delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "delay-08-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-8",
+    "text": "Train 1419 from Nagpur to Mumbai is delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "delay-09-2",
+    "category": "Delay",
+    "variant": 2,
+    "family": "Delay-9",
+    "text": "1419 is delayed by 45 minutes.",
+    "entities": {
+      "train_number": "1419",
+      "delay_duration": "45 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "DELAY",
+      "45",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "cancellation-00-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-0",
+    "text": "Train 1419 is cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-01-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-1",
+    "text": "Train 1419 has been cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-02-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-2",
+    "text": "Train number 1419 is cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-03-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-3",
+    "text": "Train 1419 is not cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL",
+      "NOT"
+    ]
+  },
+  {
+    "id": "cancellation-04-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-4",
+    "text": "Train 1419 has been canceled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-05-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-5",
+    "text": "Train 1419 cancellation announced.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-06-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-6",
+    "text": "Service 1419 is cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-07-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-7",
+    "text": "Train 1419 from Nagpur to Mumbai is cancelled.",
+    "entities": {
+      "train_number": "1419",
+      "source": "nagpur",
+      "destination": "mumbai"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL",
+      "FROM",
+      "NAGPUR",
+      "TO",
+      "MUMBAI"
+    ]
+  },
+  {
+    "id": "cancellation-08-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-8",
+    "text": "Train 1419 is cancelled today.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "cancellation-09-2",
+    "category": "Cancellation",
+    "variant": 2,
+    "family": "Cancellation-9",
+    "text": "1419 is cancelled.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "platform-change-00-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-0",
+    "text": "Platform for train 1419 has changed from 4 to 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-01-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-1",
+    "text": "Train 1419 platform changed from 4 to 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-02-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-2",
+    "text": "Train 1419 will use platform 7 instead of platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-03-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-3",
+    "text": "Platform change: train 1419 moves from 4 to 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-04-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-4",
+    "text": "Train 1419 now arrives at platform 7, not platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-05-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-5",
+    "text": "Platform for train number 1419 has changed from 4 to 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-06-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-6",
+    "text": "Attention: platform for train 1419 has changed from 4 to 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-07-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-7",
+    "text": "Train 1419: platform 4 replaced by 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-08-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-8",
+    "text": "Platform for train 1419 has changed from 4 to 7",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "platform-change-09-2",
+    "category": "Platform change",
+    "variant": 2,
+    "family": "Platform change-9",
+    "text": "PLATFORM FOR TRAIN 1419 HAS CHANGED FROM 4 TO 7.",
+    "entities": {
+      "train_number": "1419",
+      "old_platform": "4",
+      "new_platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "7",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "emergency-00-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-0",
+    "text": "Emergency evacuation. Use the nearest emergency exit.",
+    "entities": {},
+    "required_units": [
+      "EMERGENCY",
+      "EVACUATE",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-01-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-1",
+    "text": "Fire at platform 4. Leave the station immediately.",
+    "entities": {
+      "platform": "4"
+    },
+    "required_units": [
+      "FIRE",
+      "PLATFORM",
+      "4",
+      "LEAVE",
+      "STATION"
+    ]
+  },
+  {
+    "id": "emergency-02-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-2",
+    "text": "Security alert. Do not touch unattended baggage.",
+    "entities": {},
+    "required_units": [
+      "SECURITY",
+      "ALERT",
+      "NOT",
+      "TOUCH",
+      "BAGGAGE"
+    ]
+  },
+  {
+    "id": "emergency-03-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-3",
+    "text": "An accident has occurred. Please call for help.",
+    "entities": {},
+    "required_units": [
+      "ACCIDENT",
+      "HELP"
+    ]
+  },
+  {
+    "id": "emergency-04-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-4",
+    "text": "Danger. Keep away from the tracks.",
+    "entities": {},
+    "required_units": [
+      "DANGER",
+      "TRACK"
+    ]
+  },
+  {
+    "id": "emergency-05-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-5",
+    "text": "Medical emergency at platform 4.",
+    "entities": {
+      "platform": "4"
+    },
+    "required_units": [
+      "MEDICAL",
+      "EMERGENCY",
+      "PLATFORM",
+      "4"
+    ]
+  },
+  {
+    "id": "emergency-06-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-6",
+    "text": "Evacuate platform 4 immediately.",
+    "entities": {
+      "platform": "4"
+    },
+    "required_units": [
+      "EVACUATE",
+      "PLATFORM",
+      "4"
+    ]
+  },
+  {
+    "id": "emergency-07-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-7",
+    "text": "Smoke detected. Follow emergency instructions.",
+    "entities": {},
+    "required_units": [
+      "SMOKE",
+      "EMERGENCY"
+    ]
+  },
+  {
+    "id": "emergency-08-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-8",
+    "text": "Warning: suspicious object near the exit.",
+    "entities": {},
+    "required_units": [
+      "WARNING",
+      "OBJECT",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "emergency-09-2",
+    "category": "Emergency",
+    "variant": 2,
+    "family": "Emergency-9",
+    "text": "Emergency. Stop boarding train 1419.",
+    "entities": {
+      "train_number": "1419"
+    },
+    "required_units": [
+      "EMERGENCY",
+      "STOP",
+      "BOARD",
+      "TRAIN",
+      "1419"
+    ]
+  },
+  {
+    "id": "other-00-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-0",
+    "text": "Please keep your ticket ready.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "READY"
+    ]
+  },
+  {
+    "id": "other-01-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-1",
+    "text": "Board train 1419 at platform 4.",
+    "entities": {
+      "train_number": "1419",
+      "platform": "4"
+    },
+    "required_units": [
+      "BOARD",
+      "TRAIN",
+      "1419",
+      "PLATFORM",
+      "4"
+    ]
+  },
+  {
+    "id": "other-02-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-2",
+    "text": "Train 1419 to Pune.",
+    "entities": {
+      "train_number": "1419",
+      "destination": "pune"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "TO",
+      "PUNE"
+    ]
+  },
+  {
+    "id": "other-03-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-3",
+    "text": "Drinking water is available near platform 4.",
+    "entities": {
+      "platform": "4"
+    },
+    "required_units": [
+      "DRINKING WATER",
+      "PLATFORM",
+      "4"
+    ]
+  },
+  {
+    "id": "other-04-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-4",
+    "text": "Please mind the gap.",
+    "entities": {},
+    "required_units": [
+      "GAP"
+    ]
+  },
+  {
+    "id": "other-05-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-5",
+    "text": "The ticket counter is closed.",
+    "entities": {},
+    "required_units": [
+      "TICKET",
+      "COUNTER",
+      "CLOSED"
+    ]
+  },
+  {
+    "id": "other-06-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-6",
+    "text": "Welcome to Nagpur station.",
+    "entities": {},
+    "required_units": [
+      "WELCOME",
+      "NAGPUR",
+      "STATION"
+    ]
+  },
+  {
+    "id": "other-07-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-7",
+    "text": "Train 1419 from Xylophonex to Quizzleville.",
+    "entities": {
+      "train_number": "1419",
+      "source": "xylophonex",
+      "destination": "quizzleville"
+    },
+    "required_units": [
+      "TRAIN",
+      "1419",
+      "FROM",
+      "XYLOPHONEX",
+      "TO",
+      "QUIZZLEVILLE"
+    ]
+  },
+  {
+    "id": "other-08-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-8",
+    "text": "Passengers for Mumbai should proceed to platform 4.",
+    "entities": {
+      "platform": "4"
+    },
+    "required_units": [
+      "PASSENGER",
+      "MUMBAI",
+      "PLATFORM",
+      "4"
+    ]
+  },
+  {
+    "id": "other-09-2",
+    "category": "Other",
+    "variant": 2,
+    "family": "Other-9",
+    "text": "Keep the station clean.",
+    "entities": {},
+    "required_units": [
+      "STATION",
+      "CLEAN"
+    ]
+  },
+  {
+    "id": "additional-0",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "additional-0",
+    "text": "Train 00981 has already arrived on platform 1.",
+    "entities": {
+      "train_number": "00981",
+      "platform": "1"
+    },
+    "required_units": [
+      "TRAIN",
+      "00981",
+      "PLATFORM",
+      "1",
+      "ALREADY",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "additional-1",
+    "category": "Arrival",
+    "variant": 0,
+    "family": "additional-1",
+    "text": "Train 13007 will not arrive at platform 8.",
+    "entities": {
+      "train_number": "13007",
+      "platform": "8"
+    },
+    "required_units": [
+      "TRAIN",
+      "13007",
+      "PLATFORM",
+      "8",
+      "FUTURE",
+      "NOT",
+      "ARRIVE"
+    ]
+  },
+  {
+    "id": "additional-2",
+    "category": "Departure",
+    "variant": 0,
+    "family": "additional-2",
+    "text": "Train 00810 has already departed from platform 6.",
+    "entities": {
+      "train_number": "00810",
+      "platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "00810",
+      "PLATFORM",
+      "6",
+      "ALREADY",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "additional-3",
+    "category": "Departure",
+    "variant": 0,
+    "family": "additional-3",
+    "text": "Train 00456 will not depart from platform 7.",
+    "entities": {
+      "train_number": "00456",
+      "platform": "7"
+    },
+    "required_units": [
+      "TRAIN",
+      "00456",
+      "PLATFORM",
+      "7",
+      "FUTURE",
+      "NOT",
+      "DEPART"
+    ]
+  },
+  {
+    "id": "additional-4",
+    "category": "Delay",
+    "variant": 0,
+    "family": "additional-4",
+    "text": "Train 19653 is delayed by 2 hours.",
+    "entities": {
+      "train_number": "19653",
+      "delay_duration": "2 hours"
+    },
+    "required_units": [
+      "TRAIN",
+      "19653",
+      "DELAY",
+      "2",
+      "HOUR"
+    ]
+  },
+  {
+    "id": "additional-5",
+    "category": "Delay",
+    "variant": 0,
+    "family": "additional-5",
+    "text": "Train 18309 is delayed by 75 minutes.",
+    "entities": {
+      "train_number": "18309",
+      "delay_duration": "75 minutes"
+    },
+    "required_units": [
+      "TRAIN",
+      "18309",
+      "DELAY",
+      "75",
+      "MINUTE"
+    ]
+  },
+  {
+    "id": "additional-6",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "additional-6",
+    "text": "Train 13917 has not been cancelled.",
+    "entities": {
+      "train_number": "13917"
+    },
+    "required_units": [
+      "TRAIN",
+      "13917",
+      "NOT",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "additional-7",
+    "category": "Cancellation",
+    "variant": 0,
+    "family": "additional-7",
+    "text": "Train 18234 is not cancelled.",
+    "entities": {
+      "train_number": "18234"
+    },
+    "required_units": [
+      "TRAIN",
+      "18234",
+      "NOT",
+      "CANCEL"
+    ]
+  },
+  {
+    "id": "additional-8",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "additional-8",
+    "text": "Platform for train 12005 has changed from 1 to 8.",
+    "entities": {
+      "train_number": "12005",
+      "old_platform": "1",
+      "new_platform": "8"
+    },
+    "required_units": [
+      "TRAIN",
+      "12005",
+      "FROM",
+      "PLATFORM",
+      "1",
+      "TO",
+      "PLATFORM",
+      "8",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "additional-9",
+    "category": "Platform change",
+    "variant": 0,
+    "family": "additional-9",
+    "text": "Train 19711 will leave from platform 6 instead of platform 4.",
+    "entities": {
+      "train_number": "19711",
+      "old_platform": "4",
+      "new_platform": "6"
+    },
+    "required_units": [
+      "TRAIN",
+      "19711",
+      "FROM",
+      "PLATFORM",
+      "4",
+      "TO",
+      "PLATFORM",
+      "6",
+      "CHANGE"
+    ]
+  },
+  {
+    "id": "additional-10",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "additional-10",
+    "text": "Fire reported in the waiting room. Leave through the exit.",
+    "entities": {},
+    "required_units": [
+      "FIRE",
+      "WAITING ROOM",
+      "LEAVE",
+      "EXIT"
+    ]
+  },
+  {
+    "id": "additional-11",
+    "category": "Emergency",
+    "variant": 0,
+    "family": "additional-11",
+    "text": "Emergency help is required at platform 8.",
+    "entities": {
+      "platform": "8"
+    },
+    "required_units": [
+      "EMERGENCY",
+      "HELP",
+      "PLATFORM",
+      "8"
+    ]
+  },
+  {
+    "id": "additional-12",
+    "category": "Other",
+    "variant": 0,
+    "family": "additional-12",
+    "text": "Tickets for the Superfast Express are available at the counter.",
+    "entities": {
+      "train_name": "superfast express"
+    },
+    "required_units": [
+      "TICKET",
+      "SUPERFAST EXPRESS",
+      "AVAILABLE",
+      "COUNTER"
+    ]
+  },
+  {
+    "id": "additional-13",
+    "category": "Other",
+    "variant": 0,
+    "family": "additional-13",
+    "text": "Passengers travelling to Chennai may collect tickets at the counter.",
+    "entities": {
+      "destination": "chennai"
+    },
+    "required_units": [
+      "PASSENGER",
+      "TO",
+      "CHENNAI",
+      "TICKET",
+      "COUNTER"
+    ]
+  }
+]

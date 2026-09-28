@@ -1,0 +1,19 @@
+metric,measured_result
+Template Accuracy,46.43%
+Template Macro F1,55.42%
+Template Weighted F1,55.42%
+Entity Extraction F1,89.29%
+Safety Validation F1 (integrated timetable),Not measurable with current implementation
+Safety False Negative Rate (integrated timetable),Not measurable with current implementation
+Retrieval Accuracy (35 engineering probes),100.00%
+Recall@1,Not measurable with current implementation
+Recall@3,Not measurable with current implementation
+Recall@5,Not measurable with current implementation
+Translation Coverage (lexical retention proxy),92.59%
+Fingerspelling Rate (represented units),28.87%
+Mean End-to-End Preparation Latency (repeated-motion workload),336.44 ms
+P95 Preparation Latency (repeated-motion workload),366.30 ms
+Time-to-First-Sign (repeated-motion workload),695.38 ms
+"13 Clip Processing Time (repeated TRAIN, mean preparation)",267.51 ms
+Transition Improvement,Not measurable with current implementation
+Average Avatar FPS (rAF estimate),20.82

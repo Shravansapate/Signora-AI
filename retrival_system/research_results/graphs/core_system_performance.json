@@ -1,0 +1,18 @@
+{
+  "labels": [
+    "Template\naccuracy",
+    "Entity\nF1",
+    "Integrated\nsafety F1",
+    "Retrieval\nidentity accuracy",
+    "Lexical\ncoverage"
+  ],
+  "values": [
+    46.42857142857143,
+    89.28571428571429,
+    null,
+    100.0,
+    92.5895087427144
+  ],
+  "subtitle": "Synthetic English cases; retrieval probes are a separate catalog-identity task",
+  "ylabel": "Performance (%)"
+}

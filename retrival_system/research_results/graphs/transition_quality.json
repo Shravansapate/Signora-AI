@@ -1,0 +1,12 @@
+{
+  "labels": [
+    "Existing full-clip cuts",
+    "Transition-aware selection"
+  ],
+  "values": [
+    14.658347794265712,
+    null
+  ],
+  "subtitle": "Source-GLB endpoint rotation discontinuity; optimizer absent, improvement not measurable",
+  "ylabel": "Mean joint angle jump (degrees)"
+}

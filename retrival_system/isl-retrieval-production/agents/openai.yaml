@@ -1,0 +1,11 @@
+interface:
+  display_name: ISL Retrieval Production
+  short_description: Build verified ISL retrieval, GLB management, and playback
+  default_prompt: Use $isl-retrieval-production for the requested Signora AI milestone.
+    Inspect existing code first, preserve the approved architecture and separate backend/frontend
+    boundary, include typed/voice input when relevant, implement only the requested
+    scope, and verify the changed behavior.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true

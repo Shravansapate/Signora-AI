@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "threeRevision": "186",
+  "status": "BINDING_PROBE_PASSED",
+  "canonicalAvatarApproved": false,
+  "productionEligible": false,
+  "candidate": {
+    "filename": "Train.glb",
+    "sha256": "c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a",
+    "bones": 65,
+    "skins": 7,
+    "meshCount": 7,
+    "finalMeshCount": 7
+  },
+  "compatibleWithCandidate": true,
+  "limitations": [
+    "Candidate chosen only for engineering inspection; no canonical avatar approval is asserted.",
+    "Headless probe skips texture decoding and WebGL rendering; it cannot validate appearance, collisions, visual transitions, or signing meaning.",
+    "Diagnostic mixer sampling does not bypass incompatibility: initial-transform or bind-pose differences require resolution before activation.",
+    "Sequential clips use no reviewed transition/composition policy; these are technical occurrences, not railway announcements.",
+    "Parse timings are local headless measurements, not display-device download, decode, frame-rate, or memory benchmarks."
+  ],
+  "assets": [
+    {
+      "filename": "Train.glb",
+      "sha256": "c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a",
+      "bytes": 58587864,
+      "parseMilliseconds": 148.57,
+      "textureImagesNotDecoded": 5,
+      "clip": "TRAIN",
+      "durationSeconds": 3.5199999809265137,
+      "boundTrackCount": 195,
+      "animatedTargets": 65,
+      "rig": {
+        "compatible": true,
+        "tolerance": 0.00001,
+        "differences": []
+      },
+      "sampledPlayback": {
+        "occurrences": 1,
+        "uniqueActions": 1,
+        "completionEvents": 1,
+        "sampledPoses": 108,
+        "completed": [
+          {
+            "index": 0,
+            "clip": "TRAIN",
+            "durationSeconds": 3.5199999809265137
+          }
+        ]
+      }
+    },
+    {
+      "filename": "Arrive.glb",
+      "sha256": "e342b13d50fc7a5152611d40a4cf40bdf11460bc0dd4f0b884f961af6e8088cb",
+      "bytes": 59229792,
+      "parseMilliseconds": 122.61,
+      "textureImagesNotDecoded": 5,
+      "clip": "ARRIVE",
+      "durationSeconds": 36.47999954223633,
+      "boundTrackCount": 195,
+      "animatedTargets": 65,
+      "rig": {
+        "compatible": true,
+        "tolerance": 0.00001,
+        "differences": []
+      },
+      "sampledPlayback": {
+        "occurrences": 1,
+        "uniqueActions": 1,
+        "completionEvents": 1,
+        "sampledPoses": 1097,
+        "completed": [
+          {
+            "index": 0,
+            "clip": "ARRIVE",
+            "durationSeconds": 36.47999954223633
+          }
+        ]
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "occurrences": 1,
+      "uniqueActions": 1,
+      "completionEvents": 1,
+      "sampledPoses": 108,
+      "completed": [
+        {
+          "index": 0,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        }
+      ]
+    },
+    {
+      "occurrences": 3,
+      "uniqueActions": 2,
+      "completionEvents": 3,
+      "sampledPoses": 1313,
+      "completed": [
+        {
+          "index": 0,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 1,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 2,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        }
+      ]
+    },
+    {
+      "occurrences": 12,
+      "uniqueActions": 2,
+      "completionEvents": 12,
+      "sampledPoses": 7230,
+      "completed": [
+        {
+          "index": 0,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 1,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 2,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 3,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 4,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 5,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 6,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 7,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 8,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 9,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        },
+        {
+          "index": 10,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 11,
+          "clip": "ARRIVE",
+          "durationSeconds": 36.47999954223633
+        }
+      ]
+    },
+    {
+      "occurrences": 12,
+      "uniqueActions": 1,
+      "completionEvents": 12,
+      "sampledPoses": 1296,
+      "completed": [
+        {
+          "index": 0,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 1,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 2,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 3,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 4,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 5,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 6,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 7,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 8,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 9,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 10,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        },
+        {
+          "index": 11,
+          "clip": "TRAIN",
+          "durationSeconds": 3.5199999809265137
+        }
+      ]
+    }
+  ]
+}

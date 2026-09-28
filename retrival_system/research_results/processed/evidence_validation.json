@@ -1,0 +1,26 @@
+{
+  "status": "PASSED",
+  "announcements": 224,
+  "unique_texts": 202,
+  "consecutive_complete": 50,
+  "browser": {
+    "browser_trials.jsonl": {
+      "attempts": 170,
+      "failed_attempts": 0
+    },
+    "browser_diverse.jsonl": {
+      "attempts": 121,
+      "failed_attempts": 1
+    }
+  },
+  "graphs": 13,
+  "scalability_sizes": [
+    149,
+    1000,
+    5000,
+    10000,
+    25000,
+    50000,
+    100000
+  ]
+}

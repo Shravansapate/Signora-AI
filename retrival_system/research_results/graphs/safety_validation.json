@@ -1,0 +1,16 @@
+{
+  "labels": [
+    "Precision",
+    "Recall",
+    "F1",
+    "False negative\nrate"
+  ],
+  "values": [
+    100.0,
+    83.33333333333334,
+    90.9090909090909,
+    16.666666666666664
+  ],
+  "subtitle": "Candidate compatibility guard ONLY: TP=50, TN=10, FP=0, FN=10; integrated safety N/A",
+  "ylabel": "Performance (%)"
+}

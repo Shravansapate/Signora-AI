@@ -1,0 +1,18 @@
+{
+  "labels": [
+    "Sentence",
+    "Phrase",
+    "Word",
+    "Number",
+    "Fingerspelling"
+  ],
+  "values": [
+    0.0,
+    0.5546311702717692,
+    16.500277315585137,
+    25.180255130338324,
+    57.76483638380477
+  ],
+  "subtitle": "Output clips across 224 inputs (n=3606); a spelled letter is one clip",
+  "ylabel": "Output clips (%)"
+}

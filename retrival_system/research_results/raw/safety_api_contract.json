@@ -1,0 +1,30 @@
+{
+  "request": {
+    "request_id": "59bab9c5-57d3-41b0-a51c-92d4dc62bbb4",
+    "station_id": "NAGPUR",
+    "input_type": "TEXT",
+    "text": "Train 1201 arrives at platform 2",
+    "trusted_information": {
+      "train_number": "1201",
+      "platform": "3"
+    }
+  },
+  "http_status": 422,
+  "response": {
+    "detail": [
+      {
+        "type": "extra_forbidden",
+        "loc": [
+          "body",
+          "trusted_information"
+        ],
+        "msg": "Extra inputs are not permitted",
+        "input": {
+          "train_number": "1201",
+          "platform": "3"
+        }
+      }
+    ]
+  },
+  "interpretation": "Schema rejection of an unsupported trusted_information field is not detection of its platform conflict."
+}

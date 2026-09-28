@@ -1,0 +1,4729 @@
+{
+  "video": {
+    "path": "D:\\video2glb\\failed\\H\\4c19d1b798c54d489f1851951e006d80\\evidence\\working_video.mp4",
+    "codec": "h264",
+    "width": 848,
+    "height": 480,
+    "fps": 30.016675931072818,
+    "duration_seconds": 1.799,
+    "frame_count": 54,
+    "rotation_degrees": null,
+    "inspector": "ffprobe+opencv_decode",
+    "timestamps_seconds": [
+      0.0,
+      0.033,
+      0.066,
+      0.1,
+      0.133,
+      0.166,
+      0.2,
+      0.233,
+      0.266,
+      0.3,
+      0.333,
+      0.366,
+      0.4,
+      0.433,
+      0.466,
+      0.5,
+      0.533,
+      0.566,
+      0.6,
+      0.633,
+      0.666,
+      0.7,
+      0.733,
+      0.766,
+      0.8,
+      0.833,
+      0.866,
+      0.9,
+      0.933,
+      0.966,
+      1.0,
+      1.033,
+      1.066,
+      1.1,
+      1.133,
+      1.166,
+      1.2,
+      1.233,
+      1.266,
+      1.3,
+      1.333,
+      1.366,
+      1.4,
+      1.433,
+      1.466,
+      1.5,
+      1.533,
+      1.566,
+      1.6,
+      1.633,
+      1.666,
+      1.7,
+      1.733,
+      1.766
+    ],
+    "variable_frame_rate": false,
+    "timestamp_source": "ffprobe_decoded_pts",
+    "reported_frame_count": 54,
+    "fps_rational": "54000/1799",
+    "timestamp_start_ms": 0,
+    "timestamp_end_ms": 1766,
+    "timestamp_interval_ms": 33.31481481481482,
+    "timestamps_explicit": false
+  },
+  "milestone": "Direct MP4 to GLB production integration",
+  "pipeline_stage": "video_to_pose_to_motion_to_glb",
+  "technical_qc": "REVIEW",
+  "isl_verified": false,
+  "production_status": "NOT_ELIGIBLE",
+  "production_eligible": false,
+  "engineering_candidate": false,
+  "run_id": "7c83242568234fd9aa71df9227818b63",
+  "glb_validation": {
+    "status": "REVIEW",
+    "reasons": [],
+    "review_reasons": [
+      "Hand bones appear collapsed into or hidden by the torso in sampled frames.",
+      "Animated mesh collision: Shallow penetration or unsupported surface boundaries require review in 1 frame(s).",
+      "Motion stability: Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+      "Motion stability: P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000.",
+      "Isolated source finger-direction outliers were corrected; compare affected frames with the source.",
+      "Finger recovery rotations were rate-limited; compare affected transitions with the source."
+    ],
+    "mesh_count": 8,
+    "armature_count": 1,
+    "animation_count": 1,
+    "expected_duration_seconds": 1.765685184124959,
+    "actual_duration_seconds": 1.7656851530064035,
+    "source_fps": 30.01667594909668,
+    "source_frame_count": 54,
+    "imported_timeline_fps": 30.016676511869857,
+    "blender_version": "4.5.11 LTS",
+    "file_size": 58566048,
+    "hand_visibility": {
+      "status": "REVIEW",
+      "reasons": [],
+      "review_reasons": [
+        "Hand bones appear collapsed into or hidden by the torso in sampled frames."
+      ],
+      "sampled_frames": [
+        1,
+        10,
+        27,
+        43,
+        54
+      ],
+      "visible_samples": 0,
+      "hand_separation_distances": [
+        0.16729576140642166,
+        0.22905898094177246,
+        0.289776012301445,
+        0.29158855974674225,
+        0.2849033623933792
+      ],
+      "animated_finger_bones": 4
+    },
+    "finger_motion": {
+      "status": "PASS",
+      "reasons": [],
+      "evaluated_every_frame_transition": true,
+      "frame_count": 54,
+      "channel_count": 30,
+      "sample_count": 1590,
+      "source_supported_transition_count": 1470,
+      "maximum_step_degrees": 19.98902214174011,
+      "maximum_normalized_step_degrees": 24.000160006717255,
+      "p99_normalized_step_degrees": 24.000061688617777,
+      "maximum_unexplained_step_degrees": 24.00009986794491,
+      "worst_frame": 5,
+      "worst_channel": "LeftRing2",
+      "fail_frame_indices": [],
+      "review_frame_indices": [],
+      "thresholds": {
+        "reference_fps": 25.0,
+        "review_step_degrees": 30.0,
+        "fail_unexplained_step_degrees": 45.0
+      }
+    },
+    "finger_retargeting": {
+      "status": "PASS",
+      "reasons": [],
+      "sample_count": 1500,
+      "mean_direction_error_degrees": 0.3691863375110315,
+      "p95_direction_error_degrees": 2.57902080809159,
+      "source_observed_samples": 1620,
+      "excluded_neutral_or_transition_samples": 120,
+      "neutral_and_transition_coverage": "Checked independently by all-frame continuity and neutral shape validation."
+    },
+    "palm_orientation": {
+      "status": "PASS",
+      "reasons": [],
+      "applicable": true,
+      "sample_count": 100,
+      "invalid_active_basis_count": 0,
+      "mean_baked_target_error_degrees": 0.0043046608959191185,
+      "p95_baked_target_error_degrees": 0.01211507854082212,
+      "max_baked_target_error_degrees": 0.014594416238180377,
+      "max_baked_target_error_side": "Right",
+      "max_baked_target_error_frame": 26,
+      "target_step_sample_count": 98,
+      "max_target_step_degrees": 18.226209089478044,
+      "p95_target_step_degrees": 4.039372771779658,
+      "max_target_step_side": "Right",
+      "max_target_step_frame": 6,
+      "max_baked_step_degrees": 18.226156235054336,
+      "p95_baked_step_degrees": 4.039344512538788,
+      "max_baked_step_side": "Right",
+      "max_baked_step_frame": 6
+    },
+    "retargeting": {
+      "status": "PASS",
+      "reasons": [],
+      "sample_count": 108,
+      "mean_normalized_wrist_error": 8.266632577387601e-05,
+      "p95_normalized_wrist_error": 9.88681260684013e-05,
+      "max_normalized_wrist_error": 0.00010363908267488896
+    },
+    "initial_hand_pose": {
+      "status": "PASS",
+      "reasons": [],
+      "applicable": false
+    },
+    "ending_hand_pose": {
+      "status": "PASS",
+      "reasons": [],
+      "applicable": false
+    },
+    "full_clip_collision": {
+      "schema_version": "1.0",
+      "check_name": "full_clip_torso_hand_clearance_proxy",
+      "status": "PASS",
+      "mesh_aware": false,
+      "evaluated_every_input_frame": true,
+      "coordinate_space_note": "Pose, palm, and finger points must share one Cartesian coordinate space; positive clearance follows cross(right-to-left shoulder, hips-to-shoulders).",
+      "frames": {
+        "total": 54,
+        "torso_frame_valid": 54,
+        "hand_observed": 54,
+        "evaluated": 54,
+        "central_region": 54,
+        "pass": 54,
+        "review": 0,
+        "fail": 0,
+        "torso_frame_coverage": 1.0,
+        "hand_observation_coverage": 1.0,
+        "evaluated_coverage": 1.0
+      },
+      "thresholds": {
+        "normalization": "per_frame_shoulder_width",
+        "central_half_width": 0.45,
+        "vertical_min": 0.0,
+        "vertical_max": 1.0,
+        "review_clearance": 0.04,
+        "fail_clearance": -0.08,
+        "minimum_evaluated_coverage": 0.9
+      },
+      "minimum_normalized_clearance": 0.42549260607586464,
+      "risky_frame_indices": [],
+      "review_frame_indices": [],
+      "fail_frame_indices": [],
+      "sides": {
+        "left": {
+          "observed_points": 864,
+          "central_points": 864,
+          "detailed_hand_frames": 54,
+          "pose_wrist_fallback_frames": 0,
+          "minimum_normalized_clearance": 0.42549260607586464,
+          "risky_frame_indices": [],
+          "fail_frame_indices": []
+        },
+        "right": {
+          "observed_points": 864,
+          "central_points": 864,
+          "detailed_hand_frames": 54,
+          "pose_wrist_fallback_frames": 0,
+          "minimum_normalized_clearance": 0.5517325292089627,
+          "risky_frame_indices": [],
+          "fail_frame_indices": []
+        }
+      },
+      "frame_results": [
+        {
+          "frame_index": 1,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.42549260607586464
+        },
+        {
+          "frame_index": 2,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.4400404845623523
+        },
+        {
+          "frame_index": 3,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.4945325764951659
+        },
+        {
+          "frame_index": 4,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5203225690515405
+        },
+        {
+          "frame_index": 5,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5122592363340623
+        },
+        {
+          "frame_index": 6,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5077721028708027
+        },
+        {
+          "frame_index": 7,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5061562174695536
+        },
+        {
+          "frame_index": 8,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5064821406228063
+        },
+        {
+          "frame_index": 9,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5063834040657982
+        },
+        {
+          "frame_index": 10,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5056650379964447
+        },
+        {
+          "frame_index": 11,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5040582838559885
+        },
+        {
+          "frame_index": 12,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5063777450577486
+        },
+        {
+          "frame_index": 13,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5115804723616696
+        },
+        {
+          "frame_index": 14,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5191301412096089
+        },
+        {
+          "frame_index": 15,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5251217314087335
+        },
+        {
+          "frame_index": 16,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5293598804259592
+        },
+        {
+          "frame_index": 17,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5321542814631881
+        },
+        {
+          "frame_index": 18,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5342021110937971
+        },
+        {
+          "frame_index": 19,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5357305283267314
+        },
+        {
+          "frame_index": 20,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5364155738213633
+        },
+        {
+          "frame_index": 21,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5363615586510784
+        },
+        {
+          "frame_index": 22,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5359009856723652
+        },
+        {
+          "frame_index": 23,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5353100956678244
+        },
+        {
+          "frame_index": 24,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5347008722451302
+        },
+        {
+          "frame_index": 25,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5340598121836132
+        },
+        {
+          "frame_index": 26,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5334595653290454
+        },
+        {
+          "frame_index": 27,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5330198362521751
+        },
+        {
+          "frame_index": 28,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5327879202468774
+        },
+        {
+          "frame_index": 29,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5328290192653711
+        },
+        {
+          "frame_index": 30,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5331353259603436
+        },
+        {
+          "frame_index": 31,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5336823901086893
+        },
+        {
+          "frame_index": 32,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.534341272817316
+        },
+        {
+          "frame_index": 33,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5349535614725413
+        },
+        {
+          "frame_index": 34,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5355130988293543
+        },
+        {
+          "frame_index": 35,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5359932326012085
+        },
+        {
+          "frame_index": 36,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5363628290365051
+        },
+        {
+          "frame_index": 37,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.536447599304725
+        },
+        {
+          "frame_index": 38,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5362035242019356
+        },
+        {
+          "frame_index": 39,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5356095391634126
+        },
+        {
+          "frame_index": 40,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.534735767966557
+        },
+        {
+          "frame_index": 41,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5335792456685032
+        },
+        {
+          "frame_index": 42,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5322447642595619
+        },
+        {
+          "frame_index": 43,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5308716022058158
+        },
+        {
+          "frame_index": 44,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5296163314880526
+        },
+        {
+          "frame_index": 45,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5284303180708945
+        },
+        {
+          "frame_index": 46,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5271208014652725
+        },
+        {
+          "frame_index": 47,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5255502295200972
+        },
+        {
+          "frame_index": 48,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5236578474827943
+        },
+        {
+          "frame_index": 49,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5215825640484806
+        },
+        {
+          "frame_index": 50,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5195542047392342
+        },
+        {
+          "frame_index": 51,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5178522957054807
+        },
+        {
+          "frame_index": 52,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5166633000272528
+        },
+        {
+          "frame_index": 53,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5159790100252744
+        },
+        {
+          "frame_index": 54,
+          "status": "PASS",
+          "reason": "clearance_above_review_threshold",
+          "central_point_count": 32,
+          "minimum_normalized_clearance": 0.5156576592518919
+        }
+      ],
+      "warnings": [],
+      "limitations": [
+        "This is an anatomical landmark proxy, not a mesh-aware collision test.",
+        "It does not test hand-hand, finger-finger, clothing, skinning, or geometry between landmarks.",
+        "Monocular landmark depth is ambiguous during occlusion and intentional body contact.",
+        "A PASS cannot by itself certify a production GLB as collision free."
+      ],
+      "sampling_source": "reimported_glb_evaluated_pose_bone_heads",
+      "source_frame_count": 54,
+      "blender_frame_start": 1,
+      "blender_frame_end": 54,
+      "sampled_points_per_side": {
+        "left": 16,
+        "right": 16
+      },
+      "missing_finger_bones": [],
+      "reasons": []
+    },
+    "root_drift": {
+      "status": "PASS",
+      "reasons": [],
+      "frame_count": 54,
+      "normalization_scale": 2.516264878506623,
+      "maximum_normalized_drift": {
+        "expected": 0.0,
+        "armature": 0.0,
+        "hips": 0.0
+      },
+      "threshold": 0.0001,
+      "root_motion_policy": "IN_PLACE"
+    },
+    "motion_stability": {
+      "status": "REVIEW",
+      "reasons": [
+        "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+        "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+      ],
+      "evaluated_every_frame": true,
+      "frame_count": 54,
+      "channel_count": 43,
+      "body": {
+        "status": "PASS",
+        "reasons": [],
+        "frame_count": 54,
+        "channel_count": 11,
+        "fps": 30.01667594909668,
+        "metric": "quaternion_neighbour_midpoint_residual",
+        "mean_degrees": 0.040135764328744855,
+        "p95_degrees": 0.16071013237049,
+        "maximum_degrees": 0.5121476088227502,
+        "worst_frame": 14,
+        "worst_channel": "RightUpperArm",
+        "worst_samples": [
+          {
+            "frame": 14,
+            "channel": "RightUpperArm",
+            "residual_degrees": 0.5121476088227502,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 4,
+            "channel": "LeftForeArm",
+            "residual_degrees": 0.47809592590416256,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 10,
+            "channel": "RightUpperArm",
+            "residual_degrees": 0.44995019957760596,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 13,
+            "channel": "RightUpperArm",
+            "residual_degrees": 0.43556034233828933,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 14,
+            "channel": "RightForeArm",
+            "residual_degrees": 0.4200379489155699,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 9,
+            "channel": "RightUpperArm",
+            "residual_degrees": 0.39805279428340595,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 15,
+            "channel": "RightUpperArm",
+            "residual_degrees": 0.3824689532416372,
+            "state": "UNCLASSIFIED"
+          },
+          {
+            "frame": 15,
+            "channel": "RightForeArm",
+            "residual_degrees": 0.37099194850366146,
+            "state": "UNCLASSIFIED"
+          }
+        ],
+        "maximum_limit_exceeded_frame_indices": [],
+        "state_metrics": {},
+        "thresholds": {
+          "p95_degrees": 3.0,
+          "maximum_degrees": 12.0
+        }
+      },
+      "hands_and_fingers": {
+        "status": "FAIL",
+        "reasons": [
+          "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+          "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+        ],
+        "frame_count": 54,
+        "channel_count": 32,
+        "fps": 30.01667594909668,
+        "metric": "quaternion_neighbour_midpoint_residual",
+        "mean_degrees": 2.760704049550983,
+        "p95_degrees": 9.77564271083853,
+        "maximum_degrees": 24.76251777579858,
+        "worst_frame": 10,
+        "worst_channel": "LeftIndex2",
+        "worst_samples": [
+          {
+            "frame": 10,
+            "channel": "LeftIndex2",
+            "residual_degrees": 24.76251777579858,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 8,
+            "channel": "LeftRing2",
+            "residual_degrees": 24.384133707902095,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 8,
+            "channel": "LeftIndex2",
+            "residual_degrees": 21.539116526325092,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 10,
+            "channel": "LeftRing2",
+            "residual_degrees": 19.37348664138634,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 8,
+            "channel": "LeftThumb1",
+            "residual_degrees": 18.59014672093233,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 11,
+            "channel": "LeftRing2",
+            "residual_degrees": 18.558495640463285,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 10,
+            "channel": "LeftRing1",
+            "residual_degrees": 18.21025401220447,
+            "state": "SOURCE_ACTIVE"
+          },
+          {
+            "frame": 8,
+            "channel": "LeftRing1",
+            "residual_degrees": 18.052020005050647,
+            "state": "SOURCE_ACTIVE"
+          }
+        ],
+        "maximum_limit_exceeded_frame_indices": [
+          5,
+          8,
+          9,
+          10,
+          11,
+          14,
+          19,
+          27,
+          29,
+          31,
+          38,
+          40
+        ],
+        "state_metrics": {
+          "SOURCE_ACTIVE": {
+            "sample_count": 1536,
+            "maximum_degrees": 24.76251777579858,
+            "p95_degrees": 9.537560220071489,
+            "maximum_limit_exceeded_count": 38
+          },
+          "NEUTRAL": {
+            "sample_count": 0,
+            "maximum_degrees": null,
+            "p95_degrees": null,
+            "maximum_limit_exceeded_count": 0
+          },
+          "TRANSITION": {
+            "sample_count": 128,
+            "maximum_degrees": 17.891904479180717,
+            "p95_degrees": 11.040027301150134,
+            "maximum_limit_exceeded_count": 5
+          },
+          "MISSING": {
+            "sample_count": 0,
+            "maximum_degrees": null,
+            "p95_degrees": null,
+            "maximum_limit_exceeded_count": 0
+          }
+        },
+        "thresholds": {
+          "p95_degrees": 3.0,
+          "maximum_degrees": 12.0
+        }
+      }
+    },
+    "required_channel_coverage": {
+      "status": "PASS",
+      "reasons": [],
+      "required_varying_channels": [
+        "Chest",
+        "LeftForeArm",
+        "LeftHand",
+        "LeftIndex1",
+        "LeftIndex2",
+        "LeftIndex3",
+        "LeftLittle1",
+        "LeftLittle2",
+        "LeftLittle3",
+        "LeftMiddle1",
+        "LeftMiddle2",
+        "LeftMiddle3",
+        "LeftRing1",
+        "LeftRing2",
+        "LeftRing3",
+        "LeftThumb1",
+        "LeftThumb2",
+        "LeftThumb3",
+        "LeftUpperArm",
+        "RightForeArm",
+        "RightHand",
+        "RightIndex1",
+        "RightIndex2",
+        "RightIndex3",
+        "RightLittle1",
+        "RightLittle2",
+        "RightLittle3",
+        "RightMiddle1",
+        "RightMiddle2",
+        "RightMiddle3",
+        "RightRing1",
+        "RightRing2",
+        "RightRing3",
+        "RightThumb1",
+        "RightThumb2",
+        "RightThumb3",
+        "RightUpperArm"
+      ],
+      "missing_varying_channels": [],
+      "constant_pose_nodes": [],
+      "animated_channel_count": 43,
+      "constant_pose_policy": "Constant joints may be represented by static glTF node transforms; geometric retargeting checks still apply."
+    },
+    "neutral_finger_shape": {
+      "status": "PASS",
+      "reasons": [],
+      "applicable": false,
+      "evaluated_all_fully_neutral_frames": true,
+      "sample_count": 0,
+      "worst_sample": null,
+      "fail_frame_indices": [],
+      "review_frame_indices": []
+    },
+    "mesh_collision": {
+      "status": "REVIEW",
+      "reasons": [
+        "Shallow penetration or unsupported surface boundaries require review in 1 frame(s)."
+      ],
+      "mesh_aware": true,
+      "check_name": "evaluated_hand_vertices_to_weighted_torso_surface",
+      "evaluated_every_input_frame": true,
+      "source_frame_count": 54,
+      "evaluated_frames": 54,
+      "hand_vertex_count": 3562,
+      "torso_triangle_count": 5040,
+      "tested_near_torso_samples": 95,
+      "unsupported_near_torso_samples": 96,
+      "minimum_signed_clearance_shoulder_widths": 0.05667074363734194,
+      "fail_frame_indices": [],
+      "review_frame_indices": [
+        1
+      ],
+      "thresholds": {
+        "review_penetration_shoulder_widths": 0.005,
+        "fail_penetration_shoulder_widths": 0.025
+      },
+      "limitations": [
+        "Checks exported hand vertices against selected torso triangles, not continuous triangle-triangle collision or sign-language meaning.",
+        "Intentional surface contact is allowed; uncertain open borders require review."
+      ]
+    },
+    "mesh_contact_correction": {
+      "status": "PASS",
+      "method": "measured_torso_clearance_with_length_preserving_arm_IK",
+      "reasons": [],
+      "source_frame_count": 54,
+      "evaluated_every_input_frame": true,
+      "corrected_samples": [],
+      "unsupported_samples": [],
+      "unreachable_samples": [],
+      "projected_endpoint_samples": [],
+      "maximum_shift_shoulder_widths": 0.0,
+      "maximum_endpoint_error_avatar_units": 0.0,
+      "preserves_finger_pose": true,
+      "preserves_arm_lengths": true,
+      "post_export_mesh_validation_required": true,
+      "correction_pass_count": 1,
+      "maximum_cumulative_shift_shoulder_widths": 0.3
+    },
+    "finger_continuity_correction": {
+      "status": "REVIEW",
+      "reasons": [
+        "Finger recovery rotations were rate-limited; compare affected transitions with the source."
+      ],
+      "corrected_sample_count": 119,
+      "maximum_target_rotation_error_degrees": 16.054421037498088,
+      "sample_corrections": [
+        {
+          "frame": 2,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb3",
+          "target_error_degrees": 2.7898923033771736
+        },
+        {
+          "frame": 2,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle3",
+          "target_error_degrees": 2.1837762631559445
+        },
+        {
+          "frame": 2,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandRing3",
+          "target_error_degrees": 0.4165989728848322
+        },
+        {
+          "frame": 4,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb1",
+          "target_error_degrees": 6.99422942108987
+        },
+        {
+          "frame": 4,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb2",
+          "target_error_degrees": 6.148240667666685
+        },
+        {
+          "frame": 4,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb3",
+          "target_error_degrees": 2.6087385721917586
+        },
+        {
+          "frame": 4,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex2",
+          "target_error_degrees": 2.7414189483385956
+        },
+        {
+          "frame": 4,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex3",
+          "target_error_degrees": 0.3454101904582584
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb1",
+          "target_error_degrees": 4.087652139712124
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb2",
+          "target_error_degrees": 16.054421037498088
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb3",
+          "target_error_degrees": 7.996510450880052
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle3",
+          "target_error_degrees": 7.085157192003698
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandRing2",
+          "target_error_degrees": 7.95119379726446
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandRing3",
+          "target_error_degrees": 7.998120511273721
+        },
+        {
+          "frame": 5,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandPinky3",
+          "target_error_degrees": 8.597287951954923
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb2",
+          "target_error_degrees": 0.224135206776041
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex2",
+          "target_error_degrees": 4.01109723987399
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex3",
+          "target_error_degrees": 4.011031536957062
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle3",
+          "target_error_degrees": 9.703746676484505
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandRing2",
+          "target_error_degrees": 9.063225559442568
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandRing3",
+          "target_error_degrees": 10.179392583508264
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandPinky2",
+          "target_error_degrees": 1.9292129213631293
+        },
+        {
+          "frame": 6,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandPinky3",
+          "target_error_degrees": 8.10829289584466
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb1",
+          "target_error_degrees": 4.01109723987399
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb2",
+          "target_error_degrees": 4.06681521479902
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandThumb3",
+          "target_error_degrees": 4.01109723987399
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex1",
+          "target_error_degrees": 3.6584462675915455
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex2",
+          "target_error_degrees": 7.81611718269107
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandIndex3",
+          "target_error_degrees": 7.939167002440269
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle1",
+          "target_error_degrees": 4.01109723987399
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle2",
+          "target_error_degrees": 4.01109723987399
+        },
+        {
+          "frame": 7,
+          "side": "Left",
+          "bone": "mixamorig9:LeftHandMiddle3",
+          "target_error_degrees": 7.79996599825248
+        }
+      ],
+      "reference_fps": 25.0,
+      "maximum_step_degrees_at_reference_fps": 24.0
+    },
+    "finger_direction_conditioning": {
+      "method": "palm_local_isolated_spike_rejection_and_centered_direction_smoothing",
+      "status": "REVIEW",
+      "observed_samples": 1620,
+      "interpolated_samples": 0,
+      "corrected_sample_count": 17,
+      "sample_corrections": [
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 0,
+          "segment": 2,
+          "adjustment_degrees": 55.611352275884876
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 1,
+          "segment": 1,
+          "adjustment_degrees": 48.63675699579786
+        },
+        {
+          "frame": 27,
+          "side": 0,
+          "finger": 1,
+          "segment": 2,
+          "adjustment_degrees": 49.65655891438085
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 1,
+          "segment": 2,
+          "adjustment_degrees": 53.466145574612156
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 1,
+          "segment": 2,
+          "adjustment_degrees": 53.294081670787214
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 2,
+          "segment": 1,
+          "adjustment_degrees": 56.77221084687908
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 2,
+          "segment": 1,
+          "adjustment_degrees": 51.60011839763544
+        },
+        {
+          "frame": 27,
+          "side": 0,
+          "finger": 2,
+          "segment": 2,
+          "adjustment_degrees": 49.47236644164882
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 2,
+          "segment": 2,
+          "adjustment_degrees": 50.69732204598319
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 3,
+          "segment": 0,
+          "adjustment_degrees": 53.6466632697886
+        },
+        {
+          "frame": 27,
+          "side": 0,
+          "finger": 3,
+          "segment": 1,
+          "adjustment_degrees": 56.133585570086545
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 3,
+          "segment": 1,
+          "adjustment_degrees": 60.21841911443332
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 3,
+          "segment": 1,
+          "adjustment_degrees": 58.703693769072586
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 3,
+          "segment": 2,
+          "adjustment_degrees": 54.22686258307187
+        },
+        {
+          "frame": 31,
+          "side": 0,
+          "finger": 4,
+          "segment": 1,
+          "adjustment_degrees": 60.97842535765214
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 4,
+          "segment": 1,
+          "adjustment_degrees": 62.33993540274971
+        },
+        {
+          "frame": 38,
+          "side": 0,
+          "finger": 4,
+          "segment": 2,
+          "adjustment_degrees": 56.8294365428891
+        }
+      ],
+      "observation_mask_preserved": true
+    },
+    "arm_temporal_conditioning": {
+      "status": "PASS",
+      "reasons": [],
+      "adjusted_sample_count": 0,
+      "maximum_adjustment_degrees": 3.0,
+      "sample_corrections": [],
+      "clip_endpoints_preserved": true,
+      "channels": [
+        "LeftUpperArm",
+        "LeftForeArm",
+        "RightUpperArm",
+        "RightForeArm"
+      ],
+      "maximum_wrist_shift_avatar_units": 0.0,
+      "finger_and_palm_orientations_preserved": true,
+      "arm_lengths_preserved": true
+    },
+    "skin_weight_preparation": {
+      "maximum_influences": 4,
+      "vertices_reduced": 248,
+      "normalized_before_contact_correction": true,
+      "source_avatar_modified": false
+    },
+    "source_depth": {
+      "status": "PASS",
+      "reasons": [],
+      "method": "observed_canonical_upperarm_forearm_depth_scaled_by_avatar_segment_lengths",
+      "monocular_estimate": true,
+      "image_plane_trajectory_unchanged": true,
+      "sides": {
+        "Left": {
+          "observed_frames": 54,
+          "interpolated_frames": 0,
+          "held_frames": 0,
+          "held_frame_indices": [],
+          "median_wrist_depth": 24.380185119595783
+        },
+        "Right": {
+          "observed_frames": 54,
+          "interpolated_frames": 0,
+          "held_frames": 0,
+          "held_frame_indices": [],
+          "median_wrist_depth": 27.206245950064847
+        }
+      }
+    },
+    "arm_pole_conditioning": {
+      "method": "interpolate_geometrically_ambiguous_poles",
+      "reliability_radius_ratio": 0.08,
+      "sides": {
+        "Left": {
+          "conditioned_frames": 0,
+          "minimum_pole_radius": 3.8990228271484377,
+          "minimum_observed_radius": 26.495002584215463,
+          "spans": [],
+          "unanchored_spans": 0
+        },
+        "Right": {
+          "conditioned_frames": 0,
+          "minimum_pole_radius": 3.8978060913085937,
+          "minimum_observed_radius": 25.552865182943545,
+          "spans": [],
+          "unanchored_spans": 0
+        }
+      }
+    },
+    "validation_run_id": "b5bd4ef17af745c381829f8d71c08389",
+    "validated_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+    "motion_sha256": "f93729e9953a21ee9b4ab95d4ed962500605d3444a90c5305549eab051e66724",
+    "ik_report_sha256": "e667628fd3b4dc2224b9aa1879ec8bdc07124c5a14d8fcb07f8dbdef01b4f716",
+    "validator_returncode": 0,
+    "validated_at": "2026-09-11T10:56:54.509093Z",
+    "khronos_validation": {
+      "schema_version": "1.0",
+      "status": "PASS",
+      "report_readable": true,
+      "validator_version": "2.0.0-dev.3.10",
+      "counts": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0
+      },
+      "messages": [],
+      "messages_truncated": false,
+      "warning_codes": {},
+      "allowlisted_warning_explanations": [],
+      "unallowlisted_warning_codes": [],
+      "invalid_allowlist_codes": [],
+      "reasons": [],
+      "validator_returncode": 0,
+      "validated_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+      "validated_at": "2026-09-11T10:56:55.089561Z",
+      "asset_info": {
+        "version": "2.0",
+        "generator": "Khronos glTF Blender I/O v4.5.51",
+        "extensionsUsed": [
+          "KHR_materials_specular"
+        ],
+        "resources": [
+          {
+            "pointer": "/buffers/0",
+            "mimeType": "application/gltf-buffer",
+            "storage": "glb",
+            "byteLength": 58495404
+          },
+          {
+            "pointer": "/images/0",
+            "mimeType": "image/png",
+            "storage": "buffer-view",
+            "image": {
+              "width": 4096,
+              "height": 4096,
+              "format": "rgb",
+              "primaries": "srgb",
+              "transfer": "srgb",
+              "bits": 8
+            }
+          },
+          {
+            "pointer": "/images/1",
+            "mimeType": "image/png",
+            "storage": "buffer-view",
+            "image": {
+              "width": 4096,
+              "height": 4096,
+              "format": "rgb",
+              "primaries": "srgb",
+              "transfer": "srgb",
+              "bits": 8
+            }
+          },
+          {
+            "pointer": "/images/2",
+            "mimeType": "image/png",
+            "storage": "buffer-view",
+            "image": {
+              "width": 4096,
+              "height": 4096,
+              "format": "rgb",
+              "primaries": "srgb",
+              "transfer": "srgb",
+              "bits": 8
+            }
+          },
+          {
+            "pointer": "/images/3",
+            "mimeType": "image/png",
+            "storage": "buffer-view",
+            "image": {
+              "width": 4096,
+              "height": 4096,
+              "format": "rgb",
+              "primaries": "srgb",
+              "transfer": "srgb",
+              "bits": 8
+            }
+          },
+          {
+            "pointer": "/images/4",
+            "mimeType": "image/png",
+            "storage": "buffer-view",
+            "image": {
+              "width": 2048,
+              "height": 2048,
+              "format": "rgba",
+              "primaries": "srgb",
+              "transfer": "srgb",
+              "bits": 8
+            }
+          }
+        ],
+        "animationCount": 1,
+        "materialCount": 2,
+        "hasMorphTargets": false,
+        "hasSkins": true,
+        "hasTextures": true,
+        "hasDefaultScene": true,
+        "drawCallCount": 7,
+        "totalVertexCount": 33140,
+        "totalTriangleCount": 50266,
+        "maxUVs": 1,
+        "maxInfluences": 4,
+        "maxAttributes": 6
+      }
+    }
+  },
+  "source_avatar_validation": {
+    "status": "PASS",
+    "reasons": [],
+    "source_frame_count": 54,
+    "avatar_frame_count": 54,
+    "source_reported_frame_count": 54,
+    "avatar_reported_frame_count": 54,
+    "expected_comparison_frame_count": 54,
+    "comparison_frame_count": 54,
+    "comparison_reopened_frame_count": 54,
+    "comparison_complete": true,
+    "source_fps": 30.016675931072818,
+    "avatar_fps": 30.01668927923926,
+    "comparison_reopened_fps": 30.017,
+    "source_timeline_max_error_seconds": 0.0009444444444446365,
+    "avatar_timeline_max_error_seconds": 2.220446049250313e-16,
+    "source_duration_seconds": 1.7656851851851851,
+    "avatar_duration_seconds": 1.7656843999999998,
+    "duration_difference_seconds": 7.851851853146741e-07,
+    "technical_motion_match": "See the matching .glb_validation.json report for endpoint and finger-direction metrics.",
+    "isl_verified": false,
+    "isl_verification_status": "PENDING_SIGNER_REVIEW",
+    "validation_run_id": "7c83242568234fd9aa71df9227818b63",
+    "source_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+    "working_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+    "original_source_frame_count": 54,
+    "timing_normalized": false,
+    "comparison_video_sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4"
+  },
+  "signer_review": {
+    "schema_version": "2.0",
+    "run_id": "7c83242568234fd9aa71df9227818b63",
+    "gloss": "H",
+    "technical_qc": "REVIEW",
+    "isl_verified": false,
+    "production_status": "PENDING_GATE_EVALUATION",
+    "source_video": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/source_video.mp4",
+    "avatar_glb": "output/H/H.glb",
+    "comparison_video": "output/H/debug/H_source_avatar_comparison.mp4",
+    "hash_binding": {
+      "source_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+      "comparison_video_sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4"
+    },
+    "current_artifact_hashes": {
+      "source_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+      "comparison_video_sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4"
+    },
+    "signer_verdict": "PENDING",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": null,
+    "collision_review": {
+      "status": "PENDING",
+      "method": null,
+      "notes": null
+    },
+    "approval_rule": "A qualified ISL signer must mark this sign PASS before it is released for passenger-facing use."
+  },
+  "metadata_schema_version": "3.1",
+  "asset_identity": {
+    "video_id": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+    "original_filename": "H.mp4",
+    "batch_id": null,
+    "run_id": "7c83242568234fd9aa71df9227818b63"
+  },
+  "motion_identity": {
+    "motion_code": "ISL_H_01",
+    "gloss": "H",
+    "canonical_text": "h",
+    "language_code": "ISL",
+    "language_name": "Indian Sign Language",
+    "domain": null,
+    "level": "WORD",
+    "category": null,
+    "variant_no": 1
+  },
+  "linguistic": {
+    "meaning": null,
+    "context": null,
+    "dominant_hand": null,
+    "two_handed": null,
+    "non_manual_features_available": false,
+    "linguistic_notes": null
+  },
+  "retrieval": {
+    "aliases": [
+      "h"
+    ],
+    "tags": [],
+    "exact_lookup_enabled": true,
+    "fuzzy_lookup_enabled": true,
+    "semantic_search_enabled": true
+  },
+  "source": {
+    "dataset": null,
+    "source_name": null,
+    "source_type": null,
+    "source_reference": null,
+    "source_video_path": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/source_video.mp4",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/source_video.mp4",
+      "exists": true,
+      "sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "size_bytes": 373310
+    },
+    "license": null,
+    "provenance_verified": false
+  },
+  "preparation": {
+    "source": {
+      "path": "D:\\video2glb\\input\\BATCH_4\\H.mp4",
+      "codec": "h264",
+      "width": 848,
+      "height": 480,
+      "fps": 30.016675931072818,
+      "duration_seconds": 1.799,
+      "frame_count": 54,
+      "rotation_degrees": null,
+      "inspector": "ffprobe+opencv_decode",
+      "variable_frame_rate": false,
+      "timestamp_source": "ffprobe_decoded_pts",
+      "reported_frame_count": 54,
+      "fps_rational": "54000/1799"
+    },
+    "working": {
+      "path": "D:\\video2glb\\input\\BATCH_4\\H.mp4",
+      "codec": "h264",
+      "width": 848,
+      "height": 480,
+      "fps": 30.016675931072818,
+      "duration_seconds": 1.799,
+      "frame_count": 54,
+      "rotation_degrees": null,
+      "inspector": "ffprobe+opencv_decode",
+      "variable_frame_rate": false,
+      "timestamp_source": "ffprobe_decoded_pts",
+      "reported_frame_count": 54,
+      "fps_rational": "54000/1799"
+    },
+    "working_path": "D:\\video2glb\\input\\BATCH_4\\H.mp4",
+    "normalized": false,
+    "normalization": "none",
+    "timing_mapping_frame_count": 54,
+    "timing_evidence": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/video_preparation.json",
+      "exists": true,
+      "size_bytes": 11588,
+      "sha256": "f4d836ae8312a0aede746fae70de2923bbd06fd59f51b07430ccd3ac85a20917"
+    },
+    "working_video": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/working_video.mp4",
+      "exists": true,
+      "size_bytes": 373310,
+      "sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea"
+    }
+  },
+  "processing": {
+    "pipeline_name": "video2glb",
+    "pipeline_version": "0.1.0",
+    "pipeline_stage": "video_to_pose_to_motion_to_glb",
+    "pose_backend": "mediapipe_holistic",
+    "coordinate_system_version": "canonical-image-aspect-corrected-v2",
+    "avatar_profile_version": null,
+    "bone_map_version": null,
+    "neutral_hand_pose_version": null,
+    "conversion_started_at": "2026-09-11T10:57:08.394743Z",
+    "conversion_completed_at": "2026-09-11T10:57:08.412713Z",
+    "elapsed_seconds": 0.01797,
+    "run_id": "7c83242568234fd9aa71df9227818b63",
+    "batch_id": null,
+    "attempt": 1,
+    "context_fingerprint": null,
+    "input_hashes": {},
+    "dependency_versions": {
+      "python": "3.12.4",
+      "mediapipe": "0.10.35",
+      "numpy": "2.2.6",
+      "opencv-contrib-python": "4.11.0.86",
+      "PyYAML": "6.0.2",
+      "cryptography": "50.0.0"
+    },
+    "stage_cache": [],
+    "stages": [],
+    "execution_record": null
+  },
+  "avatar": {
+    "avatar_file": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/avatar.fbx",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/avatar.fbx",
+      "exists": true,
+      "sha256": "b18c4641779d2e98f8a83b5a58acf39e1d630b6fd4c0ad2a7882cef61b3c57ff",
+      "size_bytes": 53660848
+    },
+    "armature_name": "Armature",
+    "mesh_count": 7,
+    "bone_count": 65,
+    "hand_bones_present": true,
+    "finger_bones_present": true,
+    "calibration_hashes": {},
+    "neutral_hand_pose_applied": false
+  },
+  "animation": {
+    "fps": 30.01667594909668,
+    "frame_count": 54,
+    "duration_seconds": 1.765685184124959,
+    "animation_count": 1,
+    "animation_name": "H",
+    "has_body_motion": true,
+    "has_wrist_motion": true,
+    "has_palm_motion": true,
+    "has_finger_motion": true,
+    "root_translation_enabled": false
+  },
+  "assets": {
+    "source_video": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/source_video.mp4",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/source_video.mp4",
+      "exists": true,
+      "sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "size_bytes": 373310
+    },
+    "final_glb": {
+      "absolute_path": "D:/video2glb/output/H/H.glb",
+      "relative_path": "output/H/H.glb",
+      "exists": true,
+      "sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+      "size_bytes": 58566048
+    },
+    "pose_npz": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/pose.pose.npz",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/pose.pose.npz",
+      "exists": true,
+      "sha256": "93d24e06fe09aa05e1601fe57d9938d6d52b085f328a6cbda052c6abc8bbd7a5",
+      "size_bytes": 103392
+    },
+    "motion_npz": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/motion.motion.npz",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/motion.motion.npz",
+      "exists": true,
+      "sha256": "f93729e9953a21ee9b4ab95d4ed962500605d3444a90c5305549eab051e66724",
+      "size_bytes": 52086
+    },
+    "qc_report": {
+      "absolute_path": "D:/video2glb/output/H/H.qc.json",
+      "relative_path": "output/H/H.qc.json",
+      "exists": true,
+      "sha256": "2ab6d8b05c0da6efa60c30e0af7e6ed211567a33a65caf62c61b1c04362e56fe",
+      "size_bytes": 45636
+    },
+    "glb_validation": {
+      "absolute_path": "D:/video2glb/output/H/H.glb_validation.json",
+      "relative_path": "output/H/H.glb_validation.json",
+      "exists": true,
+      "sha256": "5bc9c141fd74b83db9ac734f8c3b240d17a87e46d2908c19f7892d8e00a55a15",
+      "size_bytes": 40126
+    },
+    "source_avatar_validation": {
+      "absolute_path": "D:/video2glb/output/H/H.source_avatar_validation.json",
+      "relative_path": "output/H/H.source_avatar_validation.json",
+      "exists": true,
+      "sha256": "4cbda4367ed443eb3853624250e7b896d8afbbd26801bbe5e0e16be7b27b6917",
+      "size_bytes": 1309
+    },
+    "signer_review": {
+      "absolute_path": "D:/video2glb/output/H/H.signer_review.json",
+      "relative_path": "output/H/H.signer_review.json",
+      "exists": true,
+      "sha256": "79764fcb448eb45d8b07142b0277981af5b85b8aceae2ce017cafd2f7f525fc0",
+      "size_bytes": 1311
+    },
+    "comparison_video": {
+      "absolute_path": "D:/video2glb/output/H/debug/H_source_avatar_comparison.mp4",
+      "relative_path": "output/H/debug/H_source_avatar_comparison.mp4",
+      "exists": true,
+      "sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4",
+      "size_bytes": 334856
+    },
+    "neutral_hand_pose": {
+      "absolute_path": "D:/video2glb/failed/H/4c19d1b798c54d489f1851951e006d80/evidence/neutral_hand_pose.json",
+      "relative_path": "failed/H/4c19d1b798c54d489f1851951e006d80/evidence/neutral_hand_pose.json",
+      "exists": true,
+      "sha256": "9e4dd8650d939099700490c23eb42541ab055aaf92dc0a89ea482d035d18f45e",
+      "size_bytes": 11720
+    },
+    "intermediate_assets": {
+      "classification": "DEBUG_INTERMEDIATE",
+      "production_glb_selected": false
+    }
+  },
+  "file_integrity": {
+    "glb_size_bytes": 58566048,
+    "glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+    "source_video_size_bytes": 373310,
+    "source_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+    "comparison_video_size_bytes": 334856,
+    "comparison_video_sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4",
+    "avatar_size_bytes": 53660848,
+    "avatar_sha256": "b18c4641779d2e98f8a83b5a58acf39e1d630b6fd4c0ad2a7882cef61b3c57ff",
+    "pose_sha256": "93d24e06fe09aa05e1601fe57d9938d6d52b085f328a6cbda052c6abc8bbd7a5",
+    "motion_sha256": "f93729e9953a21ee9b4ab95d4ed962500605d3444a90c5305549eab051e66724",
+    "qc_sha256": "0f7c9b65d9df1ea65ec47eef2a8cf8857653f477e610ec15542f32a4dc39894c",
+    "glb_validation_sha256": "5bc9c141fd74b83db9ac734f8c3b240d17a87e46d2908c19f7892d8e00a55a15",
+    "khronos_validation_sha256": "856ad1592b405304932b5b062714ab010761c5e427bf281dfcc5cebed54b652d",
+    "source_avatar_validation_sha256": "4cbda4367ed443eb3853624250e7b896d8afbbd26801bbe5e0e16be7b27b6917",
+    "signer_review_sha256": "79764fcb448eb45d8b07142b0277981af5b85b8aceae2ce017cafd2f7f525fc0",
+    "avatar_profile_sha256": "aefd52c05701e8b6e01c0fd7a67d5fb1ffa9ab49f128b0e5ea3e71fc7721cc24",
+    "bone_map_sha256": "7adf6aafef954ef9f9c96d5f497f8937c094ba953a35f7468fd00eb743fc14d8",
+    "neutral_hand_pose_sha256": "9e4dd8650d939099700490c23eb42541ab055aaf92dc0a89ea482d035d18f45e",
+    "catalog_record_sha256": "95c585ce48a477ffa156b96bbe9a5af40be141cf7593ed71ad3e9ce5a9aaed79",
+    "video_preparation_sha256": "f4d836ae8312a0aede746fae70de2923bbd06fd59f51b07430ccd3ac85a20917",
+    "working_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+    "ik_report_sha256": "e667628fd3b4dc2224b9aa1879ec8bdc07124c5a14d8fcb07f8dbdef01b4f716",
+    "stable_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+    "run_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55"
+  },
+  "technical_validation": {
+    "technical_qc": "REVIEW",
+    "glb_validation": {
+      "status": "REVIEW",
+      "reasons": [],
+      "review_reasons": [
+        "Hand bones appear collapsed into or hidden by the torso in sampled frames.",
+        "Animated mesh collision: Shallow penetration or unsupported surface boundaries require review in 1 frame(s).",
+        "Motion stability: Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+        "Motion stability: P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000.",
+        "Isolated source finger-direction outliers were corrected; compare affected frames with the source.",
+        "Finger recovery rotations were rate-limited; compare affected transitions with the source."
+      ],
+      "mesh_count": 8,
+      "armature_count": 1,
+      "animation_count": 1,
+      "expected_duration_seconds": 1.765685184124959,
+      "actual_duration_seconds": 1.7656851530064035,
+      "source_fps": 30.01667594909668,
+      "source_frame_count": 54,
+      "imported_timeline_fps": 30.016676511869857,
+      "blender_version": "4.5.11 LTS",
+      "file_size": 58566048,
+      "hand_visibility": {
+        "status": "REVIEW",
+        "reasons": [],
+        "review_reasons": [
+          "Hand bones appear collapsed into or hidden by the torso in sampled frames."
+        ],
+        "sampled_frames": [
+          1,
+          10,
+          27,
+          43,
+          54
+        ],
+        "visible_samples": 0,
+        "hand_separation_distances": [
+          0.16729576140642166,
+          0.22905898094177246,
+          0.289776012301445,
+          0.29158855974674225,
+          0.2849033623933792
+        ],
+        "animated_finger_bones": 4
+      },
+      "finger_motion": {
+        "status": "PASS",
+        "reasons": [],
+        "evaluated_every_frame_transition": true,
+        "frame_count": 54,
+        "channel_count": 30,
+        "sample_count": 1590,
+        "source_supported_transition_count": 1470,
+        "maximum_step_degrees": 19.98902214174011,
+        "maximum_normalized_step_degrees": 24.000160006717255,
+        "p99_normalized_step_degrees": 24.000061688617777,
+        "maximum_unexplained_step_degrees": 24.00009986794491,
+        "worst_frame": 5,
+        "worst_channel": "LeftRing2",
+        "fail_frame_indices": [],
+        "review_frame_indices": [],
+        "thresholds": {
+          "reference_fps": 25.0,
+          "review_step_degrees": 30.0,
+          "fail_unexplained_step_degrees": 45.0
+        }
+      },
+      "finger_retargeting": {
+        "status": "PASS",
+        "reasons": [],
+        "sample_count": 1500,
+        "mean_direction_error_degrees": 0.3691863375110315,
+        "p95_direction_error_degrees": 2.57902080809159,
+        "source_observed_samples": 1620,
+        "excluded_neutral_or_transition_samples": 120,
+        "neutral_and_transition_coverage": "Checked independently by all-frame continuity and neutral shape validation."
+      },
+      "palm_orientation": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": true,
+        "sample_count": 100,
+        "invalid_active_basis_count": 0,
+        "mean_baked_target_error_degrees": 0.0043046608959191185,
+        "p95_baked_target_error_degrees": 0.01211507854082212,
+        "max_baked_target_error_degrees": 0.014594416238180377,
+        "max_baked_target_error_side": "Right",
+        "max_baked_target_error_frame": 26,
+        "target_step_sample_count": 98,
+        "max_target_step_degrees": 18.226209089478044,
+        "p95_target_step_degrees": 4.039372771779658,
+        "max_target_step_side": "Right",
+        "max_target_step_frame": 6,
+        "max_baked_step_degrees": 18.226156235054336,
+        "p95_baked_step_degrees": 4.039344512538788,
+        "max_baked_step_side": "Right",
+        "max_baked_step_frame": 6
+      },
+      "retargeting": {
+        "status": "PASS",
+        "reasons": [],
+        "sample_count": 108,
+        "mean_normalized_wrist_error": 8.266632577387601e-05,
+        "p95_normalized_wrist_error": 9.88681260684013e-05,
+        "max_normalized_wrist_error": 0.00010363908267488896
+      },
+      "initial_hand_pose": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false
+      },
+      "ending_hand_pose": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false
+      },
+      "full_clip_collision": {
+        "schema_version": "1.0",
+        "check_name": "full_clip_torso_hand_clearance_proxy",
+        "status": "PASS",
+        "mesh_aware": false,
+        "evaluated_every_input_frame": true,
+        "coordinate_space_note": "Pose, palm, and finger points must share one Cartesian coordinate space; positive clearance follows cross(right-to-left shoulder, hips-to-shoulders).",
+        "frames": {
+          "total": 54,
+          "torso_frame_valid": 54,
+          "hand_observed": 54,
+          "evaluated": 54,
+          "central_region": 54,
+          "pass": 54,
+          "review": 0,
+          "fail": 0,
+          "torso_frame_coverage": 1.0,
+          "hand_observation_coverage": 1.0,
+          "evaluated_coverage": 1.0
+        },
+        "thresholds": {
+          "normalization": "per_frame_shoulder_width",
+          "central_half_width": 0.45,
+          "vertical_min": 0.0,
+          "vertical_max": 1.0,
+          "review_clearance": 0.04,
+          "fail_clearance": -0.08,
+          "minimum_evaluated_coverage": 0.9
+        },
+        "minimum_normalized_clearance": 0.42549260607586464,
+        "risky_frame_indices": [],
+        "review_frame_indices": [],
+        "fail_frame_indices": [],
+        "sides": {
+          "left": {
+            "observed_points": 864,
+            "central_points": 864,
+            "detailed_hand_frames": 54,
+            "pose_wrist_fallback_frames": 0,
+            "minimum_normalized_clearance": 0.42549260607586464,
+            "risky_frame_indices": [],
+            "fail_frame_indices": []
+          },
+          "right": {
+            "observed_points": 864,
+            "central_points": 864,
+            "detailed_hand_frames": 54,
+            "pose_wrist_fallback_frames": 0,
+            "minimum_normalized_clearance": 0.5517325292089627,
+            "risky_frame_indices": [],
+            "fail_frame_indices": []
+          }
+        },
+        "frame_results": [
+          {
+            "frame_index": 1,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.42549260607586464
+          },
+          {
+            "frame_index": 2,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.4400404845623523
+          },
+          {
+            "frame_index": 3,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.4945325764951659
+          },
+          {
+            "frame_index": 4,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5203225690515405
+          },
+          {
+            "frame_index": 5,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5122592363340623
+          },
+          {
+            "frame_index": 6,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5077721028708027
+          },
+          {
+            "frame_index": 7,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5061562174695536
+          },
+          {
+            "frame_index": 8,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5064821406228063
+          },
+          {
+            "frame_index": 9,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5063834040657982
+          },
+          {
+            "frame_index": 10,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5056650379964447
+          },
+          {
+            "frame_index": 11,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5040582838559885
+          },
+          {
+            "frame_index": 12,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5063777450577486
+          },
+          {
+            "frame_index": 13,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5115804723616696
+          },
+          {
+            "frame_index": 14,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5191301412096089
+          },
+          {
+            "frame_index": 15,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5251217314087335
+          },
+          {
+            "frame_index": 16,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5293598804259592
+          },
+          {
+            "frame_index": 17,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5321542814631881
+          },
+          {
+            "frame_index": 18,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5342021110937971
+          },
+          {
+            "frame_index": 19,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5357305283267314
+          },
+          {
+            "frame_index": 20,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5364155738213633
+          },
+          {
+            "frame_index": 21,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5363615586510784
+          },
+          {
+            "frame_index": 22,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5359009856723652
+          },
+          {
+            "frame_index": 23,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5353100956678244
+          },
+          {
+            "frame_index": 24,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5347008722451302
+          },
+          {
+            "frame_index": 25,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5340598121836132
+          },
+          {
+            "frame_index": 26,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5334595653290454
+          },
+          {
+            "frame_index": 27,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5330198362521751
+          },
+          {
+            "frame_index": 28,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5327879202468774
+          },
+          {
+            "frame_index": 29,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5328290192653711
+          },
+          {
+            "frame_index": 30,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5331353259603436
+          },
+          {
+            "frame_index": 31,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5336823901086893
+          },
+          {
+            "frame_index": 32,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.534341272817316
+          },
+          {
+            "frame_index": 33,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5349535614725413
+          },
+          {
+            "frame_index": 34,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5355130988293543
+          },
+          {
+            "frame_index": 35,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5359932326012085
+          },
+          {
+            "frame_index": 36,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5363628290365051
+          },
+          {
+            "frame_index": 37,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.536447599304725
+          },
+          {
+            "frame_index": 38,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5362035242019356
+          },
+          {
+            "frame_index": 39,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5356095391634126
+          },
+          {
+            "frame_index": 40,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.534735767966557
+          },
+          {
+            "frame_index": 41,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5335792456685032
+          },
+          {
+            "frame_index": 42,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5322447642595619
+          },
+          {
+            "frame_index": 43,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5308716022058158
+          },
+          {
+            "frame_index": 44,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5296163314880526
+          },
+          {
+            "frame_index": 45,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5284303180708945
+          },
+          {
+            "frame_index": 46,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5271208014652725
+          },
+          {
+            "frame_index": 47,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5255502295200972
+          },
+          {
+            "frame_index": 48,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5236578474827943
+          },
+          {
+            "frame_index": 49,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5215825640484806
+          },
+          {
+            "frame_index": 50,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5195542047392342
+          },
+          {
+            "frame_index": 51,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5178522957054807
+          },
+          {
+            "frame_index": 52,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5166633000272528
+          },
+          {
+            "frame_index": 53,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5159790100252744
+          },
+          {
+            "frame_index": 54,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5156576592518919
+          }
+        ],
+        "warnings": [],
+        "limitations": [
+          "This is an anatomical landmark proxy, not a mesh-aware collision test.",
+          "It does not test hand-hand, finger-finger, clothing, skinning, or geometry between landmarks.",
+          "Monocular landmark depth is ambiguous during occlusion and intentional body contact.",
+          "A PASS cannot by itself certify a production GLB as collision free."
+        ],
+        "sampling_source": "reimported_glb_evaluated_pose_bone_heads",
+        "source_frame_count": 54,
+        "blender_frame_start": 1,
+        "blender_frame_end": 54,
+        "sampled_points_per_side": {
+          "left": 16,
+          "right": 16
+        },
+        "missing_finger_bones": [],
+        "reasons": []
+      },
+      "root_drift": {
+        "status": "PASS",
+        "reasons": [],
+        "frame_count": 54,
+        "normalization_scale": 2.516264878506623,
+        "maximum_normalized_drift": {
+          "expected": 0.0,
+          "armature": 0.0,
+          "hips": 0.0
+        },
+        "threshold": 0.0001,
+        "root_motion_policy": "IN_PLACE"
+      },
+      "motion_stability": {
+        "status": "REVIEW",
+        "reasons": [
+          "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+          "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+        ],
+        "evaluated_every_frame": true,
+        "frame_count": 54,
+        "channel_count": 43,
+        "body": {
+          "status": "PASS",
+          "reasons": [],
+          "frame_count": 54,
+          "channel_count": 11,
+          "fps": 30.01667594909668,
+          "metric": "quaternion_neighbour_midpoint_residual",
+          "mean_degrees": 0.040135764328744855,
+          "p95_degrees": 0.16071013237049,
+          "maximum_degrees": 0.5121476088227502,
+          "worst_frame": 14,
+          "worst_channel": "RightUpperArm",
+          "worst_samples": [
+            {
+              "frame": 14,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.5121476088227502,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 4,
+              "channel": "LeftForeArm",
+              "residual_degrees": 0.47809592590416256,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 10,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.44995019957760596,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 13,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.43556034233828933,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 14,
+              "channel": "RightForeArm",
+              "residual_degrees": 0.4200379489155699,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 9,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.39805279428340595,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 15,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.3824689532416372,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 15,
+              "channel": "RightForeArm",
+              "residual_degrees": 0.37099194850366146,
+              "state": "UNCLASSIFIED"
+            }
+          ],
+          "maximum_limit_exceeded_frame_indices": [],
+          "state_metrics": {},
+          "thresholds": {
+            "p95_degrees": 3.0,
+            "maximum_degrees": 12.0
+          }
+        },
+        "hands_and_fingers": {
+          "status": "FAIL",
+          "reasons": [
+            "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+            "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+          ],
+          "frame_count": 54,
+          "channel_count": 32,
+          "fps": 30.01667594909668,
+          "metric": "quaternion_neighbour_midpoint_residual",
+          "mean_degrees": 2.760704049550983,
+          "p95_degrees": 9.77564271083853,
+          "maximum_degrees": 24.76251777579858,
+          "worst_frame": 10,
+          "worst_channel": "LeftIndex2",
+          "worst_samples": [
+            {
+              "frame": 10,
+              "channel": "LeftIndex2",
+              "residual_degrees": 24.76251777579858,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftRing2",
+              "residual_degrees": 24.384133707902095,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftIndex2",
+              "residual_degrees": 21.539116526325092,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 10,
+              "channel": "LeftRing2",
+              "residual_degrees": 19.37348664138634,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftThumb1",
+              "residual_degrees": 18.59014672093233,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 11,
+              "channel": "LeftRing2",
+              "residual_degrees": 18.558495640463285,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 10,
+              "channel": "LeftRing1",
+              "residual_degrees": 18.21025401220447,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftRing1",
+              "residual_degrees": 18.052020005050647,
+              "state": "SOURCE_ACTIVE"
+            }
+          ],
+          "maximum_limit_exceeded_frame_indices": [
+            5,
+            8,
+            9,
+            10,
+            11,
+            14,
+            19,
+            27,
+            29,
+            31,
+            38,
+            40
+          ],
+          "state_metrics": {
+            "SOURCE_ACTIVE": {
+              "sample_count": 1536,
+              "maximum_degrees": 24.76251777579858,
+              "p95_degrees": 9.537560220071489,
+              "maximum_limit_exceeded_count": 38
+            },
+            "NEUTRAL": {
+              "sample_count": 0,
+              "maximum_degrees": null,
+              "p95_degrees": null,
+              "maximum_limit_exceeded_count": 0
+            },
+            "TRANSITION": {
+              "sample_count": 128,
+              "maximum_degrees": 17.891904479180717,
+              "p95_degrees": 11.040027301150134,
+              "maximum_limit_exceeded_count": 5
+            },
+            "MISSING": {
+              "sample_count": 0,
+              "maximum_degrees": null,
+              "p95_degrees": null,
+              "maximum_limit_exceeded_count": 0
+            }
+          },
+          "thresholds": {
+            "p95_degrees": 3.0,
+            "maximum_degrees": 12.0
+          }
+        }
+      },
+      "required_channel_coverage": {
+        "status": "PASS",
+        "reasons": [],
+        "required_varying_channels": [
+          "Chest",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftIndex1",
+          "LeftIndex2",
+          "LeftIndex3",
+          "LeftLittle1",
+          "LeftLittle2",
+          "LeftLittle3",
+          "LeftMiddle1",
+          "LeftMiddle2",
+          "LeftMiddle3",
+          "LeftRing1",
+          "LeftRing2",
+          "LeftRing3",
+          "LeftThumb1",
+          "LeftThumb2",
+          "LeftThumb3",
+          "LeftUpperArm",
+          "RightForeArm",
+          "RightHand",
+          "RightIndex1",
+          "RightIndex2",
+          "RightIndex3",
+          "RightLittle1",
+          "RightLittle2",
+          "RightLittle3",
+          "RightMiddle1",
+          "RightMiddle2",
+          "RightMiddle3",
+          "RightRing1",
+          "RightRing2",
+          "RightRing3",
+          "RightThumb1",
+          "RightThumb2",
+          "RightThumb3",
+          "RightUpperArm"
+        ],
+        "missing_varying_channels": [],
+        "constant_pose_nodes": [],
+        "animated_channel_count": 43,
+        "constant_pose_policy": "Constant joints may be represented by static glTF node transforms; geometric retargeting checks still apply."
+      },
+      "neutral_finger_shape": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false,
+        "evaluated_all_fully_neutral_frames": true,
+        "sample_count": 0,
+        "worst_sample": null,
+        "fail_frame_indices": [],
+        "review_frame_indices": []
+      },
+      "mesh_collision": {
+        "status": "REVIEW",
+        "reasons": [
+          "Shallow penetration or unsupported surface boundaries require review in 1 frame(s)."
+        ],
+        "mesh_aware": true,
+        "check_name": "evaluated_hand_vertices_to_weighted_torso_surface",
+        "evaluated_every_input_frame": true,
+        "source_frame_count": 54,
+        "evaluated_frames": 54,
+        "hand_vertex_count": 3562,
+        "torso_triangle_count": 5040,
+        "tested_near_torso_samples": 95,
+        "unsupported_near_torso_samples": 96,
+        "minimum_signed_clearance_shoulder_widths": 0.05667074363734194,
+        "fail_frame_indices": [],
+        "review_frame_indices": [
+          1
+        ],
+        "thresholds": {
+          "review_penetration_shoulder_widths": 0.005,
+          "fail_penetration_shoulder_widths": 0.025
+        },
+        "limitations": [
+          "Checks exported hand vertices against selected torso triangles, not continuous triangle-triangle collision or sign-language meaning.",
+          "Intentional surface contact is allowed; uncertain open borders require review."
+        ]
+      },
+      "mesh_contact_correction": {
+        "status": "PASS",
+        "method": "measured_torso_clearance_with_length_preserving_arm_IK",
+        "reasons": [],
+        "source_frame_count": 54,
+        "evaluated_every_input_frame": true,
+        "corrected_samples": [],
+        "unsupported_samples": [],
+        "unreachable_samples": [],
+        "projected_endpoint_samples": [],
+        "maximum_shift_shoulder_widths": 0.0,
+        "maximum_endpoint_error_avatar_units": 0.0,
+        "preserves_finger_pose": true,
+        "preserves_arm_lengths": true,
+        "post_export_mesh_validation_required": true,
+        "correction_pass_count": 1,
+        "maximum_cumulative_shift_shoulder_widths": 0.3
+      },
+      "finger_continuity_correction": {
+        "status": "REVIEW",
+        "reasons": [
+          "Finger recovery rotations were rate-limited; compare affected transitions with the source."
+        ],
+        "corrected_sample_count": 119,
+        "maximum_target_rotation_error_degrees": 16.054421037498088,
+        "sample_corrections": [
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 2.7898923033771736
+          },
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 2.1837762631559445
+          },
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 0.4165989728848322
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 6.99422942108987
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 6.148240667666685
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 2.6087385721917586
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 2.7414189483385956
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 0.3454101904582584
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 4.087652139712124
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 16.054421037498088
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 7.996510450880052
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 7.085157192003698
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing2",
+            "target_error_degrees": 7.95119379726446
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 7.998120511273721
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky3",
+            "target_error_degrees": 8.597287951954923
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 0.224135206776041
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 4.011031536957062
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 9.703746676484505
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing2",
+            "target_error_degrees": 9.063225559442568
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 10.179392583508264
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky2",
+            "target_error_degrees": 1.9292129213631293
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky3",
+            "target_error_degrees": 8.10829289584466
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 4.06681521479902
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex1",
+            "target_error_degrees": 3.6584462675915455
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 7.81611718269107
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 7.939167002440269
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle1",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle2",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 7.79996599825248
+          }
+        ],
+        "reference_fps": 25.0,
+        "maximum_step_degrees_at_reference_fps": 24.0
+      },
+      "finger_direction_conditioning": {
+        "method": "palm_local_isolated_spike_rejection_and_centered_direction_smoothing",
+        "status": "REVIEW",
+        "observed_samples": 1620,
+        "interpolated_samples": 0,
+        "corrected_sample_count": 17,
+        "sample_corrections": [
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 0,
+            "segment": 2,
+            "adjustment_degrees": 55.611352275884876
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 1,
+            "segment": 1,
+            "adjustment_degrees": 48.63675699579786
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 49.65655891438085
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 53.466145574612156
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 53.294081670787214
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 2,
+            "segment": 1,
+            "adjustment_degrees": 56.77221084687908
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 2,
+            "segment": 1,
+            "adjustment_degrees": 51.60011839763544
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 2,
+            "segment": 2,
+            "adjustment_degrees": 49.47236644164882
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 2,
+            "segment": 2,
+            "adjustment_degrees": 50.69732204598319
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 3,
+            "segment": 0,
+            "adjustment_degrees": 53.6466632697886
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 56.133585570086545
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 60.21841911443332
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 58.703693769072586
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 3,
+            "segment": 2,
+            "adjustment_degrees": 54.22686258307187
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 4,
+            "segment": 1,
+            "adjustment_degrees": 60.97842535765214
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 4,
+            "segment": 1,
+            "adjustment_degrees": 62.33993540274971
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 4,
+            "segment": 2,
+            "adjustment_degrees": 56.8294365428891
+          }
+        ],
+        "observation_mask_preserved": true
+      },
+      "arm_temporal_conditioning": {
+        "status": "PASS",
+        "reasons": [],
+        "adjusted_sample_count": 0,
+        "maximum_adjustment_degrees": 3.0,
+        "sample_corrections": [],
+        "clip_endpoints_preserved": true,
+        "channels": [
+          "LeftUpperArm",
+          "LeftForeArm",
+          "RightUpperArm",
+          "RightForeArm"
+        ],
+        "maximum_wrist_shift_avatar_units": 0.0,
+        "finger_and_palm_orientations_preserved": true,
+        "arm_lengths_preserved": true
+      },
+      "skin_weight_preparation": {
+        "maximum_influences": 4,
+        "vertices_reduced": 248,
+        "normalized_before_contact_correction": true,
+        "source_avatar_modified": false
+      },
+      "source_depth": {
+        "status": "PASS",
+        "reasons": [],
+        "method": "observed_canonical_upperarm_forearm_depth_scaled_by_avatar_segment_lengths",
+        "monocular_estimate": true,
+        "image_plane_trajectory_unchanged": true,
+        "sides": {
+          "Left": {
+            "observed_frames": 54,
+            "interpolated_frames": 0,
+            "held_frames": 0,
+            "held_frame_indices": [],
+            "median_wrist_depth": 24.380185119595783
+          },
+          "Right": {
+            "observed_frames": 54,
+            "interpolated_frames": 0,
+            "held_frames": 0,
+            "held_frame_indices": [],
+            "median_wrist_depth": 27.206245950064847
+          }
+        }
+      },
+      "arm_pole_conditioning": {
+        "method": "interpolate_geometrically_ambiguous_poles",
+        "reliability_radius_ratio": 0.08,
+        "sides": {
+          "Left": {
+            "conditioned_frames": 0,
+            "minimum_pole_radius": 3.8990228271484377,
+            "minimum_observed_radius": 26.495002584215463,
+            "spans": [],
+            "unanchored_spans": 0
+          },
+          "Right": {
+            "conditioned_frames": 0,
+            "minimum_pole_radius": 3.8978060913085937,
+            "minimum_observed_radius": 25.552865182943545,
+            "spans": [],
+            "unanchored_spans": 0
+          }
+        }
+      },
+      "validation_run_id": "b5bd4ef17af745c381829f8d71c08389",
+      "validated_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+      "motion_sha256": "f93729e9953a21ee9b4ab95d4ed962500605d3444a90c5305549eab051e66724",
+      "ik_report_sha256": "e667628fd3b4dc2224b9aa1879ec8bdc07124c5a14d8fcb07f8dbdef01b4f716",
+      "validator_returncode": 0,
+      "validated_at": "2026-09-11T10:56:54.509093Z",
+      "khronos_validation": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "report_readable": true,
+        "validator_version": "2.0.0-dev.3.10",
+        "counts": {
+          "numErrors": 0,
+          "numWarnings": 0,
+          "numInfos": 0,
+          "numHints": 0
+        },
+        "messages": [],
+        "messages_truncated": false,
+        "warning_codes": {},
+        "allowlisted_warning_explanations": [],
+        "unallowlisted_warning_codes": [],
+        "invalid_allowlist_codes": [],
+        "reasons": [],
+        "validator_returncode": 0,
+        "validated_glb_sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55",
+        "validated_at": "2026-09-11T10:56:55.089561Z",
+        "asset_info": {
+          "version": "2.0",
+          "generator": "Khronos glTF Blender I/O v4.5.51",
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "resources": [
+            {
+              "pointer": "/buffers/0",
+              "mimeType": "application/gltf-buffer",
+              "storage": "glb",
+              "byteLength": 58495404
+            },
+            {
+              "pointer": "/images/0",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 4096,
+                "height": 4096,
+                "format": "rgb",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/1",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 4096,
+                "height": 4096,
+                "format": "rgb",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/2",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 4096,
+                "height": 4096,
+                "format": "rgb",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/3",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 4096,
+                "height": 4096,
+                "format": "rgb",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            },
+            {
+              "pointer": "/images/4",
+              "mimeType": "image/png",
+              "storage": "buffer-view",
+              "image": {
+                "width": 2048,
+                "height": 2048,
+                "format": "rgba",
+                "primaries": "srgb",
+                "transfer": "srgb",
+                "bits": 8
+              }
+            }
+          ],
+          "animationCount": 1,
+          "materialCount": 2,
+          "hasMorphTargets": false,
+          "hasSkins": true,
+          "hasTextures": true,
+          "hasDefaultScene": true,
+          "drawCallCount": 7,
+          "totalVertexCount": 33140,
+          "totalTriangleCount": 50266,
+          "maxUVs": 1,
+          "maxInfluences": 4,
+          "maxAttributes": 6
+        }
+      }
+    },
+    "source_avatar_validation": {
+      "status": "PASS",
+      "reasons": [],
+      "source_frame_count": 54,
+      "avatar_frame_count": 54,
+      "source_reported_frame_count": 54,
+      "avatar_reported_frame_count": 54,
+      "expected_comparison_frame_count": 54,
+      "comparison_frame_count": 54,
+      "comparison_reopened_frame_count": 54,
+      "comparison_complete": true,
+      "source_fps": 30.016675931072818,
+      "avatar_fps": 30.01668927923926,
+      "comparison_reopened_fps": 30.017,
+      "source_timeline_max_error_seconds": 0.0009444444444446365,
+      "avatar_timeline_max_error_seconds": 2.220446049250313e-16,
+      "source_duration_seconds": 1.7656851851851851,
+      "avatar_duration_seconds": 1.7656843999999998,
+      "duration_difference_seconds": 7.851851853146741e-07,
+      "technical_motion_match": "See the matching .glb_validation.json report for endpoint and finger-direction metrics.",
+      "isl_verified": false,
+      "isl_verification_status": "PENDING_SIGNER_REVIEW",
+      "validation_run_id": "7c83242568234fd9aa71df9227818b63",
+      "source_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "working_video_sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea",
+      "original_source_frame_count": 54,
+      "timing_normalized": false,
+      "comparison_video_sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4"
+    },
+    "neutral_hand_validation": {
+      "status": "PASS",
+      "reasons": [],
+      "left_hand": {
+        "mapped_finger_bones": 15,
+        "maximum_correction_degrees": 16.955604560955635,
+        "mean_correction_degrees": 6.61673593807455,
+        "minimum_non_thumb_spread_degrees": 0.0888675032749099,
+        "minimum_non_thumb_chain_clearance": 2.251437343047577,
+        "minimum_non_thumb_chain_clearance_normalized": 0.251106824965807,
+        "maximum_fk_straightness_error_degrees": 4.353408482428142e-06,
+        "excessive_flexion": false,
+        "finger_intersection_risk": false,
+        "impossible_joint_orientation": false
+      },
+      "right_hand": {
+        "mapped_finger_bones": 15,
+        "maximum_correction_degrees": 11.593029524831923,
+        "mean_correction_degrees": 5.8752658049561015,
+        "minimum_non_thumb_spread_degrees": 0.04667388582101941,
+        "minimum_non_thumb_chain_clearance": 2.193542512547489,
+        "minimum_non_thumb_chain_clearance_normalized": 0.24355302702457401,
+        "maximum_fk_straightness_error_degrees": 2.091309789151873e-06,
+        "excessive_flexion": false,
+        "finger_intersection_risk": false,
+        "impossible_joint_orientation": false
+      },
+      "left_right_mean_correction_delta_degrees": 0.7414701331184483
+    },
+    "tracking_summary": {
+      "frame_count": 54,
+      "fps": 30.01667594909668,
+      "body_tracking_availability": 1.0,
+      "left_hand_availability": 1.0,
+      "right_hand_availability": 1.0,
+      "longest_missing_hand_sequence_frames": 0,
+      "longest_missing_hand_sequence_seconds": 0.0,
+      "left_right_swap_events": 0,
+      "hand_assignment_ambiguous_frames": [],
+      "left_wrong_side_frames": [],
+      "right_wrong_side_frames": [],
+      "left_missing_intervals": [],
+      "right_missing_intervals": []
+    },
+    "motion_quality": {
+      "initial_hand_pose": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false
+      },
+      "ending_hand_pose": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false
+      },
+      "neutral_finger_shape": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": false,
+        "evaluated_all_fully_neutral_frames": true,
+        "sample_count": 0,
+        "worst_sample": null,
+        "fail_frame_indices": [],
+        "review_frame_indices": []
+      },
+      "finger_motion": {
+        "status": "PASS",
+        "reasons": [],
+        "evaluated_every_frame_transition": true,
+        "frame_count": 54,
+        "channel_count": 30,
+        "sample_count": 1590,
+        "source_supported_transition_count": 1470,
+        "maximum_step_degrees": 19.98902214174011,
+        "maximum_normalized_step_degrees": 24.000160006717255,
+        "p99_normalized_step_degrees": 24.000061688617777,
+        "maximum_unexplained_step_degrees": 24.00009986794491,
+        "worst_frame": 5,
+        "worst_channel": "LeftRing2",
+        "fail_frame_indices": [],
+        "review_frame_indices": [],
+        "thresholds": {
+          "reference_fps": 25.0,
+          "review_step_degrees": 30.0,
+          "fail_unexplained_step_degrees": 45.0
+        }
+      },
+      "finger_retargeting": {
+        "status": "PASS",
+        "reasons": [],
+        "sample_count": 1500,
+        "mean_direction_error_degrees": 0.3691863375110315,
+        "p95_direction_error_degrees": 2.57902080809159,
+        "source_observed_samples": 1620,
+        "excluded_neutral_or_transition_samples": 120,
+        "neutral_and_transition_coverage": "Checked independently by all-frame continuity and neutral shape validation."
+      },
+      "palm_orientation": {
+        "status": "PASS",
+        "reasons": [],
+        "applicable": true,
+        "sample_count": 100,
+        "invalid_active_basis_count": 0,
+        "mean_baked_target_error_degrees": 0.0043046608959191185,
+        "p95_baked_target_error_degrees": 0.01211507854082212,
+        "max_baked_target_error_degrees": 0.014594416238180377,
+        "max_baked_target_error_side": "Right",
+        "max_baked_target_error_frame": 26,
+        "target_step_sample_count": 98,
+        "max_target_step_degrees": 18.226209089478044,
+        "p95_target_step_degrees": 4.039372771779658,
+        "max_target_step_side": "Right",
+        "max_target_step_frame": 6,
+        "max_baked_step_degrees": 18.226156235054336,
+        "p95_baked_step_degrees": 4.039344512538788,
+        "max_baked_step_side": "Right",
+        "max_baked_step_frame": 6
+      },
+      "retargeting": {
+        "status": "PASS",
+        "reasons": [],
+        "sample_count": 108,
+        "mean_normalized_wrist_error": 8.266632577387601e-05,
+        "p95_normalized_wrist_error": 9.88681260684013e-05,
+        "max_normalized_wrist_error": 0.00010363908267488896
+      },
+      "motion_stability": {
+        "status": "REVIEW",
+        "reasons": [
+          "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+          "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+        ],
+        "evaluated_every_frame": true,
+        "frame_count": 54,
+        "channel_count": 43,
+        "body": {
+          "status": "PASS",
+          "reasons": [],
+          "frame_count": 54,
+          "channel_count": 11,
+          "fps": 30.01667594909668,
+          "metric": "quaternion_neighbour_midpoint_residual",
+          "mean_degrees": 0.040135764328744855,
+          "p95_degrees": 0.16071013237049,
+          "maximum_degrees": 0.5121476088227502,
+          "worst_frame": 14,
+          "worst_channel": "RightUpperArm",
+          "worst_samples": [
+            {
+              "frame": 14,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.5121476088227502,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 4,
+              "channel": "LeftForeArm",
+              "residual_degrees": 0.47809592590416256,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 10,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.44995019957760596,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 13,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.43556034233828933,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 14,
+              "channel": "RightForeArm",
+              "residual_degrees": 0.4200379489155699,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 9,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.39805279428340595,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 15,
+              "channel": "RightUpperArm",
+              "residual_degrees": 0.3824689532416372,
+              "state": "UNCLASSIFIED"
+            },
+            {
+              "frame": 15,
+              "channel": "RightForeArm",
+              "residual_degrees": 0.37099194850366146,
+              "state": "UNCLASSIFIED"
+            }
+          ],
+          "maximum_limit_exceeded_frame_indices": [],
+          "state_metrics": {},
+          "thresholds": {
+            "p95_degrees": 3.0,
+            "maximum_degrees": 12.0
+          }
+        },
+        "hands_and_fingers": {
+          "status": "FAIL",
+          "reasons": [
+            "Maximum one-frame rotation residual 24.7625 degrees exceeds 12.0000.",
+            "P95 one-frame rotation residual 9.7756 degrees exceeds 3.0000."
+          ],
+          "frame_count": 54,
+          "channel_count": 32,
+          "fps": 30.01667594909668,
+          "metric": "quaternion_neighbour_midpoint_residual",
+          "mean_degrees": 2.760704049550983,
+          "p95_degrees": 9.77564271083853,
+          "maximum_degrees": 24.76251777579858,
+          "worst_frame": 10,
+          "worst_channel": "LeftIndex2",
+          "worst_samples": [
+            {
+              "frame": 10,
+              "channel": "LeftIndex2",
+              "residual_degrees": 24.76251777579858,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftRing2",
+              "residual_degrees": 24.384133707902095,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftIndex2",
+              "residual_degrees": 21.539116526325092,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 10,
+              "channel": "LeftRing2",
+              "residual_degrees": 19.37348664138634,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftThumb1",
+              "residual_degrees": 18.59014672093233,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 11,
+              "channel": "LeftRing2",
+              "residual_degrees": 18.558495640463285,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 10,
+              "channel": "LeftRing1",
+              "residual_degrees": 18.21025401220447,
+              "state": "SOURCE_ACTIVE"
+            },
+            {
+              "frame": 8,
+              "channel": "LeftRing1",
+              "residual_degrees": 18.052020005050647,
+              "state": "SOURCE_ACTIVE"
+            }
+          ],
+          "maximum_limit_exceeded_frame_indices": [
+            5,
+            8,
+            9,
+            10,
+            11,
+            14,
+            19,
+            27,
+            29,
+            31,
+            38,
+            40
+          ],
+          "state_metrics": {
+            "SOURCE_ACTIVE": {
+              "sample_count": 1536,
+              "maximum_degrees": 24.76251777579858,
+              "p95_degrees": 9.537560220071489,
+              "maximum_limit_exceeded_count": 38
+            },
+            "NEUTRAL": {
+              "sample_count": 0,
+              "maximum_degrees": null,
+              "p95_degrees": null,
+              "maximum_limit_exceeded_count": 0
+            },
+            "TRANSITION": {
+              "sample_count": 128,
+              "maximum_degrees": 17.891904479180717,
+              "p95_degrees": 11.040027301150134,
+              "maximum_limit_exceeded_count": 5
+            },
+            "MISSING": {
+              "sample_count": 0,
+              "maximum_degrees": null,
+              "p95_degrees": null,
+              "maximum_limit_exceeded_count": 0
+            }
+          },
+          "thresholds": {
+            "p95_degrees": 3.0,
+            "maximum_degrees": 12.0
+          }
+        }
+      },
+      "root_drift": {
+        "status": "PASS",
+        "reasons": [],
+        "frame_count": 54,
+        "normalization_scale": 2.516264878506623,
+        "maximum_normalized_drift": {
+          "expected": 0.0,
+          "armature": 0.0,
+          "hips": 0.0
+        },
+        "threshold": 0.0001,
+        "root_motion_policy": "IN_PLACE"
+      },
+      "full_clip_collision": {
+        "schema_version": "1.0",
+        "check_name": "full_clip_torso_hand_clearance_proxy",
+        "status": "PASS",
+        "mesh_aware": false,
+        "evaluated_every_input_frame": true,
+        "coordinate_space_note": "Pose, palm, and finger points must share one Cartesian coordinate space; positive clearance follows cross(right-to-left shoulder, hips-to-shoulders).",
+        "frames": {
+          "total": 54,
+          "torso_frame_valid": 54,
+          "hand_observed": 54,
+          "evaluated": 54,
+          "central_region": 54,
+          "pass": 54,
+          "review": 0,
+          "fail": 0,
+          "torso_frame_coverage": 1.0,
+          "hand_observation_coverage": 1.0,
+          "evaluated_coverage": 1.0
+        },
+        "thresholds": {
+          "normalization": "per_frame_shoulder_width",
+          "central_half_width": 0.45,
+          "vertical_min": 0.0,
+          "vertical_max": 1.0,
+          "review_clearance": 0.04,
+          "fail_clearance": -0.08,
+          "minimum_evaluated_coverage": 0.9
+        },
+        "minimum_normalized_clearance": 0.42549260607586464,
+        "risky_frame_indices": [],
+        "review_frame_indices": [],
+        "fail_frame_indices": [],
+        "sides": {
+          "left": {
+            "observed_points": 864,
+            "central_points": 864,
+            "detailed_hand_frames": 54,
+            "pose_wrist_fallback_frames": 0,
+            "minimum_normalized_clearance": 0.42549260607586464,
+            "risky_frame_indices": [],
+            "fail_frame_indices": []
+          },
+          "right": {
+            "observed_points": 864,
+            "central_points": 864,
+            "detailed_hand_frames": 54,
+            "pose_wrist_fallback_frames": 0,
+            "minimum_normalized_clearance": 0.5517325292089627,
+            "risky_frame_indices": [],
+            "fail_frame_indices": []
+          }
+        },
+        "frame_results": [
+          {
+            "frame_index": 1,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.42549260607586464
+          },
+          {
+            "frame_index": 2,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.4400404845623523
+          },
+          {
+            "frame_index": 3,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.4945325764951659
+          },
+          {
+            "frame_index": 4,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5203225690515405
+          },
+          {
+            "frame_index": 5,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5122592363340623
+          },
+          {
+            "frame_index": 6,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5077721028708027
+          },
+          {
+            "frame_index": 7,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5061562174695536
+          },
+          {
+            "frame_index": 8,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5064821406228063
+          },
+          {
+            "frame_index": 9,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5063834040657982
+          },
+          {
+            "frame_index": 10,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5056650379964447
+          },
+          {
+            "frame_index": 11,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5040582838559885
+          },
+          {
+            "frame_index": 12,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5063777450577486
+          },
+          {
+            "frame_index": 13,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5115804723616696
+          },
+          {
+            "frame_index": 14,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5191301412096089
+          },
+          {
+            "frame_index": 15,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5251217314087335
+          },
+          {
+            "frame_index": 16,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5293598804259592
+          },
+          {
+            "frame_index": 17,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5321542814631881
+          },
+          {
+            "frame_index": 18,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5342021110937971
+          },
+          {
+            "frame_index": 19,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5357305283267314
+          },
+          {
+            "frame_index": 20,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5364155738213633
+          },
+          {
+            "frame_index": 21,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5363615586510784
+          },
+          {
+            "frame_index": 22,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5359009856723652
+          },
+          {
+            "frame_index": 23,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5353100956678244
+          },
+          {
+            "frame_index": 24,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5347008722451302
+          },
+          {
+            "frame_index": 25,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5340598121836132
+          },
+          {
+            "frame_index": 26,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5334595653290454
+          },
+          {
+            "frame_index": 27,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5330198362521751
+          },
+          {
+            "frame_index": 28,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5327879202468774
+          },
+          {
+            "frame_index": 29,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5328290192653711
+          },
+          {
+            "frame_index": 30,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5331353259603436
+          },
+          {
+            "frame_index": 31,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5336823901086893
+          },
+          {
+            "frame_index": 32,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.534341272817316
+          },
+          {
+            "frame_index": 33,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5349535614725413
+          },
+          {
+            "frame_index": 34,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5355130988293543
+          },
+          {
+            "frame_index": 35,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5359932326012085
+          },
+          {
+            "frame_index": 36,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5363628290365051
+          },
+          {
+            "frame_index": 37,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.536447599304725
+          },
+          {
+            "frame_index": 38,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5362035242019356
+          },
+          {
+            "frame_index": 39,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5356095391634126
+          },
+          {
+            "frame_index": 40,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.534735767966557
+          },
+          {
+            "frame_index": 41,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5335792456685032
+          },
+          {
+            "frame_index": 42,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5322447642595619
+          },
+          {
+            "frame_index": 43,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5308716022058158
+          },
+          {
+            "frame_index": 44,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5296163314880526
+          },
+          {
+            "frame_index": 45,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5284303180708945
+          },
+          {
+            "frame_index": 46,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5271208014652725
+          },
+          {
+            "frame_index": 47,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5255502295200972
+          },
+          {
+            "frame_index": 48,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5236578474827943
+          },
+          {
+            "frame_index": 49,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5215825640484806
+          },
+          {
+            "frame_index": 50,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5195542047392342
+          },
+          {
+            "frame_index": 51,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5178522957054807
+          },
+          {
+            "frame_index": 52,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5166633000272528
+          },
+          {
+            "frame_index": 53,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5159790100252744
+          },
+          {
+            "frame_index": 54,
+            "status": "PASS",
+            "reason": "clearance_above_review_threshold",
+            "central_point_count": 32,
+            "minimum_normalized_clearance": 0.5156576592518919
+          }
+        ],
+        "warnings": [],
+        "limitations": [
+          "This is an anatomical landmark proxy, not a mesh-aware collision test.",
+          "It does not test hand-hand, finger-finger, clothing, skinning, or geometry between landmarks.",
+          "Monocular landmark depth is ambiguous during occlusion and intentional body contact.",
+          "A PASS cannot by itself certify a production GLB as collision free."
+        ],
+        "sampling_source": "reimported_glb_evaluated_pose_bone_heads",
+        "source_frame_count": 54,
+        "blender_frame_start": 1,
+        "blender_frame_end": 54,
+        "sampled_points_per_side": {
+          "left": 16,
+          "right": 16
+        },
+        "missing_finger_bones": [],
+        "reasons": []
+      },
+      "mesh_collision": {
+        "status": "REVIEW",
+        "reasons": [
+          "Shallow penetration or unsupported surface boundaries require review in 1 frame(s)."
+        ],
+        "mesh_aware": true,
+        "check_name": "evaluated_hand_vertices_to_weighted_torso_surface",
+        "evaluated_every_input_frame": true,
+        "source_frame_count": 54,
+        "evaluated_frames": 54,
+        "hand_vertex_count": 3562,
+        "torso_triangle_count": 5040,
+        "tested_near_torso_samples": 95,
+        "unsupported_near_torso_samples": 96,
+        "minimum_signed_clearance_shoulder_widths": 0.05667074363734194,
+        "fail_frame_indices": [],
+        "review_frame_indices": [
+          1
+        ],
+        "thresholds": {
+          "review_penetration_shoulder_widths": 0.005,
+          "fail_penetration_shoulder_widths": 0.025
+        },
+        "limitations": [
+          "Checks exported hand vertices against selected torso triangles, not continuous triangle-triangle collision or sign-language meaning.",
+          "Intentional surface contact is allowed; uncertain open borders require review."
+        ]
+      },
+      "mesh_contact_correction": {
+        "status": "PASS",
+        "method": "measured_torso_clearance_with_length_preserving_arm_IK",
+        "reasons": [],
+        "source_frame_count": 54,
+        "evaluated_every_input_frame": true,
+        "corrected_samples": [],
+        "unsupported_samples": [],
+        "unreachable_samples": [],
+        "projected_endpoint_samples": [],
+        "maximum_shift_shoulder_widths": 0.0,
+        "maximum_endpoint_error_avatar_units": 0.0,
+        "preserves_finger_pose": true,
+        "preserves_arm_lengths": true,
+        "post_export_mesh_validation_required": true,
+        "correction_pass_count": 1,
+        "maximum_cumulative_shift_shoulder_widths": 0.3
+      },
+      "finger_continuity_correction": {
+        "status": "REVIEW",
+        "reasons": [
+          "Finger recovery rotations were rate-limited; compare affected transitions with the source."
+        ],
+        "corrected_sample_count": 119,
+        "maximum_target_rotation_error_degrees": 16.054421037498088,
+        "sample_corrections": [
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 2.7898923033771736
+          },
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 2.1837762631559445
+          },
+          {
+            "frame": 2,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 0.4165989728848322
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 6.99422942108987
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 6.148240667666685
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 2.6087385721917586
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 2.7414189483385956
+          },
+          {
+            "frame": 4,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 0.3454101904582584
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 4.087652139712124
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 16.054421037498088
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 7.996510450880052
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 7.085157192003698
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing2",
+            "target_error_degrees": 7.95119379726446
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 7.998120511273721
+          },
+          {
+            "frame": 5,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky3",
+            "target_error_degrees": 8.597287951954923
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 0.224135206776041
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 4.011031536957062
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 9.703746676484505
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing2",
+            "target_error_degrees": 9.063225559442568
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandRing3",
+            "target_error_degrees": 10.179392583508264
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky2",
+            "target_error_degrees": 1.9292129213631293
+          },
+          {
+            "frame": 6,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandPinky3",
+            "target_error_degrees": 8.10829289584466
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb1",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb2",
+            "target_error_degrees": 4.06681521479902
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandThumb3",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex1",
+            "target_error_degrees": 3.6584462675915455
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex2",
+            "target_error_degrees": 7.81611718269107
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandIndex3",
+            "target_error_degrees": 7.939167002440269
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle1",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle2",
+            "target_error_degrees": 4.01109723987399
+          },
+          {
+            "frame": 7,
+            "side": "Left",
+            "bone": "mixamorig9:LeftHandMiddle3",
+            "target_error_degrees": 7.79996599825248
+          }
+        ],
+        "reference_fps": 25.0,
+        "maximum_step_degrees_at_reference_fps": 24.0
+      },
+      "finger_direction_conditioning": {
+        "method": "palm_local_isolated_spike_rejection_and_centered_direction_smoothing",
+        "status": "REVIEW",
+        "observed_samples": 1620,
+        "interpolated_samples": 0,
+        "corrected_sample_count": 17,
+        "sample_corrections": [
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 0,
+            "segment": 2,
+            "adjustment_degrees": 55.611352275884876
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 1,
+            "segment": 1,
+            "adjustment_degrees": 48.63675699579786
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 49.65655891438085
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 53.466145574612156
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 1,
+            "segment": 2,
+            "adjustment_degrees": 53.294081670787214
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 2,
+            "segment": 1,
+            "adjustment_degrees": 56.77221084687908
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 2,
+            "segment": 1,
+            "adjustment_degrees": 51.60011839763544
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 2,
+            "segment": 2,
+            "adjustment_degrees": 49.47236644164882
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 2,
+            "segment": 2,
+            "adjustment_degrees": 50.69732204598319
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 3,
+            "segment": 0,
+            "adjustment_degrees": 53.6466632697886
+          },
+          {
+            "frame": 27,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 56.133585570086545
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 60.21841911443332
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 3,
+            "segment": 1,
+            "adjustment_degrees": 58.703693769072586
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 3,
+            "segment": 2,
+            "adjustment_degrees": 54.22686258307187
+          },
+          {
+            "frame": 31,
+            "side": 0,
+            "finger": 4,
+            "segment": 1,
+            "adjustment_degrees": 60.97842535765214
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 4,
+            "segment": 1,
+            "adjustment_degrees": 62.33993540274971
+          },
+          {
+            "frame": 38,
+            "side": 0,
+            "finger": 4,
+            "segment": 2,
+            "adjustment_degrees": 56.8294365428891
+          }
+        ],
+        "observation_mask_preserved": true
+      },
+      "skin_weight_preparation": {
+        "maximum_influences": 4,
+        "vertices_reduced": 248,
+        "normalized_before_contact_correction": true,
+        "source_avatar_modified": false
+      },
+      "required_channel_coverage": {
+        "status": "PASS",
+        "reasons": [],
+        "required_varying_channels": [
+          "Chest",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftIndex1",
+          "LeftIndex2",
+          "LeftIndex3",
+          "LeftLittle1",
+          "LeftLittle2",
+          "LeftLittle3",
+          "LeftMiddle1",
+          "LeftMiddle2",
+          "LeftMiddle3",
+          "LeftRing1",
+          "LeftRing2",
+          "LeftRing3",
+          "LeftThumb1",
+          "LeftThumb2",
+          "LeftThumb3",
+          "LeftUpperArm",
+          "RightForeArm",
+          "RightHand",
+          "RightIndex1",
+          "RightIndex2",
+          "RightIndex3",
+          "RightLittle1",
+          "RightLittle2",
+          "RightLittle3",
+          "RightMiddle1",
+          "RightMiddle2",
+          "RightMiddle3",
+          "RightRing1",
+          "RightRing2",
+          "RightRing3",
+          "RightThumb1",
+          "RightThumb2",
+          "RightThumb3",
+          "RightUpperArm"
+        ],
+        "missing_varying_channels": [],
+        "constant_pose_nodes": [],
+        "animated_channel_count": 43,
+        "constant_pose_policy": "Constant joints may be represented by static glTF node transforms; geometric retargeting checks still apply."
+      },
+      "source_depth": {
+        "status": "PASS",
+        "reasons": [],
+        "method": "observed_canonical_upperarm_forearm_depth_scaled_by_avatar_segment_lengths",
+        "monocular_estimate": true,
+        "image_plane_trajectory_unchanged": true,
+        "sides": {
+          "Left": {
+            "observed_frames": 54,
+            "interpolated_frames": 0,
+            "held_frames": 0,
+            "held_frame_indices": [],
+            "median_wrist_depth": 24.380185119595783
+          },
+          "Right": {
+            "observed_frames": 54,
+            "interpolated_frames": 0,
+            "held_frames": 0,
+            "held_frame_indices": [],
+            "median_wrist_depth": 27.206245950064847
+          }
+        }
+      },
+      "arm_pole_conditioning": {
+        "method": "interpolate_geometrically_ambiguous_poles",
+        "reliability_radius_ratio": 0.08,
+        "sides": {
+          "Left": {
+            "conditioned_frames": 0,
+            "minimum_pole_radius": 3.8990228271484377,
+            "minimum_observed_radius": 26.495002584215463,
+            "spans": [],
+            "unanchored_spans": 0
+          },
+          "Right": {
+            "conditioned_frames": 0,
+            "minimum_pole_radius": 3.8978060913085937,
+            "minimum_observed_radius": 25.552865182943545,
+            "spans": [],
+            "unanchored_spans": 0
+          }
+        }
+      },
+      "arm_temporal_conditioning": {
+        "status": "PASS",
+        "reasons": [],
+        "adjusted_sample_count": 0,
+        "maximum_adjustment_degrees": 3.0,
+        "sample_corrections": [],
+        "clip_endpoints_preserved": true,
+        "channels": [
+          "LeftUpperArm",
+          "LeftForeArm",
+          "RightUpperArm",
+          "RightForeArm"
+        ],
+        "maximum_wrist_shift_avatar_units": 0.0,
+        "finger_and_palm_orientations_preserved": true,
+        "arm_lengths_preserved": true
+      }
+    }
+  },
+  "isl_validation": {
+    "isl_verified": false,
+    "signer_verdict": "PENDING",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": null
+  },
+  "production": {
+    "production_status": "NOT_ELIGIBLE",
+    "production_eligible": false,
+    "engineering_candidate": false,
+    "release_gate": {
+      "schema_version": "1.1",
+      "checks": {
+        "technical_qc_pass": false,
+        "glb_validation_pass": false,
+        "glb_validation_run_id_present": true,
+        "glb_validation_hash_matches": true,
+        "khronos_validation_pass": true,
+        "khronos_validation_hash_matches": true,
+        "khronos_validator_version_present": true,
+        "khronos_num_errors_zero": true,
+        "source_avatar_validation_pass": true,
+        "source_avatar_validation_run_id_present": true,
+        "source_avatar_source_hash_matches": true,
+        "source_avatar_comparison_hash_matches": true,
+        "neutral_hand_calibration_pass": true,
+        "collision_metric_pass": true,
+        "collision_metric_full_clip": true,
+        "collision_metric_evaluated_coverage_complete": true,
+        "collision_metric_frame_count_matches": true,
+        "source_sha256_valid": true,
+        "glb_sha256_valid": true,
+        "signer_verdict_pass": false,
+        "isl_verified": false,
+        "reviewer_present": false,
+        "reviewed_at_valid": false,
+        "signer_signature_verified": false,
+        "review_source_hash_matches": true,
+        "review_glb_hash_matches": true,
+        "comparison_sha256_valid": true,
+        "review_comparison_hash_matches": true,
+        "collision_review_pass": false,
+        "provenance_verified": false,
+        "meaning_present": false,
+        "license_present": false,
+        "source_reference_present": false
+      },
+      "blockers": [
+        {
+          "code": "TECHNICAL_QC_PASS",
+          "gate": "ENGINEERING_CANDIDATE",
+          "message": "Technical QC must be PASS."
+        },
+        {
+          "code": "GLB_VALIDATION_PASS",
+          "gate": "ENGINEERING_CANDIDATE",
+          "message": "Fresh-import GLB validation must be PASS."
+        },
+        {
+          "code": "SIGNER_VERDICT_PASS",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "A qualified signer must record signer_verdict=PASS."
+        },
+        {
+          "code": "ISL_VERIFIED",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "The signer review must explicitly set isl_verified=true."
+        },
+        {
+          "code": "REVIEWER_PRESENT",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "The signer review must identify the reviewer."
+        },
+        {
+          "code": "REVIEWED_AT_VALID",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "The signer review needs a valid timezone-aware reviewed_at timestamp."
+        },
+        {
+          "code": "SIGNER_SIGNATURE_VERIFIED",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "The signer approval must have a valid Ed25519 signature from an active trusted reviewer key."
+        },
+        {
+          "code": "COLLISION_REVIEW_PASS",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "A full-clip collision review must be PASS."
+        },
+        {
+          "code": "PROVENANCE_VERIFIED",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "Source provenance must be explicitly verified."
+        },
+        {
+          "code": "MEANING_PRESENT",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "A verified sign meaning is required."
+        },
+        {
+          "code": "LICENSE_PRESENT",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "A source license or usage-rights statement is required."
+        },
+        {
+          "code": "SOURCE_REFERENCE_PRESENT",
+          "gate": "PRODUCTION_RELEASE",
+          "message": "A traceable source reference is required."
+        }
+      ],
+      "status": "NOT_ELIGIBLE",
+      "engineering_candidate": false,
+      "production_eligible": false
+    },
+    "is_active": true,
+    "database_indexed": false
+  },
+  "database_ingestion": {
+    "motion_table_source": "motion_identity",
+    "aliases_table_source": "retrieval.aliases",
+    "sources_table_source": "source",
+    "assets_table_source": "assets",
+    "technical_jsonb_source": "technical_validation",
+    "embedding_stored_in_metadata": false
+  },
+  "release_evidence": {
+    "source_video": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/source_video.mp4",
+      "exists": true,
+      "size_bytes": 373310,
+      "sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea"
+    },
+    "avatar": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/avatar.fbx",
+      "exists": true,
+      "size_bytes": 53660848,
+      "sha256": "b18c4641779d2e98f8a83b5a58acf39e1d630b6fd4c0ad2a7882cef61b3c57ff"
+    },
+    "pose": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/pose.pose.npz",
+      "exists": true,
+      "size_bytes": 103392,
+      "sha256": "93d24e06fe09aa05e1601fe57d9938d6d52b085f328a6cbda052c6abc8bbd7a5"
+    },
+    "motion": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/motion.motion.npz",
+      "exists": true,
+      "size_bytes": 52086,
+      "sha256": "f93729e9953a21ee9b4ab95d4ed962500605d3444a90c5305549eab051e66724"
+    },
+    "qc": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/qc.qc.json",
+      "exists": true,
+      "size_bytes": 49183,
+      "sha256": "0f7c9b65d9df1ea65ec47eef2a8cf8857653f477e610ec15542f32a4dc39894c"
+    },
+    "glb_validation": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/glb_validation.glb_validation.json",
+      "exists": true,
+      "size_bytes": 40126,
+      "sha256": "5bc9c141fd74b83db9ac734f8c3b240d17a87e46d2908c19f7892d8e00a55a15"
+    },
+    "khronos_validation": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/khronos_validation.khronos_validation.json",
+      "exists": true,
+      "size_bytes": 2756,
+      "sha256": "856ad1592b405304932b5b062714ab010761c5e427bf281dfcc5cebed54b652d"
+    },
+    "source_avatar_validation": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/source_avatar_validation.source_avatar_validation.json",
+      "exists": true,
+      "size_bytes": 1309,
+      "sha256": "4cbda4367ed443eb3853624250e7b896d8afbbd26801bbe5e0e16be7b27b6917"
+    },
+    "signer_review": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/signer_review.signer_review.json",
+      "exists": true,
+      "size_bytes": 1311,
+      "sha256": "79764fcb448eb45d8b07142b0277981af5b85b8aceae2ce017cafd2f7f525fc0"
+    },
+    "comparison_video": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/comparison_video.mp4",
+      "exists": true,
+      "size_bytes": 334856,
+      "sha256": "9c546b163810c556e3f014189705424e200a7dfa4ed6dce9c56e8ac76299c3f4"
+    },
+    "avatar_profile": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/avatar_profile.json",
+      "exists": true,
+      "size_bytes": 61948,
+      "sha256": "aefd52c05701e8b6e01c0fd7a67d5fb1ffa9ab49f128b0e5ea3e71fc7721cc24"
+    },
+    "bone_map": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/bone_map.json",
+      "exists": true,
+      "size_bytes": 2401,
+      "sha256": "7adf6aafef954ef9f9c96d5f497f8937c094ba953a35f7468fd00eb743fc14d8"
+    },
+    "neutral_hand_pose": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/neutral_hand_pose.json",
+      "exists": true,
+      "size_bytes": 11720,
+      "sha256": "9e4dd8650d939099700490c23eb42541ab055aaf92dc0a89ea482d035d18f45e"
+    },
+    "catalog_record": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/catalog_record.json",
+      "exists": true,
+      "size_bytes": 79,
+      "sha256": "95c585ce48a477ffa156b96bbe9a5af40be141cf7593ed71ad3e9ce5a9aaed79"
+    },
+    "video_preparation": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/video_preparation.json",
+      "exists": true,
+      "size_bytes": 11588,
+      "sha256": "f4d836ae8312a0aede746fae70de2923bbd06fd59f51b07430ccd3ac85a20917"
+    },
+    "working_video": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/working_video.mp4",
+      "exists": true,
+      "size_bytes": 373310,
+      "sha256": "de09fb7792d87104919ccc3c73cef218e8a2972b19e488ddbda22a113c7da1ea"
+    },
+    "ik_report": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/evidence/ik_report.ik_calibration.json",
+      "exists": true,
+      "size_bytes": 7574,
+      "sha256": "e667628fd3b4dc2224b9aa1879ec8bdc07124c5a14d8fcb07f8dbdef01b4f716"
+    },
+    "stable_glb": {
+      "path": "output/H/H.glb",
+      "exists": true,
+      "size_bytes": 58566048,
+      "sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55"
+    },
+    "run_glb": {
+      "path": "output/H/runs/7c83242568234fd9aa71df9227818b63/H.glb",
+      "exists": true,
+      "size_bytes": 58566048,
+      "sha256": "38e2f0d4e769a71c66ffaef2f98df7877c60f5ee5a542831de16ea51a850ba55"
+    }
+  }
+}

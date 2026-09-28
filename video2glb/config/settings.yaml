@@ -1,0 +1,31 @@
+avatar:
+  path: "./assets/character.fbx"
+
+blender:
+  executable: "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe"
+
+pose:
+  backend: "mediapipe_holistic"
+  model_path: "./models/holistic_landmarker.task"
+  min_face_detection_confidence: 0.5
+  min_pose_detection_confidence: 0.5
+  min_pose_landmarks_confidence: 0.5
+  min_hand_landmarks_confidence: 0.5
+
+processing:
+  preserve_source_fps: true
+  mirror_input: false
+  auto_trim: false
+  smoothing: true
+
+tracking:
+  body: true
+  hands: true
+  face: false
+
+output:
+  save_pose: true
+  save_motion: true
+  save_debug: true
+  save_intermediates: false
+  uppercase_output_dir: true

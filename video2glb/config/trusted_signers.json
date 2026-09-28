@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0",
+  "keys": {},
+  "note": "Provision active reviewer Ed25519 public keys here. Never store private keys in this repository."
+}

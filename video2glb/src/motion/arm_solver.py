@@ -1,0 +1,1 @@
+from src.motion.skeleton_solver import solve_motion_from_pose

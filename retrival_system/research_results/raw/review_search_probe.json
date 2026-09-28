@@ -1,0 +1,107 @@
+[
+  {
+    "request": {
+      "text": "train",
+      "domain": "railway",
+      "context": "passenger information",
+      "avatar_profile_id": "c29d8124-c7cd-4cbd-8ce0-d5f25434f19b",
+      "semantic": false
+    },
+    "http_status": 200,
+    "response": {
+      "query_id": "a05d3e94-fc9b-49d3-9d43-f664121151a3",
+      "status": "UNSUPPORTED",
+      "operational": false,
+      "candidates": [],
+      "trace": [
+        {
+          "method": "EXACT",
+          "candidates": 0
+        },
+        {
+          "method": "ALIAS",
+          "candidates": 0
+        },
+        {
+          "method": "FUZZY",
+          "candidates": 0,
+          "minimum": 0.2
+        }
+      ],
+      "ambiguous_stages": [],
+      "policy_version": "e5-trgm-review-v1",
+      "encoder_state": "READY",
+      "reason": "Approximate matches are review suggestions. Announcement playback requires a complete reviewed construction."
+    }
+  },
+  {
+    "request": {
+      "text": "arrive",
+      "domain": "railway",
+      "context": "passenger information",
+      "avatar_profile_id": "c29d8124-c7cd-4cbd-8ce0-d5f25434f19b",
+      "semantic": false
+    },
+    "http_status": 200,
+    "response": {
+      "query_id": "4c7927e2-f840-4878-aa44-84b50ee68484",
+      "status": "UNSUPPORTED",
+      "operational": false,
+      "candidates": [],
+      "trace": [
+        {
+          "method": "EXACT",
+          "candidates": 0
+        },
+        {
+          "method": "ALIAS",
+          "candidates": 0
+        },
+        {
+          "method": "FUZZY",
+          "candidates": 0,
+          "minimum": 0.2
+        }
+      ],
+      "ambiguous_stages": [],
+      "policy_version": "e5-trgm-review-v1",
+      "encoder_state": "READY",
+      "reason": "Approximate matches are review suggestions. Announcement playback requires a complete reviewed construction."
+    }
+  },
+  {
+    "request": {
+      "text": "platform",
+      "domain": "railway",
+      "context": "passenger information",
+      "avatar_profile_id": "c29d8124-c7cd-4cbd-8ce0-d5f25434f19b",
+      "semantic": false
+    },
+    "http_status": 200,
+    "response": {
+      "query_id": "9b4a18fe-f929-4ec1-aee6-65d5598fe6ee",
+      "status": "UNSUPPORTED",
+      "operational": false,
+      "candidates": [],
+      "trace": [
+        {
+          "method": "EXACT",
+          "candidates": 0
+        },
+        {
+          "method": "ALIAS",
+          "candidates": 0
+        },
+        {
+          "method": "FUZZY",
+          "candidates": 0,
+          "minimum": 0.2
+        }
+      ],
+      "ambiguous_stages": [],
+      "policy_version": "e5-trgm-review-v1",
+      "encoder_state": "READY",
+      "reason": "Approximate matches are review suggestions. Announcement playback requires a complete reviewed construction."
+    }
+  }
+]

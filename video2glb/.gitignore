@@ -1,0 +1,38 @@
+# Dependencies and Python caches
+node_modules/
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local processing data, generated exports, and temporary files
+/.tmp_*
+/temp/
+/output/*
+!/output/README.md
+/failed/
+/logs/
+/input/*
+!/input/README.md
+/video/
+.conversion.lock
+
+# Source videos and generated animation files
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.glb
+*.gltf
+
+# Include the source MP4s used by the documented pipeline commands.
+!/input/*.mp4
+
+# Local credentials and environment settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key

@@ -1,0 +1,566 @@
+{
+  "status": "PASSED",
+  "browser": "153.0.8010.12",
+  "measurements": [
+    {
+      "name": "mandatory",
+      "normalized": "train 1201 arrives at platform 2",
+      "tokens": [
+        "TRAIN",
+        "1201",
+        "PLATFORM",
+        "2",
+        "ARRIVE"
+      ],
+      "clip_count": 8,
+      "samples": [
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2746496874",
+          "mixerTime": "0.4165999999999985"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "4233347425",
+          "mixerTime": "1.2165999999999986"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2165737610",
+          "mixerTime": "2.016599999999999"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2234422861",
+          "mixerTime": "2.9166"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "808429123",
+          "mixerTime": "4.0166"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1283624581",
+          "mixerTime": "4.916599999999997"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2612586061",
+          "mixerTime": "5.816599999999994"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1609157513",
+          "mixerTime": "6.716399999999988"
+        }
+      ],
+      "completed": {
+        "engine": "three.js r186",
+        "playbackState": "COMPLETE",
+        "completedClips": "8",
+        "clipCount": "8",
+        "manifestId": "d2d715b0-a0de-4ecd-b6ff-c940ced0014e",
+        "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+        "avatarMeshes": "7",
+        "avatarTextures": "5",
+        "maxTextureSize": "1024",
+        "poseHash": "3851938241",
+        "mixerTime": "64.71320000000043"
+      }
+    },
+    {
+      "name": "typo",
+      "normalized": "train 1201 arrives at platform 2",
+      "tokens": [
+        "TRAIN",
+        "1201",
+        "PLATFORM",
+        "2",
+        "ARRIVE"
+      ],
+      "clip_count": 8,
+      "samples": [
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1424150590",
+          "mixerTime": "65.42990000000039"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3086915295",
+          "mixerTime": "66.12990000000035"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2538046622",
+          "mixerTime": "66.9299000000003"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2654683402",
+          "mixerTime": "67.92990000000025"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2270228890",
+          "mixerTime": "68.8299000000002"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1283624581",
+          "mixerTime": "69.62990000000015"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1991570352",
+          "mixerTime": "70.72990000000009"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "2",
+          "clipCount": "8",
+          "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1832143913",
+          "mixerTime": "71.52990000000004"
+        }
+      ],
+      "completed": {
+        "engine": "three.js r186",
+        "playbackState": "COMPLETE",
+        "completedClips": "8",
+        "clipCount": "8",
+        "manifestId": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+        "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+        "avatarMeshes": "7",
+        "avatarTextures": "5",
+        "maxTextureSize": "1024",
+        "poseHash": "3851938241",
+        "mixerTime": "129.41239999999675"
+      }
+    },
+    {
+      "name": "lexical",
+      "normalized": "train accident",
+      "tokens": [
+        "TRAIN",
+        "ACCIDENT"
+      ],
+      "clip_count": 2,
+      "samples": [
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3032671344",
+          "mixerTime": "129.52909999999676"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3355377889",
+          "mixerTime": "130.4290999999967"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "686610800",
+          "mixerTime": "131.22899999999666"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2648833477",
+          "mixerTime": "132.2289999999966"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "1799966749",
+          "mixerTime": "133.02889999999655"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3630422976",
+          "mixerTime": "134.0288999999965"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "44561437",
+          "mixerTime": "134.82889999999645"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "1",
+          "clipCount": "2",
+          "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2527514898",
+          "mixerTime": "135.7288999999964"
+        }
+      ],
+      "completed": {
+        "engine": "three.js r186",
+        "playbackState": "COMPLETE",
+        "completedClips": "2",
+        "clipCount": "2",
+        "manifestId": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+        "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+        "avatarMeshes": "7",
+        "avatarTextures": "5",
+        "maxTextureSize": "1024",
+        "poseHash": "3909235952",
+        "mixerTime": "137.22889999999632"
+      }
+    },
+    {
+      "name": "voice",
+      "normalized": "is arriving at platform 2. train number 1201 is",
+      "tokens": [
+        "IS",
+        "ARRIVING",
+        "AT",
+        "PLATFORM",
+        "2",
+        "TRAIN",
+        "NUMBER",
+        "1201",
+        "IS"
+      ],
+      "clip_count": 8,
+      "samples": [
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "43154688",
+          "mixerTime": "137.5456999999963"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "4064851042",
+          "mixerTime": "138.44569999999624"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2874552483",
+          "mixerTime": "139.34569999999619"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3491808640",
+          "mixerTime": "140.14569999999614"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3060660063",
+          "mixerTime": "140.9456999999961"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "2137837466",
+          "mixerTime": "141.74569999999605"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "3085898597",
+          "mixerTime": "142.545699999996"
+        },
+        {
+          "engine": "three.js r186",
+          "playbackState": "PLAYING",
+          "completedClips": "0",
+          "clipCount": "8",
+          "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+          "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+          "avatarMeshes": "7",
+          "avatarTextures": "5",
+          "maxTextureSize": "1024",
+          "poseHash": "517339266",
+          "mixerTime": "143.34569999999596"
+        }
+      ],
+      "completed": {
+        "engine": "three.js r186",
+        "playbackState": "COMPLETE",
+        "completedClips": "8",
+        "clipCount": "8",
+        "manifestId": "19880565-252f-42b3-8ddd-58caaf72b458",
+        "avatarInstance": "d7c6505e-f697-4a4c-a281-a76a1bfaeb0e",
+        "avatarMeshes": "7",
+        "avatarTextures": "5",
+        "maxTextureSize": "1024",
+        "poseHash": "2379053313",
+        "mixerTime": "201.94559999999262"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/e4a3a7c3-39db-4cd0-b07e-dcc1d41dae57/ba31048c518e94e44472c3dbbac05fe9bc20eebcd30e8a14c62a2609add94b77.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/13aa7c82-76e9-44dd-8df4-6439bc899aa8/af9d6c4729488389b834c41a456b48530d7f82000d5692c63259b2186c8eeeaf.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/67fd9c51-03f7-4e18-80d3-67ce47fc9d52/c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f/0291c5e881ed7c0513d1ac7b611da5af4ee63bacfb89c2a6f0f130f0a03c999e.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/1a1d3b63-bb0b-47c9-a210-c4c62b4d7bf4/62279dc9091305ae1a098675bca4540e151fea787e5127e57510e13e711279df.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/0b491654-7763-4654-b7be-09ee24b44be5/4d6ec524186b6f0bf8646f1c08b3534d28ba87506571664ba2b29b269dc8c325.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/d2d715b0-a0de-4ecd-b6ff-c940ced0014e/assets/6ff47feb-8692-458f-972d-7aefbbee94fa/e342b13d50fc7a5152611d40a4cf40bdf11460bc0dd4f0b884f961af6e8088cb.glb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/v1/playback/b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc/assets/cdd00611-6da7-49e7-b790-7e4c36796d16/aa22ec435f9b85f7d6507d4e3d9930b8d4feae814b223e6d0965a1cb8eecfdb6.glb",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

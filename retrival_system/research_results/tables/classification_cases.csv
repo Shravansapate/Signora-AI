@@ -1,0 +1,225 @@
+id,text,expected,predicted,correct,http_status
+arrival-00-0,Train 1201 arrives at platform 2.,Arrival,Arrival,True,200
+arrival-01-0,Train number 1201 is arriving on platform 2.,Arrival,Arrival,True,200
+arrival-02-0,Train 1201 will arrive at platform 2.,Arrival,Arrival,True,200
+arrival-03-0,Train 1201 has arrived at platform 2.,Arrival,Arrival,True,200
+arrival-04-0,1201 is arriving platform 2.,Arrival,Arrival,True,200
+arrival-05-0,Train 1201 arrive at platform 2.,Arrival,Arrival,True,200
+arrival-06-0,Train 1201 from Nagpur to Mumbai will arrive at platform 2.,Arrival,Arrival,True,200
+arrival-07-0,Train 1201 will arrive at platform 2 at 5:30 PM.,Arrival,Arrival,True,200
+arrival-08-0,Platform 2 train 1201 Mumbai arrival.,Arrival,ABSTAIN,False,200
+arrival-09-0,The Vidarbha Express train 1201 is arriving at platform 2.,Arrival,ABSTAIN,False,200
+departure-00-0,Train 1201 departs at platform 2.,Departure,Departure,True,200
+departure-01-0,Train number 1201 is departing on platform 2.,Departure,Departure,True,200
+departure-02-0,Train 1201 will depart at platform 2.,Departure,Departure,True,200
+departure-03-0,Train 1201 has departed at platform 2.,Departure,Departure,True,200
+departure-04-0,1201 is departing platform 2.,Departure,Departure,True,200
+departure-05-0,Train 1201 depart at platform 2.,Departure,Departure,True,200
+departure-06-0,Train 1201 from Nagpur to Mumbai will depart at platform 2.,Departure,Departure,True,200
+departure-07-0,Train 1201 will depart at platform 2 at 5:30 PM.,Departure,Departure,True,200
+departure-08-0,Platform 2 train 1201 Mumbai departure.,Departure,ABSTAIN,False,200
+departure-09-0,The Vidarbha Express train 1201 is departing at platform 2.,Departure,ABSTAIN,False,200
+delay-00-0,Train 1201 is delayed by 15 minutes.,Delay,Delay,True,200
+delay-01-0,Train 1201 has been delayed by 15 minutes.,Delay,Delay,True,200
+delay-02-0,Train 1201 is delayed by 15 minutes due to fog.,Delay,ABSTAIN,False,200
+delay-03-0,Train 1201 is running 15 minutes late.,Delay,ABSTAIN,False,200
+delay-04-0,A delay of 15 minutes affects train 1201.,Delay,ABSTAIN,False,200
+delay-05-0,Train number 1201 is delayed by 15 minutes.,Delay,Delay,True,200
+delay-06-0,Train 1201 delayed 15 minutes.,Delay,ABSTAIN,False,200
+delay-07-0,"Passengers, train 1201 is delayed by 15 minutes.",Delay,ABSTAIN,False,200
+delay-08-0,Train 1201 from Nagpur to Mumbai is delayed by 15 minutes.,Delay,Delay,True,200
+delay-09-0,1201 is delayed by 15 minutes.,Delay,Delay,True,200
+cancellation-00-0,Train 1201 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-01-0,Train 1201 has been cancelled.,Cancellation,Cancellation,True,200
+cancellation-02-0,Train number 1201 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-03-0,Train 1201 is not cancelled.,Cancellation,Cancellation,True,200
+cancellation-04-0,Train 1201 has been canceled.,Cancellation,Cancellation,True,200
+cancellation-05-0,Train 1201 cancellation announced.,Cancellation,ABSTAIN,False,200
+cancellation-06-0,Service 1201 is cancelled.,Cancellation,ABSTAIN,False,200
+cancellation-07-0,Train 1201 from Nagpur to Mumbai is cancelled.,Cancellation,Cancellation,True,200
+cancellation-08-0,Train 1201 is cancelled today.,Cancellation,ABSTAIN,False,200
+cancellation-09-0,1201 is cancelled.,Cancellation,Cancellation,True,200
+platform-change-00-0,Platform for train 1201 has changed from 2 to 5.,Platform change,Platform change,True,200
+platform-change-01-0,Train 1201 platform changed from 2 to 5.,Platform change,ABSTAIN,False,200
+platform-change-02-0,Train 1201 will use platform 5 instead of platform 2.,Platform change,ABSTAIN,False,200
+platform-change-03-0,Platform change: train 1201 moves from 2 to 5.,Platform change,ABSTAIN,False,200
+platform-change-04-0,"Train 1201 now arrives at platform 5, not platform 2.",Platform change,ABSTAIN,False,200
+platform-change-05-0,Platform for train number 1201 has changed from 2 to 5.,Platform change,Platform change,True,200
+platform-change-06-0,Attention: platform for train 1201 has changed from 2 to 5.,Platform change,ABSTAIN,False,200
+platform-change-07-0,Train 1201: platform 2 replaced by 5.,Platform change,ABSTAIN,False,200
+platform-change-08-0,Platform for train 1201 has changed from 2 to 5,Platform change,Platform change,True,200
+platform-change-09-0,PLATFORM FOR TRAIN 1201 HAS CHANGED FROM 2 TO 5.,Platform change,Platform change,True,200
+emergency-00-0,Emergency evacuation. Use the nearest emergency exit.,Emergency,ABSTAIN,False,200
+emergency-01-0,Fire at platform 2. Leave the station immediately.,Emergency,ABSTAIN,False,200
+emergency-02-0,Security alert. Do not touch unattended baggage.,Emergency,ABSTAIN,False,200
+emergency-03-0,An accident has occurred. Please call for help.,Emergency,ABSTAIN,False,200
+emergency-04-0,Danger. Keep away from the tracks.,Emergency,ABSTAIN,False,200
+emergency-05-0,Medical emergency at platform 2.,Emergency,ABSTAIN,False,200
+emergency-06-0,Evacuate platform 2 immediately.,Emergency,ABSTAIN,False,200
+emergency-07-0,Smoke detected. Follow emergency instructions.,Emergency,ABSTAIN,False,200
+emergency-08-0,Warning: suspicious object near the exit.,Emergency,ABSTAIN,False,200
+emergency-09-0,Emergency. Stop boarding train 1201.,Emergency,ABSTAIN,False,200
+other-00-0,Please keep your ticket ready.,Other,ABSTAIN,False,200
+other-01-0,Board train 1201 at platform 2.,Other,ABSTAIN,False,200
+other-02-0,Train 1201 to Pune.,Other,ABSTAIN,False,200
+other-03-0,Drinking water is available near platform 2.,Other,ABSTAIN,False,200
+other-04-0,Please mind the gap.,Other,ABSTAIN,False,200
+other-05-0,The ticket counter is closed.,Other,ABSTAIN,False,200
+other-06-0,Welcome to Nagpur station.,Other,ABSTAIN,False,200
+other-07-0,Train 1201 from Xylophonex to Quizzleville.,Other,ABSTAIN,False,200
+other-08-0,Passengers for Mumbai should proceed to platform 2.,Other,ABSTAIN,False,200
+other-09-0,Keep the station clean.,Other,ABSTAIN,False,200
+arrival-00-1,Train 1310 arrives at platform 3.,Arrival,Arrival,True,200
+arrival-01-1,Train number 1310 is arriving on platform 3.,Arrival,Arrival,True,200
+arrival-02-1,Train 1310 will arrive at platform 3.,Arrival,Arrival,True,200
+arrival-03-1,Train 1310 has arrived at platform 3.,Arrival,Arrival,True,200
+arrival-04-1,1310 is arriving platform 3.,Arrival,Arrival,True,200
+arrival-05-1,Train 1310 arrive at platform 3.,Arrival,Arrival,True,200
+arrival-06-1,Train 1310 from Nagpur to Mumbai will arrive at platform 3.,Arrival,Arrival,True,200
+arrival-07-1,Train 1310 will arrive at platform 3 at 5:30 PM.,Arrival,Arrival,True,200
+arrival-08-1,Platform 3 train 1310 Mumbai arrival.,Arrival,ABSTAIN,False,200
+arrival-09-1,The Vidarbha Express train 1310 is arriving at platform 3.,Arrival,ABSTAIN,False,200
+departure-00-1,Train 1310 departs at platform 3.,Departure,Departure,True,200
+departure-01-1,Train number 1310 is departing on platform 3.,Departure,Departure,True,200
+departure-02-1,Train 1310 will depart at platform 3.,Departure,Departure,True,200
+departure-03-1,Train 1310 has departed at platform 3.,Departure,Departure,True,200
+departure-04-1,1310 is departing platform 3.,Departure,Departure,True,200
+departure-05-1,Train 1310 depart at platform 3.,Departure,Departure,True,200
+departure-06-1,Train 1310 from Nagpur to Mumbai will depart at platform 3.,Departure,Departure,True,200
+departure-07-1,Train 1310 will depart at platform 3 at 5:30 PM.,Departure,Departure,True,200
+departure-08-1,Platform 3 train 1310 Mumbai departure.,Departure,ABSTAIN,False,200
+departure-09-1,The Vidarbha Express train 1310 is departing at platform 3.,Departure,ABSTAIN,False,200
+delay-00-1,Train 1310 is delayed by 30 minutes.,Delay,Delay,True,200
+delay-01-1,Train 1310 has been delayed by 30 minutes.,Delay,Delay,True,200
+delay-02-1,Train 1310 is delayed by 30 minutes due to fog.,Delay,ABSTAIN,False,200
+delay-03-1,Train 1310 is running 30 minutes late.,Delay,ABSTAIN,False,200
+delay-04-1,A delay of 30 minutes affects train 1310.,Delay,ABSTAIN,False,200
+delay-05-1,Train number 1310 is delayed by 30 minutes.,Delay,Delay,True,200
+delay-06-1,Train 1310 delayed 30 minutes.,Delay,ABSTAIN,False,200
+delay-07-1,"Passengers, train 1310 is delayed by 30 minutes.",Delay,ABSTAIN,False,200
+delay-08-1,Train 1310 from Nagpur to Mumbai is delayed by 30 minutes.,Delay,Delay,True,200
+delay-09-1,1310 is delayed by 30 minutes.,Delay,Delay,True,200
+cancellation-00-1,Train 1310 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-01-1,Train 1310 has been cancelled.,Cancellation,Cancellation,True,200
+cancellation-02-1,Train number 1310 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-03-1,Train 1310 is not cancelled.,Cancellation,Cancellation,True,200
+cancellation-04-1,Train 1310 has been canceled.,Cancellation,Cancellation,True,200
+cancellation-05-1,Train 1310 cancellation announced.,Cancellation,ABSTAIN,False,200
+cancellation-06-1,Service 1310 is cancelled.,Cancellation,ABSTAIN,False,200
+cancellation-07-1,Train 1310 from Nagpur to Mumbai is cancelled.,Cancellation,Cancellation,True,200
+cancellation-08-1,Train 1310 is cancelled today.,Cancellation,ABSTAIN,False,200
+cancellation-09-1,1310 is cancelled.,Cancellation,Cancellation,True,200
+platform-change-00-1,Platform for train 1310 has changed from 3 to 6.,Platform change,Platform change,True,200
+platform-change-01-1,Train 1310 platform changed from 3 to 6.,Platform change,ABSTAIN,False,200
+platform-change-02-1,Train 1310 will use platform 6 instead of platform 3.,Platform change,ABSTAIN,False,200
+platform-change-03-1,Platform change: train 1310 moves from 3 to 6.,Platform change,ABSTAIN,False,200
+platform-change-04-1,"Train 1310 now arrives at platform 6, not platform 3.",Platform change,ABSTAIN,False,200
+platform-change-05-1,Platform for train number 1310 has changed from 3 to 6.,Platform change,Platform change,True,200
+platform-change-06-1,Attention: platform for train 1310 has changed from 3 to 6.,Platform change,ABSTAIN,False,200
+platform-change-07-1,Train 1310: platform 3 replaced by 6.,Platform change,ABSTAIN,False,200
+platform-change-08-1,Platform for train 1310 has changed from 3 to 6,Platform change,Platform change,True,200
+platform-change-09-1,PLATFORM FOR TRAIN 1310 HAS CHANGED FROM 3 TO 6.,Platform change,Platform change,True,200
+emergency-00-1,Emergency evacuation. Use the nearest emergency exit.,Emergency,ABSTAIN,False,200
+emergency-01-1,Fire at platform 3. Leave the station immediately.,Emergency,ABSTAIN,False,200
+emergency-02-1,Security alert. Do not touch unattended baggage.,Emergency,ABSTAIN,False,200
+emergency-03-1,An accident has occurred. Please call for help.,Emergency,ABSTAIN,False,200
+emergency-04-1,Danger. Keep away from the tracks.,Emergency,ABSTAIN,False,200
+emergency-05-1,Medical emergency at platform 3.,Emergency,ABSTAIN,False,200
+emergency-06-1,Evacuate platform 3 immediately.,Emergency,ABSTAIN,False,200
+emergency-07-1,Smoke detected. Follow emergency instructions.,Emergency,ABSTAIN,False,200
+emergency-08-1,Warning: suspicious object near the exit.,Emergency,ABSTAIN,False,200
+emergency-09-1,Emergency. Stop boarding train 1310.,Emergency,ABSTAIN,False,200
+other-00-1,Please keep your ticket ready.,Other,ABSTAIN,False,200
+other-01-1,Board train 1310 at platform 3.,Other,ABSTAIN,False,200
+other-02-1,Train 1310 to Pune.,Other,ABSTAIN,False,200
+other-03-1,Drinking water is available near platform 3.,Other,ABSTAIN,False,200
+other-04-1,Please mind the gap.,Other,ABSTAIN,False,200
+other-05-1,The ticket counter is closed.,Other,ABSTAIN,False,200
+other-06-1,Welcome to Nagpur station.,Other,ABSTAIN,False,200
+other-07-1,Train 1310 from Xylophonex to Quizzleville.,Other,ABSTAIN,False,200
+other-08-1,Passengers for Mumbai should proceed to platform 3.,Other,ABSTAIN,False,200
+other-09-1,Keep the station clean.,Other,ABSTAIN,False,200
+arrival-00-2,Train 1419 arrives at platform 4.,Arrival,Arrival,True,200
+arrival-01-2,Train number 1419 is arriving on platform 4.,Arrival,Arrival,True,200
+arrival-02-2,Train 1419 will arrive at platform 4.,Arrival,Arrival,True,200
+arrival-03-2,Train 1419 has arrived at platform 4.,Arrival,Arrival,True,200
+arrival-04-2,1419 is arriving platform 4.,Arrival,Arrival,True,200
+arrival-05-2,Train 1419 arrive at platform 4.,Arrival,Arrival,True,200
+arrival-06-2,Train 1419 from Nagpur to Mumbai will arrive at platform 4.,Arrival,Arrival,True,200
+arrival-07-2,Train 1419 will arrive at platform 4 at 5:30 PM.,Arrival,Arrival,True,200
+arrival-08-2,Platform 4 train 1419 Mumbai arrival.,Arrival,ABSTAIN,False,200
+arrival-09-2,The Vidarbha Express train 1419 is arriving at platform 4.,Arrival,ABSTAIN,False,200
+departure-00-2,Train 1419 departs at platform 4.,Departure,Departure,True,200
+departure-01-2,Train number 1419 is departing on platform 4.,Departure,Departure,True,200
+departure-02-2,Train 1419 will depart at platform 4.,Departure,Departure,True,200
+departure-03-2,Train 1419 has departed at platform 4.,Departure,Departure,True,200
+departure-04-2,1419 is departing platform 4.,Departure,Departure,True,200
+departure-05-2,Train 1419 depart at platform 4.,Departure,Departure,True,200
+departure-06-2,Train 1419 from Nagpur to Mumbai will depart at platform 4.,Departure,Departure,True,200
+departure-07-2,Train 1419 will depart at platform 4 at 5:30 PM.,Departure,Departure,True,200
+departure-08-2,Platform 4 train 1419 Mumbai departure.,Departure,ABSTAIN,False,200
+departure-09-2,The Vidarbha Express train 1419 is departing at platform 4.,Departure,ABSTAIN,False,200
+delay-00-2,Train 1419 is delayed by 45 minutes.,Delay,Delay,True,200
+delay-01-2,Train 1419 has been delayed by 45 minutes.,Delay,Delay,True,200
+delay-02-2,Train 1419 is delayed by 45 minutes due to fog.,Delay,ABSTAIN,False,200
+delay-03-2,Train 1419 is running 45 minutes late.,Delay,ABSTAIN,False,200
+delay-04-2,A delay of 45 minutes affects train 1419.,Delay,ABSTAIN,False,200
+delay-05-2,Train number 1419 is delayed by 45 minutes.,Delay,Delay,True,200
+delay-06-2,Train 1419 delayed 45 minutes.,Delay,ABSTAIN,False,200
+delay-07-2,"Passengers, train 1419 is delayed by 45 minutes.",Delay,ABSTAIN,False,200
+delay-08-2,Train 1419 from Nagpur to Mumbai is delayed by 45 minutes.,Delay,Delay,True,200
+delay-09-2,1419 is delayed by 45 minutes.,Delay,Delay,True,200
+cancellation-00-2,Train 1419 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-01-2,Train 1419 has been cancelled.,Cancellation,Cancellation,True,200
+cancellation-02-2,Train number 1419 is cancelled.,Cancellation,Cancellation,True,200
+cancellation-03-2,Train 1419 is not cancelled.,Cancellation,Cancellation,True,200
+cancellation-04-2,Train 1419 has been canceled.,Cancellation,Cancellation,True,200
+cancellation-05-2,Train 1419 cancellation announced.,Cancellation,ABSTAIN,False,200
+cancellation-06-2,Service 1419 is cancelled.,Cancellation,ABSTAIN,False,200
+cancellation-07-2,Train 1419 from Nagpur to Mumbai is cancelled.,Cancellation,Cancellation,True,200
+cancellation-08-2,Train 1419 is cancelled today.,Cancellation,ABSTAIN,False,200
+cancellation-09-2,1419 is cancelled.,Cancellation,Cancellation,True,200
+platform-change-00-2,Platform for train 1419 has changed from 4 to 7.,Platform change,Platform change,True,200
+platform-change-01-2,Train 1419 platform changed from 4 to 7.,Platform change,ABSTAIN,False,200
+platform-change-02-2,Train 1419 will use platform 7 instead of platform 4.,Platform change,ABSTAIN,False,200
+platform-change-03-2,Platform change: train 1419 moves from 4 to 7.,Platform change,ABSTAIN,False,200
+platform-change-04-2,"Train 1419 now arrives at platform 7, not platform 4.",Platform change,ABSTAIN,False,200
+platform-change-05-2,Platform for train number 1419 has changed from 4 to 7.,Platform change,Platform change,True,200
+platform-change-06-2,Attention: platform for train 1419 has changed from 4 to 7.,Platform change,ABSTAIN,False,200
+platform-change-07-2,Train 1419: platform 4 replaced by 7.,Platform change,ABSTAIN,False,200
+platform-change-08-2,Platform for train 1419 has changed from 4 to 7,Platform change,Platform change,True,200
+platform-change-09-2,PLATFORM FOR TRAIN 1419 HAS CHANGED FROM 4 TO 7.,Platform change,Platform change,True,200
+emergency-00-2,Emergency evacuation. Use the nearest emergency exit.,Emergency,ABSTAIN,False,200
+emergency-01-2,Fire at platform 4. Leave the station immediately.,Emergency,ABSTAIN,False,200
+emergency-02-2,Security alert. Do not touch unattended baggage.,Emergency,ABSTAIN,False,200
+emergency-03-2,An accident has occurred. Please call for help.,Emergency,ABSTAIN,False,200
+emergency-04-2,Danger. Keep away from the tracks.,Emergency,ABSTAIN,False,200
+emergency-05-2,Medical emergency at platform 4.,Emergency,ABSTAIN,False,200
+emergency-06-2,Evacuate platform 4 immediately.,Emergency,ABSTAIN,False,200
+emergency-07-2,Smoke detected. Follow emergency instructions.,Emergency,ABSTAIN,False,200
+emergency-08-2,Warning: suspicious object near the exit.,Emergency,ABSTAIN,False,200
+emergency-09-2,Emergency. Stop boarding train 1419.,Emergency,ABSTAIN,False,200
+other-00-2,Please keep your ticket ready.,Other,ABSTAIN,False,200
+other-01-2,Board train 1419 at platform 4.,Other,ABSTAIN,False,200
+other-02-2,Train 1419 to Pune.,Other,ABSTAIN,False,200
+other-03-2,Drinking water is available near platform 4.,Other,ABSTAIN,False,200
+other-04-2,Please mind the gap.,Other,ABSTAIN,False,200
+other-05-2,The ticket counter is closed.,Other,ABSTAIN,False,200
+other-06-2,Welcome to Nagpur station.,Other,ABSTAIN,False,200
+other-07-2,Train 1419 from Xylophonex to Quizzleville.,Other,ABSTAIN,False,200
+other-08-2,Passengers for Mumbai should proceed to platform 4.,Other,ABSTAIN,False,200
+other-09-2,Keep the station clean.,Other,ABSTAIN,False,200
+additional-0,Train 00981 has already arrived on platform 1.,Arrival,Arrival,True,200
+additional-1,Train 13007 will not arrive at platform 8.,Arrival,Arrival,True,200
+additional-2,Train 00810 has already departed from platform 6.,Departure,Departure,True,200
+additional-3,Train 00456 will not depart from platform 7.,Departure,Departure,True,200
+additional-4,Train 19653 is delayed by 2 hours.,Delay,Delay,True,200
+additional-5,Train 18309 is delayed by 75 minutes.,Delay,Delay,True,200
+additional-6,Train 13917 has not been cancelled.,Cancellation,ABSTAIN,False,200
+additional-7,Train 18234 is not cancelled.,Cancellation,Cancellation,True,200
+additional-8,Platform for train 12005 has changed from 1 to 8.,Platform change,Platform change,True,200
+additional-9,Train 19711 will leave from platform 6 instead of platform 4.,Platform change,ABSTAIN,False,200
+additional-10,Fire reported in the waiting room. Leave through the exit.,Emergency,ABSTAIN,False,200
+additional-11,Emergency help is required at platform 8.,Emergency,ABSTAIN,False,200
+additional-12,Tickets for the Superfast Express are available at the counter.,Other,ABSTAIN,False,200
+additional-13,Passengers travelling to Chennai may collect tickets at the counter.,Other,ABSTAIN,False,200

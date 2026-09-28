@@ -1,0 +1,18 @@
+{
+  "labels": [
+    "Recall@1",
+    "Recall@3",
+    "Recall@5",
+    "Retrieval\nidentity accuracy",
+    "Lexical\ncoverage"
+  ],
+  "values": [
+    null,
+    null,
+    null,
+    100.0,
+    92.5895087427144
+  ],
+  "subtitle": "Ranked retrieval unavailable for current preview/catalog; N/A is not zero",
+  "ylabel": "Performance (%)"
+}

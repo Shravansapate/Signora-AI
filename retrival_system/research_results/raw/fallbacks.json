@@ -1,0 +1,187 @@
+[
+  {
+    "name": "phrase_present",
+    "input": "local train",
+    "excluded": [],
+    "matches": [
+      {
+        "input": "local train",
+        "method": "PHRASE",
+        "matched": "ISL_LOCAL_TRAIN_01",
+        "motion_version_id": "c3638d59-b618-43e0-a2e8-31251370c59e",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      }
+    ],
+    "clip_count": 1,
+    "missing": []
+  },
+  {
+    "name": "phrase_removed",
+    "input": "local train",
+    "excluded": [
+      "ISL_LOCAL_TRAIN_01"
+    ],
+    "matches": [
+      {
+        "input": "l",
+        "method": "ALPHABET",
+        "matched": "ISL_L_01",
+        "motion_version_id": "64b293a6-6686-4bf8-8bb3-cef41dff8936",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      },
+      {
+        "input": "o",
+        "method": "ALPHABET",
+        "matched": "ISL_O_01",
+        "motion_version_id": "0a327df7-be58-4468-bf5b-751d5548ca25",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      },
+      {
+        "input": "c",
+        "method": "ALPHABET",
+        "matched": "ISL_C_01",
+        "motion_version_id": "9f6d2d48-875a-41f8-bba0-b1c74e4faf8d",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      },
+      {
+        "input": "a",
+        "method": "ALPHABET",
+        "matched": "ISL_A_01",
+        "motion_version_id": "29781d60-4383-4dc8-8c83-0e145353ab7b",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      },
+      {
+        "input": "l",
+        "method": "ALPHABET",
+        "matched": "ISL_L_01",
+        "motion_version_id": "64b293a6-6686-4bf8-8bb3-cef41dff8936",
+        "gloss_token": "LOCAL",
+        "role": "lexical"
+      },
+      {
+        "input": "train",
+        "method": "WORD",
+        "matched": "ISL_TRAIN_01",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      }
+    ],
+    "clip_count": 6,
+    "missing": []
+  },
+  {
+    "name": "word_present",
+    "input": "train",
+    "excluded": [],
+    "matches": [
+      {
+        "input": "train",
+        "method": "WORD",
+        "matched": "ISL_TRAIN_01",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      }
+    ],
+    "clip_count": 1,
+    "missing": []
+  },
+  {
+    "name": "word_removed",
+    "input": "train",
+    "excluded": [
+      "ISL_TRAIN_01"
+    ],
+    "matches": [
+      {
+        "input": "t",
+        "method": "ALPHABET",
+        "matched": "ISL_T_01",
+        "motion_version_id": "0ac098ac-caf2-4254-80d7-97431bab1448",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      },
+      {
+        "input": "r",
+        "method": "ALPHABET",
+        "matched": "ISL_R_01",
+        "motion_version_id": "610aeaad-6af9-47c3-bfd5-e431f94b8ee4",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      },
+      {
+        "input": "a",
+        "method": "ALPHABET",
+        "matched": "ISL_A_01",
+        "motion_version_id": "29781d60-4383-4dc8-8c83-0e145353ab7b",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      },
+      {
+        "input": "i",
+        "method": "ALPHABET",
+        "matched": "ISL_I_01",
+        "motion_version_id": "44ef1a05-41f2-407e-b12a-7e6090bc58a8",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      },
+      {
+        "input": "n",
+        "method": "ALPHABET",
+        "matched": "ISL_N_01",
+        "motion_version_id": "38161d0b-8387-42d7-8540-2c5f413ecc7f",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      }
+    ],
+    "clip_count": 5,
+    "missing": []
+  },
+  {
+    "name": "number",
+    "input": "1201",
+    "excluded": [],
+    "matches": [
+      {
+        "input": "1",
+        "method": "DIGIT",
+        "matched": "ISL_1_ONE_01",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "gloss_token": "1201",
+        "role": "probe"
+      },
+      {
+        "input": "2",
+        "method": "DIGIT",
+        "matched": "ISL_2_TWO_01",
+        "motion_version_id": "07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f",
+        "gloss_token": "1201",
+        "role": "probe"
+      },
+      {
+        "input": "0",
+        "method": "DIGIT",
+        "matched": "ISL_ZERO_01",
+        "motion_version_id": "1a1d3b63-bb0b-47c9-a210-c4c62b4d7bf4",
+        "gloss_token": "1201",
+        "role": "probe"
+      },
+      {
+        "input": "1",
+        "method": "DIGIT",
+        "matched": "ISL_1_ONE_01",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "gloss_token": "1201",
+        "role": "probe"
+      }
+    ],
+    "clip_count": 4,
+    "missing": []
+  }
+]

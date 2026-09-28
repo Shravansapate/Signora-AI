@@ -1,0 +1,422 @@
+[
+  {
+    "id": "train_number-0",
+    "kind": "train_number",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 9901 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-0",
+    "kind": "platform",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1201 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-0",
+    "kind": "destination",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1201 from Nagpur to Pune will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-0",
+    "kind": "time",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-0",
+    "kind": "cancellation_status",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1201 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-0",
+    "kind": "negative_control",
+    "announcement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1201 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-1",
+    "kind": "train_number",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 9902 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-1",
+    "kind": "platform",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1202 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-1",
+    "kind": "destination",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1202 from Nagpur to Pune will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-1",
+    "kind": "time",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-1",
+    "kind": "cancellation_status",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1202 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-1",
+    "kind": "negative_control",
+    "announcement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1202 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-2",
+    "kind": "train_number",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 9903 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-2",
+    "kind": "platform",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1203 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-2",
+    "kind": "destination",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1203 from Nagpur to Pune will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-2",
+    "kind": "time",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-2",
+    "kind": "cancellation_status",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1203 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-2",
+    "kind": "negative_control",
+    "announcement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1203 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-3",
+    "kind": "train_number",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 9904 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-3",
+    "kind": "platform",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 1204 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-3",
+    "kind": "destination",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 1204 from Nagpur to Pune will arrive at platform 4 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-3",
+    "kind": "time",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-3",
+    "kind": "cancellation_status",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 1204 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-3",
+    "kind": "negative_control",
+    "announcement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "trusted_statement": "Train 1204 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-4",
+    "kind": "train_number",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 9905 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-4",
+    "kind": "platform",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 1205 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-4",
+    "kind": "destination",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 1205 from Nagpur to Pune will arrive at platform 5 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-4",
+    "kind": "time",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-4",
+    "kind": "cancellation_status",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 1205 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-4",
+    "kind": "negative_control",
+    "announcement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "trusted_statement": "Train 1205 from Nagpur to Mumbai will arrive at platform 5 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-5",
+    "kind": "train_number",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 9906 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-5",
+    "kind": "platform",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 1206 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-5",
+    "kind": "destination",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 1206 from Nagpur to Pune will arrive at platform 6 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-5",
+    "kind": "time",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-5",
+    "kind": "cancellation_status",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 1206 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-5",
+    "kind": "negative_control",
+    "announcement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "trusted_statement": "Train 1206 from Nagpur to Mumbai will arrive at platform 6 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-6",
+    "kind": "train_number",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 9907 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-6",
+    "kind": "platform",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 1207 from Nagpur to Mumbai will arrive at platform 8 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-6",
+    "kind": "destination",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 1207 from Nagpur to Pune will arrive at platform 7 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-6",
+    "kind": "time",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-6",
+    "kind": "cancellation_status",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 1207 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-6",
+    "kind": "negative_control",
+    "announcement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "trusted_statement": "Train 1207 from Nagpur to Mumbai will arrive at platform 7 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-7",
+    "kind": "train_number",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 9908 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-7",
+    "kind": "platform",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1208 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-7",
+    "kind": "destination",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1208 from Nagpur to Pune will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-7",
+    "kind": "time",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-7",
+    "kind": "cancellation_status",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1208 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-7",
+    "kind": "negative_control",
+    "announcement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "trusted_statement": "Train 1208 from Nagpur to Mumbai will arrive at platform 1 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-8",
+    "kind": "train_number",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 9909 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-8",
+    "kind": "platform",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1209 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-8",
+    "kind": "destination",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1209 from Nagpur to Pune will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-8",
+    "kind": "time",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-8",
+    "kind": "cancellation_status",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1209 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-8",
+    "kind": "negative_control",
+    "announcement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "trusted_statement": "Train 1209 from Nagpur to Mumbai will arrive at platform 2 at 5:30 PM",
+    "expected_conflict": false
+  },
+  {
+    "id": "train_number-9",
+    "kind": "train_number",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 9910 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "platform-9",
+    "kind": "platform",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1210 from Nagpur to Mumbai will arrive at platform 4 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "destination-9",
+    "kind": "destination",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1210 from Nagpur to Pune will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "time-9",
+    "kind": "time",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 6:30 PM",
+    "expected_conflict": true
+  },
+  {
+    "id": "cancellation_status-9",
+    "kind": "cancellation_status",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1210 from Nagpur to Mumbai is cancelled",
+    "expected_conflict": true
+  },
+  {
+    "id": "no-conflict-9",
+    "kind": "negative_control",
+    "announcement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "trusted_statement": "Train 1210 from Nagpur to Mumbai will arrive at platform 3 at 5:30 PM",
+    "expected_conflict": false
+  }
+]

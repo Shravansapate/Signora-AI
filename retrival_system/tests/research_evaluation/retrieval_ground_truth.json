@@ -1,0 +1,212 @@
+[
+  {
+    "id": "probe-0",
+    "query": "train",
+    "expected": "train",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-1",
+    "query": "arrive",
+    "expected": "arrive",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-2",
+    "query": "arrival",
+    "expected": "arrive",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-3",
+    "query": "arriving",
+    "expected": "arrive",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-4",
+    "query": "departure",
+    "expected": "depart",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-5",
+    "query": "delayed",
+    "expected": "delay",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-6",
+    "query": "cancelled",
+    "expected": "cancel",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-7",
+    "query": "platform",
+    "expected": "platform",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-8",
+    "query": "ticket",
+    "expected": "ticket",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-9",
+    "query": "baggage",
+    "expected": "luggage",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-10",
+    "query": "exit",
+    "expected": "exit",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-11",
+    "query": "emergency",
+    "expected": "emergency",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-12",
+    "query": "fire",
+    "expected": "fire",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-13",
+    "query": "help",
+    "expected": "help",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-14",
+    "query": "station",
+    "expected": "station",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-15",
+    "query": "water",
+    "expected": "water",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-16",
+    "query": "local train",
+    "expected": "local train",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-17",
+    "query": "express train",
+    "expected": "express train",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-18",
+    "query": "waiting room",
+    "expected": "waiting room",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-19",
+    "query": "new delhi",
+    "expected": "new delhi",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-20",
+    "query": "identity card",
+    "expected": "identity card",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-21",
+    "query": "time table",
+    "expected": "time table",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-22",
+    "query": "1201",
+    "expected": "1201",
+    "kind": "IDENTIFIER"
+  },
+  {
+    "id": "probe-23",
+    "query": "00120",
+    "expected": "00120",
+    "kind": "IDENTIFIER"
+  },
+  {
+    "id": "probe-24",
+    "query": "22120",
+    "expected": "22120",
+    "kind": "IDENTIFIER"
+  },
+  {
+    "id": "probe-25",
+    "query": "2",
+    "expected": "2",
+    "kind": "NUMBER"
+  },
+  {
+    "id": "probe-26",
+    "query": "10",
+    "expected": "10",
+    "kind": "NUMBER"
+  },
+  {
+    "id": "probe-27",
+    "query": "30",
+    "expected": "30",
+    "kind": "NUMBER"
+  },
+  {
+    "id": "probe-28",
+    "query": "xylophonex",
+    "expected": "xylophonex",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-29",
+    "query": "quizzleville",
+    "expected": "quizzleville",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-30",
+    "query": "evacuate",
+    "expected": "evacuate",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-31",
+    "query": "not",
+    "expected": "not",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-32",
+    "query": "future",
+    "expected": "future",
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-33",
+    "query": "at",
+    "expected": null,
+    "kind": "LEXICAL"
+  },
+  {
+    "id": "probe-34",
+    "query": "railway track",
+    "expected": "railway track",
+    "kind": "LEXICAL"
+  }
+]

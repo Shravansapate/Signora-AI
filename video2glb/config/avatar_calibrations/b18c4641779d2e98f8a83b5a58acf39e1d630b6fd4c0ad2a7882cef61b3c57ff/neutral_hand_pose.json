@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.3",
+  "quaternion_order": "WXYZ",
+  "rotation_space": "LOCAL_POSE_DELTA_FROM_AVATAR_REST",
+  "generation_method": "Hierarchy-aware finger FK straightening and signed anatomical palm alignment after lowering the rest arm.",
+  "wrist_pose": {
+    "left_hand": {
+      "canonical_bone": "LeftHand",
+      "avatar_bone": "mixamorig9:LeftHand",
+      "rotation_wxyz": [
+        0.9931960223025259,
+        -0.0,
+        -0.1164545459930206,
+        -0.0
+      ],
+      "roll_degrees": -13.375056291294731,
+      "calibration_basis": "signed_palmar_normal_in_lowered_arm_frame"
+    },
+    "right_hand": {
+      "canonical_bone": "RightHand",
+      "avatar_bone": "mixamorig9:RightHand",
+      "rotation_wxyz": [
+        0.9936055783442757,
+        0.0,
+        0.1129068407278214,
+        0.0
+      ],
+      "roll_degrees": 12.96581900751945,
+      "calibration_basis": "signed_palmar_normal_in_lowered_arm_frame"
+    }
+  },
+  "left_hand": {
+    "thumb_1": {
+      "canonical_bone": "LeftThumb1",
+      "avatar_bone": "mixamorig9:LeftHandThumb1",
+      "rotation_wxyz": [
+        1.0,
+        -0.0,
+        0.0,
+        3.435965509894362e-17
+      ],
+      "correction_degrees": 0.0
+    },
+    "thumb_2": {
+      "canonical_bone": "LeftThumb2",
+      "avatar_bone": "mixamorig9:LeftHandThumb2",
+      "rotation_wxyz": [
+        0.9989657589861389,
+        -0.04546880659479962,
+        -8.601451357079145e-09,
+        -3.03736166094562e-07
+      ],
+      "correction_degrees": 5.212138427907549
+    },
+    "thumb_3": {
+      "canonical_bone": "LeftThumb3",
+      "avatar_bone": "mixamorig9:LeftHandThumb3",
+      "rotation_wxyz": [
+        0.9993280983664394,
+        0.036651764149048714,
+        5.260923583601394e-09,
+        -2.802544382767842e-07
+      ],
+      "correction_degrees": 4.200923706339865
+    },
+    "index_1": {
+      "canonical_bone": "LeftIndex1",
+      "avatar_bone": "mixamorig9:LeftHandIndex1",
+      "rotation_wxyz": [
+        0.9997178945200144,
+        -0.023746437219851518,
+        -2.4457151195748965e-09,
+        0.0004879506463685159
+      ],
+      "correction_degrees": 2.721971648958568
+    },
+    "index_2": {
+      "canonical_bone": "LeftIndex2",
+      "avatar_bone": "mixamorig9:LeftHandIndex2",
+      "rotation_wxyz": [
+        0.9980900227175492,
+        -0.06177626204038353,
+        -4.940878541110835e-09,
+        -6.903643482956726e-10
+      ],
+      "correction_degrees": 7.0835485581278315
+    },
+    "index_3": {
+      "canonical_bone": "LeftIndex3",
+      "avatar_bone": "mixamorig9:LeftHandIndex3",
+      "rotation_wxyz": [
+        0.9999690608858792,
+        0.007866210710522747,
+        5.190689959070783e-10,
+        -2.657606186100282e-07
+      ],
+      "correction_degrees": 0.9014106457615426
+    },
+    "middle_1": {
+      "canonical_bone": "LeftMiddle1",
+      "avatar_bone": "mixamorig9:LeftHandMiddle1",
+      "rotation_wxyz": [
+        0.9999174182982891,
+        -0.01284925052213101,
+        -3.040148898595577e-10,
+        0.00023096472482497086
+      ],
+      "correction_degrees": 1.4726940379223898
+    },
+    "middle_2": {
+      "canonical_bone": "LeftMiddle2",
+      "avatar_bone": "mixamorig9:LeftHandMiddle2",
+      "rotation_wxyz": [
+        0.9952713139450377,
+        -0.0971339880685274,
+        -3.61018862447245e-09,
+        -1.4723445265355845e-07
+      ],
+      "correction_degrees": 11.148312963732439
+    },
+    "middle_3": {
+      "canonical_bone": "LeftMiddle3",
+      "avatar_bone": "mixamorig9:LeftHandMiddle3",
+      "rotation_wxyz": [
+        0.999545106616255,
+        0.03015924136121626,
+        1.4138868348329586e-09,
+        1.244280080095937e-07
+      ],
+      "correction_degrees": 3.456518618370397
+    },
+    "ring_1": {
+      "canonical_bone": "LeftRing1",
+      "avatar_bone": "mixamorig9:LeftHandRing1",
+      "rotation_wxyz": [
+        0.9959685742505283,
+        -0.08968938223753509,
+        -1.2553233007807315e-09,
+        0.0015536470703784104
+      ],
+      "correction_degrees": 10.293023604527956
+    },
+    "ring_2": {
+      "canonical_bone": "LeftRing2",
+      "avatar_bone": "mixamorig9:LeftHandRing2",
+      "rotation_wxyz": [
+        0.9995344844485048,
+        -0.03050925102752717,
+        -9.802496002429916e-10,
+        3.224385054515995e-08
+      ],
+      "correction_degrees": 3.4966452377195583
+    },
+    "ring_3": {
+      "canonical_bone": "LeftRing3",
+      "avatar_bone": "mixamorig9:LeftHandRing3",
+      "rotation_wxyz": [
+        0.9912157740670315,
+        0.13225463787960856,
+        4.822930565774425e-09,
+        1.7084213133770946e-07
+      ],
+      "correction_degrees": 15.199797412745385
+    },
+    "little_1": {
+      "canonical_bone": "LeftLittle1",
+      "avatar_bone": "mixamorig9:LeftHandPinky1",
+      "rotation_wxyz": [
+        0.9975716506121368,
+        -0.06963733095612513,
+        5.3948246533571556e-09,
+        0.0012016789437345361
+      ],
+      "correction_degrees": 7.987504875840195
+    },
+    "little_2": {
+      "canonical_bone": "LeftLittle2",
+      "avatar_bone": "mixamorig9:LeftHandPinky2",
+      "rotation_wxyz": [
+        0.9968339694423075,
+        -0.07951124050022396,
+        -2.670117861449791e-09,
+        -9.246308128313129e-08
+      ],
+      "correction_degrees": 9.120944772208924
+    },
+    "little_3": {
+      "canonical_bone": "LeftLittle3",
+      "avatar_bone": "mixamorig9:LeftHandPinky3",
+      "rotation_wxyz": [
+        0.9890730539450862,
+        0.1474262322644011,
+        5.880077221113489e-09,
+        2.524224432032884e-07
+      ],
+      "correction_degrees": 16.955604560955635
+    }
+  },
+  "right_hand": {
+    "thumb_1": {
+      "canonical_bone": "RightThumb1",
+      "avatar_bone": "mixamorig9:RightHandThumb1",
+      "rotation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "correction_degrees": 0.0
+    },
+    "thumb_2": {
+      "canonical_bone": "RightThumb2",
+      "avatar_bone": "mixamorig9:RightHandThumb2",
+      "rotation_wxyz": [
+        0.9986786147025872,
+        -0.051390899346660884,
+        4.295719955533767e-09,
+        -2.505624340054039e-07
+      ],
+      "correction_degrees": 5.891558510897678
+    },
+    "thumb_3": {
+      "canonical_bone": "RightThumb3",
+      "avatar_bone": "mixamorig9:RightHandThumb3",
+      "rotation_wxyz": [
+        0.9999347283361893,
+        0.011425369453207651,
+        5.581783682883399e-11,
+        -2.980084437640968e-07
+      ],
+      "correction_degrees": 1.309279384944113
+    },
+    "index_1": {
+      "canonical_bone": "RightIndex1",
+      "avatar_bone": "mixamorig9:RightHandIndex1",
+      "rotation_wxyz": [
+        0.9994551285732584,
+        -0.03299698173270522,
+        1.8886822959371627e-09,
+        -0.0008032217272907511
+      ],
+      "correction_degrees": 3.782982779952359
+    },
+    "index_2": {
+      "canonical_bone": "RightIndex2",
+      "avatar_bone": "mixamorig9:RightHandIndex2",
+      "rotation_wxyz": [
+        0.997966329403327,
+        -0.06374327711414057,
+        1.3309204149600688e-09,
+        8.149249507610388e-09
+      ],
+      "correction_degrees": 7.309397142739658
+    },
+    "index_3": {
+      "canonical_bone": "RightIndex3",
+      "avatar_bone": "mixamorig9:RightHandIndex3",
+      "rotation_wxyz": [
+        0.9999870191512465,
+        -0.005095245725616847,
+        1.774180486999423e-10,
+        -1.1609635764844108e-08
+      ],
+      "correction_degrees": 0.5838746777189152
+    },
+    "middle_1": {
+      "canonical_bone": "RightMiddle1",
+      "avatar_bone": "mixamorig9:RightHandMiddle1",
+      "rotation_wxyz": [
+        0.9987470136778241,
+        -0.050031737064220747,
+        1.2684886775423882e-09,
+        -0.0011081317452874102
+      ],
+      "correction_degrees": 5.737017154731764
+    },
+    "middle_2": {
+      "canonical_bone": "RightMiddle2",
+      "avatar_bone": "mixamorig9:RightHandMiddle2",
+      "rotation_wxyz": [
+        0.9977745931964417,
+        -0.06667729127418948,
+        -2.4721127525964063e-10,
+        1.11108740285932e-07
+      ],
+      "correction_degrees": 7.646327663919439
+    },
+    "middle_3": {
+      "canonical_bone": "RightMiddle3",
+      "avatar_bone": "mixamorig9:RightHandMiddle3",
+      "rotation_wxyz": [
+        0.9992718390220869,
+        0.038154838977726195,
+        -5.0650401809026214e-11,
+        -1.413072385891494e-08
+      ],
+      "correction_degrees": 4.373284019310609
+    },
+    "ring_1": {
+      "canonical_bone": "RightRing1",
+      "avatar_bone": "mixamorig9:RightHandRing1",
+      "rotation_wxyz": [
+        0.9952348502054771,
+        -0.09748812260731386,
+        7.88706259592079e-10,
+        -0.0019128217332263031
+      ],
+      "correction_degrees": 11.19124779663611
+    },
+    "ring_2": {
+      "canonical_bone": "RightRing2",
+      "avatar_bone": "mixamorig9:RightHandRing2",
+      "rotation_wxyz": [
+        0.9995885618936077,
+        -0.02868286825734829,
+        -2.044248443800172e-10,
+        3.1814993882132085e-08
+      ],
+      "correction_degrees": 3.287265438743063
+    },
+    "ring_3": {
+      "canonical_bone": "RightRing3",
+      "avatar_bone": "mixamorig9:RightHandRing3",
+      "rotation_wxyz": [
+        0.9948868541286504,
+        0.10099577952563812,
+        -7.000639630187352e-10,
+        7.956070664230433e-08
+      ],
+      "correction_degrees": 11.593029524831923
+    },
+    "little_1": {
+      "canonical_bone": "RightLittle1",
+      "avatar_bone": "mixamorig9:RightHandPinky1",
+      "rotation_wxyz": [
+        0.9976966047007799,
+        -0.0678213596434871,
+        -5.021315353483937e-09,
+        -0.0013221742111589752
+      ],
+      "correction_degrees": 7.779205816455769
+    },
+    "little_2": {
+      "canonical_bone": "RightLittle2",
+      "avatar_bone": "mixamorig9:RightHandPinky2",
+      "rotation_wxyz": [
+        0.9953183985708526,
+        -0.09665032574351003,
+        -8.172541001318707e-10,
+        1.6473866988295e-07
+      ],
+      "correction_degrees": 11.092627336077916
+    },
+    "little_3": {
+      "canonical_bone": "RightLittle3",
+      "avatar_bone": "mixamorig9:RightHandPinky3",
+      "rotation_wxyz": [
+        0.9983658963338949,
+        0.05714487761311723,
+        -4.1945966514512907e-10,
+        1.8934424138630427e-08
+      ],
+      "correction_degrees": 6.551889827382211
+    }
+  },
+  "validation": {
+    "status": "PASS",
+    "reasons": [],
+    "left_hand": {
+      "mapped_finger_bones": 15,
+      "maximum_correction_degrees": 16.955604560955635,
+      "mean_correction_degrees": 6.61673593807455,
+      "minimum_non_thumb_spread_degrees": 0.0888675032749099,
+      "minimum_non_thumb_chain_clearance": 2.251437343047577,
+      "minimum_non_thumb_chain_clearance_normalized": 0.251106824965807,
+      "maximum_fk_straightness_error_degrees": 4.353408482428142e-06,
+      "excessive_flexion": false,
+      "finger_intersection_risk": false,
+      "impossible_joint_orientation": false
+    },
+    "right_hand": {
+      "mapped_finger_bones": 15,
+      "maximum_correction_degrees": 11.593029524831923,
+      "mean_correction_degrees": 5.8752658049561015,
+      "minimum_non_thumb_spread_degrees": 0.04667388582101941,
+      "minimum_non_thumb_chain_clearance": 2.193542512547489,
+      "minimum_non_thumb_chain_clearance_normalized": 0.24355302702457401,
+      "maximum_fk_straightness_error_degrees": 2.091309789151873e-06,
+      "excessive_flexion": false,
+      "finger_intersection_risk": false,
+      "impossible_joint_orientation": false
+    },
+    "left_right_mean_correction_delta_degrees": 0.7414701331184483
+  },
+  "calibration_binding": {
+    "avatar_profile_sha256": "aefd52c05701e8b6e01c0fd7a67d5fb1ffa9ab49f128b0e5ea3e71fc7721cc24",
+    "bone_map_sha256": "7adf6aafef954ef9f9c96d5f497f8937c094ba953a35f7468fd00eb743fc14d8"
+  }
+}

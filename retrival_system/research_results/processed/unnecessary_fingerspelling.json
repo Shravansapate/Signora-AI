@@ -1,0 +1,82 @@
+[
+  {
+    "id": "cancellation-06-0",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "cancellation-08-0",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "platform-change-04-0",
+    "token": "NOW",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-02-0",
+    "token": "BAGGAGE",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-04-0",
+    "token": "DANGER",
+    "role": "lexical"
+  },
+  {
+    "id": "cancellation-06-1",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "cancellation-08-1",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "platform-change-04-1",
+    "token": "NOW",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-02-1",
+    "token": "BAGGAGE",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-04-1",
+    "token": "DANGER",
+    "role": "lexical"
+  },
+  {
+    "id": "cancellation-06-2",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "cancellation-08-2",
+    "token": "CANCELLED",
+    "role": "lexical"
+  },
+  {
+    "id": "platform-change-04-2",
+    "token": "NOW",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-02-2",
+    "token": "BAGGAGE",
+    "role": "lexical"
+  },
+  {
+    "id": "emergency-04-2",
+    "token": "DANGER",
+    "role": "lexical"
+  },
+  {
+    "id": "additional-6",
+    "token": "CANCELLED",
+    "role": "lexical"
+  }
+]

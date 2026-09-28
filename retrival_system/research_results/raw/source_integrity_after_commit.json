@@ -1,0 +1,70 @@
+[
+  {
+    "path": "backend/app/display_control.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/app/live.py",
+    "line_endings_only": false
+  },
+  {
+    "path": "backend/app/main.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/app/playback_api.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/app/recovery.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/app/workspace_api.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/app/globals.css",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/AnnouncementConsole.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/LibraryManager.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/OperationsManager.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/PublicationPanel.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/ReviewConsole.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "frontend/src/components/TemplateManager.jsx",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/tests/test_announcements.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/tests/test_display_control.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/tests/test_live_delivery.py",
+    "line_endings_only": true
+  },
+  {
+    "path": "backend/tests/test_registry.py",
+    "line_endings_only": true
+  }
+]

@@ -1,0 +1,154 @@
+{
+  "input_id": "bdf98aa5-ee56-4d88-836c-15cb92a89f4c",
+  "status": "READY",
+  "original_text": "Train ACCIDENT",
+  "normalized_text": "train accident",
+  "meaning": null,
+  "meaning_hash": null,
+  "issues": [
+    {
+      "code": "UNSUPPORTED_GRAMMAR",
+      "detail": "The complete sentence does not match a supported construction",
+      "slot": null
+    }
+  ],
+  "manifest": {
+    "schema_version": 2,
+    "manifest_id": "b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc",
+    "manifest_hash": "a61deb2b7268991c4091699cf2005b9a66d1f1aa1c11b4826a383ada6c95d86e",
+    "purpose": "CONTENT_REVIEW",
+    "output_language": "ISL",
+    "operational": false,
+    "issued_at": "2026-09-28T01:57:09.850095Z",
+    "valid_until": "2026-09-28T02:12:09.295950Z",
+    "caption_text": "Train ACCIDENT",
+    "avatar": {
+      "profile_id": "c29d8124-c7cd-4cbd-8ce0-d5f25434f19b",
+      "rig_fingerprint": "c673080eccebd3d3cd6180033b059ed484a2fb532042dcdcba76d636f4392f05",
+      "motion_version_id": "e4a3a7c3-39db-4cd0-b07e-dcc1d41dae57",
+      "sha256": "ba31048c518e94e44472c3dbbac05fe9bc20eebcd30e8a14c62a2609add94b77",
+      "size_bytes": 58579352,
+      "asset_url": "/api/v1/playback/b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc/assets/e4a3a7c3-39db-4cd0-b07e-dcc1d41dae57/ba31048c518e94e44472c3dbbac05fe9bc20eebcd30e8a14c62a2609add94b77.glb"
+    },
+    "items": [
+      {
+        "sequence_index": 0,
+        "semantic_key": "ISL_TRAIN_01",
+        "concept_id": "94285fb9-67ba-4db0-821f-c07a26ec6a8e",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "version_no": 1,
+        "sha256": "c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a",
+        "size_bytes": 58587864,
+        "asset_url": "/api/v1/playback/b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc/assets/67fd9c51-03f7-4e18-80d3-67ce47fc9d52/c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a.glb",
+        "clip_name": "TRAIN",
+        "duration_seconds": 3.5199999809265137,
+        "semantic_group": "gloss-lexical",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 1,
+        "semantic_key": "ISL_ACCIDENT_01",
+        "concept_id": "1ed71179-124b-4103-8abe-1320c003d311",
+        "motion_version_id": "cdd00611-6da7-49e7-b790-7e4c36796d16",
+        "version_no": 1,
+        "sha256": "aa22ec435f9b85f7d6507d4e3d9930b8d4feae814b223e6d0965a1cb8eecfdb6",
+        "size_bytes": 58597688,
+        "asset_url": "/api/v1/playback/b33fd5cc-f4da-4962-bc7a-827a0dd5cbfc/assets/cdd00611-6da7-49e7-b790-7e4c36796d16/aa22ec435f9b85f7d6507d4e3d9930b8d4feae814b223e6d0965a1cb8eecfdb6.glb",
+        "clip_name": "ACCIDENT",
+        "duration_seconds": 4.159999847412109,
+        "semantic_group": "gloss-lexical",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      }
+    ],
+    "readiness_policy": "FULL_MESSAGE",
+    "safe_boundaries": [
+      1
+    ],
+    "estimated_duration_seconds": 7.679999828338623
+  },
+  "demo_mode": true,
+  "retrieval": {
+    "original_input": "Train ACCIDENT",
+    "normalized_input": "train accident",
+    "english_tokens": [
+      "train",
+      "accident"
+    ],
+    "semantic_parse": null,
+    "translation_status": "LEXICAL_RECOVERY",
+    "normalization_corrections": [],
+    "partial_semantics": {
+      "slots": {},
+      "events": [],
+      "polarity": null
+    },
+    "semantic_status": "UNSUPPORTED",
+    "construction": {
+      "source": "LEXICAL_RECOVERY",
+      "rule_id": null,
+      "linguistically_validated": false,
+      "order": [
+        "input_order"
+      ]
+    },
+    "translation_issues": [
+      {
+        "code": "UNSUPPORTED_GRAMMAR",
+        "detail": "The complete sentence does not match a supported construction",
+        "slot": null
+      }
+    ],
+    "gloss_tokens": [
+      "TRAIN",
+      "ACCIDENT"
+    ],
+    "gloss_units": [
+      {
+        "token": "TRAIN",
+        "kind": "LEXICAL",
+        "role": "lexical"
+      },
+      {
+        "token": "ACCIDENT",
+        "kind": "LEXICAL",
+        "role": "lexical"
+      }
+    ],
+    "retrieval_tokens": [
+      "TRAIN",
+      "ACCIDENT"
+    ],
+    "tokens": [
+      "TRAIN",
+      "ACCIDENT"
+    ],
+    "matches": [
+      {
+        "input": "train",
+        "method": "WORD",
+        "matched": "ISL_TRAIN_01",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "gloss_token": "TRAIN",
+        "role": "lexical"
+      },
+      {
+        "input": "accident",
+        "method": "WORD",
+        "matched": "ISL_ACCIDENT_01",
+        "motion_version_id": "cdd00611-6da7-49e7-b790-7e4c36796d16",
+        "gloss_token": "ACCIDENT",
+        "role": "lexical"
+      }
+    ],
+    "fingerspelled": [],
+    "missing_gloss": [],
+    "semantic_coverage": "LEXICAL_ONLY",
+    "skipped": [],
+    "unavailable_motion_ids": [],
+    "last_resort": false,
+    "retrieval_status": "COMPLETE",
+    "clip_count": 2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "labels": [
+    "Normalize\n(inclusive)",
+    "Parse+entities\n+validation",
+    "Gloss",
+    "Selector\nCPU",
+    "Safety\nservice",
+    "GLB/stitch/\nrender split"
+  ],
+  "values": [
+    0.08177901785714285,
+    0.13251116071428573,
+    0.029698214285714286,
+    0.6359053571428571,
+    null,
+    null
+  ],
+  "subtitle": "Component timings overlap; not additive. Browser preparation measured separately.",
+  "ylabel": "Time (milliseconds)"
+}

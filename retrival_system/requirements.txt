@@ -1,0 +1,29 @@
+# Signora Backend - Python Dependencies
+# Generated from backend/pyproject.toml
+# Install with: pip install -r requirements.txt
+# Or preferably: cd backend && uv sync --locked --extra asr --extra retrieval
+
+# ── Core dependencies ──────────────────────────────────────────────
+alembic>=1.16,<2
+fastapi>=0.116,<1
+psycopg[binary]>=3.2,<4
+pydantic>=2.12,<3
+pydantic-settings>=2.10,<3
+python-multipart>=0.0.20,<1
+sqlalchemy>=2.0.43,<2.1
+uvicorn>=0.35,<1
+websockets>=15,<17
+
+# ── Optional: ASR (speech recognition) ─────────────────────────────
+faster-whisper>=1.2,<2
+
+# ── Optional: Semantic retrieval (E5 embeddings) ───────────────────
+onnxruntime>=1.23,<2
+tokenizers>=0.22,<1
+huggingface-hub>=0.34,<2
+numpy>=2,<3
+
+# ── Development / Testing ──────────────────────────────────────────
+httpx>=0.28,<1
+pytest>=9.0.3,<10
+ruff>=0.12,<1

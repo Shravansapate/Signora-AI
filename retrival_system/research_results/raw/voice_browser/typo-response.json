@@ -1,0 +1,383 @@
+{
+  "input_id": "51740a84-56c5-497e-9935-ed1d0a7f9e29",
+  "status": "READY",
+  "original_text": "Train 1201 Arrives at platfrm 2",
+  "normalized_text": "train 1201 arrives at platform 2",
+  "meaning": {
+    "schema_version": 1,
+    "parser_version": "railway-en-domain-2",
+    "station_id": "NAGPUR",
+    "source_text_language": "en",
+    "intent": "TRAIN_ARRIVAL",
+    "temporal_state": "ARRIVAL_UNSPECIFIED",
+    "polarity": "POSITIVE",
+    "priority": "P2",
+    "slots": {
+      "train_identifier": {
+        "kind": "TRAIN_IDENTIFIER",
+        "raw": "1201",
+        "value": "1201",
+        "source_start": 6,
+        "source_end": 10,
+        "valid": true
+      },
+      "platform_identifier": {
+        "kind": "PLATFORM_IDENTIFIER",
+        "raw": "2",
+        "value": "2",
+        "source_start": 30,
+        "source_end": 31,
+        "valid": true
+      }
+    },
+    "relations": {
+      "platform_identifier": "location"
+    },
+    "event_form": "arrives",
+    "time_modifier": null
+  },
+  "meaning_hash": "91c33cd995374c925828abe4ff0decafa03fd54119e8f0cef84f0468d6ec12fd",
+  "issues": [],
+  "manifest": {
+    "schema_version": 2,
+    "manifest_id": "802c415f-aae3-4b40-8adb-efeae3bdd749",
+    "manifest_hash": "96eb5f73cc142d3b4016fe0b4c3992e79edee08c2707afc0d69138309ba78678",
+    "purpose": "CONTENT_REVIEW",
+    "output_language": "ISL",
+    "operational": false,
+    "issued_at": "2026-09-28T01:55:42.103152Z",
+    "valid_until": "2026-09-28T02:10:40.997074Z",
+    "caption_text": "Train 1201 Arrives at platfrm 2",
+    "avatar": {
+      "profile_id": "c29d8124-c7cd-4cbd-8ce0-d5f25434f19b",
+      "rig_fingerprint": "c673080eccebd3d3cd6180033b059ed484a2fb532042dcdcba76d636f4392f05",
+      "motion_version_id": "e4a3a7c3-39db-4cd0-b07e-dcc1d41dae57",
+      "sha256": "ba31048c518e94e44472c3dbbac05fe9bc20eebcd30e8a14c62a2609add94b77",
+      "size_bytes": 58579352,
+      "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/e4a3a7c3-39db-4cd0-b07e-dcc1d41dae57/ba31048c518e94e44472c3dbbac05fe9bc20eebcd30e8a14c62a2609add94b77.glb"
+    },
+    "items": [
+      {
+        "sequence_index": 0,
+        "semantic_key": "ISL_TRAIN_01",
+        "concept_id": "94285fb9-67ba-4db0-821f-c07a26ec6a8e",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "version_no": 1,
+        "sha256": "c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a",
+        "size_bytes": 58587864,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/67fd9c51-03f7-4e18-80d3-67ce47fc9d52/c01998664f2081db8f8ea94b31ae6ffd9935527c6c8d34d368f85da6e8fa8b7a.glb",
+        "clip_name": "TRAIN",
+        "duration_seconds": 3.5199999809265137,
+        "semantic_group": "gloss-entity",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 1,
+        "semantic_key": "ISL_1_ONE_01",
+        "concept_id": "17805d2f-d17a-43ba-bbe3-7a115be0ca2d",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "version_no": 1,
+        "sha256": "af9d6c4729488389b834c41a456b48530d7f82000d5692c63259b2186c8eeeaf",
+        "size_bytes": 58563612,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/13aa7c82-76e9-44dd-8df4-6439bc899aa8/af9d6c4729488389b834c41a456b48530d7f82000d5692c63259b2186c8eeeaf.glb",
+        "clip_name": "1_ONE",
+        "duration_seconds": 3.1600000858306885,
+        "semantic_group": "gloss-entity",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 2,
+        "semantic_key": "ISL_2_TWO_01",
+        "concept_id": "4e416207-e73a-460d-a165-670334a4c0c5",
+        "motion_version_id": "07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f",
+        "version_no": 1,
+        "sha256": "0291c5e881ed7c0513d1ac7b611da5af4ee63bacfb89c2a6f0f130f0a03c999e",
+        "size_bytes": 58552832,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f/0291c5e881ed7c0513d1ac7b611da5af4ee63bacfb89c2a6f0f130f0a03c999e.glb",
+        "clip_name": "2_TWO",
+        "duration_seconds": 2.119999885559082,
+        "semantic_group": "gloss-entity",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 3,
+        "semantic_key": "ISL_ZERO_01",
+        "concept_id": "fec4f1c8-bb72-4f30-8d6d-db695d4560e0",
+        "motion_version_id": "1a1d3b63-bb0b-47c9-a210-c4c62b4d7bf4",
+        "version_no": 1,
+        "sha256": "62279dc9091305ae1a098675bca4540e151fea787e5127e57510e13e711279df",
+        "size_bytes": 58563656,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/1a1d3b63-bb0b-47c9-a210-c4c62b4d7bf4/62279dc9091305ae1a098675bca4540e151fea787e5127e57510e13e711279df.glb",
+        "clip_name": "ZERO",
+        "duration_seconds": 3.2799999713897705,
+        "semantic_group": "gloss-entity",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 4,
+        "semantic_key": "ISL_1_ONE_01",
+        "concept_id": "17805d2f-d17a-43ba-bbe3-7a115be0ca2d",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "version_no": 1,
+        "sha256": "af9d6c4729488389b834c41a456b48530d7f82000d5692c63259b2186c8eeeaf",
+        "size_bytes": 58563612,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/13aa7c82-76e9-44dd-8df4-6439bc899aa8/af9d6c4729488389b834c41a456b48530d7f82000d5692c63259b2186c8eeeaf.glb",
+        "clip_name": "1_ONE",
+        "duration_seconds": 3.1600000858306885,
+        "semantic_group": "gloss-entity",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 5,
+        "semantic_key": "ISL_PLATFORM_01",
+        "concept_id": "9e88f3e7-b93c-4b9c-9088-9e3659092630",
+        "motion_version_id": "0b491654-7763-4654-b7be-09ee24b44be5",
+        "version_no": 1,
+        "sha256": "4d6ec524186b6f0bf8646f1c08b3534d28ba87506571664ba2b29b269dc8c325",
+        "size_bytes": 58707624,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/0b491654-7763-4654-b7be-09ee24b44be5/4d6ec524186b6f0bf8646f1c08b3534d28ba87506571664ba2b29b269dc8c325.glb",
+        "clip_name": "PLATFORM",
+        "duration_seconds": 10.4399995803833,
+        "semantic_group": "gloss-location",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 6,
+        "semantic_key": "ISL_2_TWO_01",
+        "concept_id": "4e416207-e73a-460d-a165-670334a4c0c5",
+        "motion_version_id": "07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f",
+        "version_no": 1,
+        "sha256": "0291c5e881ed7c0513d1ac7b611da5af4ee63bacfb89c2a6f0f130f0a03c999e",
+        "size_bytes": 58552832,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f/0291c5e881ed7c0513d1ac7b611da5af4ee63bacfb89c2a6f0f130f0a03c999e.glb",
+        "clip_name": "2_TWO",
+        "duration_seconds": 2.119999885559082,
+        "semantic_group": "gloss-location",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      },
+      {
+        "sequence_index": 7,
+        "semantic_key": "ISL_ARRIVE_01",
+        "concept_id": "ac970dd7-d39d-43d7-be4b-1b084557487e",
+        "motion_version_id": "6ff47feb-8692-458f-972d-7aefbbee94fa",
+        "version_no": 1,
+        "sha256": "e342b13d50fc7a5152611d40a4cf40bdf11460bc0dd4f0b884f961af6e8088cb",
+        "size_bytes": 59229792,
+        "asset_url": "/api/v1/playback/802c415f-aae3-4b40-8adb-efeae3bdd749/assets/6ff47feb-8692-458f-972d-7aefbbee94fa/e342b13d50fc7a5152611d40a4cf40bdf11460bc0dd4f0b884f961af6e8088cb.glb",
+        "clip_name": "ARRIVE",
+        "duration_seconds": 36.47999954223633,
+        "semantic_group": "gloss-event",
+        "transition": "REVIEW_CUT",
+        "playback_rate": 1
+      }
+    ],
+    "readiness_policy": "FULL_MESSAGE",
+    "safe_boundaries": [
+      4,
+      6,
+      7
+    ],
+    "estimated_duration_seconds": 64.27999901771545
+  },
+  "demo_mode": true,
+  "retrieval": {
+    "original_input": "Train 1201 Arrives at platfrm 2",
+    "normalized_input": "train 1201 arrives at platform 2",
+    "english_tokens": [
+      "train",
+      "1201",
+      "arrives",
+      "at",
+      "platform",
+      "2"
+    ],
+    "semantic_parse": {
+      "schema_version": 1,
+      "parser_version": "railway-en-domain-2",
+      "station_id": "NAGPUR",
+      "source_text_language": "en",
+      "intent": "TRAIN_ARRIVAL",
+      "temporal_state": "ARRIVAL_UNSPECIFIED",
+      "polarity": "POSITIVE",
+      "priority": "P2",
+      "slots": {
+        "train_identifier": {
+          "kind": "TRAIN_IDENTIFIER",
+          "raw": "1201",
+          "value": "1201",
+          "source_start": 6,
+          "source_end": 10,
+          "valid": true
+        },
+        "platform_identifier": {
+          "kind": "PLATFORM_IDENTIFIER",
+          "raw": "2",
+          "value": "2",
+          "source_start": 30,
+          "source_end": 31,
+          "valid": true
+        }
+      },
+      "relations": {
+        "platform_identifier": "location"
+      },
+      "event_form": "arrives",
+      "time_modifier": null
+    },
+    "translation_status": "DOMAIN_DRAFT",
+    "normalization_corrections": [
+      {
+        "original": "platfrm",
+        "normalized": "platform",
+        "reason": "DOMAIN_FUZZY_MATCH"
+      }
+    ],
+    "partial_semantics": null,
+    "semantic_status": "COMPLETE",
+    "construction": {
+      "source": "STATION_DOMAIN_RULES",
+      "rule_id": "railway-domain-draft-1",
+      "linguistically_validated": false,
+      "order": [
+        "entity",
+        "source",
+        "destination",
+        "location",
+        "time",
+        "polarity",
+        "event",
+        "duration"
+      ]
+    },
+    "translation_issues": [],
+    "gloss_tokens": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE"
+    ],
+    "gloss_units": [
+      {
+        "token": "TRAIN",
+        "kind": "LEXEME",
+        "role": "entity"
+      },
+      {
+        "token": "1201",
+        "kind": "IDENTIFIER",
+        "role": "entity"
+      },
+      {
+        "token": "PLATFORM",
+        "kind": "LEXEME",
+        "role": "location"
+      },
+      {
+        "token": "2",
+        "kind": "PLATFORM_IDENTIFIER",
+        "role": "location"
+      },
+      {
+        "token": "ARRIVE",
+        "kind": "LEXEME",
+        "role": "event"
+      }
+    ],
+    "retrieval_tokens": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE"
+    ],
+    "tokens": [
+      "TRAIN",
+      "1201",
+      "PLATFORM",
+      "2",
+      "ARRIVE"
+    ],
+    "matches": [
+      {
+        "input": "train",
+        "method": "WORD",
+        "matched": "ISL_TRAIN_01",
+        "motion_version_id": "67fd9c51-03f7-4e18-80d3-67ce47fc9d52",
+        "gloss_token": "TRAIN",
+        "role": "entity"
+      },
+      {
+        "input": "1",
+        "method": "DIGIT",
+        "matched": "ISL_1_ONE_01",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "gloss_token": "1201",
+        "role": "entity"
+      },
+      {
+        "input": "2",
+        "method": "DIGIT",
+        "matched": "ISL_2_TWO_01",
+        "motion_version_id": "07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f",
+        "gloss_token": "1201",
+        "role": "entity"
+      },
+      {
+        "input": "0",
+        "method": "DIGIT",
+        "matched": "ISL_ZERO_01",
+        "motion_version_id": "1a1d3b63-bb0b-47c9-a210-c4c62b4d7bf4",
+        "gloss_token": "1201",
+        "role": "entity"
+      },
+      {
+        "input": "1",
+        "method": "DIGIT",
+        "matched": "ISL_1_ONE_01",
+        "motion_version_id": "13aa7c82-76e9-44dd-8df4-6439bc899aa8",
+        "gloss_token": "1201",
+        "role": "entity"
+      },
+      {
+        "input": "platform",
+        "method": "WORD",
+        "matched": "ISL_PLATFORM_01",
+        "motion_version_id": "0b491654-7763-4654-b7be-09ee24b44be5",
+        "gloss_token": "PLATFORM",
+        "role": "location"
+      },
+      {
+        "input": "2",
+        "method": "WORD",
+        "matched": "ISL_2_TWO_01",
+        "motion_version_id": "07f2b2a4-8cbc-45c9-a423-c6436bc5cc2f",
+        "gloss_token": "2",
+        "role": "location"
+      },
+      {
+        "input": "arrive",
+        "method": "WORD",
+        "matched": "ISL_ARRIVE_01",
+        "motion_version_id": "6ff47feb-8692-458f-972d-7aefbbee94fa",
+        "gloss_token": "ARRIVE",
+        "role": "event"
+      }
+    ],
+    "fingerspelled": [],
+    "missing_gloss": [],
+    "semantic_coverage": "COMPLETE_DRAFT",
+    "skipped": [],
+    "unavailable_motion_ids": [],
+    "last_resort": false,
+    "retrieval_status": "COMPLETE",
+    "clip_count": 8
+  }
+}

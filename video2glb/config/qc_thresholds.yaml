@@ -1,0 +1,6 @@
+tracking:
+  body_availability_fail_below: 0.50
+  body_availability_review_below: 0.80
+  hand_availability_review_below: 0.20
+  longest_missing_hand_review_seconds: 1.50
+  swap_events_review_at_or_above: 1

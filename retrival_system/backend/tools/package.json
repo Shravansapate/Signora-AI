@@ -1,0 +1,12 @@
+{
+  "name": "signora-asset-validation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pinned official Khronos glTF validation for backend asset inspection",
+  "engines": {
+    "node": ">=20.20.0"
+  },
+  "dependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

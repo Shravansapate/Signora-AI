@@ -1,0 +1,1443 @@
+[
+  {
+    "id": "probe-0",
+    "mode": "Word only",
+    "query": "train",
+    "expected": "train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-1",
+    "mode": "Word only",
+    "query": "arrive",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-2",
+    "mode": "Word only",
+    "query": "arrival",
+    "expected": "arrive",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-3",
+    "mode": "Word only",
+    "query": "arriving",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-4",
+    "mode": "Word only",
+    "query": "departure",
+    "expected": "depart",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-5",
+    "mode": "Word only",
+    "query": "delayed",
+    "expected": "delay",
+    "decoded": {
+      "DELAY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-6",
+    "mode": "Word only",
+    "query": "cancelled",
+    "expected": "cancel",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-7",
+    "mode": "Word only",
+    "query": "platform",
+    "expected": "platform",
+    "decoded": {
+      "PLATFORM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-8",
+    "mode": "Word only",
+    "query": "ticket",
+    "expected": "ticket",
+    "decoded": {
+      "TICKET": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-9",
+    "mode": "Word only",
+    "query": "baggage",
+    "expected": "luggage",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-10",
+    "mode": "Word only",
+    "query": "exit",
+    "expected": "exit",
+    "decoded": {
+      "EXIT": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-11",
+    "mode": "Word only",
+    "query": "emergency",
+    "expected": "emergency",
+    "decoded": {
+      "EMERGENCY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-12",
+    "mode": "Word only",
+    "query": "fire",
+    "expected": "fire",
+    "decoded": {
+      "FIRE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-13",
+    "mode": "Word only",
+    "query": "help",
+    "expected": "help",
+    "decoded": {
+      "HELP": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-14",
+    "mode": "Word only",
+    "query": "station",
+    "expected": "station",
+    "decoded": {
+      "STATION": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-15",
+    "mode": "Word only",
+    "query": "water",
+    "expected": "water",
+    "decoded": {
+      "WATER": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-16",
+    "mode": "Word only",
+    "query": "local train",
+    "expected": "local train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": false,
+    "clips": 1
+  },
+  {
+    "id": "probe-17",
+    "mode": "Word only",
+    "query": "express train",
+    "expected": "express train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": false,
+    "clips": 1
+  },
+  {
+    "id": "probe-18",
+    "mode": "Word only",
+    "query": "waiting room",
+    "expected": "waiting room",
+    "decoded": {
+      "WAIT": 1
+    },
+    "correct": false,
+    "clips": 1
+  },
+  {
+    "id": "probe-19",
+    "mode": "Word only",
+    "query": "new delhi",
+    "expected": "new delhi",
+    "decoded": {
+      "DELHI": 1
+    },
+    "correct": false,
+    "clips": 1
+  },
+  {
+    "id": "probe-20",
+    "mode": "Word only",
+    "query": "identity card",
+    "expected": "identity card",
+    "decoded": {
+      "IDENTITY": 1,
+      "CARD": 1
+    },
+    "correct": false,
+    "clips": 2
+  },
+  {
+    "id": "probe-21",
+    "mode": "Word only",
+    "query": "time table",
+    "expected": "time table",
+    "decoded": {
+      "TIME": 1
+    },
+    "correct": false,
+    "clips": 1
+  },
+  {
+    "id": "probe-22",
+    "mode": "Word only",
+    "query": "1201",
+    "expected": "1201",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-23",
+    "mode": "Word only",
+    "query": "00120",
+    "expected": "00120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-24",
+    "mode": "Word only",
+    "query": "22120",
+    "expected": "22120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-25",
+    "mode": "Word only",
+    "query": "2",
+    "expected": "2",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-26",
+    "mode": "Word only",
+    "query": "10",
+    "expected": "10",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-27",
+    "mode": "Word only",
+    "query": "30",
+    "expected": "30",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-28",
+    "mode": "Word only",
+    "query": "xylophonex",
+    "expected": "xylophonex",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-29",
+    "mode": "Word only",
+    "query": "quizzleville",
+    "expected": "quizzleville",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-30",
+    "mode": "Word only",
+    "query": "evacuate",
+    "expected": "evacuate",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-31",
+    "mode": "Word only",
+    "query": "not",
+    "expected": "not",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-32",
+    "mode": "Word only",
+    "query": "future",
+    "expected": "future",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-33",
+    "mode": "Word only",
+    "query": "at",
+    "expected": null,
+    "decoded": {},
+    "correct": true,
+    "clips": 0
+  },
+  {
+    "id": "probe-34",
+    "mode": "Word only",
+    "query": "railway track",
+    "expected": "railway track",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-0",
+    "mode": "Phrase + Word",
+    "query": "train",
+    "expected": "train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-1",
+    "mode": "Phrase + Word",
+    "query": "arrive",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-2",
+    "mode": "Phrase + Word",
+    "query": "arrival",
+    "expected": "arrive",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-3",
+    "mode": "Phrase + Word",
+    "query": "arriving",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-4",
+    "mode": "Phrase + Word",
+    "query": "departure",
+    "expected": "depart",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-5",
+    "mode": "Phrase + Word",
+    "query": "delayed",
+    "expected": "delay",
+    "decoded": {
+      "DELAY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-6",
+    "mode": "Phrase + Word",
+    "query": "cancelled",
+    "expected": "cancel",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-7",
+    "mode": "Phrase + Word",
+    "query": "platform",
+    "expected": "platform",
+    "decoded": {
+      "PLATFORM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-8",
+    "mode": "Phrase + Word",
+    "query": "ticket",
+    "expected": "ticket",
+    "decoded": {
+      "TICKET": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-9",
+    "mode": "Phrase + Word",
+    "query": "baggage",
+    "expected": "luggage",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-10",
+    "mode": "Phrase + Word",
+    "query": "exit",
+    "expected": "exit",
+    "decoded": {
+      "EXIT": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-11",
+    "mode": "Phrase + Word",
+    "query": "emergency",
+    "expected": "emergency",
+    "decoded": {
+      "EMERGENCY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-12",
+    "mode": "Phrase + Word",
+    "query": "fire",
+    "expected": "fire",
+    "decoded": {
+      "FIRE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-13",
+    "mode": "Phrase + Word",
+    "query": "help",
+    "expected": "help",
+    "decoded": {
+      "HELP": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-14",
+    "mode": "Phrase + Word",
+    "query": "station",
+    "expected": "station",
+    "decoded": {
+      "STATION": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-15",
+    "mode": "Phrase + Word",
+    "query": "water",
+    "expected": "water",
+    "decoded": {
+      "WATER": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-16",
+    "mode": "Phrase + Word",
+    "query": "local train",
+    "expected": "local train",
+    "decoded": {
+      "LOCAL TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-17",
+    "mode": "Phrase + Word",
+    "query": "express train",
+    "expected": "express train",
+    "decoded": {
+      "EXPRESS TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-18",
+    "mode": "Phrase + Word",
+    "query": "waiting room",
+    "expected": "waiting room",
+    "decoded": {
+      "WAITING ROOM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-19",
+    "mode": "Phrase + Word",
+    "query": "new delhi",
+    "expected": "new delhi",
+    "decoded": {
+      "NEW DELHI": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-20",
+    "mode": "Phrase + Word",
+    "query": "identity card",
+    "expected": "identity card",
+    "decoded": {
+      "IDENTITY CARD": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-21",
+    "mode": "Phrase + Word",
+    "query": "time table",
+    "expected": "time table",
+    "decoded": {
+      "TIME TABLE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-22",
+    "mode": "Phrase + Word",
+    "query": "1201",
+    "expected": "1201",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-23",
+    "mode": "Phrase + Word",
+    "query": "00120",
+    "expected": "00120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-24",
+    "mode": "Phrase + Word",
+    "query": "22120",
+    "expected": "22120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-25",
+    "mode": "Phrase + Word",
+    "query": "2",
+    "expected": "2",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-26",
+    "mode": "Phrase + Word",
+    "query": "10",
+    "expected": "10",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-27",
+    "mode": "Phrase + Word",
+    "query": "30",
+    "expected": "30",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-28",
+    "mode": "Phrase + Word",
+    "query": "xylophonex",
+    "expected": "xylophonex",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-29",
+    "mode": "Phrase + Word",
+    "query": "quizzleville",
+    "expected": "quizzleville",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-30",
+    "mode": "Phrase + Word",
+    "query": "evacuate",
+    "expected": "evacuate",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-31",
+    "mode": "Phrase + Word",
+    "query": "not",
+    "expected": "not",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-32",
+    "mode": "Phrase + Word",
+    "query": "future",
+    "expected": "future",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-33",
+    "mode": "Phrase + Word",
+    "query": "at",
+    "expected": null,
+    "decoded": {},
+    "correct": true,
+    "clips": 0
+  },
+  {
+    "id": "probe-34",
+    "mode": "Phrase + Word",
+    "query": "railway track",
+    "expected": "railway track",
+    "decoded": {
+      "TRACK": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-0",
+    "mode": "Sentence + Phrase + Word",
+    "query": "train",
+    "expected": "train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-1",
+    "mode": "Sentence + Phrase + Word",
+    "query": "arrive",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-2",
+    "mode": "Sentence + Phrase + Word",
+    "query": "arrival",
+    "expected": "arrive",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-3",
+    "mode": "Sentence + Phrase + Word",
+    "query": "arriving",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-4",
+    "mode": "Sentence + Phrase + Word",
+    "query": "departure",
+    "expected": "depart",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-5",
+    "mode": "Sentence + Phrase + Word",
+    "query": "delayed",
+    "expected": "delay",
+    "decoded": {
+      "DELAY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-6",
+    "mode": "Sentence + Phrase + Word",
+    "query": "cancelled",
+    "expected": "cancel",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-7",
+    "mode": "Sentence + Phrase + Word",
+    "query": "platform",
+    "expected": "platform",
+    "decoded": {
+      "PLATFORM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-8",
+    "mode": "Sentence + Phrase + Word",
+    "query": "ticket",
+    "expected": "ticket",
+    "decoded": {
+      "TICKET": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-9",
+    "mode": "Sentence + Phrase + Word",
+    "query": "baggage",
+    "expected": "luggage",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-10",
+    "mode": "Sentence + Phrase + Word",
+    "query": "exit",
+    "expected": "exit",
+    "decoded": {
+      "EXIT": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-11",
+    "mode": "Sentence + Phrase + Word",
+    "query": "emergency",
+    "expected": "emergency",
+    "decoded": {
+      "EMERGENCY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-12",
+    "mode": "Sentence + Phrase + Word",
+    "query": "fire",
+    "expected": "fire",
+    "decoded": {
+      "FIRE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-13",
+    "mode": "Sentence + Phrase + Word",
+    "query": "help",
+    "expected": "help",
+    "decoded": {
+      "HELP": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-14",
+    "mode": "Sentence + Phrase + Word",
+    "query": "station",
+    "expected": "station",
+    "decoded": {
+      "STATION": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-15",
+    "mode": "Sentence + Phrase + Word",
+    "query": "water",
+    "expected": "water",
+    "decoded": {
+      "WATER": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-16",
+    "mode": "Sentence + Phrase + Word",
+    "query": "local train",
+    "expected": "local train",
+    "decoded": {
+      "LOCAL TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-17",
+    "mode": "Sentence + Phrase + Word",
+    "query": "express train",
+    "expected": "express train",
+    "decoded": {
+      "EXPRESS TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-18",
+    "mode": "Sentence + Phrase + Word",
+    "query": "waiting room",
+    "expected": "waiting room",
+    "decoded": {
+      "WAITING ROOM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-19",
+    "mode": "Sentence + Phrase + Word",
+    "query": "new delhi",
+    "expected": "new delhi",
+    "decoded": {
+      "NEW DELHI": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-20",
+    "mode": "Sentence + Phrase + Word",
+    "query": "identity card",
+    "expected": "identity card",
+    "decoded": {
+      "IDENTITY CARD": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-21",
+    "mode": "Sentence + Phrase + Word",
+    "query": "time table",
+    "expected": "time table",
+    "decoded": {
+      "TIME TABLE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-22",
+    "mode": "Sentence + Phrase + Word",
+    "query": "1201",
+    "expected": "1201",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-23",
+    "mode": "Sentence + Phrase + Word",
+    "query": "00120",
+    "expected": "00120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-24",
+    "mode": "Sentence + Phrase + Word",
+    "query": "22120",
+    "expected": "22120",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-25",
+    "mode": "Sentence + Phrase + Word",
+    "query": "2",
+    "expected": "2",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-26",
+    "mode": "Sentence + Phrase + Word",
+    "query": "10",
+    "expected": "10",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-27",
+    "mode": "Sentence + Phrase + Word",
+    "query": "30",
+    "expected": "30",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-28",
+    "mode": "Sentence + Phrase + Word",
+    "query": "xylophonex",
+    "expected": "xylophonex",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-29",
+    "mode": "Sentence + Phrase + Word",
+    "query": "quizzleville",
+    "expected": "quizzleville",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-30",
+    "mode": "Sentence + Phrase + Word",
+    "query": "evacuate",
+    "expected": "evacuate",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-31",
+    "mode": "Sentence + Phrase + Word",
+    "query": "not",
+    "expected": "not",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-32",
+    "mode": "Sentence + Phrase + Word",
+    "query": "future",
+    "expected": "future",
+    "decoded": {},
+    "correct": false,
+    "clips": 0
+  },
+  {
+    "id": "probe-33",
+    "mode": "Sentence + Phrase + Word",
+    "query": "at",
+    "expected": null,
+    "decoded": {},
+    "correct": true,
+    "clips": 0
+  },
+  {
+    "id": "probe-34",
+    "mode": "Sentence + Phrase + Word",
+    "query": "railway track",
+    "expected": "railway track",
+    "decoded": {
+      "TRACK": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-0",
+    "mode": "Full hierarchy",
+    "query": "train",
+    "expected": "train",
+    "decoded": {
+      "TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-1",
+    "mode": "Full hierarchy",
+    "query": "arrive",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-2",
+    "mode": "Full hierarchy",
+    "query": "arrival",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 7
+  },
+  {
+    "id": "probe-3",
+    "mode": "Full hierarchy",
+    "query": "arriving",
+    "expected": "arrive",
+    "decoded": {
+      "ARRIVE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-4",
+    "mode": "Full hierarchy",
+    "query": "departure",
+    "expected": "depart",
+    "decoded": {
+      "DEPART": 1
+    },
+    "correct": true,
+    "clips": 9
+  },
+  {
+    "id": "probe-5",
+    "mode": "Full hierarchy",
+    "query": "delayed",
+    "expected": "delay",
+    "decoded": {
+      "DELAY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-6",
+    "mode": "Full hierarchy",
+    "query": "cancelled",
+    "expected": "cancel",
+    "decoded": {
+      "CANCEL": 1
+    },
+    "correct": true,
+    "clips": 9
+  },
+  {
+    "id": "probe-7",
+    "mode": "Full hierarchy",
+    "query": "platform",
+    "expected": "platform",
+    "decoded": {
+      "PLATFORM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-8",
+    "mode": "Full hierarchy",
+    "query": "ticket",
+    "expected": "ticket",
+    "decoded": {
+      "TICKET": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-9",
+    "mode": "Full hierarchy",
+    "query": "baggage",
+    "expected": "luggage",
+    "decoded": {
+      "LUGGAGE": 1
+    },
+    "correct": true,
+    "clips": 7
+  },
+  {
+    "id": "probe-10",
+    "mode": "Full hierarchy",
+    "query": "exit",
+    "expected": "exit",
+    "decoded": {
+      "EXIT": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-11",
+    "mode": "Full hierarchy",
+    "query": "emergency",
+    "expected": "emergency",
+    "decoded": {
+      "EMERGENCY": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-12",
+    "mode": "Full hierarchy",
+    "query": "fire",
+    "expected": "fire",
+    "decoded": {
+      "FIRE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-13",
+    "mode": "Full hierarchy",
+    "query": "help",
+    "expected": "help",
+    "decoded": {
+      "HELP": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-14",
+    "mode": "Full hierarchy",
+    "query": "station",
+    "expected": "station",
+    "decoded": {
+      "STATION": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-15",
+    "mode": "Full hierarchy",
+    "query": "water",
+    "expected": "water",
+    "decoded": {
+      "WATER": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-16",
+    "mode": "Full hierarchy",
+    "query": "local train",
+    "expected": "local train",
+    "decoded": {
+      "LOCAL TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-17",
+    "mode": "Full hierarchy",
+    "query": "express train",
+    "expected": "express train",
+    "decoded": {
+      "EXPRESS TRAIN": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-18",
+    "mode": "Full hierarchy",
+    "query": "waiting room",
+    "expected": "waiting room",
+    "decoded": {
+      "WAITING ROOM": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-19",
+    "mode": "Full hierarchy",
+    "query": "new delhi",
+    "expected": "new delhi",
+    "decoded": {
+      "NEW DELHI": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-20",
+    "mode": "Full hierarchy",
+    "query": "identity card",
+    "expected": "identity card",
+    "decoded": {
+      "IDENTITY CARD": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-21",
+    "mode": "Full hierarchy",
+    "query": "time table",
+    "expected": "time table",
+    "decoded": {
+      "TIME TABLE": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-22",
+    "mode": "Full hierarchy",
+    "query": "1201",
+    "expected": "1201",
+    "decoded": {
+      "1201": 1
+    },
+    "correct": true,
+    "clips": 4
+  },
+  {
+    "id": "probe-23",
+    "mode": "Full hierarchy",
+    "query": "00120",
+    "expected": "00120",
+    "decoded": {
+      "00120": 1
+    },
+    "correct": true,
+    "clips": 5
+  },
+  {
+    "id": "probe-24",
+    "mode": "Full hierarchy",
+    "query": "22120",
+    "expected": "22120",
+    "decoded": {
+      "22120": 1
+    },
+    "correct": true,
+    "clips": 5
+  },
+  {
+    "id": "probe-25",
+    "mode": "Full hierarchy",
+    "query": "2",
+    "expected": "2",
+    "decoded": {
+      "2": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-26",
+    "mode": "Full hierarchy",
+    "query": "10",
+    "expected": "10",
+    "decoded": {
+      "10": 1
+    },
+    "correct": true,
+    "clips": 1
+  },
+  {
+    "id": "probe-27",
+    "mode": "Full hierarchy",
+    "query": "30",
+    "expected": "30",
+    "decoded": {
+      "30": 1
+    },
+    "correct": true,
+    "clips": 2
+  },
+  {
+    "id": "probe-28",
+    "mode": "Full hierarchy",
+    "query": "xylophonex",
+    "expected": "xylophonex",
+    "decoded": {
+      "XYLOPHONEX": 1
+    },
+    "correct": true,
+    "clips": 10
+  },
+  {
+    "id": "probe-29",
+    "mode": "Full hierarchy",
+    "query": "quizzleville",
+    "expected": "quizzleville",
+    "decoded": {
+      "QUIZZLEVILLE": 1
+    },
+    "correct": true,
+    "clips": 12
+  },
+  {
+    "id": "probe-30",
+    "mode": "Full hierarchy",
+    "query": "evacuate",
+    "expected": "evacuate",
+    "decoded": {
+      "EVACUATE": 1
+    },
+    "correct": true,
+    "clips": 8
+  },
+  {
+    "id": "probe-31",
+    "mode": "Full hierarchy",
+    "query": "not",
+    "expected": "not",
+    "decoded": {
+      "NOT": 1
+    },
+    "correct": true,
+    "clips": 3
+  },
+  {
+    "id": "probe-32",
+    "mode": "Full hierarchy",
+    "query": "future",
+    "expected": "future",
+    "decoded": {
+      "FUTURE": 1
+    },
+    "correct": true,
+    "clips": 6
+  },
+  {
+    "id": "probe-33",
+    "mode": "Full hierarchy",
+    "query": "at",
+    "expected": null,
+    "decoded": {},
+    "correct": true,
+    "clips": 0
+  },
+  {
+    "id": "probe-34",
+    "mode": "Full hierarchy",
+    "query": "railway track",
+    "expected": "railway track",
+    "decoded": {
+      "TRACK": 1
+    },
+    "correct": true,
+    "clips": 1
+  }
+]

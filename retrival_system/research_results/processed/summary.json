@@ -1,0 +1,583 @@
+{
+  "dataset": {
+    "cases": 224,
+    "unique_texts": 202,
+    "families": 84,
+    "distribution": {
+      "Arrival": 32,
+      "Departure": 32,
+      "Delay": 32,
+      "Cancellation": 32,
+      "Platform change": 32,
+      "Emergency": 32,
+      "Other": 32
+    }
+  },
+  "classification": {
+    "accuracy": 0.4642857142857143,
+    "macro_f1": 0.5542247988412662,
+    "weighted_f1": 0.5542247988412662,
+    "per_class": [
+      {
+        "category": "Arrival",
+        "support": 32,
+        "tp": 26,
+        "fp": 0,
+        "fn": 6,
+        "precision": 1.0,
+        "recall": 0.8125,
+        "f1": 0.896551724137931
+      },
+      {
+        "category": "Departure",
+        "support": 32,
+        "tp": 26,
+        "fp": 0,
+        "fn": 6,
+        "precision": 1.0,
+        "recall": 0.8125,
+        "f1": 0.896551724137931
+      },
+      {
+        "category": "Delay",
+        "support": 32,
+        "tp": 17,
+        "fp": 0,
+        "fn": 15,
+        "precision": 1.0,
+        "recall": 0.53125,
+        "f1": 0.6938775510204082
+      },
+      {
+        "category": "Cancellation",
+        "support": 32,
+        "tp": 22,
+        "fp": 0,
+        "fn": 10,
+        "precision": 1.0,
+        "recall": 0.6875,
+        "f1": 0.8148148148148148
+      },
+      {
+        "category": "Platform change",
+        "support": 32,
+        "tp": 13,
+        "fp": 0,
+        "fn": 19,
+        "precision": 1.0,
+        "recall": 0.40625,
+        "f1": 0.5777777777777777
+      },
+      {
+        "category": "Emergency",
+        "support": 32,
+        "tp": 0,
+        "fp": 0,
+        "fn": 32,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0
+      },
+      {
+        "category": "Other",
+        "support": 32,
+        "tp": 0,
+        "fp": 0,
+        "fn": 32,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        26,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      [
+        0,
+        26,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      [
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        15
+      ],
+      [
+        0,
+        0,
+        0,
+        22,
+        0,
+        0,
+        0,
+        10
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        19
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32
+      ]
+    ],
+    "predicted_classes": [
+      "Arrival",
+      "Departure",
+      "Delay",
+      "Cancellation",
+      "Platform change",
+      "Emergency",
+      "Other",
+      "ABSTAIN"
+    ]
+  },
+  "entities": {
+    "micro": {
+      "tp": 350,
+      "fp": 30,
+      "fn": 54,
+      "precision": 0.9210526315789473,
+      "recall": 0.8663366336633663,
+      "f1": 0.8928571428571429
+    },
+    "per_field": [
+      {
+        "entity": "train_number",
+        "tp": 169,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.9825581395348837,
+        "f1": 0.9912023460410557,
+        "exact_match": 0.9825581395348837,
+        "evaluated_fields": 172
+      },
+      {
+        "entity": "platform",
+        "tp": 83,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.9651162790697675,
+        "recall": 1.0,
+        "f1": 0.9822485207100593,
+        "exact_match": 0.9651162790697675,
+        "evaluated_fields": 86
+      },
+      {
+        "entity": "source",
+        "tp": 15,
+        "fp": 12,
+        "fn": 0,
+        "precision": 0.5555555555555556,
+        "recall": 1.0,
+        "f1": 0.7142857142857143,
+        "exact_match": 0.5555555555555556,
+        "evaluated_fields": 27
+      },
+      {
+        "entity": "destination",
+        "tp": 19,
+        "fp": 15,
+        "fn": 6,
+        "precision": 0.5588235294117647,
+        "recall": 0.76,
+        "f1": 0.6440677966101696,
+        "exact_match": 0.475,
+        "evaluated_fields": 40
+      },
+      {
+        "entity": "arrival_time",
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1.0,
+        "evaluated_fields": 3
+      },
+      {
+        "entity": "train_name",
+        "tp": 0,
+        "fp": 0,
+        "fn": 7,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "exact_match": 0.0,
+        "evaluated_fields": 7
+      },
+      {
+        "entity": "departure_time",
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1.0,
+        "evaluated_fields": 3
+      },
+      {
+        "entity": "delay_duration",
+        "tp": 32,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "exact_match": 1.0,
+        "evaluated_fields": 32
+      },
+      {
+        "entity": "new_platform",
+        "tp": 13,
+        "fp": 0,
+        "fn": 19,
+        "precision": 1.0,
+        "recall": 0.40625,
+        "f1": 0.5777777777777777,
+        "exact_match": 0.40625,
+        "evaluated_fields": 32
+      },
+      {
+        "entity": "old_platform",
+        "tp": 13,
+        "fp": 0,
+        "fn": 19,
+        "precision": 1.0,
+        "recall": 0.40625,
+        "f1": 0.5777777777777777,
+        "exact_match": 0.40625,
+        "evaluated_fields": 32
+      }
+    ]
+  },
+  "safety_integrated": null,
+  "safety_guard": {
+    "tp": 50,
+    "fp": 0,
+    "fn": 10,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1": 0.9090909090909091,
+    "tn": 10,
+    "false_negative_rate": 0.16666666666666666,
+    "scope": "candidate-text guard only; no integrated trusted timetable validation"
+  },
+  "retrieval": {
+    "probe_accuracy": 1.0,
+    "probe_count": 35,
+    "recall_at_1": null,
+    "recall_at_3": null,
+    "recall_at_5": null,
+    "lexical_coverage": 0.925895087427144,
+    "required_units": 1201,
+    "represented_required": 1112,
+    "fingerspelling_rate": 0.28865979381443296,
+    "spelled_units": 392,
+    "represented_units": 1358,
+    "unnecessary_fingerspelling": 16,
+    "clip_level_counts": {
+      "Word": 595,
+      "Number": 908,
+      "Phrase": 20,
+      "Fingerspelling": 2083
+    }
+  },
+  "ablation": [
+    {
+      "mode": "Word only",
+      "queries": 35,
+      "correct": 13,
+      "retrieval_accuracy": 0.37142857142857144,
+      "coverage": 0.35294117647058826,
+      "fingerspelling_rate": 0.0,
+      "mean_clips": 0.5428571428571428,
+      "selector_ms": {
+        "n": 35,
+        "mean": 0.1349742857142857,
+        "median": 0.0773,
+        "minimum": 0.0025,
+        "maximum": 0.8181,
+        "std": 0.1925830841982954,
+        "p95": 0.45113999999999865
+      },
+      "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+    },
+    {
+      "mode": "Phrase + Word",
+      "queries": 35,
+      "correct": 20,
+      "retrieval_accuracy": 0.5714285714285714,
+      "coverage": 0.5588235294117647,
+      "fingerspelling_rate": 0.0,
+      "mean_clips": 0.5428571428571428,
+      "selector_ms": {
+        "n": 35,
+        "mean": 0.07175714285714285,
+        "median": 0.0251,
+        "minimum": 0.002,
+        "maximum": 0.3287,
+        "std": 0.08986993309193893,
+        "p95": 0.27430999999999994
+      },
+      "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+    },
+    {
+      "mode": "Sentence + Phrase + Word",
+      "queries": 35,
+      "correct": 20,
+      "retrieval_accuracy": 0.5714285714285714,
+      "coverage": 0.5588235294117647,
+      "fingerspelling_rate": 0.0,
+      "mean_clips": 0.5428571428571428,
+      "selector_ms": {
+        "n": 35,
+        "mean": 0.060542857142857134,
+        "median": 0.0223,
+        "minimum": 0.002,
+        "maximum": 0.2919,
+        "std": 0.07677261416491095,
+        "p95": 0.23362999999999998
+      },
+      "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+    },
+    {
+      "mode": "Full hierarchy",
+      "queries": 35,
+      "correct": 35,
+      "retrieval_accuracy": 1.0,
+      "coverage": 1.0,
+      "fingerspelling_rate": 0.2647058823529412,
+      "mean_clips": 3.085714285714286,
+      "selector_ms": {
+        "n": 35,
+        "mean": 0.09099999999999998,
+        "median": 0.0292,
+        "minimum": 0.0075,
+        "maximum": 0.3654,
+        "std": 0.10599576850599494,
+        "p95": 0.29527999999999993
+      },
+      "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+    }
+  ],
+  "api_latency_ms": {
+    "n": 236,
+    "mean": 937.8317322033565,
+    "median": 936.9988500002364,
+    "minimum": 264.11930000176653,
+    "maximum": 1801.325000000361,
+    "std": 320.3919548434005,
+    "p95": 1488.2882749998316
+  },
+  "browser_latency": [
+    {
+      "clips": 1,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 1001.8699999999255,
+        "median": 673.2999999988824,
+        "minimum": 453.20000000298023,
+        "maximum": 7704.400000002235,
+        "std": 1581.277062876906,
+        "p95": 1172.9599999994089
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 601.8299999995157,
+        "median": 275.0,
+        "minimum": 195.19999999925494,
+        "maximum": 6892.699999999255,
+        "std": 1481.2569655531763,
+        "p95": 692.3349999999674
+      }
+    },
+    {
+      "clips": 5,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 725.160000000149,
+        "median": 721.3000000007451,
+        "minimum": 483.19999999925494,
+        "maximum": 1259.3999999985099,
+        "std": 167.23546400484872,
+        "p95": 893.5550000006335
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 318.220000000298,
+        "median": 305.30000000074506,
+        "minimum": 231.90000000223517,
+        "maximum": 543.8999999985099,
+        "std": 74.29803850852292,
+        "p95": 414.60499999709435
+      }
+    },
+    {
+      "clips": 10,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 559.3649999994784,
+        "median": 531.8499999977648,
+        "minimum": 450.70000000298023,
+        "maximum": 696.6999999992549,
+        "std": 79.10951286839119,
+        "p95": 673.9950000006705
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 251.45499999932946,
+        "median": 250.30000000074506,
+        "minimum": 217.40000000223517,
+        "maximum": 287.69999999925494,
+        "std": 17.396656514567457,
+        "p95": 283.61499999854715
+      }
+    },
+    {
+      "clips": 13,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 596.2000000005588,
+        "median": 603.2000000011176,
+        "minimum": 451.1000000014901,
+        "maximum": 731.6000000014901,
+        "std": 98.81333811542466,
+        "p95": 711.5550000000745
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 267.505000000447,
+        "median": 270.4500000011176,
+        "minimum": 241.0,
+        "maximum": 304.80000000074506,
+        "std": 21.217457434918803,
+        "p95": 300.71500000003726
+      }
+    },
+    {
+      "clips": 20,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 640.790000000596,
+        "median": 642.4000000003725,
+        "minimum": 488.9000000022352,
+        "maximum": 769.6000000014901,
+        "std": 79.20245145109276,
+        "p95": 747.085000002198
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 276.50000000037255,
+        "median": 278.34999999962747,
+        "minimum": 227.0,
+        "maximum": 343.5999999977648,
+        "std": 27.664113177293892,
+        "p95": 313.0100000020117
+      }
+    },
+    {
+      "clips": 30,
+      "attempts": 20,
+      "successful": 20,
+      "ttfs_ms": {
+        "n": 20,
+        "mean": 648.8650000002235,
+        "median": 680.7500000018626,
+        "minimum": 481.9000000022352,
+        "maximum": 813.3000000007451,
+        "std": 98.96864083304882,
+        "p95": 792.3049999993294
+      },
+      "preparation_ms": {
+        "n": 20,
+        "mean": 303.10500000044703,
+        "median": 302.6000000014901,
+        "minimum": 263.0,
+        "maximum": 341.0,
+        "std": 21.564211945656602,
+        "p95": 335.775
+      }
+    }
+  ],
+  "consecutive": {
+    "attempts": 50,
+    "completed": 50,
+    "errors": []
+  },
+  "avatar": {
+    "mean_fps": 20.820981192025275,
+    "min_instantaneous_fps": 9.990009990023932,
+    "frame_ms": {
+      "n": 28508,
+      "mean": 48.02847621720219,
+      "median": 50.0,
+      "minimum": 33.199999999953434,
+      "maximum": 100.0999999998603,
+      "std": 8.550051029700223,
+      "p95": 66.60000000003492
+    },
+    "estimated_missed_60hz_opportunities": 53647,
+    "fps_scope": "rAF intervals during PLAYING, headless/software-capable browser; not GPU hardware counter"
+  },
+  "missing": {
+    "safety_integrated": "No trusted operational timetable comparison service",
+    "recall_at_k": "Preview returns a sequence, not ranked alternatives; separate reviewed candidate API has no eligible indexed population",
+    "transition_optimization": "No optimizer implemented",
+    "sentence_ablation": "No sentence-level catalog content",
+    "expert_quality": "Requires human participant evaluation."
+  }
+}

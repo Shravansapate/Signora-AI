@@ -1,0 +1,13 @@
+{
+  "version": "153.0.8010.12",
+  "headless": true,
+  "args": [
+    "--enable-unsafe-swiftshader"
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "measurement": "requestAnimationFrame diagnostics; bone pose hash sampled by app every 250ms; warm persistent-avatar session; no playback-rate changes",
+  "timing_workload": "Repeated TRAIN clips: controlled sequence length, one unique motion; does not estimate diverse-asset cold loading"
+}

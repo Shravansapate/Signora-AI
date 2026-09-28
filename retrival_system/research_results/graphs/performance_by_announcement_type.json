@@ -1,0 +1,22 @@
+{
+  "labels": [
+    "Arrival",
+    "Departure",
+    "Delay",
+    "Cancellation",
+    "Platform\nchange",
+    "Emergency",
+    "Other"
+  ],
+  "values": [
+    89.65517241379311,
+    89.65517241379311,
+    69.38775510204081,
+    81.48148148148148,
+    57.77777777777777,
+    0,
+    0
+  ],
+  "subtitle": "Per-class F1; unparsed messages count as abstentions / false negatives",
+  "ylabel": "Performance (%)"
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "mode": "Word only",
+    "queries": 35,
+    "correct": 13,
+    "retrieval_accuracy": 0.37142857142857144,
+    "coverage": 0.35294117647058826,
+    "fingerspelling_rate": 0.0,
+    "mean_clips": 0.5428571428571428,
+    "selector_ms": {
+      "n": 35,
+      "mean": 0.1349742857142857,
+      "median": 0.0773,
+      "minimum": 0.0025,
+      "maximum": 0.8181,
+      "std": 0.1925830841982954,
+      "p95": 0.45113999999999865
+    },
+    "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+  },
+  {
+    "mode": "Phrase + Word",
+    "queries": 35,
+    "correct": 20,
+    "retrieval_accuracy": 0.5714285714285714,
+    "coverage": 0.5588235294117647,
+    "fingerspelling_rate": 0.0,
+    "mean_clips": 0.5428571428571428,
+    "selector_ms": {
+      "n": 35,
+      "mean": 0.07175714285714285,
+      "median": 0.0251,
+      "minimum": 0.002,
+      "maximum": 0.3287,
+      "std": 0.08986993309193893,
+      "p95": 0.27430999999999994
+    },
+    "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+  },
+  {
+    "mode": "Sentence + Phrase + Word",
+    "queries": 35,
+    "correct": 20,
+    "retrieval_accuracy": 0.5714285714285714,
+    "coverage": 0.5588235294117647,
+    "fingerspelling_rate": 0.0,
+    "mean_clips": 0.5428571428571428,
+    "selector_ms": {
+      "n": 35,
+      "mean": 0.060542857142857134,
+      "median": 0.0223,
+      "minimum": 0.002,
+      "maximum": 0.2919,
+      "std": 0.07677261416491095,
+      "p95": 0.23362999999999998
+    },
+    "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+  },
+  {
+    "mode": "Full hierarchy",
+    "queries": 35,
+    "correct": 35,
+    "retrieval_accuracy": 1.0,
+    "coverage": 1.0,
+    "fingerspelling_rate": 0.2647058823529412,
+    "mean_clips": 3.085714285714286,
+    "selector_ms": {
+      "n": 35,
+      "mean": 0.09099999999999998,
+      "median": 0.0292,
+      "minimum": 0.0075,
+      "maximum": 0.3654,
+      "std": 0.10599576850599494,
+      "p95": 0.29527999999999993
+    },
+    "scope": "evaluation-only spelling-disabled selector and restricted catalog; not deployed modes; no sentence assets; at expects omission and is excluded from coverage denominator"
+  }
+]

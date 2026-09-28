@@ -1,0 +1,10 @@
+{
+  "name": "video2glb-validation-tools",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pinned production validation tooling for video2glb artifacts.",
+  "type": "module",
+  "dependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

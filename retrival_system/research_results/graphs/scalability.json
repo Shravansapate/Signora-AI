@@ -1,0 +1,450 @@
+[
+  {
+    "requested_rows": 149,
+    "synthetic": false,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 149,
+        "sql_materialization_ms": 59.09539999993285,
+        "candidate_build_ms": 1.1243999997532228,
+        "selector_ms": 0.1052999996318249,
+        "combined_ms": 60.3250999993179,
+        "clips": 8,
+        "rss_before_bytes": 72486912,
+        "rss_loaded_bytes": 74915840
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 149,
+        "sql_materialization_ms": 11.079599998993217,
+        "candidate_build_ms": 2.3997000007511815,
+        "selector_ms": 0.15720000010333024,
+        "combined_ms": 13.636499999847729,
+        "clips": 8,
+        "rss_before_bytes": 74915840,
+        "rss_loaded_bytes": 74973184
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 149,
+        "sql_materialization_ms": 7.200600000942359,
+        "candidate_build_ms": 1.1031999983970309,
+        "selector_ms": 0.09529999988444615,
+        "combined_ms": 8.399099999223836,
+        "clips": 8,
+        "rss_before_bytes": 74973184,
+        "rss_loaded_bytes": 75010048
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 149,
+        "sql_materialization_ms": 7.147200001782039,
+        "candidate_build_ms": 0.9326999988843454,
+        "selector_ms": 0.08789999992586672,
+        "combined_ms": 8.167800000592251,
+        "clips": 8,
+        "rss_before_bytes": 75010048,
+        "rss_loaded_bytes": 75022336
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 149,
+        "sql_materialization_ms": 6.808199999795761,
+        "candidate_build_ms": 1.0403000014775898,
+        "selector_ms": 0.09680000039224979,
+        "combined_ms": 7.945300001665601,
+        "clips": 8,
+        "rss_before_bytes": 75022336,
+        "rss_loaded_bytes": 75022336
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 1000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 1000,
+        "sql_materialization_ms": 63.696600000184844,
+        "candidate_build_ms": 10.99419999991369,
+        "selector_ms": 0.35229999957664404,
+        "combined_ms": 75.04309999967518,
+        "clips": 8,
+        "rss_before_bytes": 70160384,
+        "rss_loaded_bytes": 77873152
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 1000,
+        "sql_materialization_ms": 40.83809999974619,
+        "candidate_build_ms": 8.955999999670894,
+        "selector_ms": 0.27909999880648684,
+        "combined_ms": 50.07319999822357,
+        "clips": 8,
+        "rss_before_bytes": 77889536,
+        "rss_loaded_bytes": 77606912
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 1000,
+        "sql_materialization_ms": 55.170599998746184,
+        "candidate_build_ms": 18.54559999992489,
+        "selector_ms": 0.6551000005856622,
+        "combined_ms": 74.37129999925673,
+        "clips": 8,
+        "rss_before_bytes": 77635584,
+        "rss_loaded_bytes": 77598720
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 1000,
+        "sql_materialization_ms": 32.134699999005534,
+        "candidate_build_ms": 6.507699999929173,
+        "selector_ms": 0.26699999943957664,
+        "combined_ms": 38.90939999837428,
+        "clips": 8,
+        "rss_before_bytes": 77598720,
+        "rss_loaded_bytes": 77619200
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 1000,
+        "sql_materialization_ms": 36.19940000135102,
+        "candidate_build_ms": 10.74729999891133,
+        "selector_ms": 0.4239999998389976,
+        "combined_ms": 47.37070000010135,
+        "clips": 8,
+        "rss_before_bytes": 77631488,
+        "rss_loaded_bytes": 77598720
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 5000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 5000,
+        "sql_materialization_ms": 208.53209999950195,
+        "candidate_build_ms": 34.128399998735404,
+        "selector_ms": 1.937799999723211,
+        "combined_ms": 244.59829999796057,
+        "clips": 8,
+        "rss_before_bytes": 77647872,
+        "rss_loaded_bytes": 97464320
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 5000,
+        "sql_materialization_ms": 198.5050000002957,
+        "candidate_build_ms": 38.63470000032976,
+        "selector_ms": 1.4759000005142298,
+        "combined_ms": 238.61560000113968,
+        "clips": 8,
+        "rss_before_bytes": 82894848,
+        "rss_loaded_bytes": 97738752
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 5000,
+        "sql_materialization_ms": 227.01539999980014,
+        "candidate_build_ms": 50.31610000150977,
+        "selector_ms": 3.3373999995092163,
+        "combined_ms": 280.6689000008191,
+        "clips": 8,
+        "rss_before_bytes": 84262912,
+        "rss_loaded_bytes": 97796096
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 5000,
+        "sql_materialization_ms": 263.9424999997573,
+        "candidate_build_ms": 60.56849999913538,
+        "selector_ms": 7.603599999129074,
+        "combined_ms": 332.11459999802173,
+        "clips": 8,
+        "rss_before_bytes": 84242432,
+        "rss_loaded_bytes": 98045952
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 5000,
+        "sql_materialization_ms": 241.4478999999119,
+        "candidate_build_ms": 44.779900001231,
+        "selector_ms": 2.454399998896406,
+        "combined_ms": 288.6822000000393,
+        "clips": 8,
+        "rss_before_bytes": 85540864,
+        "rss_loaded_bytes": 97980416
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 10000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 10000,
+        "sql_materialization_ms": 477.28189999907045,
+        "candidate_build_ms": 101.83209999922838,
+        "selector_ms": 3.4967999999935273,
+        "combined_ms": 582.6107999982924,
+        "clips": 8,
+        "rss_before_bytes": 87588864,
+        "rss_loaded_bytes": 123002880
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 10000,
+        "sql_materialization_ms": 505.08930000069086,
+        "candidate_build_ms": 80.58369999889692,
+        "selector_ms": 3.854900000078487,
+        "combined_ms": 589.5278999996663,
+        "clips": 8,
+        "rss_before_bytes": 89686016,
+        "rss_loaded_bytes": 123764736
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 10000,
+        "sql_materialization_ms": 480.41490000105114,
+        "candidate_build_ms": 79.42049999837764,
+        "selector_ms": 3.7464999986696057,
+        "combined_ms": 563.5818999980984,
+        "clips": 8,
+        "rss_before_bytes": 90664960,
+        "rss_loaded_bytes": 123621376
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 10000,
+        "sql_materialization_ms": 558.5418999999092,
+        "candidate_build_ms": 105.70489999918209,
+        "selector_ms": 5.530399999770452,
+        "combined_ms": 669.7771999988618,
+        "clips": 8,
+        "rss_before_bytes": 90742784,
+        "rss_loaded_bytes": 123461632
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 10000,
+        "sql_materialization_ms": 506.1137000011513,
+        "candidate_build_ms": 71.15720000001602,
+        "selector_ms": 6.16960000115796,
+        "combined_ms": 583.4405000023253,
+        "clips": 8,
+        "rss_before_bytes": 91635712,
+        "rss_loaded_bytes": 123084800
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 25000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 25000,
+        "sql_materialization_ms": 1715.600199999244,
+        "candidate_build_ms": 499.0789000003133,
+        "selector_ms": 15.730099999927916,
+        "combined_ms": 2230.4091999994853,
+        "clips": 8,
+        "rss_before_bytes": 95105024,
+        "rss_loaded_bytes": 199352320
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 25000,
+        "sql_materialization_ms": 1741.1682000001747,
+        "candidate_build_ms": 510.98169999931997,
+        "selector_ms": 13.950499998827581,
+        "combined_ms": 2266.1003999983222,
+        "clips": 8,
+        "rss_before_bytes": 95846400,
+        "rss_loaded_bytes": 199884800
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 25000,
+        "sql_materialization_ms": 1585.6587999987823,
+        "candidate_build_ms": 441.47460000021965,
+        "selector_ms": 16.02190000085102,
+        "combined_ms": 2043.155299999853,
+        "clips": 8,
+        "rss_before_bytes": 96382976,
+        "rss_loaded_bytes": 200359936
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 25000,
+        "sql_materialization_ms": 1785.3178000004846,
+        "candidate_build_ms": 486.1228999998275,
+        "selector_ms": 14.583100000891136,
+        "combined_ms": 2286.023800001203,
+        "clips": 8,
+        "rss_before_bytes": 96858112,
+        "rss_loaded_bytes": 200220672
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 25000,
+        "sql_materialization_ms": 1843.9018999997643,
+        "candidate_build_ms": 499.2292000006273,
+        "selector_ms": 15.28390000021318,
+        "combined_ms": 2358.415000000605,
+        "clips": 8,
+        "rss_before_bytes": 98582528,
+        "rss_loaded_bytes": 200290304
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 50000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 50000,
+        "sql_materialization_ms": 5235.259199998836,
+        "candidate_build_ms": 857.5397000004159,
+        "selector_ms": 30.829999999696156,
+        "combined_ms": 6123.628899998948,
+        "clips": 8,
+        "rss_before_bytes": 101986304,
+        "rss_loaded_bytes": 327208960
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 50000,
+        "sql_materialization_ms": 4785.358899998755,
+        "candidate_build_ms": 840.2848999994603,
+        "selector_ms": 35.27059999942139,
+        "combined_ms": 5660.914399997637,
+        "clips": 8,
+        "rss_before_bytes": 101916672,
+        "rss_loaded_bytes": 327540736
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 50000,
+        "sql_materialization_ms": 4419.833400001153,
+        "candidate_build_ms": 681.9163999989541,
+        "selector_ms": 27.977400000963826,
+        "combined_ms": 5129.727200001071,
+        "clips": 8,
+        "rss_before_bytes": 99835904,
+        "rss_loaded_bytes": 328212480
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 50000,
+        "sql_materialization_ms": 4669.553599998835,
+        "candidate_build_ms": 825.952099999995,
+        "selector_ms": 39.19270000005781,
+        "combined_ms": 5534.698399998888,
+        "clips": 8,
+        "rss_before_bytes": 103960576,
+        "rss_loaded_bytes": 327757824
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 50000,
+        "sql_materialization_ms": 4644.211200000427,
+        "candidate_build_ms": 907.0056000000477,
+        "selector_ms": 31.1122000002797,
+        "combined_ms": 5582.329000000755,
+        "clips": 8,
+        "rss_before_bytes": 98967552,
+        "rss_loaded_bytes": 328376320
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  },
+  {
+    "requested_rows": 100000,
+    "synthetic": true,
+    "seed_rows": 149,
+    "trials": [
+      {
+        "repetition": 0,
+        "actual_rows": 100000,
+        "sql_materialization_ms": 12766.592400001173,
+        "candidate_build_ms": 1606.7306000004464,
+        "selector_ms": 56.86010000135866,
+        "combined_ms": 14430.183100002978,
+        "clips": 8,
+        "rss_before_bytes": 102391808,
+        "rss_loaded_bytes": 556900352
+      },
+      {
+        "repetition": 1,
+        "actual_rows": 100000,
+        "sql_materialization_ms": 11265.130199999476,
+        "candidate_build_ms": 1625.3851000001305,
+        "selector_ms": 62.641100001201266,
+        "combined_ms": 12953.156400000807,
+        "clips": 8,
+        "rss_before_bytes": 80138240,
+        "rss_loaded_bytes": 557621248
+      },
+      {
+        "repetition": 2,
+        "actual_rows": 100000,
+        "sql_materialization_ms": 10228.135999999722,
+        "candidate_build_ms": 1571.8219999998837,
+        "selector_ms": 56.513100000302074,
+        "combined_ms": 11856.471099999908,
+        "clips": 8,
+        "rss_before_bytes": 84398080,
+        "rss_loaded_bytes": 559788032
+      },
+      {
+        "repetition": 3,
+        "actual_rows": 100000,
+        "sql_materialization_ms": 10357.250799999747,
+        "candidate_build_ms": 1750.6214999993972,
+        "selector_ms": 81.41299999988405,
+        "combined_ms": 12189.285299999028,
+        "clips": 8,
+        "rss_before_bytes": 83984384,
+        "rss_loaded_bytes": 559575040
+      },
+      {
+        "repetition": 4,
+        "actual_rows": 100000,
+        "sql_materialization_ms": 10662.483599999177,
+        "candidate_build_ms": 1503.6947000007785,
+        "selector_ms": 68.72450000082608,
+        "combined_ms": 12234.902800000782,
+        "clips": 8,
+        "rss_before_bytes": 82739200,
+        "rss_loaded_bytes": 560488448
+      }
+    ],
+    "api_ms": null,
+    "notes": "Actual development SELECT + ORM materialization + term construction + selection. Synthetic repeated vocabulary and shared GLB paths; no GLB load, aliases, HTTP or production vector index included."
+  }
+]

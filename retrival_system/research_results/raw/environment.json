@@ -1,0 +1,169 @@
+{
+  "timestamp": "2026-09-27T19:35:30+0530",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.4",
+  "hardware": {
+    "gpu": [
+      {
+        "Name": "Intel(R) UHD Graphics",
+        "AdapterRAM": 1073741824
+      },
+      {
+        "Name": "NVIDIA GeForce RTX 2050",
+        "AdapterRAM": 4293918720
+      }
+    ],
+    "cpu": {
+      "Name": "12th Gen Intel(R) Core(TM) i5-12450H",
+      "NumberOfCores": 8,
+      "NumberOfLogicalProcessors": 12
+    },
+    "ram": 8212975616,
+    "os": "Microsoft Windows 11 Home Single Language"
+  },
+  "database": {
+    "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35227, 64-bit",
+    "size_bytes": 23172799,
+    "schema": "0009_display_routing"
+  },
+  "counts": {
+    "sign_concepts": 149,
+    "motion_versions": 149,
+    "sign_aliases": 149,
+    "announcement_templates": 1,
+    "eligible_motion_versions": 0,
+    "sign_embeddings": 0,
+    "retrieval_profiles": 0
+  },
+  "glb_files": 149,
+  "unique_glb_objects": 149,
+  "capabilities": {
+    "source_text_languages": [
+      "en"
+    ],
+    "roles": [
+      "operator"
+    ],
+    "asr_state": "READY",
+    "audio_format": "PCM WAV, 16000 Hz, mono, 16-bit, 0.25-60 seconds",
+    "demo_mode_enabled": true,
+    "stations": [
+      {
+        "id": "NAGPUR",
+        "revision": 1,
+        "definition": {
+          "name": "Nagpur",
+          "places": [],
+          "trains": [],
+          "timezone": "Asia/Kolkata",
+          "platforms": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "train_suffixes": [],
+          "train_max_digits": 12,
+          "train_min_digits": 1
+        }
+      }
+    ]
+  },
+  "health": {
+    "status": "READY",
+    "schema_revision": "0009_display_routing"
+  },
+  "git_head": "5bf0bddeba9d594212313c14fe8b2c92ad6640ab",
+  "git_status": " M README.md\n M backend/app/live.py\n M backend/app/live_schema.py\n M backend/app/main.py\n M backend/app/playback_api.py\n M backend/app/recovery.py\n M backend/app/workspace_api.py\n M backend/tests/test_announcements.py\n M backend/tests/test_live_delivery.py\n M backend/tests/test_registry.py\n M frontend/README.md\n M frontend/scripts/verify-development-display.mjs\n M frontend/src/app/globals.css\n M frontend/src/components/AdminConsole.jsx\n M frontend/src/components/AnnouncementConsole.jsx\n M frontend/src/components/AvatarViewer.jsx\n M frontend/src/components/DisplayConsole.jsx\n M frontend/src/components/LibraryManager.jsx\n M frontend/src/components/OperationsManager.jsx\n M frontend/src/components/PublicationPanel.jsx\n M frontend/src/components/ReviewConsole.jsx\n M frontend/src/components/TemplateManager.jsx\n M frontend/src/components/workspace.jsx\n?? backend/alembic/versions/0009_display_routing.py\n?? backend/app/display_control.py\n?? backend/tests/test_display_control.py\n?? backend/tests/test_multidisplay_browser.py\n?? frontend/public/images/\n?? frontend/scripts/verify-multi-display.mjs\n?? frontend/scripts/verify-ui-enhancement.mjs\n?? frontend/src/components/ControlRoom.jsx\n?? frontend/src/components/Icon.jsx\n?? frontend/src/components/WorkspaceGuidance.jsx\n?? research_results/\n?? tests/\n",
+  "dependencies": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.66.0",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "psutil": "7.2.2",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "alembic": "1.20.0",
+    "annotated-doc": "0.0.5",
+    "annotated-types": "0.8.0",
+    "anyio": "4.15.1",
+    "av": "18.1.0",
+    "certifi": "2026.7.22",
+    "click": "8.5.0",
+    "colorama": "0.4.6",
+    "ctranslate2": "4.8.2",
+    "fastapi": "0.141.1",
+    "faster-whisper": "1.2.1",
+    "filelock": "3.32.6",
+    "flatbuffers": "25.12.19",
+    "fsspec": "2026.7.0",
+    "greenlet": "3.5.5",
+    "h11": "0.16.0",
+    "hf-xet": "1.6.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "huggingface_hub": "1.31.0",
+    "idna": "3.19",
+    "iniconfig": "2.3.0",
+    "Mako": "1.4.1",
+    "MarkupSafe": "3.0.3",
+    "onnxruntime": "1.30.0",
+    "pluggy": "1.6.0",
+    "protobuf": "7.36.1",
+    "psycopg": "3.3.5",
+    "psycopg-binary": "3.3.5",
+    "pydantic": "2.13.5",
+    "pydantic_core": "2.46.5",
+    "pydantic-settings": "2.15.0",
+    "Pygments": "2.21.0",
+    "pytest": "9.1.1",
+    "python-dotenv": "1.2.3",
+    "python-multipart": "0.0.32",
+    "PyYAML": "6.0.3",
+    "ruff": "0.16.7",
+    "signora-backend": "0.1.0",
+    "SQLAlchemy": "2.0.52",
+    "starlette": "1.6.0",
+    "tokenizers": "0.23.2",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "tzdata": "2026.3",
+    "uvicorn": "0.52.4",
+    "websockets": "16.1.1"
+  },
+  "frontend_package": {
+    "name": "signora-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+      "node": ">=20.19.0"
+    },
+    "scripts": {
+      "dev": "next dev --hostname 127.0.0.1",
+      "build": "next build",
+      "start": "next start --hostname 127.0.0.1",
+      "test": "node --test",
+      "verify:bindings": "node scripts/verify-bindings.mjs"
+    },
+    "dependencies": {
+      "next": "16.3.5",
+      "react": "19.3.0",
+      "react-dom": "19.3.0",
+      "three": "0.186.0"
+    },
+    "devDependencies": {
+      "playwright": "1.63.0"
+    }
+  }
+}

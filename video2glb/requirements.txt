@@ -1,0 +1,8 @@
+# Production worker versions validated together on Python 3.12 / Windows.
+# MediaPipe already depends on opencv-contrib-python; installing the separate
+# opencv-python wheel beside it can overwrite the shared cv2 package.
+mediapipe==0.10.35
+numpy==2.2.6
+opencv-contrib-python==4.11.0.86
+PyYAML==6.0.2
+cryptography==50.0.0

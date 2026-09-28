@@ -1,0 +1,747 @@
+[
+  {
+    "concept_id": "53935b62-ca98-46c7-ae4b-8a9d64629afd",
+    "alias": "1000 thousand",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "7dfb0ee1-d651-4144-b451-b23cacd2e60e",
+    "alias": "100 hundred",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "bdfc3fbd-7064-4180-b2c6-72827dc8a7ef",
+    "alias": "10 ten",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "17805d2f-d17a-43ba-bbe3-7a115be0ca2d",
+    "alias": "1 one",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4e416207-e73a-460d-a165-670334a4c0c5",
+    "alias": "2 two",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "ebead1cb-f4c9-487f-aab6-c2feb2064896",
+    "alias": "3 three",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "ed4bd687-d7a0-4056-b0f9-e91853873157",
+    "alias": "4 four",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "2d23518f-d33d-453a-a3b1-aeb752c3cfb9",
+    "alias": "5 five",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d045fc04-8836-4b1e-9246-aa90d8f528bf",
+    "alias": "6 six",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "7328dc6a-ba51-474f-b112-834a5b1856fd",
+    "alias": "7 seven",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "72f6ada9-fe5b-4dcf-8a49-c7a2e7fa2de3",
+    "alias": "8 eight",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "844d7121-25d4-4c6b-b9c0-899f3e4ba0cf",
+    "alias": "9 nine",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "3f2643af-d0f7-48a4-a477-3d3284418976",
+    "alias": "a",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1ed71179-124b-4103-8abe-1320c003d311",
+    "alias": "accident",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "19da8923-6509-42bd-ab71-43a89a0bb08d",
+    "alias": "after",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "e2167b89-ec2a-4717-b6a1-af8d839e4466",
+    "alias": "afternoon",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1c5fe70d-cd11-4811-a0c4-350deca5f146",
+    "alias": "ahmedabad",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "fc9fb484-79a8-4bf3-aca6-b0777f2d819f",
+    "alias": "announce declare release",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9a758e6c-8374-47eb-9b4f-15c47b7dedaa",
+    "alias": "approximate",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "ac970dd7-d39d-43d7-be4b-1b084557487e",
+    "alias": "arrive",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a48d9ed6-324b-4c47-83e5-aabd90fe377f",
+    "alias": "available",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d3e1dbe3-2f95-4ac0-bd13-e24cd715e7b1",
+    "alias": "b",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "8c4264cc-9def-44eb-874c-383d76da7c11",
+    "alias": "back behind",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a1132497-b2d8-4d3e-8faa-4cc45fb07de8",
+    "alias": "bag",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "2aff5001-7750-4e79-8619-ad0df1358cd8",
+    "alias": "before",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "3d8f5657-9952-49f4-a43e-f37e01073120",
+    "alias": "berth",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "c54d2c4c-6199-419e-9144-a908d7096d74",
+    "alias": "booking",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "e0d67f21-99f0-4739-898d-6079488ccdc8",
+    "alias": "c",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "45ba69b7-d28c-4079-9e2c-db980f36ae72",
+    "alias": "cancel",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "963e55b4-8009-4dc1-a63f-0731cc157136",
+    "alias": "cash",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "12afa9ae-726a-4d18-99fd-e13c8f498b7f",
+    "alias": "change",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "8663be8c-1d8d-42fc-89cb-9c275bd5b4f7",
+    "alias": "chennai",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "238378cb-ed2d-4219-8798-f6ad02b20642",
+    "alias": "clear",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "05962775-10d4-41d4-bba5-103cd5cac58d",
+    "alias": "clock",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "15ef8469-c0fa-468a-aec9-0f63ea6aa304",
+    "alias": "confirmed member",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b8b0d179-7e81-4d62-b683-bfae18d2c5a7",
+    "alias": "counter",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4cc42fcc-ecf9-4a0a-ad45-579eac136238",
+    "alias": "d",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "c1a94a94-73ea-4614-825f-df98cdba7e14",
+    "alias": "danger hazard peril",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "460f7abe-f3fb-4e70-af03-0846352aa57f",
+    "alias": "delay",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "3b9cb4b1-4c8f-4bf7-9b78-ef424220cc5a",
+    "alias": "delhi",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d344d03d-b61e-44b0-8f93-34ebf4c3298f",
+    "alias": "destination",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "6fbdbde9-64ac-4af5-beb7-77a0a9cc7e29",
+    "alias": "e",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "22d72288-ebac-4780-be13-db24a1b64fc6",
+    "alias": "early",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "8f34cdbd-5592-416d-b105-8747c0a94be6",
+    "alias": "elevator",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "97e27760-4449-4d1e-9338-6dddc851a066",
+    "alias": "emergency",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9438751c-3a94-4a48-a9f8-89913dda7d0d",
+    "alias": "engine",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "08d48e97-cc54-4c97-9715-cc5dc3696f86",
+    "alias": "enter",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "0b51e5d4-940d-4cdf-aa10-f1c8365e9147",
+    "alias": "entry",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "cfbd3b3c-9206-4df4-be8f-3e022eb9d6f8",
+    "alias": "escalator",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "66b93b82-455e-4971-a701-389dd5ffd195",
+    "alias": "evening",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "ca5b176e-db38-4930-97f3-e8dcc34339cf",
+    "alias": "exit",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "382f755c-1ff2-4b5d-b9f2-9f9e84cf0cf9",
+    "alias": "express train",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "c726db4a-0a37-4b08-83ba-38b1dda017a5",
+    "alias": "f",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "97aa3e6d-5ae0-4d94-9c2b-8cde4a1ae8eb",
+    "alias": "far",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "bc7fa857-d2ad-4deb-89bf-226ee244d5b3",
+    "alias": "fire",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "69bcf47b-fee7-4ef0-9a5c-05eb58606201",
+    "alias": "follow",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "8b683b10-63c7-4ef4-95fa-c2bb06b8feb2",
+    "alias": "food",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "c8d455b2-bb57-4068-9283-67b2ac2162ca",
+    "alias": "g",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "3b1d8448-a90d-4c47-bf10-b20aa4eef8a0",
+    "alias": "h",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "0155708b-3019-4899-b271-33d3a043287c",
+    "alias": "help",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "2e68ba4f-a6b8-4c8d-9391-2f5c47f7b977",
+    "alias": "hour",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "93297c86-68ca-4144-a4ce-b59122b5135c",
+    "alias": "hyderabad",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "801285d9-3268-46fe-acb3-c3a62443e518",
+    "alias": "i",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a0db1bc6-f7bd-4302-8df3-1772ddfcf86c",
+    "alias": "identity",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b914d85a-e65a-43a8-bc3f-485d90d60703",
+    "alias": "identity card",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9b3b1d5d-7932-4345-a343-5ceb0148c43c",
+    "alias": "inform apprise notify",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "608dd9aa-36e8-460a-9184-e05f6bc8a96b",
+    "alias": "j",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a24daa7c-4a56-4d29-9512-144ac77ee482",
+    "alias": "jaipur",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "25215ad9-491f-4689-9364-89c8234b952d",
+    "alias": "journey",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d7482b77-d379-4493-8c08-2d16a80a14f3",
+    "alias": "k",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "63cca726-f906-4e65-8d52-6fdf321c1879",
+    "alias": "kolkata",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "2889fe23-69f2-423d-bf60-12fd21539690",
+    "alias": "l",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "dd7c496f-b721-40f6-b52f-acebc21b6fec",
+    "alias": "late",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "18c3820f-3b80-4f41-8a6d-572cc3f1005e",
+    "alias": "lift",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b99b7071-8c8a-46f8-882d-64788f33db36",
+    "alias": "listen",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b749e4de-ad0b-4c7c-93c6-6cf3adb8ab0c",
+    "alias": "local train",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b58bab24-f679-4e90-8405-2d4c6084ac6e",
+    "alias": "lucknow",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "f2f55dfa-d1fe-4345-acdc-10b58866ba16",
+    "alias": "luggage",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "001d5de1-04b1-46b4-9db0-eb84c0654a6f",
+    "alias": "m",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4b5b74c6-ee8e-4d78-8bcb-54d9781ee3f6",
+    "alias": "minute",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "0487f9f8-d9c8-4245-aff1-208c0695dbda",
+    "alias": "morning",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9cffc855-2dde-44bf-910b-7af6bb6b3aa9",
+    "alias": "mumbai",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "8504b18a-9837-40e3-b989-aeb15967e1c3",
+    "alias": "n",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "39f888e7-bf0d-42fc-b48e-2669523e0d9e",
+    "alias": "nagpur",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "874e7893-7f61-40b4-a9f0-62a038430b15",
+    "alias": "near nearby close by",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "87490460-9f6b-4bdb-9c48-56583f990476",
+    "alias": "new delhi",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "314a524b-d1a4-4939-bb12-6da0b2ed4944",
+    "alias": "night",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "763dbc3e-28bb-4caa-9843-59cc3cb37ec2",
+    "alias": "o",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "da162bbf-45aa-4d18-8d99-7084009776a9",
+    "alias": "out outside",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "962b3f55-b632-4590-bc3b-f1ba475e51c6",
+    "alias": "patna",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b466ad71-0c43-4b62-9792-37c855956c47",
+    "alias": "please",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "92bc00f9-22c6-4d22-8cf5-37cf3648efcc",
+    "alias": "q",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "fc52e2f2-502d-4575-a35e-6bfab7997a37",
+    "alias": "refund",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "cd927923-d2b7-4849-a3df-3aaa31409525",
+    "alias": "reservation",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "80a8be73-6353-43b2-a0cc-7b2be4a6b8b8",
+    "alias": "s",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "efa8cd06-82e8-4019-bb29-06b46a2e74bd",
+    "alias": "shift",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "80a32df2-1f74-4af2-8e50-9eeae795370b",
+    "alias": "stairs",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "56edb4fb-4863-4bfe-8b3f-f43b4f019c76",
+    "alias": "stop",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "deaf4c2a-538a-4586-8eb1-73653637acf4",
+    "alias": "surat",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "06ea72d0-056b-4498-8a64-5a8fa3cd231b",
+    "alias": "time",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a483344d-d425-4607-a087-9b0932e16041",
+    "alias": "tomorrow",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "ed3a5ee1-ea43-4e75-b5da-29c5c984407f",
+    "alias": "now right now",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "25b32412-5f0e-4ed3-b37d-fa73be7efcc7",
+    "alias": "office",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "229de9b2-2548-4b49-9a2a-a3ae7cbf01a7",
+    "alias": "p",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "79100790-1456-480e-9faa-fb00d1521591",
+    "alias": "payment",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1cde61dd-ee06-4d60-98ba-ceb223706453",
+    "alias": "police",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "cbbfe604-1485-4c7f-807a-5b020fe1b76c",
+    "alias": "r",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1043ebab-bb9e-4e04-b9f4-e17468c3d9d7",
+    "alias": "request",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "5f40500b-2a0a-46b9-9e1c-0982d65fb9b6",
+    "alias": "right",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9d7e8cf1-543e-4ba5-8d81-3e2a953f1539",
+    "alias": "safe",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "73746cab-2c1a-4d06-a3a6-585aa9c2177b",
+    "alias": "stairs sign 2",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "e6f7b12c-02ac-4cfa-b8d4-a49f0df7a4cc",
+    "alias": "start begin",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d29dfccf-73c2-491e-9d04-95f754207e05",
+    "alias": "straight",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4147dd4f-972a-43f7-adb8-beabd95aa37e",
+    "alias": "t",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a66aafca-db60-4686-bc74-414264b85692",
+    "alias": "time table",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "94285fb9-67ba-4db0-821f-c07a26ec6a8e",
+    "alias": "train",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d9d124ff-2543-420c-b03a-d0ff175f075a",
+    "alias": "number",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4b04cdbf-4132-4ae3-a849-391272feed57",
+    "alias": "open",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b75d0fd6-a7da-4d32-ab74-6c9202edff13",
+    "alias": "parking",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9e88f3e7-b93c-4b9c-9088-9e3659092630",
+    "alias": "platform",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "08b1382d-c1b5-45d6-9a6a-55d28a819179",
+    "alias": "pune",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "43781c6b-6ec9-45ed-8308-43d2a6bbb0fc",
+    "alias": "railway track",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "dc845a2e-c40b-45da-bb56-3359b34e64ff",
+    "alias": "reservation",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9381c9da-809b-483f-8907-796c78b54781",
+    "alias": "route",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "7685e197-d59f-406a-8eb6-13d91295043c",
+    "alias": "schedule",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "bc5294c8-9f6a-4fc8-ab32-b5edf7ae4c19",
+    "alias": "stairs sign 2",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "de8541b1-7b7d-4c49-b54d-4d21a59ead7b",
+    "alias": "station",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "4536e8a3-acb9-4d6e-ae87-c4188310a558",
+    "alias": "superfast express",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a82d26d7-046f-4976-93d4-d11b5bb4df03",
+    "alias": "ticket",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "44aeff05-ed33-405e-9871-64aada322830",
+    "alias": "today",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "fec4f1c8-bb72-4f30-8d6d-db695d4560e0",
+    "alias": "zero",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "99175561-4e09-4919-8791-944c9bb0b1a8",
+    "alias": "travel",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "b319b594-0126-4dae-83a7-0314a5bd073f",
+    "alias": "turn",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "766e0050-ee4e-4c1d-ad5d-5e8ba134dd65",
+    "alias": "u",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "51bd91ed-276b-495e-9ef3-e3270905bb71",
+    "alias": "up",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "33ea9895-ce30-4cf9-831e-745cf4ca323c",
+    "alias": "v",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "f2de7c80-9bd5-474e-abb3-56f56da3aa80",
+    "alias": "w",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "cdf66159-c791-462d-8731-f0db1c9f8409",
+    "alias": "wait",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d9a087d2-34a4-4700-958c-9b4e6cd3d954",
+    "alias": "waiting list",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "a071688d-f04a-4cb3-9628-162db96261a9",
+    "alias": "waiting room",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "f7c22b8a-6c64-4a74-b959-d642b55c3b76",
+    "alias": "water",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1529e249-1c19-48ea-a1a1-e179d91748d8",
+    "alias": "x",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "87a2e163-de2e-4cac-a7f7-6da1fae09508",
+    "alias": "y",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "022484a2-db84-4463-b375-0fc86d7b8acb",
+    "alias": "yesterday",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "1912d4f1-4f22-4485-a378-b6d320474afa",
+    "alias": "z",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "9d7df0d0-e0a0-4e0f-8ce4-86c8c70be82e",
+    "alias": "bangalore",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "00f56bf2-4774-41bf-a112-844c9c835feb",
+    "alias": "bhopal",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "3467eea0-afbe-4ef0-8da6-fb8065d31b17",
+    "alias": "card",
+    "review_status": "PENDING"
+  },
+  {
+    "concept_id": "d5ebb3c4-3b61-48a4-896e-c012c15c2a43",
+    "alias": "window",
+    "review_status": "PENDING"
+  }
+]
