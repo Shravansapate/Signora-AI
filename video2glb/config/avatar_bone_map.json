@@ -2,6 +2,18 @@
   "status": "PASS",
   "note": "Automatically suggested from FBX bone names. Review before production use.",
   "required_missing": [],
+  "bvh_map": {
+    "Chest": "mixamorig9:Spine1",
+    "UpperChest": "mixamorig9:Spine2",
+    "LeftUpperLeg": "mixamorig9:LeftUpLeg",
+    "LeftLowerLeg": "mixamorig9:LeftLeg",
+    "LeftFoot": "mixamorig9:LeftFoot",
+    "LeftToes": "mixamorig9:LeftToeBase",
+    "RightUpperLeg": "mixamorig9:RightUpLeg",
+    "RightLowerLeg": "mixamorig9:RightLeg",
+    "RightFoot": "mixamorig9:RightFoot",
+    "RightToes": "mixamorig9:RightToeBase"
+  },
   "map": {
     "Hips": "mixamorig9:Hips",
     "Spine": "mixamorig9:Spine",

@@ -95,6 +95,33 @@ def discover_mp4_files(
     return sorted(set(videos), key=lambda path: (str(path).casefold(), str(path)))
 
 
+def discover_bvh_files(
+    input_dir: Path,
+    *,
+    recursive: bool,
+    excluded_roots: Iterable[Path] = (),
+) -> list[Path]:
+    """Return regular BVH inputs in a repeatable, case-insensitive order.
+
+    This is the primary input discovery function for the BVH → GLB pipeline.
+    It mirrors discover_mp4_files but targets .bvh files.
+    """
+
+    if not input_dir.is_dir():
+        raise ValueError(f"BVH input directory does not exist: {input_dir}")
+    excluded = tuple(path.resolve() for path in excluded_roots)
+    candidates = input_dir.rglob("*") if recursive else input_dir.iterdir()
+    bvh_files: list[Path] = []
+    for candidate in candidates:
+        if not candidate.is_file() or candidate.suffix.casefold() != ".bvh":
+            continue
+        resolved = candidate.resolve()
+        if any(_is_relative_to(resolved, root) for root in excluded):
+            continue
+        bvh_files.append(resolved)
+    return sorted(set(bvh_files), key=lambda path: (str(path).casefold(), str(path)))
+
+
 def assign_output_directory_names(
     videos: Iterable[Path],
     *,
@@ -341,6 +368,10 @@ def classify_process_failure(
         return "DEPENDENCY_MISSING", False
     if any(value in tail for value in ("invalid video", "cannot open video", "no decodable frames")):
         return "INVALID_INPUT", False
+    if any(value in tail for value in ("bvh file does not start", "bvh frame_time", "no channels defined")):
+        return "INVALID_BVH", False
+    if any(value in tail for value in ("bvh skeleton incompatible", "no bvh joints could be mapped")):
+        return "BVH_MAPPING_ERROR", False
     if any(value in tail for value in ("validation failed", "qc failed", "technical_qc")):
         return "TECHNICAL_QC", False
     return "CONVERSION_ERROR", False

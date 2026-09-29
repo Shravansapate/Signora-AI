@@ -1,9 +1,38 @@
 avatar:
-  path: "./assets/character.fbx"
+  path: "./character.fbx"
 
 blender:
   executable: "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe"
 
+# ──────────────────────────────────────────────────────────────────────────────
+# BVH → GLB Pipeline (primary input mode)
+# Run:  python bvh2glb.py --batch
+#       python bvh2glb.py --bvh bvh_input/my_animation.bvh
+# ──────────────────────────────────────────────────────────────────────────────
+bvh:
+  # Input folder — place .bvh files here before running the pipeline.
+  input_dir: "./bvh_input"
+
+  # Output folder — converted .glb files are written here, preserving stem name.
+  output_dir: "./glb_output"
+
+  # Unit scale: 0.01 converts centimetres (BVH default) to metres (Blender default).
+  # Change to 1.0 if your BVH files already use metres.
+  bvh_scale: 0.01
+
+  # Set to true to bake the root joint's Xposition/Yposition/Zposition channels
+  # as armature location keyframes. False = character stays at origin.
+  apply_root_translation: false
+
+  # Maximum seconds Blender may run per file before it is killed and marked FAILED.
+  timeout_seconds: 3600.0
+
+  # Set to true to also scan subdirectories of input_dir for .bvh files.
+  recursive: false
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Legacy video pipeline settings (kept for backward compatibility with convert.py)
+# ──────────────────────────────────────────────────────────────────────────────
 pose:
   backend: "mediapipe_holistic"
   model_path: "./models/holistic_landmarker.task"
