@@ -29,6 +29,7 @@ export default function AnnouncementConsole() {
   const [transcript, setTranscript] = useState(null);
   const [confirmed, setConfirmed] = useState(false);
   const [recording, setRecording] = useState(false);
+  const [microphoneLevel, setMicrophoneLevel] = useState(0);
   const [pending, setPending] = useState('');
   const [error, setError] = useState('');
   const [result, setResult] = useState(null);
@@ -43,6 +44,7 @@ export default function AnnouncementConsole() {
   const feedback = useRef(null);
   const output = useRef(null);
   const stopAction = useRef(null);
+  const stoppingRecording = useRef(false);
   const onState = useCallback(value => {
     setSnapshot(value);
     if (value.error) setError(value.error.message);
@@ -58,7 +60,7 @@ export default function AnnouncementConsole() {
     feedback.current?.scrollIntoView({ block: 'nearest' });
   }, [result, error]);
   useEffect(() => {
-    recorder.current = new PushToTalkRecorder(() => stopAction.current?.());
+    recorder.current = new PushToTalkRecorder(() => stopAction.current?.(), setMicrophoneLevel);
     return () => { generation.current++; request.current?.abort(); recorder.current?.cancel(); };
   }, []);
 
@@ -133,11 +135,14 @@ export default function AnnouncementConsole() {
     finally { if (generation.current === current) setPending(''); }
   }
   async function stopRecording() {
-    if (!recording) return;
+    if (!recording || stoppingRecording.current) return;
+    stoppingRecording.current = true;
     setRecording(false); setPending('Transcribing');
     const current = generation.current; const controller = new AbortController(); request.current = controller;
     try {
-      const audio = recorder.current.stop(); const form = new FormData(); form.append('audio', audio, 'announcement.wav');
+      const audio = await recorder.current.stop();
+      if (generation.current !== current) return;
+      const form = new FormData(); form.append('audio', audio, 'announcement.wav');
       const data = await apiRequest('/api/v1/voice/transcribe', { token, body: form, signal: controller.signal, timeoutMs: 125000 });
       if (generation.current !== current) return;
       setTranscript(data); setText(data.text); setConfirmed(false);
@@ -146,7 +151,7 @@ export default function AnnouncementConsole() {
           source_text_language: 'en', text: data.text, transcript_id: data.transcript_id });
       }
     } catch (cause) { if (generation.current === current) setError(cause.message); }
-    finally { if (generation.current === current) setPending(''); }
+    finally { stoppingRecording.current = false; if (generation.current === current) setPending(''); }
   }
   stopAction.current = stopRecording;
   const canPrepare = token && station && !busy && !recording && (mode === 'STRUCTURED' ? fields.train_identifier : text.trim()) && (mode !== 'VOICE' || transcript);
@@ -182,7 +187,7 @@ export default function AnnouncementConsole() {
           <label>Station<select value={station} disabled={!token || busy || recording} onChange={e => edit(() => setStation(e.target.value))}><option value="">Select a configured station</option>{capabilities?.stations.map(row => <option key={row.id} value={row.id}>{row.definition.name} ({row.id})</option>)}</select></label>
           {token && !capabilities?.stations.length && <p className="notice review-notice">No station is configured for this account. An administrator must add the station and its platform inventory.</p>}
           <div className="mode-switch" role="group" aria-label="Input method">{['TEXT', 'STRUCTURED', 'VOICE'].map(value => <button key={value} aria-pressed={mode === value} disabled={busy || recording} onClick={() => edit(() => { setMode(value); setTranscript(null); recorder.current?.cancel(); })}><Icon name={value === 'TEXT' ? 'keyboard' : value === 'VOICE' ? 'mic' : 'list'} />{value === 'TEXT' ? 'Type' : value === 'VOICE' ? 'Record voice' : 'Structured fields'}</button>)}</div>
-          {mode === 'VOICE' && <div className="voice-controls"><p>English · maximum 60 seconds · local transcription</p><button disabled={!token || busy} onClick={recording ? stopRecording : startRecording}>{recording ? 'Stop and transcribe' : 'Start recording'}</button><span role="status">{recording ? 'Microphone recording' : capabilities?.asr_state === 'NOT_CONFIGURED' ? 'Speech recognition is not configured. Typed input remains available.' : ''}</span></div>}
+          {mode === 'VOICE' && <div className="voice-controls"><p>English · maximum 60 seconds · local transcription. Wait for the recording status, check the microphone level, and say train numbers digit by digit.</p><button disabled={!token || busy} onClick={recording ? stopRecording : startRecording}>{recording ? 'Stop and transcribe' : 'Start recording'}</button><meter aria-label="Microphone level" min="0" max="1" value={microphoneLevel} /><span role="status">{recording ? 'Microphone recording' : capabilities?.asr_state === 'NOT_CONFIGURED' ? 'Speech recognition is not configured. Typed input remains available.' : ''}</span>{transcript?.metadata?.audio_quality?.warnings?.includes("QUIET_AUDIO") && <p role="status">The recording was quiet. Move closer to the microphone if words are missing.</p>}{transcript?.metadata?.audio_quality?.warnings?.includes("CLIPPED_AUDIO") && <p role="status">The recording was distorted. Lower the microphone level or move slightly farther away.</p>}</div>}
           {mode !== 'STRUCTURED' ? <div><label htmlFor="announcement-text">{mode === 'VOICE' ? 'Final transcript — check and correct' : 'Announcement text'}</label><textarea id="announcement-text" placeholder="Type your announcement here" rows={5} maxLength={2048} value={text} disabled={busy || recording} onChange={e => edit(() => setText(e.target.value))} /></div> : <>
             <label>Event<select value={fields.event} disabled={busy} onChange={e => edit(() => setFields({ ...fields, event: e.target.value }))}>{OPTIONS.map(([, value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
             <label>Polarity<select value={fields.polarity} disabled={busy} onChange={e => edit(() => setFields({ ...fields, polarity: e.target.value }))}><option value="POSITIVE">Affirmed</option><option value="NEGATIVE">Negated (not)</option></select></label>

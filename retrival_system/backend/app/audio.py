@@ -55,4 +55,16 @@ def inspect_audio(path):
     require(rms >= 0.001, "NO_SPEECH", "The recording is silent or too quiet; record again", 422)
     with path.open("rb") as stream:
         digest = hashlib.file_digest(stream, "sha256").hexdigest()
-    return {"audio_sha256": digest, "duration_seconds": frames / 16000}
+    clipped_fraction = sum(abs(s) >= 32700 for s in samples) / len(samples)
+    warnings = []
+    if rms < 0.01:
+        warnings.append("QUIET_AUDIO")
+    if clipped_fraction > 0.01:
+        warnings.append("CLIPPED_AUDIO")
+    return {
+        "audio_sha256": digest,
+        "duration_seconds": frames / 16000,
+        "rms_dbfs": round(20 * math.log10(rms), 1),
+        "clipped_fraction": round(clipped_fraction, 4),
+        "warnings": warnings,
+    }

@@ -53,6 +53,7 @@ from src.bvh.bvh_reader import (
     build_bvh_bone_mapping,
     validate_bvh_skeleton,
 )
+from src.motion.arm_ik import solve_two_bone_endpoint
 
 
 # ---------------------------------------------------------------------------
@@ -188,9 +189,8 @@ def main() -> int:
 
     # Index BVH joints by name for fast lookup. Target bone matrices carry
     # arbitrary roll/rest axes, so raw BVH Euler values cannot be assigned to
-    # rotation_quaternion directly. Conjugating each BVH local rotation by the
-    # target bone's global rest basis expresses the same rotation in the
-    # target bone's local pose coordinates.
+    # rotation_quaternion directly. We solve source global rotations and apply
+    # them before each target bone's own rest orientation.
     bvh_joint_index: dict[str, int] = {j.name: i for i, j in enumerate(bvh.joints)}
     target_rest_rotations = {
         target_name: armature.data.bones[target_name].matrix_local.to_3x3().normalized()
@@ -208,7 +208,8 @@ def main() -> int:
         blender_frame = frame_idx
         bpy.context.scene.frame_set(blender_frame)
 
-        source_local_rotations: list[Matrix] = []
+        source_global_rotations: list[Matrix] = []
+        source_positions: list[Vector] = []
         for joint in bvh.joints:
             rot_indices = [
                 joint.channel_offset + i
@@ -225,7 +226,25 @@ def main() -> int:
                 local_rotation = _euler_to_quat(values, order).to_matrix()
             else:
                 local_rotation = Matrix.Identity(3)
-            source_local_rotations.append(local_rotation)
+            if joint.parent_index < 0:
+                global_rotation = local_rotation
+                translation = bvh.get_root_translation()
+                source_position = (
+                    Vector(tuple(float(value) for value in translation[frame_idx]))
+                    if translation is not None
+                    else Vector((0.0, 0.0, 0.0))
+                )
+            else:
+                global_rotation = (
+                    source_global_rotations[joint.parent_index] @ local_rotation
+                )
+                source_position = (
+                    source_positions[joint.parent_index]
+                    + source_global_rotations[joint.parent_index]
+                    @ Vector(joint.offset)
+                )
+            source_global_rotations.append(global_rotation)
+            source_positions.append(source_position)
 
         # Root translation (location keyframe on armature object)
         if has_root_translation and args.apply_root_translation:
@@ -238,27 +257,41 @@ def main() -> int:
                 armature.location = Vector((tx * scale, tz * scale, -ty * scale))
                 armature.keyframe_insert(data_path="location", frame=blender_frame)
 
-        # Per-joint rotations. This direct basis conversion is independent for
-        # every bone and avoids stale parent matrices in Blender's depsgraph.
+        # Assign parent-first. Blender must evaluate each parent before a child
+        # matrix is solved, otherwise identical held BVH frames incorrectly
+        # converge toward the pose over several output frames.
         for bvh_name, avatar_bone_name in bvh_to_avatar.items():
             source_index = bvh_joint_index[bvh_name]
             pose_bone = armature.pose.bones.get(avatar_bone_name)
             if pose_bone is None:
                 continue
-            rest_rotation = target_rest_rotations[avatar_bone_name]
-            basis_rotation = (
-                rest_rotation.inverted()
-                @ source_local_rotations[source_index]
-                @ rest_rotation
+            desired_rotation = (
+                source_global_rotations[source_index]
+                @ target_rest_rotations[avatar_bone_name]
             )
-            quat = basis_rotation.to_quaternion()
+            desired_matrix = desired_rotation.to_4x4()
+            desired_matrix.translation = pose_bone.head.copy()
+            pose_bone.rotation_mode = "QUATERNION"
+            pose_bone.matrix = desired_matrix
+            bpy.context.view_layer.update()
+            quat = pose_bone.rotation_quaternion.copy()
             previous = previous_quaternions.get(avatar_bone_name)
             if previous is not None and previous.dot(quat) < 0.0:
                 quat.negate()
             previous_quaternions[avatar_bone_name] = quat.copy()
-            pose_bone.rotation_mode = "QUATERNION"
             pose_bone.rotation_quaternion = quat
             pose_bone.keyframe_insert(data_path="rotation_quaternion", frame=blender_frame)
+
+        if not args.disable_hand_contact:
+            _preserve_bilateral_thumb_contact(
+                armature,
+                bvh,
+                bvh_to_avatar,
+                bvh_joint_index,
+                source_positions,
+                source_global_rotations,
+                blender_frame,
+            )
 
         bpy.context.view_layer.update()
 
@@ -298,6 +331,143 @@ def main() -> int:
     return 0
 
 
+def _preserve_bilateral_thumb_contact(
+    armature,
+    bvh: BVHData,
+    bvh_to_avatar: dict[str, str],
+    joint_index: dict[str, int],
+    source_positions: list[Vector],
+    source_global_rotations: list[Matrix],
+    frame: int,
+) -> None:
+    """Close source-evidenced thumb contact with length-preserving arm IK.
+
+    BVH limb rotations can put the source thumb tips together while avatar
+    proportion differences leave a visible gap. This correction activates only
+    when the source's two thumb tips are already within 10% of shoulder width.
+    It translates each rigid hand by half the residual and re-solves both arms,
+    preserving the hand and finger rotations from the BVH.
+    """
+    required_source = (
+        "LeftUpperArm", "RightUpperArm",
+        "LeftThumbDistal", "RightThumbDistal",
+    )
+    required_targets = (
+        "LeftUpperArm", "LeftLowerArm", "LeftHand", "LeftThumbDistal",
+        "RightUpperArm", "RightLowerArm", "RightHand", "RightThumbDistal",
+    )
+    if any(name not in joint_index for name in required_source):
+        return
+    if any(name not in bvh_to_avatar for name in required_targets):
+        return
+
+    def source_tip(name: str) -> Vector:
+        index = joint_index[name]
+        joint = bvh.joints[index]
+        # These captures use an End Site offset equal to the distal bone's
+        # offset. Using it here retains the contact evidence discarded by a
+        # channel-only BVH parser without inventing a new finger pose.
+        return source_positions[index] + source_global_rotations[index] @ Vector(joint.offset)
+
+    left_source_tip = source_tip("LeftThumbDistal")
+    right_source_tip = source_tip("RightThumbDistal")
+    shoulder_width = (
+        source_positions[joint_index["LeftUpperArm"]]
+        - source_positions[joint_index["RightUpperArm"]]
+    ).length
+    if shoulder_width <= 1e-8:
+        return
+    source_ratio = (left_source_tip - right_source_tip).length / shoulder_width
+    activation_ratio = 0.10
+    full_contact_ratio = 0.08
+    if source_ratio >= activation_ratio:
+        return
+    weight = min(
+        1.0,
+        max(0.0, (activation_ratio - source_ratio) / (activation_ratio - full_contact_ratio)),
+    )
+
+    left_thumb = armature.pose.bones[bvh_to_avatar["LeftThumbDistal"]]
+    right_thumb = armature.pose.bones[bvh_to_avatar["RightThumbDistal"]]
+    left_tip = _terminal_bone_tip(left_thumb)
+    right_tip = _terminal_bone_tip(right_thumb)
+    tip_delta = right_tip - left_tip
+    target_shoulder_width = (
+        armature.pose.bones[bvh_to_avatar["LeftUpperArm"]].head
+        - armature.pose.bones[bvh_to_avatar["RightUpperArm"]].head
+    ).length
+    # Skeleton endpoints do not quite reach the skinned thumb surface on this
+    # avatar. A bounded 0.75%-of-shoulder-width shift per hand closes that last
+    # visible seam without changing the recorded finger articulation.
+    surface_closure = (
+        tip_delta.normalized() * (target_shoulder_width * 0.0075 * weight)
+        if tip_delta.length > 1e-8
+        else Vector((0.0, 0.0, 0.0))
+    )
+    correction = tip_delta * (0.5 * weight) + surface_closure
+    if correction.length <= 1e-7:
+        return
+
+    _move_wrist_with_arm_ik(armature, bvh_to_avatar, "Left", correction, frame)
+    _move_wrist_with_arm_ik(armature, bvh_to_avatar, "Right", -correction, frame)
+
+
+def _terminal_bone_tip(pose_bone) -> Vector:
+    terminal = pose_bone
+    while len(terminal.children) == 1 and "thumb" in terminal.children[0].name.casefold():
+        terminal = terminal.children[0]
+    return terminal.tail.copy()
+
+
+def _move_wrist_with_arm_ik(
+    armature,
+    bvh_to_avatar: dict[str, str],
+    side: str,
+    shift: Vector,
+    frame: int,
+) -> None:
+    source_names = {
+        "Left": ("LeftUpperArm", "LeftLowerArm", "LeftHand"),
+        "Right": ("RightUpperArm", "RightLowerArm", "RightHand"),
+    }[side]
+    upper, forearm, hand = (
+        armature.pose.bones[bvh_to_avatar[name]] for name in source_names
+    )
+    shoulder, elbow, wrist = upper.head.copy(), forearm.head.copy(), hand.head.copy()
+    upper_matrix, forearm_matrix, hand_matrix = (
+        bone.matrix.copy() for bone in (upper, forearm, hand)
+    )
+    result = solve_two_bone_endpoint(
+        np.asarray(shoulder),
+        np.asarray(elbow),
+        np.asarray(wrist),
+        np.asarray(wrist + shift),
+        (elbow - shoulder).length,
+        (wrist - elbow).length,
+    )
+    desired_elbow = Vector(result["elbow"])
+    desired_wrist = Vector(result["wrist"])
+
+    upper_swing = (elbow - shoulder).rotation_difference(desired_elbow - shoulder)
+    target = (upper_swing.to_matrix() @ upper_matrix.to_3x3()).to_4x4()
+    target.translation = shoulder
+    upper.matrix = target
+    bpy.context.view_layer.update()
+
+    forearm_swing = (wrist - elbow).rotation_difference(desired_wrist - desired_elbow)
+    target = (forearm_swing.to_matrix() @ forearm_matrix.to_3x3()).to_4x4()
+    target.translation = forearm.head.copy()
+    forearm.matrix = target
+    bpy.context.view_layer.update()
+
+    hand_matrix.translation = hand.head.copy()
+    hand.matrix = hand_matrix
+    bpy.context.view_layer.update()
+    for bone in (upper, forearm, hand):
+        bone.rotation_mode = "QUATERNION"
+        bone.keyframe_insert(data_path="rotation_quaternion", frame=frame)
+
+
 # ---------------------------------------------------------------------------
 # Argument parsing
 # ---------------------------------------------------------------------------
@@ -324,6 +494,11 @@ def _parse_args() -> argparse.Namespace:
         type=float,
         default=0.01,
         help="Scale factor applied to BVH translation values (default: 0.01 = cm→m).",
+    )
+    parser.add_argument(
+        "--disable-hand-contact",
+        action="store_true",
+        help="Do not close bilateral thumb contact that is present in the source BVH.",
     )
     return parser.parse_args(argv)
 

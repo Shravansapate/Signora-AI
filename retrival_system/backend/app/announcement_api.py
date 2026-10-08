@@ -147,6 +147,9 @@ def announcement_router(sessions, store, principal, asr, *, demo_mode_enabled=Fa
                 asr_metadata={
                     **result["metadata"],
                     "duration_seconds": inspected["duration_seconds"],
+                    "audio_quality": {
+                        key: inspected[key] for key in ("rms_dbfs", "clipped_fraction", "warnings")
+                    },
                 },
                 valid_until=datetime.now(UTC) + timedelta(minutes=15),
             )

@@ -1,5 +1,6 @@
 import { LoadingManager } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { EmbeddedTextureLoader } from './texture-loader.mjs';
 import { MotionValidationError, assertCompatibleRig, captureRigProfile, validateClipBindings } from './rig-validation.mjs';
 
 const MAX_ASSET_BYTES = 128 * 1024 * 1024;
@@ -122,19 +123,27 @@ export function disposeScenes(roots, additionalTextures = []) {
     for (const image of Array.isArray(texture.image) ? texture.image : [texture.image]) if (image) images.add(image);
     texture.dispose();
   }
-  for (const image of images) image.close?.();
+  for (const image of images) {
+    image.close?.();
+    if (image.tagName === 'CANVAS') { image.width = 0; image.height = 0; }
+  }
   for (const material of materials) material.dispose();
   for (const geometry of geometries) geometry.dispose();
   for (const skeleton of skeletons) skeleton.dispose();
 }
 
 export async function parseBrowserGlb(bytes, { motionOnly = false } = {}) {
+  inspectSelfContainedGlb(bytes);
   const manager = new LoadingManager();
   manager.setURLModifier(url => {
     if (!url.startsWith('blob:')) fail('EXTERNAL_RESOURCE', 'External GLB resource requests are forbidden.');
     return url;
   });
   const loader = new GLTFLoader(manager);
+  loader.register(parser => ({
+    name: 'SIGNORA_EMBEDDED_TEXTURES',
+    beforeRoot() { parser.textureLoader = new EmbeddedTextureLoader(manager); },
+  }));
   if (motionOnly) loader.register(parser => ({
     name: 'SIGNORA_ANIMATION_RESOURCES',
     beforeRoot() {
@@ -157,22 +166,6 @@ export async function parseBrowserGlb(bytes, { motionOnly = false } = {}) {
     if (textures.some(texture => !texture?.image || !(texture.image.width > 0) || !(texture.image.height > 0))) {
       fail('TEXTURE_DECODE', 'An embedded texture could not be decoded.');
     }
-    // The preview occupies a few hundred screen pixels. Keep original GLBs intact,
-    // but avoid retaining/uploading five 2K/4K images on this local 8 GB PC.
-    const resized = new Map();
-    for (const texture of textures) {
-      const original = texture.image;
-      const scale = Math.min(1, 1024 / Math.max(original.width, original.height));
-      if (scale === 1) continue;
-      if (!resized.has(original)) resized.set(original, await createImageBitmap(original, {
-        resizeWidth: Math.max(1, Math.round(original.width * scale)),
-        resizeHeight: Math.max(1, Math.round(original.height * scale)),
-        resizeQuality: 'high', premultiplyAlpha: 'none', colorSpaceConversion: 'none',
-      }));
-      texture.image = resized.get(original);
-      texture.needsUpdate = true;
-    }
-    for (const original of resized.keys()) original.close?.();
     return { root: gltf.scene, scenes: gltf.scenes, animations: gltf.animations, textures };
   } catch (error) {
     disposeScenes(gltf.scenes, textures);

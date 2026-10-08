@@ -18,24 +18,37 @@ export function pcmWav(chunks) {
 }
 
 export class PushToTalkRecorder {
-  constructor(onLimit = () => {}) { this.onLimit = onLimit; this.generation = 0; this.chunks = []; }
+  constructor(onLimit = () => {}, onLevel = () => {}) {
+    this.onLimit = onLimit; this.onLevel = onLevel; this.generation = 0; this.chunks = [];
+  }
   async start() {
     if (!navigator.mediaDevices?.getUserMedia || !window.AudioWorkletNode) throw new Error('Microphone capture requires a secure browser with AudioWorklet support.');
     this.cancel();
     const generation = this.generation;
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true }, video: false });
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true }, video: false });
     if (generation !== this.generation) { stream.getTracks().forEach(track => track.stop()); return false; }
     this.stream = stream;
     try {
-      this.context = new AudioContext({ sampleRate: 16000 });
-      if (this.context.sampleRate !== 16000) throw new Error('This browser cannot capture the required 16 kHz audio.');
+      this.context = new AudioContext();
+      this.finished = false; this.samples = 0; this.lastLevel = 0;
       await this.context.audioWorklet.addModule('/pcm-recorder-worklet.js');
       if (generation !== this.generation) return false;
       this.node = new AudioWorkletNode(this.context, 'signora-pcm-capture');
       this.node.port.onmessage = ({ data }) => {
         if (generation !== this.generation) return;
-        if (data.samples) this.chunks.push(data.samples);
-        if (data.complete) this.onLimit();
+        if (data.samples) {
+          this.samples += data.samples.length;
+          if (this.samples > this.context.sampleRate * 60) { this.cancel(); return; }
+          this.chunks.push(data.samples);
+          if (performance.now() - this.lastLevel > 150) {
+            const rms = Math.sqrt(data.samples.reduce((sum, value) => sum + value * value, 0) / data.samples.length);
+            this.onLevel(Math.min(1, rms * 5)); this.lastLevel = performance.now();
+          }
+        }
+        if (data.complete) {
+          this.finished = true; this.flush?.resolve();
+          if (data.reason === 'limit') this.onLimit();
+        }
       };
       this.source = this.context.createMediaStreamSource(stream);
       this.source.connect(this.node);
@@ -45,15 +58,54 @@ export class PushToTalkRecorder {
       return true;
     } catch (error) { this.cancel(); throw error; }
   }
-  stop() { const chunks = this.chunks; this.cancel(); return pcmWav(chunks); }
+  async stop() {
+    if (!this.context || !this.node || this.flush) throw new Error('No active recording to finish.');
+    const generation = this.generation;
+    let timeout;
+    try {
+      if (!this.finished) {
+        await new Promise((resolve, reject) => {
+          this.flush = { resolve, reject };
+          timeout = setTimeout(() => reject(new Error('Microphone did not finish recording. Please record again.')), 2000);
+          this.node.port.postMessage({ command: 'stop' });
+        });
+      }
+      if (generation !== this.generation) throw new DOMException('Recording cancelled', 'AbortError');
+      const chunks = this.chunks, rate = this.context.sampleRate;
+      this.flush = null; clearTimeout(timeout); this.cancel();
+      return pcmWav([await resampleRecording(chunks, rate)]);
+    } finally {
+      clearTimeout(timeout);
+      if (generation === this.generation) { this.flush = null; this.cancel(); }
+    }
+  }
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
+    this.flush?.reject(new DOMException('Recording cancelled', 'AbortError')); this.flush = null;
     this.stream?.getTracks().forEach(track => track.stop());
     this.source?.disconnect(); this.node?.disconnect();
     if (this.node) this.node.port.onmessage = null;
     this.context?.close().catch(() => {});
     this.stream = this.source = this.node = this.context = null;
     this.chunks = [];
+    this.onLevel(0);
   }
+}
+
+/** Use the browser's band-limited resampler; never relabel 44.1/48 kHz samples as 16 kHz. */
+export async function resampleRecording(chunks, sampleRate) {
+  const count = chunks.reduce((sum, chunk) => sum + chunk.length, 0);
+  if (!Number.isFinite(sampleRate) || sampleRate < 8000 || sampleRate > 192000 ||
+      count < sampleRate * 0.25 || count > sampleRate * 60) throw new Error('Record between 0.25 and 60 seconds.');
+  const samples = new Float32Array(count);
+  let offset = 0;
+  for (const chunk of chunks) { samples.set(chunk, offset); offset += chunk.length; }
+  if (sampleRate === 16000) return samples;
+  const offline = new OfflineAudioContext(1, Math.round(count * 16000 / sampleRate), 16000);
+  const buffer = offline.createBuffer(1, count, sampleRate);
+  buffer.copyToChannel(samples, 0);
+  const source = offline.createBufferSource(); source.buffer = buffer;
+  source.connect(offline.destination); source.start();
+  return (await offline.startRendering()).getChannelData(0);
 }

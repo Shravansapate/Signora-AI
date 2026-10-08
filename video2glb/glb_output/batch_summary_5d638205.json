@@ -1,0 +1,32 @@
+{
+  "batch_id": "5d638205",
+  "total": 2,
+  "success": 2,
+  "failed": 0,
+  "input_dir": "D:\\Signora_AI\\video2glb\\bvh_input",
+  "output_dir": "D:\\Signora_AI\\video2glb\\glb_output",
+  "avatar": "D:\\Signora_AI\\video2glb\\character.fbx",
+  "blender": "C:\\Program Files\\Blender Foundation\\Blender 4.5\\blender.exe",
+  "items": [
+    {
+      "index": 1,
+      "input": "D:\\Signora_AI\\video2glb\\bvh_input\\A motion_20260924010030.bvh",
+      "output": "D:\\Signora_AI\\video2glb\\glb_output\\A motion_20260924010030.glb",
+      "status": "SUCCESS",
+      "message": "OK (14.2s, 57186 KB)",
+      "log": "D:\\Signora_AI\\video2glb\\logs\\5d638205_A motion_20260924010030.log",
+      "started_at": "2026-09-29T15:08:07+00:00",
+      "completed_at": "2026-09-29T15:08:21+00:00"
+    },
+    {
+      "index": 2,
+      "input": "D:\\Signora_AI\\video2glb\\bvh_input\\B motion_20260924010708.bvh",
+      "output": "D:\\Signora_AI\\video2glb\\glb_output\\B motion_20260924010708.glb",
+      "status": "SUCCESS",
+      "message": "OK (15.7s, 57211 KB)",
+      "log": "D:\\Signora_AI\\video2glb\\logs\\5d638205_B motion_20260924010708.log",
+      "started_at": "2026-09-29T15:08:21+00:00",
+      "completed_at": "2026-09-29T15:08:37+00:00"
+    }
+  ]
+}

@@ -100,6 +100,7 @@ def convert_single(
     bone_map_path: Path,
     blender_path: Path,
     apply_root_translation: bool = False,
+    preserve_hand_contact: bool = True,
     bvh_scale: float = 0.01,
     log_path: Path | None = None,
     timeout: float = 3600.0,
@@ -125,6 +126,8 @@ def convert_single(
     ]
     if apply_root_translation:
         cmd.append("--apply-root-translation")
+    if not preserve_hand_contact:
+        cmd.append("--disable-hand-contact")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -254,6 +257,7 @@ def run_batch(args: argparse.Namespace) -> int:
             bone_map_path=bone_map_path,
             blender_path=blender_path,
             apply_root_translation=apply_root,
+            preserve_hand_contact=not bool(getattr(args, "disable_hand_contact", False)),
             bvh_scale=bvh_scale,
             log_path=log_path,
             timeout=timeout,
@@ -358,6 +362,7 @@ def run_single(args: argparse.Namespace) -> int:
         bone_map_path=bone_map_path,
         blender_path=blender_path,
         apply_root_translation=apply_root,
+        preserve_hand_contact=not bool(getattr(args, "disable_hand_contact", False)),
         bvh_scale=bvh_scale,
         log_path=log_path,
         timeout=timeout,
@@ -460,6 +465,12 @@ Examples:
         default=False,
         help="Scan --input-dir recursively for .bvh files.",
     )
+    parser.add_argument(
+        "--disable-hand-contact",
+        action="store_true",
+        default=False,
+        help="Disable source-evidenced bilateral thumb contact correction.",
+    )
     return parser.parse_args()
 
 
@@ -476,6 +487,12 @@ def resolve_project_path(value: str | Path | None) -> Path:
 
 
 def main() -> int:
+    # Windows can expose a legacy cp1252 console even when this UTF-8 source is
+    # valid. Keep help text and progress output from crashing on Unicode arrows.
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="replace")
     args = parse_args()
     if args.batch:
         return run_batch(args)

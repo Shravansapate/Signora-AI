@@ -76,6 +76,22 @@ The pipeline preserves source FPS, keeps left/right hands separate, saves raw po
 
 Each video is isolated so one failure does not terminate the batch. `output/batch_summary.json` separates technically valid files from signer-approved files. Use batch output for technical processing only until the target vocabulary has been signer-reviewed.
 
+## BVH input
+
+BVH motion files can be retargeted directly to the configured avatar:
+
+```powershell
+.\.venv\Scripts\python.exe bvh2glb.py --batch
+.\.venv\Scripts\python.exe bvh2glb.py --bvh ".\bvh_input\A motion_20260924010030.bvh"
+```
+
+The converter preserves the BVH hierarchy and channel order, translates the
+source rotations through the avatar's rest-bone axes, maps the complete torso,
+arms, fingers, and legs, and writes animated files to `glb_output/`. When the
+source BVH shows the left and right thumb tips meeting, a length-preserving arm
+IK correction closes proportion-induced gaps on the avatar. Pass
+`--disable-hand-contact` only when exact bilateral thumb contact is not wanted.
+
 ## Legacy Baseline
 
 The direct path never calls Rokoko or BVH. If the previous TDPT/BVH/Rokoko script becomes available, place an unchanged copy at `legacy/bvh_to_glb_rokoko.py` for comparison and fallback research. Current legacy-comparison status is recorded in each output directory rather than fabricated.

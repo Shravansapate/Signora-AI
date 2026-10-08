@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
 
 const origin = process.env.SIGNORA_BROWSER_ORIGIN, token = process.env.SIGNORA_BROWSER_TOKEN;
@@ -24,6 +24,28 @@ async function state(value, timeout = 90000) {
 try {
   const document = await page.goto(`${origin}/announcements`);
   assert.match(document.headers()['permissions-policy'], /microphone=\(self\)/);
+  const recorderSource = await readFile(new URL('../src/services/recorder.mjs', import.meta.url), 'utf8');
+  const resampling = await page.evaluate(async source => {
+    const url = URL.createObjectURL(new Blob([source], { type: 'text/javascript' }));
+    try {
+      const { resampleRecording, pcmWav } = await import(url);
+      const results = [];
+      for (const rate of [44100, 48000]) {
+        const samples = Float32Array.from({ length: rate }, (_, i) => 0.5 * Math.sin(2 * Math.PI * 1000 * i / rate));
+        const output = await resampleRecording([samples], rate);
+        const wav = new DataView(await pcmWav([output]).arrayBuffer());
+        let crossings = 0;
+        for (let i = 1; i < output.length; i++) if (output[i - 1] <= 0 && output[i] > 0) crossings++;
+        results.push({ input_rate: rate, output_frames: output.length, wav_rate: wav.getUint32(24, true), crossings });
+      }
+      return results;
+    } finally { URL.revokeObjectURL(url); }
+  }, recorderSource);
+  for (const result of resampling) {
+    assert.equal(result.output_frames, 16000);
+    assert.equal(result.wav_rate, 16000);
+    assert(Math.abs(result.crossings - 1000) <= 1, 'Resampling must preserve duration and pitch');
+  }
   await page.getByLabel('Access token', { exact: true }).fill(token);
   await page.getByRole('button', { name: 'Connect', exact: true }).click();
   await page.getByText('Credentials held in memory for this session').waitFor();
@@ -61,6 +83,7 @@ try {
   }
   await page.getByRole('button', { name: 'Start recording', exact: true }).click();
   await page.getByText('Microphone recording', { exact: true }).waitFor();
+  await page.waitForFunction(() => document.querySelector('meter[aria-label="Microphone level"]')?.value > 0);
   await page.waitForTimeout(6500);
   const speechResponse = page.waitForResponse(response => response.url().endsWith('/api/v1/voice/transcribe'), { timeout: 120000 });
   await page.getByRole('button', { name: 'Stop and transcribe', exact: true }).click();
@@ -68,6 +91,8 @@ try {
   assert.equal(speech.status(), 201);
   const transcript = await speech.json();
   assert.equal(transcript.metadata.final, true);
+  assert(Number.isFinite(transcript.metadata.audio_quality.rms_dbfs));
+  assert(Array.isArray(transcript.metadata.audio_quality.warnings));
   assert.match(transcript.text.toLowerCase(), /train/);
   const correction = page.getByLabel('Final transcript — check and correct', { exact: true });
   await correction.fill(source);
@@ -119,7 +144,8 @@ try {
   assert.deepEqual(errors, []);
   await writeFile(`${output}/browser-verification.json`, JSON.stringify({ status: 'PASSED', browser: browser.version(), ready_ms: readyMs, typed_plan_ms: typedPlanMs, structured_plan_ms: structuredPlanMs,
     motions: typed.manifest.items.length, one_avatar: true, actual_microphone_capture: 'Chromium fake device using synthetic speech WAV',
-    actual_local_asr: true, transcript: transcript.text, common_meaning_hash: typed.meaning_hash,
+    actual_local_asr: true, model_id: transcript.metadata.model_id, resampling, microphone_meter: true,
+    audio_quality: transcript.metadata.audio_quality, transcript: transcript.text, common_meaning_hash: typed.meaning_hash,
     confirmation_required: true, edited_transcript_invalidates_confirmation: true, prepared_template_review_rendered: true, page_errors: errors }, null, 2));
 } catch (error) {
   await page.screenshot({ path: `${output}/failure.png`, fullPage: true }).catch(() => {});

@@ -10,6 +10,10 @@ if (!origin || !token || !output) throw new Error('Use the isolated backend brow
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader'] });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
+const bitmapFailure = process.env.SIGNORA_TEST_BITMAP_FAILURE === '1';
+if (bitmapFailure) await context.addInitScript(() => {
+  window.createImageBitmap = async () => { throw new DOMException('Injected ImageBitmap failure', 'InvalidStateError'); };
+});
 const page = await context.newPage();
 const errors = [], requests = [], measurements = [];
 page.on('pageerror', error => errors.push(error.message));
@@ -83,7 +87,7 @@ try {
   assert.equal(await page.getByLabel('Access token', { exact: true }).inputValue(), '');
   assert.deepEqual(errors, []);
   await writeFile(`${output}/browser-verification.json`, JSON.stringify({ status: 'PASSED', browser: browser.version(),
-    viewport: '1440x1100; 390x844', measurements, missing_asset_blocks_start: true,
+    viewport: '1440x1100; 390x844', measurements, image_bitmap_failure_injected: bitmapFailure, missing_asset_blocks_start: true,
     unsupported_text_preserved: true, persisted_browser_credentials: false, page_errors: errors }, null, 2));
 } catch (error) {
   await page.screenshot({ path: `${output}/failure.png`, fullPage: true }).catch(() => {});
