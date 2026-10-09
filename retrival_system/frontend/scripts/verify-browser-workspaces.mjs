@@ -167,12 +167,14 @@ try {
   await click('Displays'); await page.getByLabel('Monitor station', { exact: true }).selectOption('TEST');
   await click('New display identity'); await page.getByLabel('Registered display ID', { exact: true }).fill(did);
   await page.getByLabel('Display name', { exact: true }).fill('Synthetic workspace display');
-  await page.getByLabel('Configured display credential subject', { exact: true }).fill('workspace-display');
+  await page.getByLabel('Display identity', { exact: true }).fill('workspace-display');
   await page.getByLabel('I checked the station and device identity. Updating registration ends the existing display session.', { exact: true }).check();
   await click('Save display registration'); await status('Display registration recorded.');
+  const issuedDisplayToken = await page.getByLabel('Display access token', { exact: true }).inputValue();
+  assert(issuedDisplayToken.startsWith('sgd_'));
   const display = await context.newPage(); display.on('pageerror', error => errors.push(error.message));
   await display.goto(`${origin}/display`); await display.getByLabel('Display ID', { exact: true }).fill(did);
-  await display.getByLabel('Display access token', { exact: true }).fill(displayToken); await display.getByRole('button', { name: 'Connect display', exact: true }).click();
+  await display.getByLabel('Display access token', { exact: true }).fill(issuedDisplayToken); await display.getByRole('button', { name: 'Connect display', exact: true }).click();
   await display.waitForFunction(() => document.querySelector('[role=status]')?.textContent.includes('Connection: CONNECTED'));
   await click('Refresh displays'); await page.getByRole('cell', { name: 'Fresh lease', exact: true }).waitFor();
   await page.screenshot({ path: `${output}/display-monitor.png`, fullPage: true }); await display.close();
@@ -183,7 +185,7 @@ try {
   await page.screenshot({ path: `${output}/management-mobile.png`, fullPage: true });
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1), 'Mobile page must not overflow');
   const persisted = await page.evaluate(() => [...Object.values(localStorage), ...Object.values(sessionStorage)].join('\n'));
-  assert(![adminToken,operatorToken,reviewerToken,displayToken].some(value => persisted.includes(value)));
+  assert(![adminToken,operatorToken,reviewerToken,displayToken,issuedDisplayToken].some(value => persisted.includes(value)));
   assert.deepEqual(errors, []);
   await writeFile(`${output}/verification.json`, JSON.stringify({ status: 'PASSED', browser: browser.version(), checks, page_errors: errors, stored_credentials: false },null,2));
 } catch (error) {

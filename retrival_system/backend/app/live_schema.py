@@ -81,6 +81,12 @@ class DeviceRegistration(WireModel):
     name: Label
     expected_revision: int = Field(ge=0)
     enabled: bool = True
+    issue_access_token: bool = False  # Opt-in preserves existing API/static-credential clients.
+
+
+class DisplayTokenRequest(WireModel):
+    expected_revision: int = Field(ge=1)
+    reason: ReviewText
 
 
 class DisplayHello(WireModel):

@@ -1,10 +1,8 @@
 """Bounded authenticated socket protocol; every connection reconciles committed SQL state."""
 
 import asyncio
-import hashlib
 import json
 import logging
-import secrets
 import threading
 from typing import Annotated
 from uuid import UUID
@@ -16,10 +14,18 @@ from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 from starlette.concurrency import run_in_threadpool
 
+from app.catalog import catalog_lock
 from app.config import Principal
-from app.lifecycle import LifecycleError
+from app.display_credentials import authenticate, issue_token
+from app.lifecycle import LifecycleError, _event, require
 from app.live import acknowledge, connect_display, now, one, publish, reconcile, register_device
-from app.live_schema import DeviceRegistration, DisplayAck, DisplayHello, Publication
+from app.live_schema import (
+    DeviceRegistration,
+    DisplayAck,
+    DisplayHello,
+    DisplayTokenRequest,
+    Publication,
+)
 from app.playback import PlaybackUnavailable
 
 
@@ -57,7 +63,44 @@ def live_router(sessions, store, settings, principal):
     @router.post("/admin/displays/{display_id}")
     def register(display_id: UUID, request: DeviceRegistration, identity: Identity):
         with sessions() as session:
-            return register_device(session, display_id, request, identity)
+            return register_device(
+                session, display_id, request, identity, settings.display_token_days
+            )
+
+    @router.post("/admin/displays/{display_id}/token")
+    def replace_token(display_id: UUID, request: DisplayTokenRequest, identity: Identity):
+        require("admin" in identity.roles, "ROLE_REQUIRED", "Administrator required", 403)
+        with sessions() as session, session.begin():
+            catalog_lock(session, write=True)
+            device = one(
+                session, "SELECT * FROM display_devices WHERE id=:id FOR UPDATE", id=display_id
+            )
+            require(device is not None, "NOT_FOUND", "Display not found", 404)
+            require(
+                device["revision"] == request.expected_revision,
+                "STALE_REVISION",
+                "Refresh display details before replacing its token",
+            )
+            require(device["enabled"], "DISPLAY_DISABLED", "Enable the display first", 409)
+            credential = issue_token(
+                session, display_id, identity.subject, settings.display_token_days
+            )
+            session.execute(
+                text("""UPDATE display_devices SET revision=revision+1,
+                session_id=NULL,lease_until=NULL WHERE id=:id"""),
+                {"id": display_id},
+            )
+            _event(
+                session,
+                identity.subject,
+                "DISPLAY_TOKEN_REPLACED",
+                display_id,
+                {"reason": request.reason},
+            )
+            return {
+                **dict(one(session, "SELECT * FROM display_devices WHERE id=:id", id=display_id)),
+                **credential,
+            }
 
     @router.get("/admin/displays/{display_id}")
     def status(display_id: UUID, identity: Identity):
@@ -83,7 +126,15 @@ def live_router(sessions, store, settings, principal):
                 .mappings()
                 .all()
             )
-            return {**dict(device), "deliveries": [dict(row) for row in deliveries]}
+            expires = session.scalar(
+                text("SELECT expires_at FROM display_credentials WHERE display_id=:id"),
+                {"id": display_id},
+            )
+            return {
+                **dict(device),
+                "token_expires_at": expires,
+                "deliveries": [dict(row) for row in deliveries],
+            }
 
     @router.websocket("/displays/{display_id}/events")
     async def events(socket: WebSocket, display_id: UUID):
@@ -109,11 +160,7 @@ def live_router(sessions, store, settings, principal):
                 return json.loads(raw)
 
             hello = DisplayHello.model_validate(await asyncio.wait_for(receive(), timeout=5))
-            digest = hashlib.sha256(hello.token.encode()).hexdigest()
-            identity = next(
-                (v for k, v in settings.principals.items() if secrets.compare_digest(k, digest)),
-                None,
-            )
+            identity = await run_in_threadpool(authenticate, settings, sessions, hello.token)
             if not identity or identity.expires_at <= now():
                 raise ValueError("Expired authentication")
             sid = await run_in_threadpool(connect_display, sessions, display_id, identity)

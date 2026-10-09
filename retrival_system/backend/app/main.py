@@ -1,14 +1,11 @@
 """FastAPI registry boundary. Business logic and storage remain separate modules."""
 
-import hashlib
 import json
 import logging
-import secrets
 import threading
 import time
 import uuid
 from contextlib import asynccontextmanager
-from datetime import UTC, datetime
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
@@ -16,6 +13,7 @@ from fastapi.responses import JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
+from starlette.concurrency import run_in_threadpool
 
 from app.announcement_api import announcement_router
 from app.asr import LocalASR
@@ -23,6 +21,7 @@ from app.assets.khronos import KhronosValidationError
 from app.assets.metadata import MAX_METADATA_BYTES
 from app.config import Principal, Settings
 from app.database import build_database
+from app.display_credentials import authenticate
 from app.http_limits import ReceivedBodyLimit, asset_upload, request_limit
 from app.lifecycle import LifecycleError
 from app.lifecycle_api import lifecycle_router
@@ -100,21 +99,18 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
         if request.url.path.startswith("/api/v1/"):
             scheme, _, token = request.headers.get("authorization", "").partition(" ")
-            digest = hashlib.sha256(token.encode()).hexdigest()
-            identity = next(
-                (
-                    value
-                    for key, value in configured.principals.items()
-                    if secrets.compare_digest(key, digest)
-                ),
-                None,
-            )
-            if (
-                scheme.casefold() != "bearer"
-                or identity is None
-                or identity.expires_at <= datetime.now(UTC)
-            ):
+            try:
+                identity = (
+                    await run_in_threadpool(authenticate, configured, sessions, token)
+                    if scheme.casefold() == "bearer"
+                    else None
+                )
+            except SQLAlchemyError:
+                logger.error("credential_registry_unavailable")
+                return reject(503, "Registry unavailable")
+            if identity is None:
                 return reject(401, "Authentication required", {"WWW-Authenticate": "Bearer"})
+            request.state.identity = identity
             if request.url.path.startswith("/api/v1/admin/") and "admin" not in identity.roles:
                 return reject(403, "Administrator role required")
             if request.url.path == "/api/v1/voice/transcribe" and not identity.roles & {
@@ -145,21 +141,16 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 audio_slots.release()
         return finish(response)
 
-    def principal(credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]):
+    def principal(
+        request: Request,
+        credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)],
+    ):
         if credentials is None:
             raise HTTPException(
                 401, "Authentication required", headers={"WWW-Authenticate": "Bearer"}
             )
-        digest = hashlib.sha256(credentials.credentials.encode()).hexdigest()
-        matched = next(
-            (
-                value
-                for key, value in configured.principals.items()
-                if secrets.compare_digest(key, digest)
-            ),
-            None,
-        )
-        if matched is None or matched.expires_at <= datetime.now(UTC):
+        matched = getattr(request.state, "identity", None)
+        if matched is None:
             raise HTTPException(401, "Invalid credentials", headers={"WWW-Authenticate": "Bearer"})
         return matched
 
@@ -197,7 +188,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             with engine.connect() as connection:
                 version = connection.scalar(text("SELECT version_num FROM alembic_version"))
                 connection.execute(text("SELECT 1 FROM eligible_motion_versions LIMIT 1"))
-            if version != "0009_display_routing" or not configured.storage_root.is_dir():
+            if version != "0010_display_credentials" or not configured.storage_root.is_dir():
                 raise RuntimeError("Required registry contract unavailable")
         except (SQLAlchemyError, RuntimeError):
             return JSONResponse(status_code=503, content={"status": "NOT_READY"})

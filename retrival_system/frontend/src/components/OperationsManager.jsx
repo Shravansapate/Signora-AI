@@ -97,27 +97,49 @@ export function DisplayManager({ token }) {
   const [stations, setStations] = useState([]), [station, setStation] = useState(''), [devices, setDevices] = useState([]), [offset, setOffset] = useState(0);
   const [device, setDevice] = useState(null), [id, setId] = useState(''), [name, setName] = useState(''), [subject, setSubject] = useState(''), [enabled, setEnabled] = useState(true);
   const [confirmed, setConfirmed] = useState(false);
+  const [credential, setCredential] = useState(null), [copied, setCopied] = useState(''), [showToken, setShowToken] = useState(false);
+  const tokenInput = useRef(null);
+  function clearCredential() { setCredential(null); setCopied(''); setShowToken(false); }
+  function received(result) {
+    const { access_token, ...record } = result;
+    setDevice(record); setConfirmed(false);
+    if (access_token) { setCredential({ token: access_token, expires: result.token_expires_at, id: result.id }); setCopied(''); setShowToken(false); }
+  }
   useEffect(() => { work.run('Loading stations', async api => { const data = await api('/api/v1/input/capabilities'); setStations(data.stations); setStation(data.stations[0]?.id || ''); }); }, []);
   const list = (page = 0) => work.run('Refreshing display status', async api => { setDevices((await api(`/api/v1/operations/displays?station_id=${encodeURIComponent(station)}&offset=${page}`)).items); setOffset(page); });
   return <section className="panel management-section"><SectionTitle icon="monitor" title="Display monitoring and registration" description="Connect station displays with registered identities and monitor their delivery status." /><Feedback {...work} />
-    <label className="form-field">Monitor station<select aria-label="Monitor station" value={station} disabled={!!work.busy} onChange={e => { setStation(e.target.value); setDevices([]); setDevice(null); setId(''); setConfirmed(false); }}><option value="">Select station</option>{stations.map(row => <option key={row.id} value={row.id}>{row.definition.name}</option>)}</select></label>
+    <label className="form-field">Monitor station<select aria-label="Monitor station" value={station} disabled={!!work.busy} onChange={e => { clearCredential(); setStation(e.target.value); setDevices([]); setDevice(null); setId(''); setConfirmed(false); }}><option value="">Select station</option>{stations.map(row => <option key={row.id} value={row.id}>{row.definition.name}</option>)}</select></label>
     <button disabled={!!work.busy || !station} onClick={() => list()}><Icon name="refresh" />Refresh displays</button><p>Snapshot from the last refresh. Check last-seen, freshness, backlog and completed playback together.</p>
     <div className="table-scroll"><table><thead><tr><th>Display</th><th>Connection</th><th>Last seen</th><th>Backlog / playback</th><th>Details</th></tr></thead><tbody>{!devices.length && <tr><td colSpan={5}><div className="empty-state"><Icon name="monitor" /><strong>No displays loaded</strong>Refresh displays for the selected station, or register a display below.</div></td></tr>}{devices.map(row => <tr key={row.id}><td>{row.name}</td><td>{row.lease_current ? 'Fresh lease' : row.enabled ? 'Offline / stale' : 'Disabled'}</td><td>{time(row.last_seen)}</td><td>{row.pending_messages} pending · receive lag {row.receive_lag} · {row.latest_delivery?.state || 'No playback'}</td>
-      <td><button disabled={!!work.busy} onClick={() => work.run('Loading device delivery history', async api => { const data = await api(`/api/v1/admin/displays/${row.id}`); setDevice(data); setId(data.id); setName(data.name); setSubject(data.subject); setEnabled(data.enabled); setConfirmed(false); })}>Inspect display</button></td></tr>)}</tbody></table></div>
+      <td><button disabled={!!work.busy} onClick={() => work.run('Loading device delivery history', async api => { clearCredential(); const data = await api(`/api/v1/admin/displays/${row.id}`); setDevice(data); setId(data.id); setName(data.name); setSubject(data.subject); setEnabled(data.enabled); setConfirmed(false); })}>Inspect display</button></td></tr>)}</tbody></table></div>
     <Pager offset={offset} count={devices.length} onChange={list} busy={!!work.busy} />
     {device && <JsonDetails label="Recorded delivery states and failures" value={device.deliveries} />}
     <section className="panel management-section"><h3>{device ? 'Update registered display' : 'Register display'}</h3>
-      <button disabled={!!work.busy} onClick={() => { setDevice(null); setId(crypto.randomUUID()); setName(''); setSubject(''); setEnabled(true); setConfirmed(false); }}>New display identity</button>
+      <button disabled={!!work.busy} onClick={() => { const nextId = crypto.randomUUID(); clearCredential(); setDevice(null); setId(nextId); setName(''); setSubject(`display_${nextId}`); setEnabled(true); setConfirmed(false); }}>New display identity</button>
       <Field label="Registered display ID" value={id} disabled={!!work.busy || !!device} onChange={setId} />
       <Field label="Display name" value={name} disabled={!!work.busy} onChange={value => { setName(value); setConfirmed(false); }} maxLength={160} />
-      <Field label="Configured display credential subject" value={subject} disabled={!!work.busy || !!device} onChange={value => { setSubject(value); setConfirmed(false); }} maxLength={160} />
+      <Field label="Display identity" value={subject} disabled={!!work.busy || !!device} onChange={value => { setSubject(value); setConfirmed(false); }} maxLength={160} />
       <label><input type="checkbox" checked={enabled} disabled={!!work.busy} onChange={e => { setEnabled(e.target.checked); setConfirmed(false); }} />Display enabled</label>
-      <p>The subject must match a separately configured, expiring station-scoped display credential. Credentials are not created or exposed here.</p>
+      <p>New displays receive an access token immediately. No backend restart is needed. Copy it before leaving this page; if it is lost, inspect the display and generate a new token.</p>
       <label className="confirmation"><input type="checkbox" checked={confirmed} disabled={!!work.busy} onChange={e => setConfirmed(e.target.checked)} />I checked the station and device identity. Updating registration ends the existing display session.</label>
       <button className="primary" disabled={!!work.busy || !confirmed || !station || !id || !subject.trim() || !name.trim()} onClick={() => work.run('Saving display registration', async api => {
-        const result = await api(`/api/v1/admin/displays/${encodeURIComponent(id)}`, { body: { station_id: station, subject, name, enabled, expected_revision: device?.revision ?? 0 } });
-        setDevice(result); setConfirmed(false); setDevices((await api(`/api/v1/operations/displays?station_id=${encodeURIComponent(station)}`)).items); setOffset(0);
+        const result = await api(`/api/v1/admin/displays/${encodeURIComponent(id)}`, { body: { station_id: station, subject, name, enabled, expected_revision: device?.revision ?? 0, issue_access_token: !device } });
+        received(result); setDevices((await api(`/api/v1/operations/displays?station_id=${encodeURIComponent(station)}`)).items); setOffset(0);
       }, 'Display registration recorded.')}>Save display registration</button>
+      {device && <><p>{device.token_expires_at ? `Access token expires ${time(device.token_expires_at)}.` : 'This display uses a separately configured credential. You can replace it with a token here.'}</p>
+        <button className="danger" disabled={!!work.busy || !confirmed || !device.enabled} onClick={() => work.run('Replacing display access token', async api => {
+          const result = await api(`/api/v1/admin/displays/${encodeURIComponent(id)}/token`, { body: { expected_revision: device.revision, reason: 'Administrator requested a replacement display access token' } });
+          received(result);
+        }, 'New display token created. Reconnect this display with the new token.')}>Generate new access token</button>
+        <p>Replacing a token disconnects this display and invalidates its previous token.</p></>}
+      {credential && <section className="notice" aria-label="New display credentials">
+        <h3>Display access token ready</h3><p>Use this token with display ID <code>{credential.id}</code> on <a href="/display" target="_blank" rel="noreferrer">Live display</a>. Expires {time(credential.expires)}.</p>
+        <label className="form-field">Display access token<input ref={tokenInput} type={showToken ? 'text' : 'password'} readOnly value={credential.token} autoComplete="off" spellCheck={false} /></label>
+        <label><input type="checkbox" checked={showToken} onChange={e => setShowToken(e.target.checked)} />Show token</label>
+        <button onClick={async () => { try { await navigator.clipboard.writeText(credential.token); setCopied('Token copied.'); } catch { tokenInput.current?.focus(); tokenInput.current?.select(); setCopied('Select the token and copy it manually.'); } }}>Copy access token</button>
+        {copied && <p role="status">{copied}</p>}
+        <p>This token is shown only after creation or replacement. It is not saved in browser storage.</p>
+      </section>}
     </section>
   </section>;
 }

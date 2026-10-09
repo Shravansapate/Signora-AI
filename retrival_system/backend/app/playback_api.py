@@ -70,7 +70,7 @@ def playback_router(sessions, store, principal, *, demo_mode_enabled=False):
             raise HTTPException(404, "Playback plan not found")
         if record.purpose == "PUBLISHED":
             from app.display_control import assigned_to
-            from app.live import now, one
+            from app.live import device_access, now, one
 
             device = one(
                 session,
@@ -88,6 +88,7 @@ def playback_router(sessions, store, principal, *, demo_mode_enabled=False):
                 or not assigned_to(session, device["id"], manifest_id)
             ):
                 raise HTTPException(403, "Fresh station-scoped display session required")
+            device_access(session, device["id"], identity)
         elif record.owner_subject != identity.subject:
             raise HTTPException(403, "Playback plan belongs to another principal")
         development = record.purpose == "PUBLISHED" and record.payload.get("schema_version") == 5

@@ -437,7 +437,7 @@ def validate_published(session, record, plan, rows):
             raise PlaybackUnavailable("The pinned published content is no longer approved")
 
 
-def register_device(session, did, request, identity):
+def register_device(session, did, request, identity, token_days=90):
     require("admin" in identity.roles, "ROLE_REQUIRED", "Administrator required", 403)
     with session.begin():
         catalog_lock(session, write=True)
@@ -454,6 +454,12 @@ def register_device(session, did, request, identity):
             "Refresh device",
         )
         if row:
+            require(
+                not request.issue_access_token,
+                "TOKEN_REPLACEMENT_REQUIRED",
+                "Use the replace-token action for an existing display",
+                422,
+            )
             require(
                 row["station_id"] == request.station_id and row["subject"] == request.subject,
                 "DEVICE_IDENTITY",
@@ -488,7 +494,18 @@ def register_device(session, did, request, identity):
                 },
             )
         _event(session, identity.subject, "DISPLAY_CONFIGURED", did, {"enabled": request.enabled})
-        return dict(one(session, "SELECT * FROM display_devices WHERE id=:id", id=did))
+        result = dict(one(session, "SELECT * FROM display_devices WHERE id=:id", id=did))
+        if request.issue_access_token:
+            from app.display_credentials import issue_token
+
+            result.update(issue_token(session, did, identity.subject, token_days))
+            _event(session, identity.subject, "DISPLAY_TOKEN_ISSUED", did, {})
+        else:
+            result["token_expires_at"] = session.scalar(
+                text("SELECT expires_at FROM display_credentials WHERE display_id=:id"),
+                {"id": did},
+            )
+        return result
 
 
 def device_access(session, did, identity, *, lock=False, session_id=None):
@@ -508,6 +525,16 @@ def device_access(session, did, identity, *, lock=False, session_id=None):
         "Display authorization unavailable",
         403,
     )
+    credential = one(session, "SELECT * FROM display_credentials WHERE display_id=:id", id=did)
+    if credential:
+        require(
+            identity.display_id == did
+            and identity.credential_digest == credential["token_hash"]
+            and credential["expires_at"] > now(),
+            "DISPLAY_CREDENTIAL_REPLACED",
+            "Reconnect with the current display token",
+            403,
+        )
     if session_id:
         require(
             device["session_id"] == session_id,

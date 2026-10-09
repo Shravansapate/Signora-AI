@@ -102,6 +102,7 @@ def run_browser(
     if workspaces:
         environment.update(
             SIGNORA_BROWSER_ADMIN_TOKEN=admin_token,
+            SIGNORA_WEBSOCKET_ORIGINS=json.dumps([environment["SIGNORA_BROWSER_ORIGIN"]]),
             SIGNORA_BROWSER_WORKSPACE_DATA=json.dumps(workspaces),
             SIGNORA_IMPORT_ROOTS=json.dumps(
                 {key: str(value) for key, value in settings.import_roots.items()}

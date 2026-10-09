@@ -568,5 +568,5 @@ def test_live_downgrade_protects_retained_publication(live_setup, registry_datab
     with engine.connect() as connection:
         assert (
             connection.scalar(text("SELECT version_num FROM alembic_version"))
-            == "0009_display_routing"
+            == "0010_display_credentials"
         )

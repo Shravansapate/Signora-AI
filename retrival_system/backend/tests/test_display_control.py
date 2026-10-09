@@ -15,6 +15,7 @@ from test_development_preview import payload, preview_environment  # noqa: F401
 from test_registry import registry_database  # noqa: F401
 
 from app.config import Principal
+from app.display_credentials import authenticate, issue_token
 from app.live import acknowledge, connect_display, reconcile
 from app.live_schema import DisplayAck
 from app.main import create_app
@@ -42,6 +43,10 @@ def control_environment(preview_environment):
               VALUES(:id,'TEST',:subject,:name)"""),
                 {"id": did, "subject": identity.subject, "name": f"Platform screen {i + 1}"},
             )
+            # Mixed credentials exercise new display tokens alongside legacy screens
+            # through routing, real GLB access, emergencies, and socket delivery.
+            if i % 2:
+                token = issue_token(session, did, "test-admin", 90)["access_token"]
             devices.append({"id": did, "token": token, "identity": identity})
     configured = settings.model_copy(
         update={
@@ -50,6 +55,9 @@ def control_environment(preview_environment):
             "display_poll_seconds": 0.1,
         }
     )
+    for device in devices:
+        device["identity"] = authenticate(configured, sessions, device["token"])
+        assert device["identity"] is not None
     with TestClient(create_app(configured)) as client:
         yield client, headers, configured, sessions, devices
 
@@ -283,9 +291,12 @@ def test_broadcast_rejects_changed_inventory_without_partial_assignment(control_
         }
         rejected_stop = client.post("/api/v1/control-room/stop", json=stop, headers=h)
         assert rejected_stop.status_code == 409, rejected_stop.text
-        assert client.post(
-            "/api/v1/control-room/stop", json={**stop, "audience": "TYPO"}, headers=h
-        ).status_code == 422
+        assert (
+            client.post(
+                "/api/v1/control-room/stop", json={**stop, "audience": "TYPO"}, headers=h
+            ).status_code
+            == 422
+        )
         after = client.get("/api/v1/control-room/displays?station_id=TEST", headers=h).json()
         assert after["history"] == before["history"]
         assert {
@@ -361,3 +372,14 @@ def test_emergency_fanout_over_real_websockets(control_environment):
             assert sync["type"] == "SYNC" and len(sync["active"]) == 1
             assert sync["active"][0]["manifest_id"] == publication.json()["manifest_id"]
             assert sync["active"][0]["priority"] == 0
+        # A database-issued token must authorize the actual manifest and GLB,
+        # not just the WebSocket connection and announcement envelope.
+        managed = next(d for d in devices if d["token"].startswith("sgd_"))
+        credential = {"Authorization": f"Bearer {managed['token']}"}
+        plan = client.get(
+            f"/api/v1/playback/{publication.json()['manifest_id']}", headers=credential
+        )
+        assert plan.status_code == 200, plan.text
+        assert client.get(
+            plan.json()["items"][0]["asset_url"], headers=credential
+        ).status_code == 200

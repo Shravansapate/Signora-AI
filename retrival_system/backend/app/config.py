@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 from typing import Literal
 from urllib.parse import urlsplit
+from uuid import UUID
 
 from pydantic import AwareDatetime, BaseModel, Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -12,6 +13,8 @@ class Principal(BaseModel):
     roles: set[Literal["admin", "reviewer", "operator", "display"]]
     expires_at: AwareDatetime
     station_ids: set[str] = Field(default_factory=set)
+    display_id: UUID | None = None
+    credential_digest: str | None = Field(default=None, repr=False, exclude=True)
 
 
 class Settings(BaseSettings):
@@ -31,6 +34,7 @@ class Settings(BaseSettings):
     display_lease_seconds: int = Field(default=15, ge=5, le=60)
     display_poll_seconds: float = Field(default=1, ge=0.1, le=5)
     display_connection_limit: int = Field(default=64, ge=1, le=256)
+    display_token_days: int = Field(default=90, ge=1, le=365)
     # Explicit local-development opt-in for partial preview and development live delivery.
     demo_mode_enabled: bool = False
 
