@@ -742,11 +742,12 @@ def acknowledge(sessions, did, identity, sid, request, lease_seconds, developmen
         )
     if request.manifest_id:
         logging.getLogger("signora.api.delivery").info(
-            "display_progress display=%s manifest=%s state=%s boundary=%s",
+            "display_progress display=%s manifest=%s state=%s boundary=%s error_code=%s",
             did,
             request.manifest_id,
             request.state,
             request.boundary,
+            request.error_code,
         )
     return {
         "type": "ACKNOWLEDGED",

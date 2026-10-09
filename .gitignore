@@ -12,6 +12,7 @@
 **/.ruff_cache/
 **/*.egg-info/
 **/.next/
+**/.next-test/
 **/coverage/
 
 retrival_system/artifacts/

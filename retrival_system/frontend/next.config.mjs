@@ -5,6 +5,7 @@ if (!['http:', 'https:'].includes(backend.protocol) || backend.username || backe
 }
 
 export default {
+  distDir: process.env.SIGNORA_NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {

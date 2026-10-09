@@ -35,6 +35,7 @@ export default function AnnouncementConsole() {
   const [result, setResult] = useState(null);
   const [delivery, setDelivery] = useState(null);
   const [routing, setRouting] = useState(null);
+  const [publishing, setPublishing] = useState(false);
   const [snapshot, setSnapshot] = useState(EMPTY);
   const [session, setSession] = useState(0);
   const player = useRef(null);
@@ -49,7 +50,7 @@ export default function AnnouncementConsole() {
     setSnapshot(value);
     if (value.error) setError(value.error.message);
   }, []);
-  const busy = !!pending || ['PRELOADING'].includes(snapshot.state);
+  const busy = !!pending || publishing || delivery?.state === 'SENDING' || ['PRELOADING'].includes(snapshot.state);
   useEffect(() => {
     if (result?.demo_mode && result.manifest && !error) {
       output.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
@@ -101,7 +102,8 @@ export default function AnnouncementConsole() {
       const receipt = await apiRequest('/api/v1/development/announcements', { token, body: publication, signal, timeoutMs: 120000 });
       if (generation.current === current) setDelivery({ state: 'SENT', receipt });
     } catch (cause) {
-      if (generation.current === current) setDelivery({ state: 'FAILED', publication, error: cause.message });
+      if (generation.current === current) setDelivery({ state: 'FAILED', publication, error: cause.message,
+        retryable: !(cause.status >= 400 && cause.status < 500 && cause.status !== 408) });
     }
   }
   async function prepare(input) {
@@ -154,7 +156,7 @@ export default function AnnouncementConsole() {
     finally { stoppingRecording.current = false; if (generation.current === current) setPending(''); }
   }
   stopAction.current = stopRecording;
-  const canPrepare = token && station && !busy && !recording && (mode === 'STRUCTURED' ? fields.train_identifier : text.trim()) && (mode !== 'VOICE' || transcript);
+  const canPrepare = token && station && !busy && !routing?.blocked && !recording && (mode === 'STRUCTURED' ? fields.train_identifier : text.trim()) && (mode !== 'VOICE' || transcript);
   const stationData = capabilities?.stations.find(row => row.id === station);
   const field = (name, label) => <label key={name}>{label}<input value={fields[name]} disabled={busy || recording} onChange={event => edit(() => setFields({ ...fields, [name]: event.target.value }))} /></label>;
 
@@ -167,7 +169,7 @@ export default function AnnouncementConsole() {
         {!token ? <form className="connection-form" onSubmit={connect}><label htmlFor="announcement-token">Access token</label><input id="announcement-token" type="password" autoComplete="off" value={credential} onChange={e => setCredential(e.target.value)} /><button className="primary" disabled={busy || !credential.trim()}>Connect</button></form>
           : <div className="connected-row"><span className="session-indicator"><span className="status-dot" />Credentials held in memory for this session</span><button onClick={disconnect}>Disconnect</button></div>}
       </section>
-      {token && station && capabilities?.roles?.some(role => ['admin', 'operator'].includes(role)) && <ControlRoom key={`${session}:${station}`} token={token} station={station} platforms={stationData?.definition.platforms || []} onRouting={setRouting} />}
+      {token && station && capabilities?.roles?.some(role => ['admin', 'operator'].includes(role)) && <ControlRoom key={`${session}:${station}`} token={token} station={station} platforms={stationData?.definition.platforms || []} onRouting={setRouting} busy={busy || (delivery?.state === 'FAILED' && delivery.retryable)} />}
       {pending && <p role="status">{pending}…</p>}
       <div ref={feedback} tabIndex={-1} aria-label="Announcement preparation result">
         {error && <div role="alert" className="notice error-notice">{error}</div>}
@@ -201,7 +203,7 @@ export default function AnnouncementConsole() {
           <button className="primary" disabled={!canPrepare} onClick={() => prepare()}><Icon name="play" />{capabilities?.demo_mode_enabled ? 'Play announcement' : mode === 'VOICE' && !confirmed ? 'Check transcript and fields' : 'Prepare complete preview'}</button>
           <p className="field-hint">{capabilities?.demo_mode_enabled ? 'Available motions play here. Select target displays above to also send this announcement.' : 'Publication and live display delivery are separate from this private preview.'}</p>
           {delivery?.state === 'SENT' && <p role="status">Sent to assigned station displays. <a href="/display" target="_blank" rel="noreferrer">Open live display</a></p>}
-          {delivery?.state === 'FAILED' && <div role="alert">Live delivery failed: {delivery.error} <button disabled={!!pending} onClick={() => sendToDisplay(delivery.publication, generation.current)}>Retry live delivery</button></div>}
+          {delivery?.state === 'FAILED' && <div role="alert">Live delivery failed: {delivery.error} {delivery.retryable ? <><button disabled={busy} onClick={() => sendToDisplay(delivery.publication, generation.current)}>Retry live delivery</button><button disabled={busy} onClick={() => setDelivery(null)}>Discard delivery retry</button></> : <p>Review the current targets and prepare the announcement again.</p>}</div>}
         </section>
         <section ref={output} className="panel viewer-panel"><div className="panel-heading"><SectionTitle icon="monitor" title="Avatar output" /><span className="player-state">{snapshot.state}</span></div>
           <div className="announcement-stage"><AvatarViewer key={session} ref={player} token={token} onState={onState} />
@@ -217,7 +219,7 @@ export default function AnnouncementConsole() {
         </section>
       </div>
       {token && station && !capabilities?.demo_mode_enabled && capabilities?.roles?.some(role => ['admin', 'operator'].includes(role)) && <PublicationPanel key={`${session}:${station}`} token={token} station={station}
-        routing={routing} preview={result?.manifest} previewComplete={snapshot.state === 'COMPLETE'} invalidatePreview={invalidate}
+        routing={routing} onBusyChange={setPublishing} preview={result?.manifest} previewComplete={snapshot.state === 'COMPLETE'} invalidatePreview={invalidate}
         onCorrect={caption => { edit(() => { setMode('TEXT'); setText(caption); setTranscript(null); }); }} />}
     </main>
   </>;

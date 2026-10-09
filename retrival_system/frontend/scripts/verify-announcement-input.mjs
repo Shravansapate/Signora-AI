@@ -6,7 +6,7 @@ const origin = process.env.SIGNORA_BROWSER_ORIGIN, token = process.env.SIGNORA_B
 const output = process.env.SIGNORA_BROWSER_OUTPUT, audio = process.env.SIGNORA_BROWSER_AUDIO;
 if (!origin || !token || !output || !audio) throw new Error('Use the isolated backend browser harness.');
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', `--use-file-for-fake-audio-capture=${audio}`] });
+const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader', '--disable-renderer-backgrounding', '--disable-background-timer-throttling', '--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream', `--use-file-for-fake-audio-capture=${audio}`] });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1100 }, permissions: ['microphone'] });
 const page = await context.newPage(), errors = [];
 page.on('pageerror', error => errors.push(error.message));
@@ -63,7 +63,8 @@ try {
   await state('PLAYING');
   await page.waitForTimeout(1500);
   await page.screenshot({ path: `${output}/announcement-playing.png`, fullPage: true });
-  await state('COMPLETE');
+  await state('COMPLETE', 180000); // Bounded budget for real GLBs on software WebGL.
+  const typedPlaybackMs = Math.round(performance.now() - began - readyMs);
   assert.equal(await canvas.getAttribute('data-avatar-instance'), avatar);
   await page.getByRole('button', { name: 'Structured fields', exact: true }).click();
   await page.getByLabel('Train identifier (keep leading zeros)', { exact: true }).fill('00110');
@@ -143,7 +144,7 @@ try {
   await page.getByRole('button', { name: 'Disconnect', exact: true }).click();
   assert.deepEqual(errors, []);
   await writeFile(`${output}/browser-verification.json`, JSON.stringify({ status: 'PASSED', browser: browser.version(), ready_ms: readyMs, typed_plan_ms: typedPlanMs, structured_plan_ms: structuredPlanMs,
-    motions: typed.manifest.items.length, one_avatar: true, actual_microphone_capture: 'Chromium fake device using synthetic speech WAV',
+    motions: typed.manifest.items.length, typed_playback_ms: typedPlaybackMs, one_avatar: true, actual_microphone_capture: 'Chromium fake device using synthetic speech WAV',
     actual_local_asr: true, model_id: transcript.metadata.model_id, resampling, microphone_meter: true,
     audio_quality: transcript.metadata.audio_quality, transcript: transcript.text, common_meaning_hash: typed.meaning_hash,
     confirmation_required: true, edited_transcript_invalidates_confirmation: true, prepared_template_review_rendered: true, page_errors: errors }, null, 2));

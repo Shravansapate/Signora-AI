@@ -81,3 +81,82 @@ test('a superseded start acknowledgement rejects its promise without invalidatin
   assert.equal(session.closed, false);
   session.close();
 });
+
+test('unavailable browser storage preserves progress in memory without disrupting live delivery', () => {
+  const progress = new DisplayProgress({ getItem() { throw Error('blocked'); }, setItem() { throw Error('quota'); } }, randomUUID());
+  const completed = item();
+  progress.completed.add(completed.manifest_id); progress.cursor = 12;
+  assert.doesNotThrow(() => progress.save());
+  assert.equal(progress.cursor, 12);
+  assert.deepEqual(selectQueue({ type: 'SYNC', cursor: 12, events: [], active: [completed] }, progress), []);
+});
+
+for (const state of ['INTERRUPTED', 'COMPLETE']) {
+  test(`${state}: rejected terminal acknowledgement cannot hold a superseding emergency`, async () => {
+    const session = new LiveDisplay({ displayId: randomUUID(), token: 'memory-only', storage: storage(),
+      origin: 'https://station.example', onStatus() {}, player: { cancel() {} } });
+    session.socket = { readyState: 1, close() {} };
+    const original = item(); session.current = original; session.plan = { safe_boundaries: [0] };
+    session.onPlayback({ state, total: 1, index: 0 });
+    session.pending = session.acks.shift();
+    session.receive({ type: 'ACKNOWLEDGED', accepted: false, detail: 'Session changed' });
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(session.current, null);
+    assert.equal(session.closed, false);
+    session.close();
+  });
+}
+
+test('a failed current asset remains held until correction or reconnect instead of retrying every heartbeat', async () => {
+  const session = new LiveDisplay({ displayId: randomUUID(), token: 'memory-only', storage: storage(),
+    origin: 'https://station.example', onStatus() {}, player: { cancel() {} } });
+  session.socket = { readyState: 1, close() {} };
+  const broken = item(); session.current = broken; session.queue = [broken];
+  session.plan = { safe_boundaries: [0] };
+  session.onPlayback({ state: 'ERROR', index: -1, error: { code: 'ASSET_CHECKSUM' } });
+  session.pending = session.acks.shift();
+  session.receive({ type: 'ACKNOWLEDGED' });
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(session.current, broken);
+  assert.equal(session.acks.length, 0);
+  session.close();
+});
+
+test('lease expiry reconnects without waiting for an ACK from a stalled connection', () => {
+  const session = new LiveDisplay({ displayId: randomUUID(), token: 'memory-only', storage: storage(),
+    origin: 'https://station.example', onStatus() {}, player: { cancel() {} } });
+  let closed = 0;
+  session.socket = { readyState: 1, close() { closed++; } };
+  const current = item(); session.current = current; session.queue = [current];
+  session.onPlayback({ state: 'ERROR', index: -1, error: { code: 'LEASE_EXPIRED' } });
+  assert.equal(session.current, null);
+  assert.equal(closed, 1);
+  assert.equal(session.acks.length, 0);
+  assert.equal(session.progress.completed.size, 0);
+  session.close();
+});
+
+test('an idle display renews its watchdog on fresh snapshots and closes a stalled socket', t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let closed = 0;
+  const session = new LiveDisplay({ displayId: randomUUID(), token: 'memory-only', storage: storage(),
+    origin: 'https://station.example', onStatus() {}, player: { grantLease() {}, cancel() {} } });
+  session.socket = { readyState: 1, send() {}, close() { closed++; } };
+  function sync() {
+    session.sentAt = performance.now();
+    const now = Date.now();
+    session.receive({ type: 'SYNC', cursor: 0, active: [], events: [],
+      server_time: new Date(now).toISOString(), lease_until: new Date(now + 15000).toISOString() });
+  }
+  sync();
+  t.mock.timers.tick(10000);
+  sync();
+  t.mock.timers.tick(6000);
+  assert.equal(closed, 0, 'The first snapshot deadline was replaced');
+  t.mock.timers.tick(9001);
+  assert.equal(closed, 1, 'Freshness loss must reconnect even with no active playback');
+  sync();
+  session.close();
+  t.mock.timers.tick(60000);
+  assert.equal(closed, 2, 'Explicit disconnect cancels the watchdog');
+});

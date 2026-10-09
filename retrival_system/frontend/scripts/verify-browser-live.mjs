@@ -9,9 +9,9 @@ const did = process.env.SIGNORA_BROWSER_DISPLAY_ID, displayToken = process.env.S
 const output = process.env.SIGNORA_BROWSER_OUTPUT;
 if (!origin || !token || !did || !displayToken || !output) throw new Error('Use the isolated backend browser harness.');
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader', '--disable-renderer-backgrounding', '--disable-background-timer-throttling'] });
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-const page = await context.newPage(), errors = [], states = [];
+const page = await context.newPage(), errors = [], states = [], playbackSamples = [];
 page.on('pageerror', e => errors.push(e.message));
 page.on('websocket', socket => socket.on('framesent', e => {
   try { const data = JSON.parse(e.payload); if (data.state) states.push(data.state); } catch { /* binary not used */ }
@@ -37,11 +37,20 @@ async function connect() {
   await page.waitForFunction(() => document.querySelector('[role=status]')?.textContent.includes('Connection: CONNECTED'), null, { timeout: 30000 });
 }
 try {
+  // Record actual rendered progress: a longer software-rendering budget must
+  // still demonstrate completion, not merely a connected socket.
+  await page.exposeFunction('recordPlaybackSample', sample => playbackSamples.push(sample));
+  await page.addInitScript(() => {
+    setInterval(() => {
+      const canvas = document.querySelector('canvas');
+      if (canvas) window.recordPlaybackSample({ at: Date.now(), ...canvas.dataset });
+    }, 5000);
+  });
   const source = randomUUID(), first = await publish(source, 1, 0);
   await page.goto(`${origin}/display`); await connect();
   await page.waitForFunction(() => document.querySelector('[role=status]')?.textContent.includes('Signing: PLAYING'), null, { timeout: 90000 });
   const avatar = await page.locator('canvas').getAttribute('data-avatar-instance');
-  await page.waitForFunction(() => document.querySelector('[role=status]')?.textContent.includes('Signing: COMPLETE'), null, { timeout: 90000 });
+  await page.waitForFunction(() => document.querySelector('[role=status]')?.textContent.includes('Signing: COMPLETE'), null, { timeout: 180000 });
   await page.waitForTimeout(2500);
   for (const state of ['RECEIVED', 'ASSETS_READY', 'STARTED', 'COMPLETED']) assert(states.includes(state), state);
   await page.reload(); await connect();
@@ -66,8 +75,9 @@ try {
     real_websocket: true, complete_sequence: true, acknowledgements: states,
     completed_revision_suppressed_on_reload: true, cancellation_during_playback: true,
     one_avatar_per_session: true, initial_avatar: avatar, corrected_manifest: second.manifest_id,
-    page_errors: errors }, null, 2));
+    playback_samples: playbackSamples, page_errors: errors }, null, 2));
 } catch (error) {
+  await writeFile(`${output}/failure.json`, JSON.stringify({ playback_samples: playbackSamples, acknowledgements: states, page_errors: errors }, null, 2));
   await page.screenshot({ path: `${output}/failure.png`, fullPage: true }).catch(() => {});
   process.stderr.write(`Display status: ${await page.locator('[role=status], [role=alert]').allTextContents()}\n`);
   throw error;

@@ -3,13 +3,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { Feedback, Field, Pager, readable, time, useWorkspace } from './workspace.jsx';
 
-export default function PublicationPanel({ token, station, preview, routing, previewComplete, onCorrect, invalidatePreview }) {
+export default function PublicationPanel({ token, station, preview, routing, previewComplete, onCorrect, invalidatePreview, onBusyChange }) {
   const work = useWorkspace(token);
   const [messages, setMessages] = useState([]), [devices, setDevices] = useState([]), [offset, setOffset] = useState(0);
   const [selected, setSelected] = useState(null), [history, setHistory] = useState(null);
   const [reason, setReason] = useState(''), [confirmed, setConfirmed] = useState(false), [receipt, setReceipt] = useState(null);
   const source = useRef(crypto.randomUUID()), retry = useRef(null), lock = useRef(false);
   const manifestId = preview?.manifest_id;
+  const awaitingRetry = !!retry.current;
+  const targetsKey = JSON.stringify([routing?.audience, routing?.display_ids, routing?.expected_routes, routing?.emergency]);
+  useEffect(() => { setConfirmed(false); }, [targetsKey]);
+  useEffect(() => { onBusyChange?.(!!work.busy || awaitingRetry); return () => onBusyChange?.(false); }, [work.busy, awaitingRetry, onBusyChange]);
   useEffect(() => { setConfirmed(false); setReceipt(null); retry.current = null; }, [manifestId]);
   const refresh = (page = offset) => work.run('Refreshing station activity', async api => {
     const data = await api(`/api/v1/announcements?station_id=${encodeURIComponent(station)}&offset=${page}`);
@@ -41,7 +45,12 @@ export default function PublicationPanel({ token, station, preview, routing, pre
     retry.current = { path, body };
     try {
       await work.run(cancel ? 'Withdrawing announcement' : 'Publishing announcement', async api => {
-        const result = await api(retry.current.path, { body: retry.current.body });
+        let result;
+        try { result = await api(retry.current.path, { body: retry.current.body }); }
+        catch (cause) {
+          if (cause.status >= 400 && cause.status < 500 && cause.status !== 408) retry.current = null;
+          throw cause;
+        }
         setReceipt(result); retry.current = null; setConfirmed(false);
         setMessages((await api(`/api/v1/announcements?station_id=${encodeURIComponent(station)}`)).items); setOffset(0);
         setHistory(await api(`/api/v1/announcements/${result.message_id}`));

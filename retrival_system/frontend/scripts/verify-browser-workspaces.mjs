@@ -9,7 +9,7 @@ const displayToken = process.env.SIGNORA_BROWSER_DISPLAY_TOKEN, did = process.en
 const output = process.env.SIGNORA_BROWSER_OUTPUT, fixture = JSON.parse(process.env.SIGNORA_BROWSER_WORKSPACE_DATA || 'null');
 if (!origin || !adminToken || !fixture) throw new Error('Use the isolated backend workspace harness.');
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ headless: true, args: ['--enable-unsafe-swiftshader', '--disable-renderer-backgrounding', '--disable-background-timer-throttling'] });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
 const page = await context.newPage(), errors = [], checks = [];
 page.on('pageerror', error => errors.push(error.message));
@@ -20,7 +20,7 @@ async function api(path, token = adminToken) {
 }
 async function click(name) { await page.getByRole('button', { name, exact: true }).click(); }
 async function status(text, timeout = 30000) { await page.getByRole('status').filter({ hasText: text }).first().waitFor({ timeout }); }
-async function management(token, tab = '') {
+async function management(token, tab = 'library') {
   await page.goto(`${origin}/admin${tab ? `?tab=${tab}` : ''}`);
   await page.getByLabel('Management access token', { exact: true }).fill(token);
   await click('Connect management');
@@ -40,12 +40,13 @@ async function operatorPreview() {
   await page.getByRole('button', { name: 'Play preview', exact: true }).waitFor();
   await page.waitForFunction(() => [...document.querySelectorAll('button')].some(b => b.textContent === 'Play preview' && !b.disabled), null, { timeout: 90000 });
   await click('Play preview');
-  await page.waitForFunction(() => document.querySelector('.player-state')?.textContent === 'COMPLETE', null, { timeout: 90000 });
+  await page.waitForFunction(() => document.querySelector('.player-state')?.textContent === 'COMPLETE', null, { timeout: 180000 });
 }
 try {
   // Operator publishes only after complete preview and explicit intent.
   await page.goto(`${origin}/announcements`);
   await page.getByLabel('Access token', { exact: true }).fill(operatorToken); await click('Connect');
+  await page.getByLabel('Broadcast to all displays', { exact: true }).check();
   await page.getByLabel('Announcement text', { exact: true }).fill('Train number 00110 is arriving on platform 1.');
   await operatorPreview();
   await page.getByLabel('Publication reason', { exact: true }).fill('Synthetic operator browser publication');
@@ -60,6 +61,7 @@ try {
   });
   await click('Publish announcement');
   await page.getByRole('alert').waitFor();
+  await page.waitForFunction(() => document.querySelector('input[name="audience"]')?.closest('fieldset')?.disabled);
   await click('Retry same publication request'); await status('Announcement published.');
   await page.unroute('**/api/v1/announcements');
   const published = (await api('/announcements?station_id=TEST', operatorToken)).items;
@@ -91,7 +93,7 @@ try {
   await page.getByLabel('Example train identifier', { exact: true }).fill('00110');
   await page.getByLabel('Example platform identifier', { exact: true }).fill('1');
   await click('Prepare construction example'); await status('Construction playback: READY', 90000);
-  await click('Play construction review'); await status('Construction playback: COMPLETE', 90000);
+  await click('Play construction review'); await status('Construction playback: COMPLETE', 180000);
   await page.getByLabel('Template review evidence', { exact: true }).fill('Synthetic browser evidence only: complete recipe rendered');
   await page.getByLabel('Template change reason', { exact: true }).fill('Synthetic construction re-review');
   await page.getByLabel('I reviewed the complete rendered examples, exact values, transitions and safe boundaries.', { exact: true }).check();
@@ -161,7 +163,7 @@ try {
   await page.screenshot({ path: `${output}/display-monitor.png`, fullPage: true }); await display.close();
   checks.push('admin_registration_and_real_display_monitor');
   await click('Audit'); await page.getByRole('heading', { name: 'Audit history', exact: true }).waitFor();
-  await page.getByText('DISPLAY_CONFIGURED', { exact: true }).waitFor(); checks.push('audit_history');
+  await page.locator('.audit-entry').filter({ hasText: did }).getByText('DISPLAY CONFIGURED', { exact: true }).waitFor(); checks.push('audit_history');
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: `${output}/management-mobile.png`, fullPage: true });
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1), 'Mobile page must not overflow');

@@ -15,7 +15,9 @@ export class DisplayProgress {
   }
   save() {
     this.completed = new Set([...this.completed].slice(-128));
-    this.storage.setItem(this.key, JSON.stringify({ cursor: this.cursor, completed: [...this.completed] }));
+    try {
+      this.storage.setItem(this.key, JSON.stringify({ cursor: this.cursor, completed: [...this.completed] }));
+    } catch { /* Keep in-memory progress; durable server ACKs remain authoritative. */ }
   }
 }
 
@@ -61,6 +63,7 @@ export class LiveDisplay {
     };
     socket.onclose = event => {
       if (this.closed || socket !== this.socket) return;
+      clearTimeout(this.leaseTimer);
       this.generation++; this.running = false;
       this.player.requestBoundaryStop('DISCONNECTED');
       if (this.state !== 'PLAYING') this.current = null;
@@ -88,6 +91,11 @@ export class LiveDisplay {
     if (!(remaining > 0 && remaining <= 60000)) throw new Error('Live freshness lease is invalid');
     this.leaseUntil = performance.now() + remaining;
     this.player.grantLease(this.leaseUntil);
+    clearTimeout(this.leaseTimer);
+    const socket = this.socket;
+    this.leaseTimer = setTimeout(() => {
+      if (!this.closed && this.socket === socket) socket.close();
+    }, remaining);
     this.retries = 0;
     this.queue = selectQueue(data, this.progress, Date.parse(data.server_time));
     for (const item of data.active) {
@@ -160,16 +168,29 @@ export class LiveDisplay {
     if (snapshot.state === 'COMPLETE') {
       this.progress.completed.add(item.manifest_id); this.progress.save();
       this.ack({ manifest_id: item.manifest_id, state: 'COMPLETED', boundary: snapshot.total - 1 })
-        .then(() => { if (this.current === item) { this.releaseCurrent(); this.schedule(); } }).catch(() => {});
+        .catch(() => {}).finally(() => { if (this.current === item) { this.releaseCurrent(); this.schedule(); } });
     } else if (snapshot.state === 'INTERRUPTED' || snapshot.state === 'ERROR') {
       if (this.socket?.readyState !== 1) { this.releaseCurrent(); return; }
+      if (snapshot.error?.code === 'LEASE_EXPIRED') {
+        this.releaseCurrent();
+        // A stalled connection may never acknowledge another request. Reconnect
+        // immediately; schedule() records any unfinished attempt as FAILED before
+        // restarting the complete message from a fresh authoritative snapshot.
+        this.socket.close();
+        return;
+      }
       const boundary = this.plan?.safe_boundaries.includes(snapshot.index) ? snapshot.index : -1;
       this.ack({ manifest_id: item.manifest_id, state: 'FAILED', boundary, error_code: snapshot.error?.code ?? 'INTERRUPTED' })
-        .then(() => { if (this.current === item) this.releaseCurrent(); }).catch(() => {});
+        .catch(() => {}).finally(() => {
+          // A broken asset must not trigger a preload/retry loop on every heartbeat.
+          // A corrected assignment or a fresh connection can retry the complete message.
+          if (this.current === item && (snapshot.state !== 'ERROR'
+            || !this.queue.some(queued => queued.manifest_id === item.manifest_id))) this.releaseCurrent();
+        });
     }
   }
   close() {
-    this.closed = true; this.generation++; clearTimeout(this.timer); this.socket?.close();
+    this.closed = true; this.generation++; clearTimeout(this.timer); clearTimeout(this.leaseTimer); this.socket?.close();
     this.player.cancel(); this.token = '';
     this.pending?.reject(new Error('Display disconnected'));
     for (const ack of this.acks.splice(0)) ack.reject(new Error('Display disconnected'));

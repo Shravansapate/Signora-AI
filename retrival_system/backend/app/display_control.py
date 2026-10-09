@@ -1,6 +1,6 @@
 """Station-scoped routing, optimistic concurrency and persistent operator history."""
 
-from typing import Annotated
+from typing import Annotated, Literal
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Response
@@ -8,6 +8,7 @@ from pydantic import Field
 from sqlalchemy import text
 
 from app.announcements import check_station_scope
+from app.catalog import catalog_lock
 from app.config import Principal
 from app.lifecycle import _event, require
 from app.lifecycle_schema import ReviewText
@@ -100,7 +101,7 @@ class StopDisplays(WireModel):
     display_ids: list[UUID] = Field(min_length=1, max_length=256)
     expected_routes: dict[UUID, int] = Field(max_length=256)
     reason: ReviewText
-    audience: str = "SELECTED"
+    audience: Literal["ALL", "SELECTED"] = "SELECTED"
 
 
 class PlatformAssignment(WireModel):
@@ -123,10 +124,11 @@ def control_router(sessions, principal):
                     text("""SELECT d.id,d.name,d.platform,d.enabled,d.revision,
               d.last_seen,coalesce(d.enabled AND d.lease_until>now(),false) AS online,
               coalesce(r.revision,0) AS route_revision,r.manifest_id,
-              CASE WHEN a.state='LIVE' AND ar.valid_until>now()
+              CASE WHEN a.state='LIVE' AND ar.revision=a.current_revision AND ar.valid_until>now()
                    THEN p.payload->>'caption_text' END AS caption,
               CASE WHEN r.display_id IS NULL THEN 'LEGACY'
                    WHEN r.manifest_id IS NULL THEN 'IDLE'
+                   WHEN ar.revision<>a.current_revision THEN 'SUPERSEDED'
                    WHEN a.state<>'LIVE' OR ar.valid_until<=now() THEN 'EXPIRED'
                    WHEN dd.state='STARTED' THEN 'PLAYING'
                    WHEN dd.state='COMPLETED' THEN 'COMPLETE'
@@ -161,14 +163,14 @@ def control_router(sessions, principal):
     def stop(request: StopDisplays, identity: Identity):
         operator_scope(identity, request.station_id)
         require(
-            request.audience == "SELECTED"
-            and len(set(request.display_ids)) == len(request.display_ids),
+            len(set(request.display_ids)) == len(request.display_ids),
             "INVALID_TARGETS",
             "Use unique selected display IDs",
             422,
         )
         digest = definition_hash(request.model_dump(mode="json"))
         with sessions() as session, session.begin():
+            catalog_lock(session)
             stream_lock(session, request.station_id)
             prior = one(
                 session, "SELECT * FROM display_commands WHERE id=:id", id=request.request_id
