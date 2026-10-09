@@ -76,6 +76,21 @@ try {
   await click('Review / correct');
   await page.getByLabel('Publication reason', { exact: true }).fill('Synthetic operator withdrawal');
   await page.getByLabel('I checked the current station, complete announcement and intended action.', { exact: true }).check();
+  // A concurrent display assignment update does not change the announcement
+  // revision being withdrawn or the operator's confirmation of that action.
+  const routes = (await api('/control-room/displays?station_id=TEST', operatorToken)).items;
+  const stopped = await context.request.post(`${origin}/api/v1/control-room/stop`, {
+    headers: { Authorization: `Bearer ${operatorToken}` }, data: {
+      request_id: crypto.randomUUID(), station_id: 'TEST', audience: 'ALL',
+      display_ids: routes.map(row => row.id),
+      expected_routes: Object.fromEntries(routes.map(row => [row.id, row.route_revision])),
+      reason: 'Synthetic concurrent display update during withdrawal',
+    },
+  });
+  assert.equal(stopped.status(), 200, await stopped.text());
+  await page.locator(`tr[data-display-id="${routes[0].id}"]`).getByText('IDLE', { exact: true }).waitFor();
+  assert(await page.getByLabel('I checked the current station, complete announcement and intended action.', { exact: true }).isChecked());
+  checks.push('withdrawal_confirmation_survives_display_status_refresh');
   await click('Withdraw announcement'); await status('Announcement withdrawn');
   assert.equal((await api(`/announcements/${first.message_id}`, operatorToken)).state, 'CANCELLED');
   await page.getByRole('listitem').filter({ hasText: 'Revision 3: CANCELLED' }).waitFor();

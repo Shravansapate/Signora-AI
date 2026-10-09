@@ -12,7 +12,9 @@ export default function PublicationPanel({ token, station, preview, routing, pre
   const manifestId = preview?.manifest_id;
   const awaitingRetry = !!retry.current;
   const targetsKey = JSON.stringify([routing?.audience, routing?.display_ids, routing?.expected_routes, routing?.emergency]);
-  useEffect(() => { setConfirmed(false); }, [targetsKey]);
+  // Targets belong to a new publication. Withdrawal concerns the selected
+  // announcement revision and must not lose confirmation when display polling updates.
+  useEffect(() => { if (manifestId) setConfirmed(false); }, [targetsKey, manifestId]);
   useEffect(() => { onBusyChange?.(!!work.busy || awaitingRetry); return () => onBusyChange?.(false); }, [work.busy, awaitingRetry, onBusyChange]);
   useEffect(() => { setConfirmed(false); setReceipt(null); retry.current = null; }, [manifestId]);
   const refresh = (page = offset) => work.run('Refreshing station activity', async api => {
