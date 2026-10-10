@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Feedback, Field, JsonDetails, Pager, time, useWorkspace } from './workspace.jsx';
 import Icon, { SectionTitle, StatusBadge } from './Icon.jsx';
 import { numberedStationDefinition, suggestedStationId } from '../services/station-setup.mjs';
+import StationEntities from './StationEntities.jsx';
 
 export function ImportManager({ token }) {
   const work = useWorkspace(token), requestId = useRef(null);
@@ -78,6 +79,8 @@ export function StationManager({ token }) {
       });
     }} />Advanced station configuration</label>
     {advanced && <Field label="Station definition JSON" value={definition} disabled={!!work.busy} onChange={value => { setDefinition(value); setConfirmed(false); }} multiline rows={14} maxLength={30000} />}
+    {!advanced && ['places', 'trains'].map(kind => <StationEntities key={kind} kind={kind} entries={base[kind] || []} disabled={!!work.busy}
+      onChange={entries => { setBase(current => ({ ...current, [kind]: entries })); setConfirmed(false); }} />)}
     <Field label="Station change reason" placeholder="Enter the reason for this change" value={reason} disabled={!!work.busy} onChange={value => { setReason(value); setConfirmed(false); }} maxLength={4000} />
     <label className="confirmation"><input type="checkbox" checked={confirmed} disabled={!!work.busy} onChange={e => setConfirmed(e.target.checked)} />I checked the station definition. Updating it withdraws affected live announcements.</label>
     <button className="primary" disabled={!!work.busy || !confirmed || !id || !(advanced ? definition.trim() : name.trim() && count) || !reason.trim()} onClick={() => work.run('Saving station revision', async api => {

@@ -9,7 +9,7 @@ from uuid import UUID, uuid4
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import select
+from sqlalchemy import select, text
 from test_lifecycle import LIBRARY, variant
 from test_registry import registry_database  # noqa: F401
 
@@ -71,6 +71,147 @@ def upload(client, headers, paths, cid=None):
 
 def details(client, headers, cid):
     return client.get(f"/api/v1/review/signs/{cid}", headers=headers["admin"]).json()
+
+
+def test_missing_invalid_and_mismatched_metadata_are_atomic(library_environment):
+    client, headers, sessions, store = library_environment
+    raw = json.loads((LIBRARY / "metadata/Train.metadata.json").read_text(encoding="utf-8-sig"))
+    raw["file_integrity"]["glb_sha256"] = "0" * 64
+    with sessions() as session:
+        cid = session.scalar(text("SELECT id FROM sign_concepts WHERE semantic_key='ISL_TRAIN_01'"))
+        before = session.execute(
+            text(
+                "SELECT (SELECT count(*) FROM sign_concepts), "
+                "(SELECT count(*) FROM motion_versions)"
+            )
+        ).one()
+    objects = {p.relative_to(store.root) for p in store.root.rglob("*") if p.is_file()}
+    for path in ("/api/v1/admin/motions/stage", f"/api/v1/admin/signs/{cid}/motions"):
+        for metadata in (None, b"", b"{}", b"not json", json.dumps(raw).encode()):
+            with (LIBRARY / "glb/Train.glb").open("rb") as motion:
+                files = {"motion": ("motion.glb", motion, "model/gltf-binary")}
+                if metadata is not None:
+                    files["metadata"] = ("metadata.json", metadata, "application/json")
+                result = client.post(path, headers=headers["admin"], files=files)
+            assert result.status_code == 422, result.text
+            if metadata is None:
+                assert any(error["loc"][-1] == "metadata" for error in result.json()["detail"])
+    with sessions() as session:
+        assert (
+            session.execute(
+                text(
+                    "SELECT (SELECT count(*) FROM sign_concepts), "
+                    "(SELECT count(*) FROM motion_versions)"
+                )
+            ).one()
+            == before
+        )
+    assert {p.relative_to(store.root) for p in store.root.rglob("*") if p.is_file()} == objects
+
+
+def test_alias_add_remove_readd_updates_live_retrieval(library_environment, tmp_path):
+    client, headers, sessions, _ = library_environment
+    paths = variant(tmp_path, "VOCAB_" + uuid4().hex.upper(), marker="aliases")
+    metadata = json.loads(paths[0].read_text())
+    retired = "retired" + uuid4().hex[:10]
+    metadata["retrieval"]["aliases"] = [retired]
+    paths[0].write_text(json.dumps(metadata))
+    result = upload(client, headers, paths).json()
+    cid, vid = result["concept_id"], result["motion_version_id"]
+    concept = details(client, headers, cid)["concept"]
+    response = client.post(
+        f"/api/v1/admin/signs/{cid}/activate",
+        headers=headers["admin"],
+        json={
+            "expected_revision": concept["revision"],
+            "expected_active_motion_version_id": None,
+            "motion_version_id": vid,
+            "reason": "Isolated vocabulary fixture",
+        },
+    )
+    assert response.status_code == 200, response.text
+    word = "vocab" + uuid4().hex[:10]
+    url = f"/api/v1/admin/signs/{cid}/aliases"
+
+    def body():
+        return {
+            "expected_revision": details(client, headers, cid)["concept"]["revision"],
+            "reason": "Isolated vocabulary maintenance",
+        }
+
+    def retrieve(value=None):
+        r = client.post(
+            "/api/v1/translate",
+            headers=headers["operator"],
+            json={
+                "request_id": str(uuid4()),
+                "station_id": "TEST",
+                "input_type": "TEXT",
+                "text": value or word,
+            },
+        )
+        assert r.status_code == 200, r.text
+        return [i["motion_version_id"] for i in (r.json().get("manifest") or {}).get("items", [])]
+
+    request = {**body(), "alias": word}
+    assert client.post(url, headers=headers["operator"], json=request).status_code == 403
+    added = client.post(url, headers=headers["admin"], json=request)
+    assert added.status_code == 201, added.text
+    assert retrieve() == [vid]
+    aid = added.json()["alias_id"]
+    assert (
+        client.request(
+            "DELETE",
+            f"{url}/{aid}",
+            headers=headers["admin"],
+            json={**body(), "expected_revision": 9999},
+        ).status_code
+        == 409
+    )
+    assert (
+        client.request("DELETE", f"{url}/{aid}", headers=headers["admin"], json=body()).status_code
+        == 200
+    )
+    assert retrieve() == [], "Withdrawn aliases must not survive development lookup"
+    added = client.post(url, headers=headers["admin"], json={**body(), "alias": word})
+    assert added.status_code == 201 and added.json()["status"] == "PENDING"
+    assert retrieve() == [vid]
+    source = next(a for a in details(client, headers, cid)["aliases"] if a["alias"] == retired)
+    assert (
+        client.request(
+            "DELETE", f"{url}/{source['id']}", headers=headers["admin"], json=body()
+        ).status_code
+        == 200
+    )
+    assert retrieve(retired) == []
+    metadata["linguistic"]["meaning"] = "Isolated revised meaning"
+    updated = client.post(
+        f"/api/v1/admin/signs/{cid}/motions/{vid}/metadata",
+        headers=headers["admin"],
+        data=body(),
+        files={"metadata": ("metadata.json", json.dumps(metadata).encode(), "application/json")},
+    )
+    assert updated.status_code == 200, updated.text
+    rows = {a["alias"]: a["review_status"] for a in details(client, headers, cid)["aliases"]}
+    assert rows[retired] == "REJECTED", "Editing meaning must not resurrect removed source aliases"
+    assert rows[word] == "PENDING", "Editing meaning must retain frontend-added vocabulary"
+    assert (
+        client.post(
+            f"/api/v1/admin/signs/{cid}/activate",
+            headers=headers["admin"],
+            json={**body(), "expected_active_motion_version_id": None, "motion_version_id": vid},
+        ).status_code
+        == 200
+    )
+    assert retrieve() == [vid] and retrieve(retired) == []
+    with sessions() as session:
+        assert (
+            session.scalar(
+                text("SELECT count(*) FROM eligible_motion_versions WHERE concept_id=:id"),
+                {"id": cid},
+            )
+            == 0
+        )
 
 
 def test_upload_select_replace_metadata_archive_rollback_without_restart(

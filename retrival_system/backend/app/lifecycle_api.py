@@ -16,6 +16,7 @@ from app.library import (
     current_metadata,
     development_enabled,
     development_switch,
+    edit_alias,
     update_metadata,
 )
 from app.lifecycle import (
@@ -33,6 +34,7 @@ from app.lifecycle_schema import (
     AvatarReview,
     CleanupRetryRequest,
     DeleteRequest,
+    LibraryAliasRequest,
     MeaningReview,
     MotionReview,
     RevisionRequest,
@@ -255,6 +257,16 @@ def lifecycle_router(sessions, store, settings, principal):
                     for row in session.scalars(select(AvatarProfile).order_by(AvatarProfile.id))
                 ]
             }
+
+    @router.post("/admin/signs/{concept_id}/aliases", status_code=201)
+    def add_alias(concept_id: UUID, request: LibraryAliasRequest, identity: Admin):
+        with sessions() as session:
+            return edit_alias(session, concept_id, request, identity.subject)
+
+    @router.delete("/admin/signs/{concept_id}/aliases/{alias_id}")
+    def remove_alias(concept_id: UUID, alias_id: UUID, request: RevisionRequest, identity: Admin):
+        with sessions() as session:
+            return edit_alias(session, concept_id, request, identity.subject, alias_id)
 
     @router.post("/review/avatars/{avatar_id}")
     def avatar_decision(avatar_id: UUID, request: AvatarReview, identity: Reviewer):

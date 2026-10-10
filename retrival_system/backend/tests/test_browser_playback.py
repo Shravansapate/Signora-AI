@@ -36,6 +36,7 @@ def run_browser(
     announcements=False,
     live_display=None,
     workspaces=None,
+    worker=False,
 ):
     repository = Path(__file__).resolve().parents[2]
     frontend = repository / "frontend"
@@ -82,6 +83,8 @@ def run_browser(
         "SIGNORA_BROWSER_OUTPUT": str(tmp_path / "browser-evidence"),
         "NEXT_TELEMETRY_DISABLED": "1",
         "SIGNORA_NEXT_DIST_DIR": ".next-test",
+        "SIGNORA_DEMO_MODE_ENABLED": str(settings.demo_mode_enabled).lower(),
+        "SIGNORA_DELETION_RETENTION_DAYS": str(settings.deletion_retention_days),
     }
     if announcements:
         environment["SIGNORA_BROWSER_REVIEW_TOKEN"] = review_token
@@ -138,6 +141,11 @@ def run_browser(
                         "4096",
                     ],
                     repository,
+                ),
+                *(
+                    [([sys.executable, "-m", "app.worker", "--workers", "1"], repository)]
+                    if worker
+                    else []
                 ),
                 (
                     [

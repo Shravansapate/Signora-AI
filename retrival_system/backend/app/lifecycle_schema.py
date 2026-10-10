@@ -13,6 +13,10 @@ class RevisionRequest(WireModel):
     reason: ReviewText
 
 
+class LibraryAliasRequest(RevisionRequest):
+    alias: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=2048)]
+
+
 class SwitchRequest(RevisionRequest):
     motion_version_id: UUID
     expected_active_motion_version_id: UUID | None

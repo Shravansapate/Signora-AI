@@ -5,7 +5,14 @@ export function numberedStationDefinition(name, count, existing = {}, replacePla
   if (!String(count).trim() || !Number.isInteger(total) || total < 1 || total > 256) {
     throw new Error('Enter a whole platform count from 1 to 256.');
   }
-  return { ...existing, name: stationName,
+  const entities = {};
+  for (const kind of ['places', 'trains']) {
+    if (!(kind in existing)) continue;
+    entities[kind] = (existing[kind] || []).map(entry => ({ ...entry,
+      id: entry.id.trim(), name: entry.name.trim(), ...(entry.aliases ? { aliases: entry.aliases.map(value => value.trim()).filter(Boolean) } : {}) }));
+    if (entities[kind].some(entry => !entry.id || !entry.name)) throw new Error(`Every ${kind === 'places' ? 'place' : 'train'} needs an ID and name.`);
+  }
+  return { ...existing, ...entities, name: stationName,
     platforms: !replacePlatforms && existing.platforms?.length ? existing.platforms
       : Array.from({ length: total }, (_, index) => String(index + 1)) };
 }

@@ -48,6 +48,19 @@ def paired_backup(live_setup, announcement_setup, tmp_path_factory):
         },
     )["manifest"]
     live = request_ok(client, headers, "/api/v1/announcements", publication(client, headers))
+    credential = request_ok(
+        client,
+        headers,
+        f"/api/v1/admin/displays/{did}/token",
+        {
+            "expected_revision": 1,
+            "reason": "Isolated durable credential recovery verification",
+        },
+    )
+    headers = {
+        **headers,
+        "managed_display": {"Authorization": "Bearer " + credential["access_token"]},
+    }
     directory = tmp_path_factory.mktemp("recovery") / "backup"
     pg_bin = Path(os.environ["SIGNORA_TEST_PG_BIN"])
     uri = recovery.connection_uri(settings.database_url.get_secret_value())
@@ -102,6 +115,8 @@ def test_actual_restore_preserves_manifest_assets_and_fences_live_state(paired_b
     )
     with TestClient(create_app(restored)) as client:
         assert client.get("/health/ready").status_code == 200
+        # Restore deliberately disables displays until an administrator re-enables them.
+        assert client.get("/api/v1/session", headers=headers["managed_display"]).status_code == 401
         response = client.get(f"/api/v1/playback/{review['manifest_id']}", headers=headers["admin"])
         assert response.status_code == 200, response.text
         assert response.json() == review
@@ -131,6 +146,21 @@ def test_actual_restore_preserves_manifest_assets_and_fences_live_state(paired_b
             "SELECT details->>'backup_id' FROM admin_audit_logs WHERE action='BACKUP_RESTORED'"
         ).fetchone()[0] == str(backup.backup_id)
     assert recovery.verify_backup(directory) == backup
+    with TestClient(create_app(restored)) as client:
+        device = client.get(f"/api/v1/admin/displays/{did}", headers=headers["admin"]).json()
+        enabled = client.post(
+            f"/api/v1/admin/displays/{did}",
+            headers=headers["admin"],
+            json={
+                "expected_revision": device["revision"],
+                "station_id": device["station_id"],
+                "subject": device["subject"],
+                "name": device["name"],
+                "enabled": True,
+            },
+        )
+        assert enabled.status_code == 200, enabled.text
+        assert client.get("/api/v1/session", headers=headers["managed_display"]).status_code == 200
 
 
 def test_refuses_populated_database_and_existing_storage(paired_backup, tmp_path):

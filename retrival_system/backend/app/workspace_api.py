@@ -30,7 +30,9 @@ def workspace_router(sessions, principal):
 
     @router.get("/session")
     def session_identity(identity: Identity):
-        return identity.model_dump(mode="json")
+        return identity.model_dump(
+            mode="json", include={"subject", "roles", "expires_at", "station_ids"}
+        )
 
     @router.get("/review/signs")
     def library(

@@ -26,7 +26,7 @@ from sqlalchemy.engine import make_url
 from app.config import Settings
 from app.storage import MAX_OBJECT_BYTES
 
-SCHEMA = "0009_display_routing"
+SCHEMA = "0010_display_credentials"
 CATALOG_LOCK = "1397311310, 1"
 INVENTORY = """SELECT DISTINCT storage_key,sha256,size_bytes FROM motion_versions
 WHERE deleted_at IS NULL ORDER BY storage_key"""
@@ -77,6 +77,7 @@ class Backup(BaseModel):
         "0007_library_workflow",
         "0008_library_reupload",
         "0009_display_routing",
+        "0010_display_credentials",
     ] = SCHEMA
     backup_id: UUID
     created_at: AwareDatetime

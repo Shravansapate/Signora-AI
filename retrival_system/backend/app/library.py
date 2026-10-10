@@ -145,6 +145,56 @@ def development_enabled(session, store, concept_id, request, actor, enabled):
         return _result(concept)
 
 
+def edit_alias(session, concept_id, request, actor, alias_id=None):
+    """Draft vocabulary and withdrawal share the reviewed retrieval hash contract."""
+    from app.meaning import normalize
+    from app.retrieval.catalog import refresh_hash
+
+    with session.begin():
+        concept = _concept(session, concept_id, request.expected_revision)
+        if alias_id is not None:
+            row = session.get(SignAlias, alias_id)
+            require(
+                row is not None and row.concept_id == concept_id,
+                "NOT_FOUND",
+                "Alias not found",
+                404,
+            )
+            row.review_status = "REJECTED"
+        else:
+            normalized = normalize(request.alias)[0]
+            require(bool(normalized), "EMPTY_ALIAS", "An alias cannot be empty", 422)
+            row = session.scalar(
+                select(SignAlias).where(
+                    SignAlias.concept_id == concept_id, SignAlias.normalized_alias == normalized
+                )
+            )
+            require(
+                row is None or row.review_status == "REJECTED",
+                "ALIAS_EXISTS",
+                "This alias already exists",
+            )
+            if row is None:
+                row = SignAlias(concept_id=concept_id, normalized_alias=normalized)
+                session.add(row)
+            row.alias, row.source_language, row.review_status = request.alias, "en", "PENDING"
+            row.domain, row.context = concept.domain, concept.context
+            row.review_id, row.reviewed_semantic_revision = None, None
+        profile = session.get(RetrievalProfile, concept_id)
+        if profile is not None:
+            refresh_hash(session, concept, profile)
+        concept.revision += 1
+        session.flush()
+        _event(
+            session,
+            actor,
+            "LIBRARY_ALIAS_REMOVED" if alias_id else "LIBRARY_ALIAS_ADDED",
+            concept_id,
+            {"alias_id": str(row.id), "reason": request.reason},
+        )
+        return {"alias_id": row.id, "revision": concept.revision, "status": row.review_status}
+
+
 def current_metadata(session, motion):
     revision = session.scalar(
         select(MotionMetadataRevision)
@@ -202,8 +252,9 @@ def update_metadata(session, store, concept_id, motion_id, path, request, actor)
             context=metadata.linguistic.context,
         )
         before = current_metadata(session, motion)
-        semantic_change = any(getattr(concept, key) != value for key, value in values.items()) or (
-            before.get("retrieval", {}).get("aliases", []) != aliases
+        aliases_changed = before.get("retrieval", {}).get("aliases", []) != aliases
+        semantic_change = aliases_changed or any(
+            getattr(concept, key) != value for key, value in values.items()
         )
         if semantic_change:
             for key, value in values.items():
@@ -216,16 +267,28 @@ def update_metadata(session, store, concept_id, motion_id, path, request, actor)
             select_library(
                 session, concept, selected.motion_version_id if selected else motion.id, False
             )
-            session.execute(delete(SignAlias).where(SignAlias.concept_id == concept.id))
-            for value in dict.fromkeys(" ".join(a.casefold().split()) for a in aliases):
-                session.add(
-                    SignAlias(
-                        concept_id=concept.id,
-                        alias=value,
-                        normalized_alias=value,
-                        review_status="PENDING",
+            if aliases_changed:
+                session.execute(delete(SignAlias).where(SignAlias.concept_id == concept.id))
+                for value in dict.fromkeys(" ".join(a.casefold().split()) for a in aliases):
+                    session.add(
+                        SignAlias(
+                            concept_id=concept.id,
+                            alias=value,
+                            normalized_alias=value,
+                            review_status="PENDING",
+                        )
                     )
-                )
+            else:
+                # A label/meaning edit must not restore withdrawn source aliases
+                # or discard vocabulary added through the management interface.
+                for alias in session.scalars(
+                    select(SignAlias).where(
+                        SignAlias.concept_id == concept.id, SignAlias.review_status != "REJECTED"
+                    )
+                ):
+                    alias.review_status = "PENDING"
+                    alias.review_id = None
+                    alias.reviewed_semantic_revision = None
             profile = session.get(RetrievalProfile, concept.id)
             if profile:
                 profile.status = "REJECTED"

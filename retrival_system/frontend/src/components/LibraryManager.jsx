@@ -17,6 +17,7 @@ export default function LibraryManager({ token, admin }) {
   const [metadata, setMetadata] = useState(null), [motion, setMotion] = useState(null), [uploadNew, setUploadNew] = useState(true);
   const [cleanup, setCleanup] = useState(null);
   const [metadataEdit, setMetadataEdit] = useState(null), [metadataHistory, setMetadataHistory] = useState(null);
+  const [metadataText, setMetadataText] = useState(null), [libraryAlias, setLibraryAlias] = useState('');
   const [deleteVisible, setDeleteVisible] = useState(false), [deleteName, setDeleteName] = useState(''), [deleteReason, setDeleteReason] = useState('');
   const [alias, setAlias] = useState(''), [aliasDecision, setAliasDecision] = useState('APPROVED');
   const [description, setDescription] = useState(''), [sense, setSense] = useState('');
@@ -42,6 +43,7 @@ export default function LibraryManager({ token, admin }) {
     setMeaning(data.concept.meaning || ''); setContext(data.concept.context || ''); setDomain(data.concept.domain || '');
     setDescription(data.retrieval_profile?.description || ''); setSense(data.retrieval_profile ? JSON.stringify(data.retrieval_profile.sense, null, 2) : '');
     setDeleteVisible(false); setDeleteName(''); setDeleteReason(''); setMetadataHistory(null); setMetadataEdit(null);
+    setMetadataText(null); setLibraryAlias('');
   }
   function select(id) {
     clearPreview(); setPlayerSession(value => value+1); setReason(''); setEvidence(''); setCleanup(null);
@@ -95,6 +97,7 @@ export default function LibraryManager({ token, admin }) {
   }
   function upload() {
     work.run('Validating uploaded metadata and GLB', async api => {
+      if (!metadata || !motion) throw new Error('Choose both the GLB and its matching metadata JSON. A GLB alone does not describe its meaning.');
       if (motion.size > 134217728 || metadata.size > 33554432) throw new Error('Maximum upload: GLB 128 MiB; metadata 32 MiB.');
       const form = new FormData(); form.append('metadata', metadata); form.append('motion', motion);
       if (uploadNew) form.append('new_concept_only', 'true');
@@ -133,8 +136,13 @@ export default function LibraryManager({ token, admin }) {
   }
   function saveMetadata() {
     work.run('Validating metadata update', async api => {
-      if (metadataEdit.size > 33554432) throw new Error('Metadata exceeds 32 MiB.');
-      const form = new FormData(); form.append('metadata', metadataEdit); form.append('expected_revision', concept.revision); form.append('reason', reason);
+      let file = metadataEdit;
+      if (metadataText !== null) {
+        try { JSON.parse(metadataText); } catch { throw new Error('Correct the metadata JSON before saving.'); }
+        file = new Blob([metadataText], { type: 'application/json' });
+      }
+      if (!file || file.size > 33554432) throw new Error('Choose metadata up to 32 MiB.');
+      const form = new FormData(); form.append('metadata', file, 'metadata.json'); form.append('expected_revision', concept.revision); form.append('reason', reason);
       await api(`/api/v1/admin/signs/${concept.id}/motions/${candidate.id}/metadata`, { body: form, timeoutMs: 180000 });
       await load(api, concept.id, candidate.id);
       setItems((await api(`/api/v1/review/signs?q=${encodeURIComponent(query)}&offset=${offset}`)).items);
@@ -156,7 +164,7 @@ export default function LibraryManager({ token, admin }) {
         <p>{concept.canonical_text} · {concept.meaning_status} · {libraryEnabled ? 'Enabled' : 'Inactive'} · revision {concept.revision}</p>
         {detail.development_mode && <p>Activation selects the version for development retrieval immediately. It does not grant production or ISL review approval.</p>}
         <p className="identifier">Concept: {concept.id}</p>
-        <label className="form-field">Motion version<select aria-label="Motion version" value={candidateId} disabled={busy} onChange={e => { clearPreview(); setCandidateId(e.target.value); setDeleteVisible(false); setDeleteName(''); setMetadataHistory(null); setMetadataEdit(null); }}>
+        <label className="form-field">Motion version<select aria-label="Motion version" value={candidateId} disabled={busy} onChange={e => { clearPreview(); setCandidateId(e.target.value); setDeleteVisible(false); setDeleteName(''); setMetadataHistory(null); setMetadataEdit(null); setMetadataText(null); }}>
           {detail.versions.map(row => <option key={row.id} value={row.id}>v{row.version_no} · {row.deleted_at ? 'DELETED' : row.lifecycle_status} · {row.id === selectedId ? 'selected for retrieval' : row.revoked_at ? 'revoked' : row.linguistic_review_status}</option>)}
         </select></label>
         {admin && candidate && <>
@@ -208,9 +216,15 @@ export default function LibraryManager({ token, admin }) {
           <details><summary>Metadata file and revisions</summary>
             <button disabled={busy || !!candidate.deleted_at} onClick={downloadMetadata}>Download current metadata.json</button>
             {metadataHistory && <JsonDetails label="Metadata revision history" value={metadataHistory} />}
-            {admin && <><p>Download, edit and upload metadata for this exact GLB. Keep motion_code, language, hashes, sizes and animation unchanged. Labels, aliases, meaning and context can change; semantic edits disable retrieval until reactivation.</p>
-              <label>Updated metadata file<input type="file" accept=".json" disabled={busy || !!candidate.deleted_at} onChange={e => setMetadataEdit(e.target.files[0] ?? null)} /></label>
-              <button disabled={busy || !metadataEdit || !hasReason || !!candidate.deleted_at} onClick={saveMetadata}>Save metadata revision</button></>}
+            {admin && <><p>Edit registered metadata here or upload an updated file. Keep motion_code, language, hashes, sizes and animation unchanged. Labels, aliases, meaning and context can change; semantic edits disable retrieval until reactivation.</p>
+              <button disabled={busy || !!candidate.deleted_at} onClick={() => work.run('Loading metadata editor', async api => {
+                const result = await api(`/api/v1/review/signs/${concept.id}/motions/${candidate.id}/metadata`);
+                setMetadataText(JSON.stringify(result.metadata, null, 2)); setMetadataEdit(null); setMetadataHistory(result.history); setConfirmed(false);
+              })}>Edit metadata here</button>
+              {metadataText !== null && <Field label="Registered metadata JSON" value={metadataText} multiline rows={16} maxLength={33554432} disabled={busy}
+                onChange={value => { setMetadataText(value); setConfirmed(false); }} />}
+              <label>Updated metadata file<input type="file" accept=".json" disabled={busy || !!candidate.deleted_at} onChange={e => { setMetadataEdit(e.target.files[0] ?? null); setMetadataText(null); setConfirmed(false); }} /></label>
+              <button disabled={busy || (metadataText === null && !metadataEdit) || !hasReason || !!candidate.deleted_at} onClick={saveMetadata}>Save metadata revision</button></>}
           </details>
           <details><summary>Canonical avatar approval · {avatar?.status || 'Unavailable'}</summary><p className="identifier">{avatar?.source_sha256}</p>
             <div className="actions">{['APPROVED','RETIRED'].map(decision => <button key={decision} disabled={busy || !hasReason || !evidence.trim() || snapshot.state !== 'COMPLETE' || preview?.items[0]?.motion_version_id !== avatar?.canonical_motion_version_id}
@@ -225,6 +239,18 @@ export default function LibraryManager({ token, admin }) {
           <button disabled={busy || concept.enabled || !hasReason || !evidence.trim() || !meaning.trim() || !context.trim() || !domain.trim()} onClick={reviewMeaning}>Record meaning review</button>
         </details>
         <JsonDetails label="Aliases" value={detail.aliases} />
+        {admin && <section className="management-section" aria-label="Library vocabulary"><h3>Library vocabulary</h3>
+          <p>Add another word or phrase for this concept. New aliases remain pending production review. Removing an alias stops its use in new lookups immediately and preserves audit history.</p>
+          <Field label="New library alias" value={libraryAlias} maxLength={2048} disabled={busy} onChange={value => { setLibraryAlias(value); setConfirmed(false); }} />
+          <button disabled={busy || !hasReason || !libraryAlias.trim()} onClick={() => work.run('Adding library alias', async api => {
+            await api(`/api/v1/admin/signs/${concept.id}/aliases`, { body: { expected_revision: concept.revision, alias: libraryAlias, reason } });
+            await load(api, concept.id, candidateId);
+          }, 'Library alias added. Production use requires alias review.')}>Add library alias</button>
+          <ul>{detail.aliases.filter(row => row.review_status !== 'REJECTED').map(row => <li key={row.id}>{row.alias} ({row.review_status}) <button disabled={busy || !hasReason} onClick={() => work.run('Removing library alias', async api => {
+            await api(`/api/v1/admin/signs/${concept.id}/aliases/${row.id}`, { method: 'DELETE', body: { expected_revision: concept.revision, reason } });
+            await load(api, concept.id, candidateId);
+          }, 'Alias removed from retrieval. Audit history retained.')}>Remove alias {row.alias}</button></li>)}</ul>
+        </section>}
         <details><summary>Reviewed aliases and retrieval description</summary>
           <p>Scope: {concept.domain || 'No reviewed domain'} · {concept.context || 'No reviewed context'}. Approximate search remains candidate assistance.</p>
           <Field label="English alias" value={alias} disabled={busy} onChange={value => { setAlias(value); setConfirmed(false); }} maxLength={2048} />
@@ -253,6 +279,8 @@ export default function LibraryManager({ token, admin }) {
       {admin && <section className="panel management-section"><SectionTitle icon="upload" title="Add a concept or GLB version" /><p>Supply the matching metadata.json and motion.glb. GLB limit: 128 MiB; metadata limit: 32 MiB. Uploading never overwrites an older version; activate the selected version after validation.</p><label>Upload target<select aria-label="Upload target" disabled={busy} value={uploadNew ? 'new' : 'selected'} onChange={e => setUploadNew(e.target.value === 'new')}><option value="new">Completely new concept</option><option value="selected" disabled={!concept}>New GLB version for: {concept?.gloss}</option></select></label>
         <label className="form-field">Metadata file<input type="file" accept=".json" disabled={busy} onChange={e => setMetadata(e.target.files[0] ?? null)} /></label>
         <label className="form-field">GLB file<input type="file" accept=".glb" disabled={busy} onChange={e => setMotion(e.target.files[0] ?? null)} /></label>
+        {motion && !metadata && <p role="status">Metadata is required. Choose the matching metadata JSON containing this motion's identity, meaning, animation and checksum. No files have been uploaded yet.</p>}
+        <p>After upload, select and activate the validated version. Production activation also requires the recorded meaning, avatar and exact-version approvals. New requests use committed changes immediately; no server restart is needed.</p>
         <button disabled={busy || !metadata || !motion || (!uploadNew && !concept)} onClick={upload}>Validate and stage upload</button>
       </section>}
       {cleanup && <section className="panel management-section"><h2>Physical cleanup</h2><p>{cleanup.id} · {readable(cleanup.state)}</p><p>{cleanup.error_code}</p><div className="actions">

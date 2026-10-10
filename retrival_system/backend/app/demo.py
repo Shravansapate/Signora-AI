@@ -243,7 +243,9 @@ def prepare_demo(session, store, caption, owner, valid_until, *, units, translat
         .with_for_update(read=True, of=(MotionVersion, SignConcept, AvatarProfile))
     ).all()
     aliases = defaultdict(list)
-    for cid, value in session.execute(select(SignAlias.concept_id, SignAlias.alias)):
+    for cid, value in session.execute(
+        select(SignAlias.concept_id, SignAlias.alias).where(SignAlias.review_status != "REJECTED")
+    ):
         aliases[cid].append(_normalized(value))
     profiles = defaultdict(list)
     for row in rows:

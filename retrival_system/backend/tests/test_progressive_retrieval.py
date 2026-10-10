@@ -208,6 +208,34 @@ def test_pgvector_real_embedding_roundtrip_revision_hash_and_quality_replacement
                 )
                 == 2
             )
+        alias(client, headers, str(cid), "passenger rail transport")
+        assert index_concepts(sessions, encoder, [cid], "test")["items"][0]["status"] == "INDEXED"
+        detail = history(client, headers, str(cid))
+        removed = next(row for row in detail["aliases"] if row["alias"] == "rail transport")
+        response = client.request(
+            "DELETE",
+            f"/api/v1/admin/signs/{cid}/aliases/{removed['id']}",
+            headers=headers["admin"],
+            json={
+                "expected_revision": detail["concept"]["revision"],
+                "reason": "Verify frontend vocabulary removal invalidates semantic inputs",
+            },
+        )
+        assert response.status_code == 200, response.text
+        with sessions() as session:
+            assert not query_rows(
+                session, SearchRequest.model_validate(request), "railway transport", vector
+            ), "Stored vectors for the removed alias must be excluded immediately"
+        assert index_concepts(sessions, encoder, [cid], "test")["items"][0]["status"] == "INDEXED"
+        with sessions() as session:
+            assert (
+                len(
+                    query_rows(
+                        session, SearchRequest.model_validate(request), "railway transport", vector
+                    )
+                )
+                == 1
+            )
     finally:
         encoder.close()
 
